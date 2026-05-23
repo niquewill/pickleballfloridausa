@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pickleball Florida USA | Coastal Pickleball Lifestyle</title>
+<meta name="description" content="Florida's premier pickleball lifestyle brand. Premium paddles, resort apparel, coastal gear and court finder for Florida pickleball players." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --coral: #FF6F61;
+    --turquoise: #2CCCD3;
+    --green: #2E8B57;
+    --cream: #FFF7EB;
+    --navy: #16324F;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 1.2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    letter-spacing: 1px;
+  }
+  .logo-sub {
+    font-size: 0.6rem;
+    color: var(--turquoise);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--turquoise); }
+  .nav-right { display: flex; gap: 1.2rem; align-items: center; }
+  .nav-right a {
+    color: var(--cream);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    opacity: 0.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    padding: 5rem 2.5rem 6rem;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--turquoise);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+  .hero h1 em { font-style: italic; color: var(--coral); }
+  .hero p {
+    color: var(--cream);
+    opacity: 0.75;
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-coral {
+    background: var(--coral);
+    color: #fff;
+    padding: 0.85rem 2.5rem;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.4);
+    color: var(--cream);
+    padding: 0.85rem 2.5rem;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  /* WAVE DIVIDER */
+  .wave { display: block; background: var(--navy); line-height: 0; }
+  .wave svg { display: block; width: 100%; }
+
+  /* SECTIONS */
+  .section { padding: 4rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--turquoise);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  .section-sub {
+    font-size: 0.85rem;
+    color: var(--navy);
+    opacity: 0.6;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* COLLECTION CARDS */
+  .collections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .col-card {
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(22,50,79,0.08);
+  }
+  .col-img {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+  .col-img.coral { background: var(--coral); }
+  .col-img.turq  { background: var(--turquoise); }
+  .col-img.green { background: var(--green); }
+  .col-img.navy  { background: var(--navy); }
+  .col-body { padding: 1.2rem; }
+  .col-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+    color: var(--navy);
+  }
+  .col-body p {
+    font-size: 0.78rem;
+    color: var(--navy);
+    opacity: 0.6;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  .col-body a {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--coral);
+    text-decoration: none;
+  }
+
+  /* LIFESTYLE STRIP */
+  .lifestyle-strip {
+    background: var(--green);
+    padding: 4rem 2.5rem;
+    text-align: center;
+  }
+  .lifestyle-strip h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--cream);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  .lifestyle-strip p {
+    color: var(--cream);
+    opacity: 0.85;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+  }
+
+  /* PRODUCT GRID */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .product { background: var(--cream); border-radius: 4px; overflow: hidden; }
+  .product-img {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    background: #fff;
+  }
+  .product-body { padding: 1rem; }
+  .product-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+    color: var(--navy);
+  }
+  .product-body .price { font-size: 0.9rem; color: var(--coral); font-weight: 500; }
+  .product-body .tag {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--turquoise);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .shop-link {
+    display: block;
+    margin-top: 0.75rem;
+    text-align: center;
+    background: var(--navy);
+    color: var(--cream);
+    padding: 0.5rem;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials { background: #fff; padding: 4rem 2.5rem; }
+  .testi-inner { max-width: 1100px; margin: 0 auto; }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .testi-card {
+    background: var(--cream);
+    padding: 1.5rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--turquoise);
+  }
+  .testi-card p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--navy);
+    opacity: 0.8;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  .testi-card strong { font-size: 0.75rem; letter-spacing: 1px; color: var(--navy); }
+  .testi-card span { font-size: 0.7rem; color: var(--turquoise); letter-spacing: 1px; }
+
+  /* EMAIL STRIP */
+  .email-strip {
+    background: var(--navy);
+    padding: 4rem 2.5rem;
+    text-align: center;
+  }
+  .email-strip h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--cream);
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+  }
+  .email-strip p {
+    color: var(--cream);
+    opacity: 0.7;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+  .email-form {
+    display: flex;
+    max-width: 420px;
+    margin: 0 auto;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .email-form input {
+    flex: 1;
+    padding: 0.85rem 1.2rem;
+    border: none;
+    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+  }
+  .email-form input::placeholder { color: var(--navy); opacity: 0.5; }
+  .email-form button {
+    background: var(--coral);
+    color: #fff;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* FOOTER */
+  .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
+  .footer .logo-text { display: block; margin-bottom: 1rem; }
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .footer-links a {
+    color: var(--cream);
+    opacity: 0.5;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div>
+    <span class="logo-text">Pickleball Florida USA</span>
+    <span class="logo-sub">Coastal Lifestyle Collection</span>
+  </div>
+  <div class="nav-links">
+    <a href="pages/shop.html">Shop</a>
+    <a href="#">Collections</a>
+    <a href="pages/courts.html">Courts</a>
+    <a href="#">Journal</a>
+  </div>
+  <div class="nav-right">
+    <a href="#">Search</a>
+    <a href="#">Cart (0)</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Florida's Premier Pickleball Lifestyle Brand</p>
+  <h1>Where Palm Beach<br>Meets <em>Pickleball</em></h1>
+  <p>Curated gear, vibrant colors, and elevated essentials designed for players who appreciate quality, style, and the coastal life.</p>
+  <div class="hero-btns">
+    <a href="pages/shop.html" class="btn-coral">Shop The Collection</a>
+    <a href="pages/courts.html" class="btn-ghost">Find Florida Courts</a>
+  </div>
+</div>
+
+<!-- WAVE DIVIDER -->
+<div class="wave">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60">
+    <path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/>
+  </svg>
+</div>
+
+<!-- COLLECTIONS -->
+<div class="section">
+  <p class="section-eyebrow">Shop by collection</p>
+  <h2 class="section-title">Resort-Inspired Essentials</h2>
+  <p class="section-sub">Thoughtfully curated for players who bring elegance to every match.</p>
+  <div class="collections">
+    <div class="col-card">
+      <div class="col-img coral">🏓</div>
+      <div class="col-body">
+        <h3>Signature Paddles</h3>
+        <p>Premium performance with Palm Beach flair.</p>
+        <a href="pages/shop.html">Discover &rarr;</a>
+      </div>
+    </div>
+    <div class="col-card">
+      <div class="col-img turq">👜</div>
+      <div class="col-body">
+        <h3>Coastal Carry</h3>
+        <p>Bags and totes styled for the court and the club.</p>
+        <a href="pages/shop.html">Discover &rarr;</a>
+      </div>
+    </div>
+    <div class="col-card">
+      <div class="col-img green">👗</div>
+      <div class="col-body">
+        <h3>Resort Apparel</h3>
+        <p>Elevated activewear inspired by Florida's finest clubs.</p>
+        <a href="pages/shop.html">Discover &rarr;</a>
+      </div>
+    </div>
+    <div class="col-card">
+      <div class="col-img navy">🎁</div>
+      <div class="col-body">
+        <h3>Curated Gift Sets</h3>
+        <p>The perfect gift for the player who has everything.</p>
+        <a href="pages/shop.html">Discover &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIFESTYLE + PRODUCTS -->
+<div class="lifestyle-strip">
+  <h2>Elevated Gear For Life<br>On &amp; Off The Court</h2>
+  <p>We believe pickleball is more than a sport — it's a lifestyle. Every piece in our collection is chosen to reflect the sophistication, warmth, and spirit of Florida's coastal communities.</p>
+  <div class="products">
+    <div class="product">
+      <div class="product-img">🏓</div>
+      <div class="product-body">
+        <span class="tag">Best Seller</span>
+        <h4>Palm Beach Signature Paddle</h4>
+        <span class="price">$129</span>
+        <a href="pages/shop.html" class="shop-link">Add to Cart</a>
+      </div>
+    </div>
+    <div class="product">
+      <div class="product-img">👜</div>
+      <div class="product-body">
+        <span class="tag">New Arrival</span>
+        <h4>Coastal Court Tote</h4>
+        <span class="price">$89</span>
+        <a href="pages/shop.html" class="shop-link">Add to Cart</a>
+      </div>
+    </div>
+    <div class="product">
+      <div class="product-img">🧢</div>
+      <div class="product-body">
+        <span class="tag">Staff Pick</span>
+        <h4>Resort Visor &mdash; Coral</h4>
+        <span class="price">$48</span>
+        <a href="pages/shop.html" class="shop-link">Add to Cart</a>
+      </div>
+    </div>
+    <div class="product">
+      <div class="product-img">🎁</div>
+      <div class="product-body">
+        <span class="tag">Gift Ready</span>
+        <h4>The Sunshine Starter Set</h4>
+        <span class="price">$199</span>
+        <a href="pages/shop.html" class="shop-link">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials">
+  <div class="testi-inner">
+    <p class="section-eyebrow">From Our Community</p>
+    <h2 class="section-title">Players Who Play Beautifully</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>"Finally a pickleball brand that matches the lifestyle. I feel like I'm shopping at a boutique, not a sporting goods store."</p>
+        <strong>Sandra M.</strong><br>
+        <span>Naples, FL</span>
+      </div>
+      <div class="testi-card">
+        <p>"The paddle quality is exceptional and the bag is gorgeous. I get compliments every time I walk onto the court."</p>
+        <strong>Diane R.</strong><br>
+        <span>Boca Raton, FL</span>
+      </div>
+      <div class="testi-card">
+        <p>"Ordered the gift set for my club's holiday party. Everyone was obsessed. This is the only pickleball brand I recommend."</p>
+        <strong>Carol T.</strong><br>
+        <span>Sarasota, FL</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EMAIL SIGNUP -->
+<div class="email-strip">
+  <h2>Join The Coastal Circle</h2>
+  <p>Exclusive access to new collections, Florida tournament news, and members-only offers. No spam &mdash; ever.</p>
+  <div class="email-form">
+    <input type="email" placeholder="Your email address" />
+    <button type="button">Join</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span class="logo-text">Pickleball Florida USA</span>
+  <div class="footer-links">
+    <a href="pages/shop.html">Shop</a>
+    <a href="pages/courts.html">Courts</a>
+    <a href="pages/tournaments.html">Tournaments</a>
+    <a href="pages/about.html">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Privacy</a>
+  </div>
+  <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
+</div>
+
+</body>
+</html>
