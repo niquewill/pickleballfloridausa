@@ -35,23 +35,24 @@
   .tab-content { display: none; }
   .tab-content.active { display: block; }
   .section-label { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(22,50,79,0.1); }
-  .newspaper-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
-  .headline-story { border-bottom: 1px solid rgba(22,50,79,0.1); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
-  .headline-story:last-child { border-bottom: none; }
-  .story-source { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); margin-bottom: 0.4rem; }
-  .story-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; line-height: 1.3; }
-  .story-title a { color: var(--navy); text-decoration: none; }
-  .story-title a:hover { color: var(--coral); }
-  .story-desc { font-size: 0.82rem; color: var(--navy); opacity: 0.65; line-height: 1.7; margin-bottom: 0.5rem; }
-  .story-date { font-size: 0.68rem; color: var(--navy); opacity: 0.4; }
-  .sidebar-stories { border-left: 1px solid rgba(22,50,79,0.1); padding-left: 2rem; }
-  .sidebar-story { border-bottom: 1px solid rgba(22,50,79,0.08); padding-bottom: 1rem; margin-bottom: 1rem; }
-  .sidebar-story:last-child { border-bottom: none; }
-  .sidebar-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 400; color: var(--navy); margin-bottom: 0.3rem; line-height: 1.4; }
-  .sidebar-title a { color: var(--navy); text-decoration: none; }
-  .sidebar-title a:hover { color: var(--coral); }
-  .sidebar-source { font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.2rem; }
-  .sidebar-date { font-size: 0.65rem; color: var(--navy); opacity: 0.4; }
+
+  /* NEWS LINKS STYLE */
+  .news-links-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+  .news-sources { margin-bottom: 2rem; }
+  .news-source-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--coral); }
+  .news-link-item { padding: 0.75rem 0; border-bottom: 1px solid rgba(22,50,79,0.08); }
+  .news-link-item:last-child { border-bottom: none; }
+  .news-link-source { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); margin-bottom: 0.2rem; }
+  .news-link-title { font-family: 'Playfair Display', serif; font-size: 1rem; line-height: 1.4; }
+  .news-link-title a { color: var(--navy); text-decoration: none; }
+  .news-link-title a:hover { color: var(--coral); }
+  .sidebar-box { background: #fff; border-radius: 4px; padding: 1.5rem; border: 1px solid rgba(22,50,79,0.08); margin-bottom: 1.5rem; }
+  .sidebar-box-title { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--navy); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(22,50,79,0.1); }
+  .sidebar-link { display: block; padding: 0.5rem 0; border-bottom: 1px solid rgba(22,50,79,0.06); font-size: 0.82rem; color: var(--navy); text-decoration: none; }
+  .sidebar-link:hover { color: var(--coral); }
+  .sidebar-link:last-child { border-bottom: none; }
+
+  /* TOURNAMENT CARDS */
   .tournament-card { background: #fff; border-radius: 4px; padding: 1.5rem; margin-bottom: 1.2rem; border: 1px solid rgba(22,50,79,0.08); border-left: 4px solid var(--coral); display: flex; gap: 1.5rem; align-items: flex-start; }
   .tournament-date-box { background: var(--navy); color: var(--cream); padding: 0.75rem 1rem; border-radius: 4px; text-align: center; min-width: 70px; flex-shrink: 0; }
   .tournament-month { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); }
@@ -67,15 +68,12 @@
   .tag-international { background: var(--turquoise); color: var(--navy); }
   .tournament-link { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); text-decoration: none; }
   .tournament-link:hover { color: var(--navy); }
-  .loading { text-align: center; padding: 3rem; }
-  .loading p { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); opacity: 0.6; }
   .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
   .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
   .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
   .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
   @media (max-width: 700px) {
-    .newspaper-grid { grid-template-columns: 1fr; }
-    .sidebar-stories { border-left: none; padding-left: 0; border-top: 1px solid rgba(22,50,79,0.1); padding-top: 1.5rem; }
+    .news-links-grid { grid-template-columns: 1fr; }
     .tournament-card { flex-direction: column; }
   }
 </style>
@@ -115,12 +113,56 @@
 
   <!-- LATEST NEWS -->
   <div id="tab-news" class="tab-content active">
-    <p class="section-label">Breaking Pickleball News — Updated Daily From Every Major Source</p>
-    <div id="loading-news" class="loading"><p>Loading the latest pickleball news...</p></div>
-    <div id="news-container" style="display:none">
-      <div class="newspaper-grid">
-        <div id="main-stories"></div>
-        <div class="sidebar-stories" id="sidebar-stories"></div>
+    <p class="section-label">Breaking Pickleball News — Click Any Headline To Read The Full Story</p>
+    <div class="news-links-grid">
+      <div>
+        <div class="news-sources">
+          <div class="news-source-title">Top Stories</div>
+          <div class="news-link-item"><div class="news-link-source">PPA Tour</div><div class="news-link-title"><a href="https://www.ppatour.com/news" target="_blank">Latest PPA Tour Results, Rankings & Player News →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">APP Tour</div><div class="news-link-title"><a href="https://www.apptoursports.com/news" target="_blank">APP Tour News — Tournament Recaps & Announcements →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">USA Pickleball</div><div class="news-link-title"><a href="https://www.usapickleball.org/news/" target="_blank">Official USA Pickleball News & Rule Updates →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">Major League Pickleball</div><div class="news-link-title"><a href="https://www.majorleaguepickleball.net/news" target="_blank">MLP News — Team Scores, Trades & Season Updates →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">Pickleball Magazine</div><div class="news-link-title"><a href="https://pickleballmagazine.com" target="_blank">Pickleball Magazine — Tips, Gear Reviews & Lifestyle →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">The Dink</div><div class="news-link-title"><a href="https://www.thedinkpickleball.com" target="_blank">The Dink — Daily Pickleball News & Analysis →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">Pickleball Central</div><div class="news-link-title"><a href="https://www.pickleballcentral.com/blogs/news" target="_blank">Pickleball Central Blog — Gear, Tips & Community →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">ESPN</div><div class="news-link-title"><a href="https://www.espn.com/search/_/q/pickleball" target="_blank">ESPN Pickleball Coverage — Scores & Highlights →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">Google News</div><div class="news-link-title"><a href="https://news.google.com/search?q=pickleball" target="_blank">All Pickleball Headlines From Every News Source →</a></div></div>
+        </div>
+
+        <div class="news-sources">
+          <div class="news-source-title">Player Rankings & Stats</div>
+          <div class="news-link-item"><div class="news-link-source">PPA Rankings</div><div class="news-link-title"><a href="https://www.ppatour.com/players" target="_blank">Current PPA Tour Player Rankings →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">APP Rankings</div><div class="news-link-title"><a href="https://www.apptoursports.com/players" target="_blank">Current APP Tour Player Rankings →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">USA Pickleball</div><div class="news-link-title"><a href="https://www.usapickleball.org/players/player-rankings/" target="_blank">DUPR National Player Rankings →</a></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sidebar-box">
+          <div class="sidebar-box-title">Follow The Top Players</div>
+          <a href="https://www.ppatour.com/players/ben-johns/" target="_blank" class="sidebar-link">🏓 Ben Johns — World #1</a>
+          <a href="https://www.ppatour.com/players/anna-leigh-waters/" target="_blank" class="sidebar-link">🏓 Anna Leigh Waters — Women's #1</a>
+          <a href="https://www.ppatour.com/players/tyson-mcguffin/" target="_blank" class="sidebar-link">🏓 Tyson McGuffin</a>
+          <a href="https://www.ppatour.com/players/catherine-parenteau/" target="_blank" class="sidebar-link">🏓 Catherine Parenteau</a>
+          <a href="https://www.ppatour.com/players/jay-devilliers/" target="_blank" class="sidebar-link">🏓 Jay deVilliers</a>
+          <a href="https://www.ppatour.com/players/jessie-irvine/" target="_blank" class="sidebar-link">🏓 Jessie Irvine</a>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-box-title">Pickleball TV & Video</div>
+          <a href="https://www.youtube.com/@ppatour" target="_blank" class="sidebar-link">▶ PPA Tour YouTube</a>
+          <a href="https://www.youtube.com/@apptoursports" target="_blank" class="sidebar-link">▶ APP Tour YouTube</a>
+          <a href="https://www.youtube.com/results?search_query=pickleball+highlights+2025" target="_blank" class="sidebar-link">▶ Latest Match Highlights</a>
+          <a href="https://www.youtube.com/results?search_query=pickleball+tips+2025" target="_blank" class="sidebar-link">▶ Coaching & Tips Videos</a>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-box-title">Quick Links</div>
+          <a href="https://www.usapickleball.org/play/tournament-software/" target="_blank" class="sidebar-link">📅 Find A Tournament</a>
+          <a href="https://www.dupr.com" target="_blank" class="sidebar-link">📊 Check Your DUPR Rating</a>
+          <a href="https://www.pickleballcentral.com/pages/paddle-finder" target="_blank" class="sidebar-link">🏓 Find Your Perfect Paddle</a>
+          <a href="courts.html" class="sidebar-link">📍 Find Florida Courts</a>
+        </div>
       </div>
     </div>
   </div>
@@ -187,11 +229,34 @@
   <!-- FLORIDA EVENTS -->
   <div id="tab-florida" class="tab-content">
     <p class="section-label">Florida Pickleball Events & Community News</p>
-    <div id="loading-florida" class="loading"><p>Loading Florida pickleball events...</p></div>
-    <div id="florida-container" style="display:none">
-      <div class="newspaper-grid">
-        <div id="florida-main"></div>
-        <div class="sidebar-stories" id="florida-sidebar"></div>
+    <div class="news-links-grid">
+      <div>
+        <div class="news-sources">
+          <div class="news-source-title">Florida Pickleball News</div>
+          <div class="news-link-item"><div class="news-link-source">Google News</div><div class="news-link-title"><a href="https://news.google.com/search?q=pickleball+Florida" target="_blank">All Florida Pickleball Headlines — Updated Live →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">USA Pickleball</div><div class="news-link-title"><a href="https://www.usapickleball.org/tournaments/?state=FL" target="_blank">Official Florida Tournament Listings →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">Pickleballtournaments.com</div><div class="news-link-title"><a href="https://www.pickleballtournaments.com/tournaments.pl?state=FL" target="_blank">Every Florida Pickleball Tournament →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">Naples Daily News</div><div class="news-link-title"><a href="https://www.naplesnews.com/search/?q=pickleball" target="_blank">Naples Pickleball News & Events →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">Palm Beach Post</div><div class="news-link-title"><a href="https://www.palmbeachpost.com/search?q=pickleball" target="_blank">Palm Beach Pickleball Coverage →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">Tampa Bay Times</div><div class="news-link-title"><a href="https://www.tampabay.com/search/pickleball/" target="_blank">Tampa Bay Pickleball News →</a></div></div>
+          <div class="news-link-item"><div class="news-link-source">Sun Sentinel</div><div class="news-link-title"><a href="https://www.sun-sentinel.com/search/#nt=navsearch&q=pickleball" target="_blank">South Florida Pickleball News →</a></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-box">
+          <div class="sidebar-box-title">Florida Pickleball Resources</div>
+          <a href="https://www.floridapickleball.org" target="_blank" class="sidebar-link">🌴 Florida Pickleball Association</a>
+          <a href="courts.html" class="sidebar-link">📍 Find Florida Courts</a>
+          <a href="https://www.pickleballtournaments.com/tournaments.pl?state=FL" target="_blank" class="sidebar-link">🏆 Florida Tournaments</a>
+          <a href="https://www.usapickleball.org/membership/" target="_blank" class="sidebar-link">🎟 Join USA Pickleball</a>
+        </div>
+        <div class="sidebar-box">
+          <div class="sidebar-box-title">Florida Pickleball Clubs</div>
+          <a href="https://www.naplesgolf.com/sports/tennis-pickleball" target="_blank" class="sidebar-link">🏓 Naples Pickleball Club</a>
+          <a href="https://www.thevillages.com/recreation/sports/pickleball.asp" target="_blank" class="sidebar-link">🏓 The Villages Pickleball</a>
+          <a href="https://www.brrsa.org/pickleball" target="_blank" class="sidebar-link">🏓 Boca Raton Pickleball</a>
+          <a href="https://www.sarasotapickleball.com" target="_blank" class="sidebar-link">🏓 Sarasota Pickleball</a>
+        </div>
       </div>
     </div>
   </div>
@@ -228,9 +293,9 @@
       <div class="tournament-info">
         <span class="tournament-tag tag-charity">Charity</span>
         <span class="tournament-tag tag-florida">Florida</span>
-        <div class="tournament-name">GO-AP Powerball Florida Tour — Jacksonville</div>
-        <div class="tournament-location">📍 Jacksonville, Florida — Toon Town Pickleball</div>
-        <div class="tournament-desc">Florida charity fundraiser tournament series. Indoor courts, raffle prizes including paddles, backpacks, and cash. Grand Finale February 28 – March 1, 2026.</div>
+        <div class="tournament-name">GO-AP Powerball Florida Tour — Grand Finale</div>
+        <div class="tournament-location">📍 Jacksonville, Florida</div>
+        <div class="tournament-desc">Florida charity fundraiser tournament series finale. Indoor courts at Toon Town Pickleball. Raffle prizes including paddles, backpacks, and cash. All proceeds benefit Florida charities.</div>
         <a href="https://pickleballtournaments.com" target="_blank" class="tournament-link">View Details →</a>
       </div>
     </div>
@@ -280,8 +345,6 @@
 </div>
 
 <script>
-const MEDIASTACK_KEY = '13fd49ce38a1eb94ffcaae7ee9d188df';
-
 document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
 function showTab(tab, btn) {
@@ -290,54 +353,6 @@ function showTab(tab, btn) {
   btn.classList.add('active');
   document.getElementById('tab-' + tab).classList.add('active');
 }
-
-function formatDate(dateStr) {
-  try { return new Date(dateStr).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }); }
-  catch(e) { return ''; }
-}
-
-async function loadNews(keywords, mainId, sidebarId, loadingId, containerId) {
-  try {
-    const url = 'http://api.mediastack.com/v1/news?access_key=' + MEDIASTACK_KEY + '&keywords=' + encodeURIComponent(keywords) + '&languages=en&limit=20&sort=published_desc';
-    const response = await fetch(url);
-    const data = await response.json();
-
-    document.getElementById(loadingId).style.display = 'none';
-
-    if (data.data && data.data.length > 0) {
-      document.getElementById(containerId).style.display = 'block';
-      const main = data.data.slice(0, 5);
-      const sidebar = data.data.slice(5, 15);
-
-      document.getElementById(mainId).innerHTML = main.map(function(article) {
-        const desc = (article.description || '').substring(0, 200) + '...';
-        return '<div class="headline-story">' +
-          '<div class="story-source">' + (article.source || 'Pickleball News') + '</div>' +
-          '<div class="story-title"><a href="' + article.url + '" target="_blank">' + article.title + '</a></div>' +
-          '<div class="story-desc">' + desc + '</div>' +
-          '<div class="story-date">' + formatDate(article.published_at) + '</div>' +
-        '</div>';
-      }).join('');
-
-      document.getElementById(sidebarId).innerHTML = sidebar.map(function(article) {
-        return '<div class="sidebar-story">' +
-          '<div class="sidebar-source">' + (article.source || 'Pickleball News') + '</div>' +
-          '<div class="sidebar-title"><a href="' + article.url + '" target="_blank">' + article.title + '</a></div>' +
-          '<div class="sidebar-date">' + formatDate(article.published_at) + '</div>' +
-        '</div>';
-      }).join('');
-    } else {
-      document.getElementById(loadingId).innerHTML = '<p>No recent news found. Check back soon.</p>';
-      document.getElementById(loadingId).style.display = 'block';
-    }
-  } catch(error) {
-    document.getElementById(loadingId).innerHTML = '<p>News feed refreshing. Check back soon.</p>';
-    document.getElementById(loadingId).style.display = 'block';
-  }
-}
-
-loadNews('pickleball', 'main-stories', 'sidebar-stories', 'loading-news', 'news-container');
-loadNews('pickleball Florida', 'florida-main', 'florida-sidebar', 'loading-florida', 'florida-container');
 </script>
 
 </body>
