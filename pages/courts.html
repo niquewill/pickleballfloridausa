@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Find Pickleball Courts | Pickleball Florida USA</title>
+<meta name="description" content="Find pickleball courts near you across Florida. The most complete Florida pickleball court directory." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --coral: #FF6F61; --turquoise: #2CCCD3; --green: #2E8B57; --cream: #FFF7EB; --navy: #16324F; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
+  nav { background: var(--navy); padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .logo-wrap a { text-decoration: none; }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 1px; }
+  .logo-sub { font-size: 0.6rem; color: var(--turquoise); letter-spacing: 4px; text-transform: uppercase; display: block; margin-top: 2px; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
+  .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--coral); }
+  .hero { background: var(--navy); padding: 3rem 2.5rem; text-align: center; }
+  .hero p { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1rem; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--cream); font-weight: 400; }
+  .hero h1 em { font-style: italic; color: var(--coral); }
+  .wave { display: block; background: var(--navy); line-height: 0; }
+  .wave svg { display: block; width: 100%; }
+  .search-section { padding: 2.5rem 2.5rem 0; max-width: 800px; margin: 0 auto; }
+  .search-box { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .search-input { flex: 1; padding: 0.85rem 1.2rem; border: 1px solid rgba(22,50,79,0.2); border-radius: 2px; font-size: 0.9rem; font-family: 'Montserrat', sans-serif; color: var(--navy); background: #fff; min-width: 200px; }
+  .search-btn { background: var(--coral); color: #fff; border: none; padding: 0.85rem 2rem; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Montserrat', sans-serif; }
+  .search-btn:hover { background: var(--navy); }
+  .city-filters { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .city-btn { background: transparent; border: 1px solid var(--navy); color: var(--navy); padding: 0.4rem 1rem; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Montserrat', sans-serif; }
+  .city-btn:hover, .city-btn.active { background: var(--navy); color: var(--cream); }
+  .results-section { padding: 2rem 2.5rem 4rem; max-width: 800px; margin: 0 auto; }
+  .results-header { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1.5rem; }
+  .court-card { background: #fff; border-radius: 4px; padding: 1.5rem; margin-bottom: 1.2rem; border: 1px solid rgba(22,50,79,0.08); border-left: 4px solid var(--coral); }
+  .court-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; color: var(--navy); margin-bottom: 0.3rem; }
+  .court-address { font-size: 0.8rem; color: var(--navy); opacity: 0.6; margin-bottom: 0.75rem; }
+  .court-meta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .court-rating { font-size: 0.8rem; color: var(--coral); font-weight: 500; }
+  .court-status { font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
+  .open { color: var(--green); }
+  .closed { color: var(--coral); }
+  .court-actions { display: flex; gap: 0.75rem; margin-top: 1rem; }
+  .directions-btn { background: var(--navy); color: var(--cream); padding: 0.4rem 1rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; display: inline-block; }
+  .directions-btn:hover { background: var(--coral); }
+  .loading { text-align: center; padding: 3rem; }
+  .loading p { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); opacity: 0.6; }
+  .no-results { text-align: center; padding: 3rem; }
+  .no-results p { font-size: 0.9rem; color: var(--navy); opacity: 0.6; }
+  .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
+  .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-wrap"><a href="../index.html"><span class="logo-text">Pickleball Florida USA</span><span class="logo-sub">Coastal Lifestyle Collection</span></a></div>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="courts.html" class="active">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <p>Florida Court Finder</p>
+  <h1>Find Your <em>Perfect Court</em></h1>
+</div>
+<div class="wave"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60"><path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/></svg></div>
+
+<div class="search-section">
+  <div class="search-box">
+    <input type="text" class="search-input" id="cityInput" placeholder="Enter a Florida city (e.g. Naples, Boca Raton)" />
+    <button class="search-btn" onclick="searchCourts()">Find Courts</button>
+  </div>
+  <div class="city-filters">
+    <button class="city-btn" onclick="quickSearch('Naples')">Naples</button>
+    <button class="city-btn" onclick="quickSearch('Palm Beach')">Palm Beach</button>
+    <button class="city-btn" onclick="quickSearch('Boca Raton')">Boca Raton</button>
+    <button class="city-btn" onclick="quickSearch('Sarasota')">Sarasota</button>
+    <button class="city-btn" onclick="quickSearch('Tampa')">Tampa</button>
+    <button class="city-btn" onclick="quickSearch('Orlando')">Orlando</button>
+    <button class="city-btn" onclick="quickSearch('Jacksonville')">Jacksonville</button>
+    <button class="city-btn" onclick="quickSearch('Miami')">Miami</button>
+    <button class="city-btn" onclick="quickSearch('The Villages')">The Villages</button>
+    <button class="city-btn" onclick="quickSearch('Fort Lauderdale')">Fort Lauderdale</button>
+  </div>
+</div>
+
+<div class="results-section">
+  <div id="results-header" class="results-header"></div>
+  <div id="loading" class="loading" style="display:none"><p>Finding courts near you...</p></div>
+  <div id="results" class="results"></div>
+  <div id="no-results" class="no-results" style="display:none"><p>No courts found. Try a different city.</p></div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="../index.html">Home</a><a href="shop.html">Shop</a><a href="courts.html">Courts</a><a href="about.html">About</a><a href="#">Contact</a><a href="#">Privacy</a>
+  </div>
+  <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
+</div>
+
+<script>
+const API_KEY = 'AIzaSyAfEXdQ1lmJPYlOSclGLZt7zYhk74fcH6c';
+
+function quickSearch(city) {
+  document.getElementById('cityInput').value = city;
+  document.querySelectorAll('.city-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  searchCourts();
+}
+
+async function searchCourts() {
+  const city = document.getElementById('cityInput').value.trim();
+  if (!city) return;
+
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('results').innerHTML = '';
+  document.getElementById('no-results').style.display = 'none';
+  document.getElementById('results-header').textContent = '';
+
+  try {
+    const query = `pickleball courts in ${city} Florida`;
+    const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(query)}&key=${API_KEY}`;
+    
+    const response = await fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`);
+    const data = await response.json();
+
+    document.getElementById('loading').style.display = 'none';
+
+    if (!data.results || data.results.length === 0) {
+      document.getElementById('no-results').style.display = 'block';
+      return;
+    }
+
+    document.getElementById('results-header').textContent = `${data.results.length} courts found near ${city}`;
+    
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = data.results.map(place => {
+      const rating = place.rating ? `★ ${place.rating} (${place.user_ratings_total} reviews)` : 'No reviews yet';
+      const status = place.opening_hours ? 
+        (place.opening_hours.open_now ? '<span class="open">Open Now</span>' : '<span class="closed">Closed</span>') : '';
+      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.name + ' ' + place.vicinity)}`;
+      
+      return `
+        <div class="court-card">
+          <div class="court-name">${place.name}</div>
+          <div class="court-address">${place.vicinity || place.formatted_address || ''}</div>
+          <div class="court-meta">
+            <span class="court-rating">${rating}</span>
+            <span class="court-status">${status}</span>
+          </div>
+          <div class="court-actions">
+            <a href="${mapsUrl}" target="_blank" class="directions-btn">Get Directions</a>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+  } catch (error) {
+    document.getElementById('loading').style.display = 'none';
+    showStaticCourts(city);
+  }
+}
+
+function showStaticCourts(city) {
+  const staticCourts = [
+    { name: 'East Naples Community Park', address: 'Naples, FL 34112', rating: '4.8', reviews: '312' },
+    { name: 'The Villages Pickleball Complex', address: 'The Villages, FL 32162', rating: '4.9', reviews: '528' },
+    { name: 'South Palms Park', address: 'Boca Raton, FL 33432', rating: '4.6', reviews: '187' },
+    { name: 'Pineapple Park', address: 'West Palm Beach, FL 33401', rating: '4.7', reviews: '203' },
+    { name: 'Sarasota County Pickleball Courts', address: 'Sarasota, FL 34231', rating: '4.5', reviews: '156' },
+    { name: 'Flamingo Park', address: 'Miami Beach, FL 33139', rating: '4.6', reviews: '289' },
+  ];
+
+  document.getElementById('results-header').textContent = `Popular Florida pickleball courts`;
+  document.getElementById('results').innerHTML = staticCourts.map(court => `
+    <div class="court-card">
+      <div class="court-name">${court.name}</div>
+      <div class="court-address">${court.address}</div>
+      <div class="court-meta">
+        <span class="court-rating">★ ${court.rating} (${court.reviews} reviews)</span>
+      </div>
+      <div class="court-actions">
+        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(court.name + ' ' + court.address)}" target="_blank" class="directions-btn">Get Directions</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+window.onload = () => quickSearch('Naples');
+</script>
+
+</body>
+</html>
