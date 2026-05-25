@@ -207,10 +207,10 @@
 
   function showStaticProducts() {
     const staticProducts = [
-      { name: 'Palm Paddle Tee — Turquoise', tag: 'Best Seller', emoji: '🎽' },
+      { name: 'Palm Paddle Tee — Turquoise', tag: 'Best Seller', emoji: '🎽', image: '../images/tee-turquoise-front.png' },
       { name: 'Palm Paddle Tee — Navy', tag: '', emoji: '🎽' },
       { name: 'Palm Paddle Tee — White', tag: 'New Arrival', emoji: '🎽' },
-      { name: 'Coastal Court Tote', tag: 'Staff Pick', emoji: '👜' },
+      { name: 'Coastal Court Tote', tag: 'Staff Pick', emoji: '👜', image: '../images/coastal-court-tote.png' },
       { name: 'Coastal Serve Tank — Turquoise', tag: '', emoji: '👚' },
       { name: 'Coastal Serve Tank — White', tag: '', emoji: '👚' },
     ];
@@ -222,7 +222,7 @@
     grid.innerHTML = staticProducts.map(product => `
       <div class="product-card" data-name="${product.name.toLowerCase()}">
         <div class="product-img">
-          <div class="placeholder">${product.emoji}</div>
+          <div class="placeholder">${product.emoji}</div>${product.image ? `<img src="${product.image}" alt="${product.name}" style="position:absolute;top:0;left:0;
           ${product.tag ? `<span class="product-tag">${product.tag}</span>` : ''}
         </div>
         <div class="product-body">
