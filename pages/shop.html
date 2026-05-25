@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop | Pickleball Florida USA</title>
+<meta name="description" content="Shop luxury coastal pickleball apparel, totes, and accessories. Florida's premier pickleball lifestyle brand." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --coral: #FF6F61;
+    --turquoise: #2CCCD3;
+    --green: #2E8B57;
+    --cream: #FFF7EB;
+    --navy: #16324F;
+  }
+  body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
+
+  /* NAV */
+  nav { background: var(--navy); padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 1px; text-decoration: none; }
+  .logo-sub { font-size: 0.6rem; color: var(--turquoise); letter-spacing: 4px; text-transform: uppercase; display: block; margin-top: 2px; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
+  .nav-links a:hover { opacity: 1; color: var(--turquoise); }
+  .nav-links a.active { opacity: 1; color: var(--coral); }
+
+  /* HERO */
+  .shop-hero { background: var(--navy); padding: 3rem 2.5rem; text-align: center; }
+  .shop-hero p { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1rem; }
+  .shop-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--cream); font-weight: 400; }
+  .shop-hero h1 em { font-style: italic; color: var(--coral); }
+  .wave { display: block; background: var(--navy); line-height: 0; }
+  .wave svg { display: block; width: 100%; }
+
+  /* FILTERS */
+  .filters { padding: 2rem 2.5rem 0; max-width: 1100px; margin: 0 auto; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .filter-btn { background: transparent; border: 1px solid var(--navy); color: var(--navy); padding: 0.5rem 1.5rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Montserrat', sans-serif; }
+  .filter-btn.active, .filter-btn:hover { background: var(--navy); color: var(--cream); }
+
+  /* PRODUCTS */
+  .products-section { padding: 2rem 2.5rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; }
+  .product-card { background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid rgba(22,50,79,0.08); transition: transform 0.2s; }
+  .product-card:hover { transform: translateY(-4px); }
+  .product-img { height: 280px; background: var(--cream); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+  .product-img img { width: 100%; height: 100%; object-fit: cover; }
+  .product-img .placeholder { font-size: 4rem; }
+  .product-tag { position: absolute; top: 1rem; left: 1rem; background: var(--coral); color: #fff; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; }
+  .product-body { padding: 1.2rem; }
+  .product-body h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 400; margin-bottom: 0.3rem; color: var(--navy); }
+  .product-body p { font-size: 0.78rem; color: var(--navy); opacity: 0.6; line-height: 1.6; margin-bottom: 0.75rem; }
+  .product-footer { display: flex; justify-content: space-between; align-items: center; }
+  .price { font-size: 1rem; color: var(--coral); font-weight: 500; }
+  .buy-btn { background: var(--navy); color: var(--cream); border: none; padding: 0.5rem 1.2rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Montserrat', sans-serif; text-decoration: none; }
+  .buy-btn:hover { background: var(--coral); }
+
+  /* LOADING */
+  .loading { text-align: center; padding: 4rem; }
+  .loading p { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); opacity: 0.6; }
+
+  /* ERROR */
+  .error { text-align: center; padding: 4rem; }
+  .error p { color: var(--coral); font-size: 0.9rem; }
+
+  /* FOOTER */
+  .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
+  .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html">
+    <span class="logo-text">Pickleball Florida USA</span>
+    <span class="logo-sub">Coastal Lifestyle Collection</span>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="shop.html" class="active">Shop</a>
+    <a href="courts.html">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="shop-hero">
+  <p>Resort-Inspired Essentials</p>
+  <h1>The <em>Collection</em></h1>
+</div>
+<div class="wave">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60">
+    <path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/>
+  </svg>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+  <button class="filter-btn" onclick="filterProducts('shirt')">Tees</button>
+  <button class="filter-btn" onclick="filterProducts('tank')">Tanks</button>
+  <button class="filter-btn" onclick="filterProducts('bag')">Bags</button>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products-section">
+  <div id="loading" class="loading"><p>Loading the collection...</p></div>
+  <div id="error" class="error" style="display:none"><p>Unable to load products. Please try again later.</p></div>
+  <div id="products-grid" class="products-grid" style="display:none"></div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="courts.html">Courts</a>
+    <a href="about.html">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Privacy</a>
+  </div>
+  <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
+</div>
+
+<script>
+  const API_TOKEN = 'pLO69f2HlK2j7SljlDciYQcAaSehpXs5V2EgMAAu';
+  const ETSY_SHOP_URL = 'https://www.etsy.com/shop/PickleballFloridaUSA';
+
+  // Product pricing map - add your retail prices here
+  const PRICES = {
+    'Palm Paddle Tee': '$45',
+    'Coastal Serve Tank': '$38',
+    'Coastal Court Tote': '$68',
+    'default': '$45'
+  };
+
+  // Product descriptions
+  const DESCRIPTIONS = {
+    'Palm Paddle Tee': 'Premium coastal tee inspired by Florida resort living.',
+    'Coastal Serve Tank': 'Lightweight racerback perfect for Florida courts.',
+    'Coastal Court Tote': 'All-over tropical print tote. Court to coast.',
+    'default': 'Luxury coastal pickleball lifestyle piece.'
+  };
+
+  let allProducts = [];
+
+  async function loadProducts() {
+    try {
+      const response = await fetch('https://api.printful.com/store/products', {
+        headers: {
+          'Authorization': `Bearer ${API_TOKEN}`,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (!response.ok) throw new Error('API error');
+      const data = await response.json();
+      allProducts = data.result || [];
+      displayProducts(allProducts);
+    } catch (error) {
+      // If API fails show static products
+      showStaticProducts();
+    }
+  }
+
+  function displayProducts(products) {
+    document.getElementById('loading').style.display = 'none';
+    const grid = document.getElementById('products-grid');
+    grid.style.display = 'grid';
+
+    if (products.length === 0) {
+      showStaticProducts();
+      return;
+    }
+
+    grid.innerHTML = products.map((product, index) => {
+      const name = product.name || 'Coastal Essential';
+      const price = getPriceForProduct(name);
+      const desc = getDescForProduct(name);
+      const img = product.thumbnail_url || '';
+      const tag = index === 0 ? 'Best Seller' : index === 1 ? 'New Arrival' : '';
+
+      return `
+        <div class="product-card" data-name="${name.toLowerCase()}">
+          <div class="product-img">
+            ${img ? `<img src="${img}" alt="${name}" />` : '<div class="placeholder">🏓</div>'}
+            ${tag ? `<span class="product-tag">${tag}</span>` : ''}
+          </div>
+          <div class="product-body">
+            <h3>${name}</h3>
+            <p>${desc}</p>
+            <div class="product-footer">
+              <span class="price">${price}</span>
+              <a href="${ETSY_SHOP_URL}" target="_blank" class="buy-btn">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function showStaticProducts() {
+    const staticProducts = [
+      { name: 'Palm Paddle Tee — Turquoise', tag: 'Best Seller', emoji: '🎽' },
+      { name: 'Palm Paddle Tee — Navy', tag: '', emoji: '🎽' },
+      { name: 'Palm Paddle Tee — White', tag: 'New Arrival', emoji: '🎽' },
+      { name: 'Coastal Court Tote', tag: 'Staff Pick', emoji: '👜' },
+      { name: 'Coastal Serve Tank — Turquoise', tag: '', emoji: '👚' },
+      { name: 'Coastal Serve Tank — White', tag: '', emoji: '👚' },
+    ];
+
+    document.getElementById('loading').style.display = 'none';
+    const grid = document.getElementById('products-grid');
+    grid.style.display = 'grid';
+
+    grid.innerHTML = staticProducts.map(product => `
+      <div class="product-card" data-name="${product.name.toLowerCase()}">
+        <div class="product-img">
+          <div class="placeholder">${product.emoji}</div>
+          ${product.tag ? `<span class="product-tag">${product.tag}</span>` : ''}
+        </div>
+        <div class="product-body">
+          <h3>${product.name}</h3>
+          <p>${getDescForProduct(product.name)}</p>
+          <div class="product-footer">
+            <span class="price">${getPriceForProduct(product.name)}</span>
+            <a href="${ETSY_SHOP_URL}" target="_blank" class="buy-btn">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function getPriceForProduct(name) {
+    for (const key of Object.keys(PRICES)) {
+      if (name.toLowerCase().includes(key.toLowerCase())) return PRICES[key];
+    }
+    return PRICES['default'];
+  }
+
+  function getDescForProduct(name) {
+    for (const key of Object.keys(DESCRIPTIONS)) {
+      if (name.toLowerCase().includes(key.toLowerCase())) return DESCRIPTIONS[key];
+    }
+    return DESCRIPTIONS['default'];
+  }
+
+  function filterProducts(type) {
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach(card => {
+      const name = card.dataset.name;
+      if (type === 'all') { card.style.display = 'block'; return; }
+      if (type === 'shirt' && name.includes('tee')) { card.style.display = 'block'; return; }
+      if (type === 'tank' && name.includes('tank')) { card.style.display = 'block'; return; }
+      if (type === 'bag' && name.includes('tote')) { card.style.display = 'block'; return; }
+      card.style.display = 'none';
+    });
+  }
+
+  loadProducts();
+</script>
+</body>
+</html>
