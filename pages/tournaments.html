@@ -18,33 +18,55 @@
   .nav-links { display: flex; gap: 2rem; }
   .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
   .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--coral); }
+
+  /* HERO */
   .hero { background: var(--navy); padding: 3rem 2.5rem; text-align: center; }
   .hero-eyebrow { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.5rem; }
-  .hero-title { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--cream); font-weight: 700; letter-spacing: 2px; }
-  .hero-tagline { font-size: 0.85rem; color: var(--cream); opacity: 0.7; margin-top: 0.5rem; letter-spacing: 2px; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--cream); font-weight: 700; letter-spacing: 4px; }
+  .hero-rule { width: 80px; height: 2px; background: var(--coral); margin: 0.75rem auto; }
+  .hero-tagline { font-size: 0.8rem; color: var(--cream); opacity: 0.6; letter-spacing: 3px; text-transform: uppercase; }
+  .hero-date { font-size: 0.75rem; color: var(--turquoise); margin-top: 0.5rem; letter-spacing: 2px; }
   .wave { display: block; background: var(--navy); line-height: 0; }
   .wave svg { display: block; width: 100%; }
+
+  /* TABS */
   .tabs-section { padding: 2rem 2.5rem 0; max-width: 1100px; margin: 0 auto; }
-  .tabs { display: flex; gap: 0; border-bottom: 2px solid rgba(22,50,79,0.1); }
-  .tab { background: transparent; border: none; padding: 0.75rem 1.5rem; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; font-family: 'Montserrat', sans-serif; color: var(--navy); opacity: 0.5; border-bottom: 3px solid transparent; margin-bottom: -2px; }
+  .tabs { display: flex; gap: 0; border-bottom: 2px solid rgba(22,50,79,0.1); flex-wrap: wrap; }
+  .tab { background: transparent; border: none; padding: 0.75rem 1.5rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; font-family: 'Montserrat', sans-serif; color: var(--navy); opacity: 0.5; border-bottom: 3px solid transparent; margin-bottom: -2px; }
   .tab.active { opacity: 1; color: var(--coral); border-bottom-color: var(--coral); }
   .tab:hover { opacity: 1; }
+
+  /* CONTENT */
   .content-section { padding: 2rem 2.5rem 4rem; max-width: 1100px; margin: 0 auto; }
   .tab-content { display: none; }
   .tab-content.active { display: block; }
-  .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-  .news-card { background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid rgba(22,50,79,0.08); transition: transform 0.2s; }
-  .news-card:hover { transform: translateY(-4px); }
-  .news-img { height: 180px; overflow: hidden; background: var(--navy); display: flex; align-items: center; justify-content: center; }
-  .news-img img { width: 100%; height: 100%; object-fit: cover; }
-  .news-img-placeholder { font-size: 3rem; opacity: 0.3; }
-  .news-body { padding: 1.2rem; }
-  .news-source { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.5rem; }
-  .news-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 400; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.4; }
-  .news-desc { font-size: 0.78rem; color: var(--navy); opacity: 0.6; line-height: 1.6; margin-bottom: 0.75rem; }
-  .news-date { font-size: 0.7rem; color: var(--navy); opacity: 0.4; margin-bottom: 0.75rem; }
-  .read-btn { background: var(--navy); color: var(--cream); padding: 0.4rem 1rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; display: inline-block; }
-  .read-btn:hover { background: var(--coral); }
+  .section-label { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(22,50,79,0.1); }
+
+  /* NEWSPAPER LAYOUT */
+  .newspaper-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+  .headline-story { border-bottom: 1px solid rgba(22,50,79,0.1); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+  .headline-story:last-child { border-bottom: none; }
+  .story-source { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); margin-bottom: 0.4rem; }
+  .story-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; line-height: 1.3; }
+  .story-title a { color: var(--navy); text-decoration: none; }
+  .story-title a:hover { color: var(--coral); }
+  .story-desc { font-size: 0.82rem; color: var(--navy); opacity: 0.65; line-height: 1.7; margin-bottom: 0.5rem; }
+  .story-date { font-size: 0.68rem; color: var(--navy); opacity: 0.4; }
+  .sidebar-stories { border-left: 1px solid rgba(22,50,79,0.1); padding-left: 2rem; }
+  .sidebar-story { border-bottom: 1px solid rgba(22,50,79,0.08); padding-bottom: 1rem; margin-bottom: 1rem; }
+  .sidebar-story:last-child { border-bottom: none; }
+  .sidebar-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 400; color: var(--navy); margin-bottom: 0.3rem; line-height: 1.4; }
+  .sidebar-title a { color: var(--navy); text-decoration: none; }
+  .sidebar-title a:hover { color: var(--coral); }
+  .sidebar-source { font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.2rem; }
+  .sidebar-date { font-size: 0.65rem; color: var(--navy); opacity: 0.4; }
+
+  /* BREAKING TICKER */
+  .ticker-wrap { background: var(--coral); padding: 0.5rem 0; overflow: hidden; margin-bottom: 1.5rem; }
+  .ticker-label { display: inline-block; background: var(--navy); color: var(--cream); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 0.2rem 0.75rem; margin-right: 1rem; }
+  .ticker-text { font-size: 0.78rem; color: #fff; letter-spacing: 1px; }
+
+  /* TOURNAMENT CARDS */
   .tournament-card { background: #fff; border-radius: 4px; padding: 1.5rem; margin-bottom: 1.2rem; border: 1px solid rgba(22,50,79,0.08); border-left: 4px solid var(--coral); display: flex; gap: 1.5rem; align-items: flex-start; }
   .tournament-date-box { background: var(--navy); color: var(--cream); padding: 0.75rem 1rem; border-radius: 4px; text-align: center; min-width: 70px; flex-shrink: 0; }
   .tournament-month { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); }
@@ -52,18 +74,29 @@
   .tournament-info { flex: 1; }
   .tournament-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; color: var(--navy); margin-bottom: 0.3rem; }
   .tournament-location { font-size: 0.8rem; color: var(--navy); opacity: 0.6; margin-bottom: 0.5rem; }
-  .tournament-tag { display: inline-block; background: var(--coral); color: #fff; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; margin-bottom: 0.5rem; }
-  .tournament-tag.major { background: var(--navy); }
-  .tournament-tag.florida { background: var(--green); }
+  .tournament-tag { display: inline-block; color: #fff; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; margin-bottom: 0.5rem; margin-right: 0.3rem; }
+  .tag-major { background: var(--navy); }
+  .tag-florida { background: var(--green); }
+  .tag-charity { background: var(--coral); }
+  .tag-international { background: var(--turquoise); color: var(--navy); }
   .tournament-link { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); text-decoration: none; }
   .tournament-link:hover { color: var(--navy); }
+
+  /* LOADING */
   .loading { text-align: center; padding: 3rem; }
   .loading p { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); opacity: 0.6; }
-  .section-label { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(22,50,79,0.1); }
+
+  /* FOOTER */
   .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
   .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
   .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
   .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
+
+  @media (max-width: 700px) {
+    .newspaper-grid { grid-template-columns: 1fr; }
+    .sidebar-stories { border-left: none; padding-left: 0; border-top: 1px solid rgba(22,50,79,0.1); padding-top: 1.5rem; }
+    .tournament-card { flex-direction: column; }
+  }
 </style>
 </head>
 <body>
@@ -82,26 +115,36 @@
 <div class="hero">
   <p class="hero-eyebrow">Pickleball Florida USA Presents</p>
   <h1 class="hero-title">THE PICKLEBALL POST</h1>
-  <p class="hero-tagline">Your Daily Source For Pickleball News, Tournaments & Community</p>
+  <div class="hero-rule"></div>
+  <p class="hero-tagline">News &bull; Tournaments &bull; Community &bull; Charity</p>
+  <p class="hero-date" id="today-date"></p>
 </div>
 <div class="wave"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60"><path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/></svg></div>
 
 <div class="tabs-section">
   <div class="tabs">
-    <button class="tab active" onclick="showTab('news', this)">Latest News</button>
-    <button class="tab" onclick="showTab('tournaments', this)">Tournaments</button>
-    <button class="tab" onclick="showTab('florida', this)">Florida Events</button>
+    <button class="tab active" onclick="showTab('news', this)">&#127916; Latest News</button>
+    <button class="tab" onclick="showTab('tournaments', this)">&#127942; Tournaments</button>
+    <button class="tab" onclick="showTab('florida', this)">&#127796; Florida Events</button>
+    <button class="tab" onclick="showTab('charity', this)">&#10084; Community & Charity</button>
   </div>
 </div>
 
 <div class="content-section">
 
+  <!-- LATEST NEWS TAB -->
   <div id="tab-news" class="tab-content active">
-    <p class="section-label">Breaking Pickleball News — Updated Daily</p>
+    <p class="section-label">Breaking Pickleball News — Updated Daily From Every Major Source</p>
     <div id="loading-news" class="loading"><p>Loading the latest pickleball news...</p></div>
-    <div id="news-grid" class="news-grid"></div>
+    <div id="news-container" style="display:none">
+      <div class="newspaper-grid">
+        <div id="main-stories"></div>
+        <div class="sidebar-stories" id="sidebar-stories"></div>
+      </div>
+    </div>
   </div>
 
+  <!-- TOURNAMENTS TAB -->
   <div id="tab-tournaments" class="tab-content">
     <p class="section-label">Major Tournaments Worldwide — 2025 & 2026</p>
     <div id="tournaments-list">
@@ -109,7 +152,7 @@
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Jan</div><div class="tournament-day">15</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag major">Major</span>
+          <span class="tournament-tag tag-major">Major</span>
           <div class="tournament-name">APP Atlanta Open</div>
           <div class="tournament-location">📍 Atlanta, Georgia</div>
           <a href="https://www.apptoursports.com" target="_blank" class="tournament-link">View Details →</a>
@@ -119,7 +162,7 @@
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Feb</div><div class="tournament-day">5</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag major">Major</span>
+          <span class="tournament-tag tag-major">Major</span>
           <div class="tournament-name">PPA Tour — Carvana Arizona Grand Slam</div>
           <div class="tournament-location">📍 Scottsdale, Arizona</div>
           <a href="https://www.ppatour.com" target="_blank" class="tournament-link">View Details →</a>
@@ -129,7 +172,7 @@
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Mar</div><div class="tournament-day">12</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag florida">Florida</span>
+          <span class="tournament-tag tag-florida">Florida</span>
           <div class="tournament-name">Florida Open Pickleball Championships</div>
           <div class="tournament-location">📍 Naples, Florida</div>
           <a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a>
@@ -139,7 +182,7 @@
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Apr</div><div class="tournament-day">3</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag major">Major</span>
+          <span class="tournament-tag tag-major">Major</span>
           <div class="tournament-name">MLP — Major League Pickleball Season Opener</div>
           <div class="tournament-location">📍 Various US Cities</div>
           <a href="https://www.majorleaguepickleball.net" target="_blank" class="tournament-link">View Details →</a>
@@ -149,7 +192,7 @@
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">May</div><div class="tournament-day">8</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag florida">Florida</span>
+          <span class="tournament-tag tag-florida">Florida</span>
           <div class="tournament-name">Palm Beach Pickleball Classic</div>
           <div class="tournament-location">📍 Palm Beach, Florida</div>
           <a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a>
@@ -159,7 +202,8 @@
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Jun</div><div class="tournament-day">20</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag major">Major</span>
+          <span class="tournament-tag tag-major">Major</span>
+          <span class="tournament-tag tag-florida">Florida</span>
           <div class="tournament-name">US Open Pickleball Championships</div>
           <div class="tournament-location">📍 Naples, Florida</div>
           <a href="https://www.usopenpickleball.com" target="_blank" class="tournament-link">View Details →</a>
@@ -169,7 +213,7 @@
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Jul</div><div class="tournament-day">10</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag major">Major</span>
+          <span class="tournament-tag tag-major">Major</span>
           <div class="tournament-name">PPA Tour — Baird Wealth Management Open</div>
           <div class="tournament-location">📍 Chicago, Illinois</div>
           <a href="https://www.ppatour.com" target="_blank" class="tournament-link">View Details →</a>
@@ -179,7 +223,7 @@
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Aug</div><div class="tournament-day">14</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag florida">Florida</span>
+          <span class="tournament-tag tag-florida">Florida</span>
           <div class="tournament-name">Sarasota Open Pickleball Tournament</div>
           <div class="tournament-location">📍 Sarasota, Florida</div>
           <a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a>
@@ -189,7 +233,7 @@
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Sep</div><div class="tournament-day">6</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag major">Major</span>
+          <span class="tournament-tag tag-major">Major</span>
           <div class="tournament-name">APP Tour — New York City Open</div>
           <div class="tournament-location">📍 New York, New York</div>
           <a href="https://www.apptoursports.com" target="_blank" class="tournament-link">View Details →</a>
@@ -197,9 +241,19 @@
       </div>
 
       <div class="tournament-card">
+        <div class="tournament-date-box"><div class="tournament-month">Sep</div><div class="tournament-day">18</div></div>
+        <div class="tournament-info">
+          <span class="tournament-tag tag-international">International</span>
+          <div class="tournament-name">WPT World Pickleball Tour — European Open</div>
+          <div class="tournament-location">📍 Madrid, Spain</div>
+          <a href="https://www.worldpickleballtour.com" target="_blank" class="tournament-link">View Details →</a>
+        </div>
+      </div>
+
+      <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Oct</div><div class="tournament-day">18</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag major">Major</span>
+          <span class="tournament-tag tag-major">Major</span>
           <div class="tournament-name">PPA Tour National Championships</div>
           <div class="tournament-location">📍 Las Vegas, Nevada</div>
           <a href="https://www.ppatour.com" target="_blank" class="tournament-link">View Details →</a>
@@ -209,7 +263,7 @@
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Nov</div><div class="tournament-day">5</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag florida">Florida</span>
+          <span class="tournament-tag tag-florida">Florida</span>
           <div class="tournament-name">Boca Raton Pickleball Festival</div>
           <div class="tournament-location">📍 Boca Raton, Florida</div>
           <a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a>
@@ -219,7 +273,7 @@
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Dec</div><div class="tournament-day">3</div></div>
         <div class="tournament-info">
-          <span class="tournament-tag major">Major</span>
+          <span class="tournament-tag tag-major">Major</span>
           <div class="tournament-name">APP Tour World Championships</div>
           <div class="tournament-location">📍 Nashville, Tennessee</div>
           <a href="https://www.apptoursports.com" target="_blank" class="tournament-link">View Details →</a>
@@ -229,10 +283,28 @@
     </div>
   </div>
 
+  <!-- FLORIDA EVENTS TAB -->
   <div id="tab-florida" class="tab-content">
     <p class="section-label">Florida Pickleball Events & Community News</p>
     <div id="loading-florida" class="loading"><p>Loading Florida pickleball events...</p></div>
-    <div id="florida-grid" class="news-grid"></div>
+    <div id="florida-container" style="display:none">
+      <div class="newspaper-grid">
+        <div id="florida-main"></div>
+        <div class="sidebar-stories" id="florida-sidebar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARITY TAB -->
+  <div id="tab-charity" class="tab-content">
+    <p class="section-label">Community & Charity Pickleball Events</p>
+    <div id="loading-charity" class="loading"><p>Loading community and charity events...</p></div>
+    <div id="charity-container" style="display:none">
+      <div class="newspaper-grid">
+        <div id="charity-main"></div>
+        <div class="sidebar-stories" id="charity-sidebar"></div>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -245,7 +317,7 @@
 </div>
 
 <script>
-const NEWS_API_KEY = 'f5b7a4b5c7f24affbed914c26a0d8247';
+document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
 function showTab(tab, btn) {
   document.querySelectorAll('.tab').forEach(function(b) { b.classList.remove('active'); });
@@ -254,34 +326,50 @@ function showTab(tab, btn) {
   document.getElementById('tab-' + tab).classList.add('active');
 }
 
-async function loadNews(query, gridId, loadingId) {
+function stripHtml(html) {
+  var tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || '';
+}
+
+function formatDate(dateStr) {
   try {
-    const url = 'https://newsapi.org/v2/everything?q=' + encodeURIComponent(query) + '&sortBy=publishedAt&language=en&pageSize=12&apiKey=' + f5b7a4b5c7f24affbed914c26a0d8247;
-    const response = await fetch(url);
+    return new Date(dateStr).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  } catch(e) { return ''; }
+}
+
+async function loadRSSFeed(rssUrl, mainId, sidebarId, loadingId, containerId) {
+  try {
+    const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl) + '&count=20';
+    const response = await fetch(apiUrl);
     const data = await response.json();
 
     document.getElementById(loadingId).style.display = 'none';
 
-    if (data.articles && data.articles.length > 0) {
-      const grid = document.getElementById(gridId);
-      grid.innerHTML = data.articles.filter(function(a) { return a.title !== '[Removed]'; }).map(function(article) {
-        const date = new Date(article.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-        const img = article.urlToImage ? '<img src="' + article.urlToImage + '" alt="' + article.title + '" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=news-img-placeholder>🏓</div>\'" />' : '<div class="news-img-placeholder">🏓</div>';
-        const desc = article.description ? article.description.substring(0, 120) + '...' : '';
+    if (data.status === 'ok' && data.items && data.items.length > 0) {
+      document.getElementById(containerId).style.display = 'block';
+      const mainStories = data.items.slice(0, 5);
+      const sidebarStories = data.items.slice(5, 15);
 
-        return '<div class="news-card">' +
-          '<div class="news-img">' + img + '</div>' +
-          '<div class="news-body">' +
-            '<div class="news-source">' + (article.source.name || 'Pickleball News') + '</div>' +
-            '<div class="news-title">' + article.title + '</div>' +
-            '<div class="news-desc">' + desc + '</div>' +
-            '<div class="news-date">' + date + '</div>' +
-            '<a href="' + article.url + '" target="_blank" class="read-btn">Read More</a>' +
-          '</div>' +
+      document.getElementById(mainId).innerHTML = mainStories.map(function(item) {
+        const desc = stripHtml(item.description || '').substring(0, 200) + '...';
+        return '<div class="headline-story">' +
+          '<div class="story-source">' + (item.author || data.feed.title || 'Pickleball News') + '</div>' +
+          '<div class="story-title"><a href="' + item.link + '" target="_blank">' + item.title + '</a></div>' +
+          '<div class="story-desc">' + desc + '</div>' +
+          '<div class="story-date">' + formatDate(item.pubDate) + '</div>' +
+        '</div>';
+      }).join('');
+
+      document.getElementById(sidebarId).innerHTML = sidebarStories.map(function(item) {
+        return '<div class="sidebar-story">' +
+          '<div class="sidebar-source">' + (data.feed.title || 'Pickleball News') + '</div>' +
+          '<div class="sidebar-title"><a href="' + item.link + '" target="_blank">' + item.title + '</a></div>' +
+          '<div class="sidebar-date">' + formatDate(item.pubDate) + '</div>' +
         '</div>';
       }).join('');
     } else {
-      document.getElementById(loadingId).innerHTML = '<p>No recent news found. Check back soon.</p>';
+      document.getElementById(loadingId).innerHTML = '<p>Refreshing news feed. Check back soon.</p>';
       document.getElementById(loadingId).style.display = 'block';
     }
   } catch(error) {
@@ -289,8 +377,13 @@ async function loadNews(query, gridId, loadingId) {
   }
 }
 
-loadNews('pickleball', 'news-grid', 'loading-news');
-loadNews('pickleball Florida tournament', 'florida-grid', 'loading-florida');
+const PICKLEBALL_NEWS = 'https://news.google.com/rss/search?q=pickleball&hl=en-US&gl=US&ceid=US:en';
+const FLORIDA_NEWS = 'https://news.google.com/rss/search?q=pickleball+Florida&hl=en-US&gl=US&ceid=US:en';
+const CHARITY_NEWS = 'https://news.google.com/rss/search?q=pickleball+charity+community+fundraiser&hl=en-US&gl=US&ceid=US:en';
+
+loadRSSFeed(PICKLEBALL_NEWS, 'main-stories', 'sidebar-stories', 'loading-news', 'news-container');
+loadRSSFeed(FLORIDA_NEWS, 'florida-main', 'florida-sidebar', 'loading-florida', 'florida-container');
+loadRSSFeed(CHARITY_NEWS, 'charity-main', 'charity-sidebar', 'loading-charity', 'charity-container');
 </script>
 
 </body>
