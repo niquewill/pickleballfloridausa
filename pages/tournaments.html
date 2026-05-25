@@ -18,8 +18,6 @@
   .nav-links { display: flex; gap: 2rem; }
   .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
   .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--coral); }
-
-  /* HERO */
   .hero { background: var(--navy); padding: 3rem 2.5rem; text-align: center; }
   .hero-eyebrow { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.5rem; }
   .hero-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--cream); font-weight: 700; letter-spacing: 4px; }
@@ -28,21 +26,15 @@
   .hero-date { font-size: 0.75rem; color: var(--turquoise); margin-top: 0.5rem; letter-spacing: 2px; }
   .wave { display: block; background: var(--navy); line-height: 0; }
   .wave svg { display: block; width: 100%; }
-
-  /* TABS */
   .tabs-section { padding: 2rem 2.5rem 0; max-width: 1100px; margin: 0 auto; }
   .tabs { display: flex; gap: 0; border-bottom: 2px solid rgba(22,50,79,0.1); flex-wrap: wrap; }
   .tab { background: transparent; border: none; padding: 0.75rem 1.5rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; font-family: 'Montserrat', sans-serif; color: var(--navy); opacity: 0.5; border-bottom: 3px solid transparent; margin-bottom: -2px; }
   .tab.active { opacity: 1; color: var(--coral); border-bottom-color: var(--coral); }
   .tab:hover { opacity: 1; }
-
-  /* CONTENT */
   .content-section { padding: 2rem 2.5rem 4rem; max-width: 1100px; margin: 0 auto; }
   .tab-content { display: none; }
   .tab-content.active { display: block; }
   .section-label { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(22,50,79,0.1); }
-
-  /* NEWSPAPER LAYOUT */
   .newspaper-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
   .headline-story { border-bottom: 1px solid rgba(22,50,79,0.1); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
   .headline-story:last-child { border-bottom: none; }
@@ -60,13 +52,6 @@
   .sidebar-title a:hover { color: var(--coral); }
   .sidebar-source { font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.2rem; }
   .sidebar-date { font-size: 0.65rem; color: var(--navy); opacity: 0.4; }
-
-  /* BREAKING TICKER */
-  .ticker-wrap { background: var(--coral); padding: 0.5rem 0; overflow: hidden; margin-bottom: 1.5rem; }
-  .ticker-label { display: inline-block; background: var(--navy); color: var(--cream); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 0.2rem 0.75rem; margin-right: 1rem; }
-  .ticker-text { font-size: 0.78rem; color: #fff; letter-spacing: 1px; }
-
-  /* TOURNAMENT CARDS */
   .tournament-card { background: #fff; border-radius: 4px; padding: 1.5rem; margin-bottom: 1.2rem; border: 1px solid rgba(22,50,79,0.08); border-left: 4px solid var(--coral); display: flex; gap: 1.5rem; align-items: flex-start; }
   .tournament-date-box { background: var(--navy); color: var(--cream); padding: 0.75rem 1rem; border-radius: 4px; text-align: center; min-width: 70px; flex-shrink: 0; }
   .tournament-month { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); }
@@ -74,6 +59,7 @@
   .tournament-info { flex: 1; }
   .tournament-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; color: var(--navy); margin-bottom: 0.3rem; }
   .tournament-location { font-size: 0.8rem; color: var(--navy); opacity: 0.6; margin-bottom: 0.5rem; }
+  .tournament-desc { font-size: 0.78rem; color: var(--navy); opacity: 0.6; line-height: 1.6; margin-bottom: 0.5rem; }
   .tournament-tag { display: inline-block; color: #fff; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; margin-bottom: 0.5rem; margin-right: 0.3rem; }
   .tag-major { background: var(--navy); }
   .tag-florida { background: var(--green); }
@@ -81,17 +67,12 @@
   .tag-international { background: var(--turquoise); color: var(--navy); }
   .tournament-link { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); text-decoration: none; }
   .tournament-link:hover { color: var(--navy); }
-
-  /* LOADING */
   .loading { text-align: center; padding: 3rem; }
   .loading p { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); opacity: 0.6; }
-
-  /* FOOTER */
   .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
   .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
   .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
   .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
-
   @media (max-width: 700px) {
     .newspaper-grid { grid-template-columns: 1fr; }
     .sidebar-stories { border-left: none; padding-left: 0; border-top: 1px solid rgba(22,50,79,0.1); padding-top: 1.5rem; }
@@ -132,7 +113,7 @@
 
 <div class="content-section">
 
-  <!-- LATEST NEWS TAB -->
+  <!-- LATEST NEWS -->
   <div id="tab-news" class="tab-content active">
     <p class="section-label">Breaking Pickleball News — Updated Daily From Every Major Source</p>
     <div id="loading-news" class="loading"><p>Loading the latest pickleball news...</p></div>
@@ -144,146 +125,66 @@
     </div>
   </div>
 
-  <!-- TOURNAMENTS TAB -->
+  <!-- TOURNAMENTS -->
   <div id="tab-tournaments" class="tab-content">
     <p class="section-label">Major Tournaments Worldwide — 2025 & 2026</p>
     <div id="tournaments-list">
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Jan</div><div class="tournament-day">15</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-major">Major</span>
-          <div class="tournament-name">APP Atlanta Open</div>
-          <div class="tournament-location">📍 Atlanta, Georgia</div>
-          <a href="https://www.apptoursports.com" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-major">Major</span><div class="tournament-name">APP Atlanta Open</div><div class="tournament-location">📍 Atlanta, Georgia</div><a href="https://www.apptoursports.com" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Feb</div><div class="tournament-day">5</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-major">Major</span>
-          <div class="tournament-name">PPA Tour — Carvana Arizona Grand Slam</div>
-          <div class="tournament-location">📍 Scottsdale, Arizona</div>
-          <a href="https://www.ppatour.com" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-major">Major</span><div class="tournament-name">PPA Tour — Carvana Arizona Grand Slam</div><div class="tournament-location">📍 Scottsdale, Arizona</div><a href="https://www.ppatour.com" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Mar</div><div class="tournament-day">12</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-florida">Florida</span>
-          <div class="tournament-name">Florida Open Pickleball Championships</div>
-          <div class="tournament-location">📍 Naples, Florida</div>
-          <a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-florida">Florida</span><div class="tournament-name">Florida Open Pickleball Championships</div><div class="tournament-location">📍 Naples, Florida</div><a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Apr</div><div class="tournament-day">3</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-major">Major</span>
-          <div class="tournament-name">MLP — Major League Pickleball Season Opener</div>
-          <div class="tournament-location">📍 Various US Cities</div>
-          <a href="https://www.majorleaguepickleball.net" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-major">Major</span><div class="tournament-name">MLP — Major League Pickleball Season Opener</div><div class="tournament-location">📍 Various US Cities</div><a href="https://www.majorleaguepickleball.net" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">May</div><div class="tournament-day">8</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-florida">Florida</span>
-          <div class="tournament-name">Palm Beach Pickleball Classic</div>
-          <div class="tournament-location">📍 Palm Beach, Florida</div>
-          <a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-florida">Florida</span><div class="tournament-name">Palm Beach Pickleball Classic</div><div class="tournament-location">📍 Palm Beach, Florida</div><a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Jun</div><div class="tournament-day">20</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-major">Major</span>
-          <span class="tournament-tag tag-florida">Florida</span>
-          <div class="tournament-name">US Open Pickleball Championships</div>
-          <div class="tournament-location">📍 Naples, Florida</div>
-          <a href="https://www.usopenpickleball.com" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-major">Major</span><span class="tournament-tag tag-florida">Florida</span><div class="tournament-name">US Open Pickleball Championships</div><div class="tournament-location">📍 Naples, Florida</div><a href="https://www.usopenpickleball.com" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Jul</div><div class="tournament-day">10</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-major">Major</span>
-          <div class="tournament-name">PPA Tour — Baird Wealth Management Open</div>
-          <div class="tournament-location">📍 Chicago, Illinois</div>
-          <a href="https://www.ppatour.com" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-major">Major</span><div class="tournament-name">PPA Tour — Baird Wealth Management Open</div><div class="tournament-location">📍 Chicago, Illinois</div><a href="https://www.ppatour.com" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Aug</div><div class="tournament-day">14</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-florida">Florida</span>
-          <div class="tournament-name">Sarasota Open Pickleball Tournament</div>
-          <div class="tournament-location">📍 Sarasota, Florida</div>
-          <a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-florida">Florida</span><div class="tournament-name">Sarasota Open Pickleball Tournament</div><div class="tournament-location">📍 Sarasota, Florida</div><a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Sep</div><div class="tournament-day">6</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-major">Major</span>
-          <div class="tournament-name">APP Tour — New York City Open</div>
-          <div class="tournament-location">📍 New York, New York</div>
-          <a href="https://www.apptoursports.com" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-major">Major</span><div class="tournament-name">APP Tour — New York City Open</div><div class="tournament-location">📍 New York, New York</div><a href="https://www.apptoursports.com" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Sep</div><div class="tournament-day">18</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-international">International</span>
-          <div class="tournament-name">WPT World Pickleball Tour — European Open</div>
-          <div class="tournament-location">📍 Madrid, Spain</div>
-          <a href="https://www.worldpickleballtour.com" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-international">International</span><div class="tournament-name">WPT World Pickleball Tour — European Open</div><div class="tournament-location">📍 Madrid, Spain</div><a href="https://www.worldpickleballtour.com" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Oct</div><div class="tournament-day">18</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-major">Major</span>
-          <div class="tournament-name">PPA Tour National Championships</div>
-          <div class="tournament-location">📍 Las Vegas, Nevada</div>
-          <a href="https://www.ppatour.com" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-major">Major</span><div class="tournament-name">PPA Tour National Championships</div><div class="tournament-location">📍 Las Vegas, Nevada</div><a href="https://www.ppatour.com" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Nov</div><div class="tournament-day">5</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-florida">Florida</span>
-          <div class="tournament-name">Boca Raton Pickleball Festival</div>
-          <div class="tournament-location">📍 Boca Raton, Florida</div>
-          <a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-florida">Florida</span><div class="tournament-name">Boca Raton Pickleball Festival</div><div class="tournament-location">📍 Boca Raton, Florida</div><a href="https://www.usapickleball.org" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
       <div class="tournament-card">
         <div class="tournament-date-box"><div class="tournament-month">Dec</div><div class="tournament-day">3</div></div>
-        <div class="tournament-info">
-          <span class="tournament-tag tag-major">Major</span>
-          <div class="tournament-name">APP Tour World Championships</div>
-          <div class="tournament-location">📍 Nashville, Tennessee</div>
-          <a href="https://www.apptoursports.com" target="_blank" class="tournament-link">View Details →</a>
-        </div>
+        <div class="tournament-info"><span class="tournament-tag tag-major">Major</span><div class="tournament-name">APP Tour World Championships</div><div class="tournament-location">📍 Nashville, Tennessee</div><a href="https://www.apptoursports.com" target="_blank" class="tournament-link">View Details →</a></div>
       </div>
-
     </div>
   </div>
 
-  <!-- FLORIDA EVENTS TAB -->
+  <!-- FLORIDA EVENTS -->
   <div id="tab-florida" class="tab-content">
     <p class="section-label">Florida Pickleball Events & Community News</p>
     <div id="loading-florida" class="loading"><p>Loading Florida pickleball events...</p></div>
@@ -295,16 +196,78 @@
     </div>
   </div>
 
-  <!-- CHARITY TAB -->
+  <!-- COMMUNITY & CHARITY -->
   <div id="tab-charity" class="tab-content">
-    <p class="section-label">Community & Charity Pickleball Events</p>
-    <div id="loading-charity" class="loading"><p>Loading community and charity events...</p></div>
-    <div id="charity-container" style="display:none">
-      <div class="newspaper-grid">
-        <div id="charity-main"></div>
-        <div class="sidebar-stories" id="charity-sidebar"></div>
+    <p class="section-label">Community & Charity — Pickleball With Purpose</p>
+
+    <div class="tournament-card">
+      <div class="tournament-date-box"><div class="tournament-month">Ongoing</div><div class="tournament-day">&#10084;</div></div>
+      <div class="tournament-info">
+        <span class="tournament-tag tag-charity">Charity</span>
+        <div class="tournament-name">Pickleball for the Cure — Susan G. Komen</div>
+        <div class="tournament-location">📍 Nationwide including Florida</div>
+        <div class="tournament-desc">Play pickleball and raise funds for breast cancer research. Join the Pickleball Challenge — play as many games as you can in 30 days while raising funds and awareness. Perfect for Florida clubs and communities.</div>
+        <a href="https://secure.info-komen.org/site/SPageServer/?pagename=pb_home" target="_blank" class="tournament-link">Register Your Event →</a>
       </div>
     </div>
+
+    <div class="tournament-card">
+      <div class="tournament-date-box"><div class="tournament-month">Jan</div><div class="tournament-day">10</div></div>
+      <div class="tournament-info">
+        <span class="tournament-tag tag-charity">Charity</span>
+        <span class="tournament-tag tag-florida">Florida</span>
+        <div class="tournament-name">Frenchy's Pickled Grouper Classic</div>
+        <div class="tournament-location">📍 Tampa Bay, Florida</div>
+        <div class="tournament-desc">Annual charity pickleball tournament benefiting Big Brothers Big Sisters of Tampa Bay. Open to all skill levels. Funds support mentoring programs for children in the community.</div>
+        <a href="https://bbbstampabay.org" target="_blank" class="tournament-link">View Details →</a>
+      </div>
+    </div>
+
+    <div class="tournament-card">
+      <div class="tournament-date-box"><div class="tournament-month">Feb</div><div class="tournament-day">28</div></div>
+      <div class="tournament-info">
+        <span class="tournament-tag tag-charity">Charity</span>
+        <span class="tournament-tag tag-florida">Florida</span>
+        <div class="tournament-name">GO-AP Powerball Florida Tour — Jacksonville</div>
+        <div class="tournament-location">📍 Jacksonville, Florida — Toon Town Pickleball</div>
+        <div class="tournament-desc">Florida charity fundraiser tournament series. Indoor courts, raffle prizes including paddles, backpacks, and cash. Grand Finale February 28 – March 1, 2026.</div>
+        <a href="https://pickleballtournaments.com" target="_blank" class="tournament-link">View Details →</a>
+      </div>
+    </div>
+
+    <div class="tournament-card">
+      <div class="tournament-date-box"><div class="tournament-month">Ongoing</div><div class="tournament-day">&#9917;</div></div>
+      <div class="tournament-info">
+        <span class="tournament-tag tag-charity">Charity</span>
+        <div class="tournament-name">Dink For Cause — Pickleball Nonprofit</div>
+        <div class="tournament-location">📍 Nationwide</div>
+        <div class="tournament-desc">A nonprofit organization raising money for charities through pickleball events and tournaments. Helping local communities one dink at a time. Past beneficiaries include cancer research, food banks, and youth programs.</div>
+        <a href="https://dinkforcause.org" target="_blank" class="tournament-link">Get Involved →</a>
+      </div>
+    </div>
+
+    <div class="tournament-card">
+      <div class="tournament-date-box"><div class="tournament-month">Ongoing</div><div class="tournament-day">&#128149;</div></div>
+      <div class="tournament-info">
+        <span class="tournament-tag tag-charity">Charity</span>
+        <div class="tournament-name">Pickleball for Pancreatic Cancer Research</div>
+        <div class="tournament-location">📍 Multiple Locations</div>
+        <div class="tournament-desc">Project Purple hosts pickleball fundraiser events supporting pancreatic cancer research and patient financial aid. A growing movement bringing pickleball communities together for a powerful cause.</div>
+        <a href="https://www.projectpurple.org/events/pickleball/" target="_blank" class="tournament-link">View Events →</a>
+      </div>
+    </div>
+
+    <div class="tournament-card">
+      <div class="tournament-date-box"><div class="tournament-month">Ongoing</div><div class="tournament-day">&#127775;</div></div>
+      <div class="tournament-info">
+        <span class="tournament-tag tag-charity">Charity</span>
+        <div class="tournament-name">Host Your Own Pickleball Charity Event</div>
+        <div class="tournament-location">📍 Your Florida Community</div>
+        <div class="tournament-desc">Want to organize a charity pickleball event for your club, school, or community? Pickleball Playmakers partners with organizations to design and run fundraising events. You bring the cause — they bring the pickleball.</div>
+        <a href="https://www.pickleballplaymakers.com/pickleball-fundraisers" target="_blank" class="tournament-link">Learn How →</a>
+      </div>
+    </div>
+
   </div>
 
 </div>
@@ -317,6 +280,8 @@
 </div>
 
 <script>
+const MEDIASTACK_KEY = '13fd49ce38a1eb94ffcaae7ee9d188df';
+
 document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
 function showTab(tab, btn) {
@@ -326,64 +291,53 @@ function showTab(tab, btn) {
   document.getElementById('tab-' + tab).classList.add('active');
 }
 
-function stripHtml(html) {
-  var tmp = document.createElement('div');
-  tmp.innerHTML = html;
-  return tmp.textContent || tmp.innerText || '';
-}
-
 function formatDate(dateStr) {
-  try {
-    return new Date(dateStr).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-  } catch(e) { return ''; }
+  try { return new Date(dateStr).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }); }
+  catch(e) { return ''; }
 }
 
-async function loadRSSFeed(rssUrl, mainId, sidebarId, loadingId, containerId) {
+async function loadNews(keywords, mainId, sidebarId, loadingId, containerId) {
   try {
-    const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl) + '&count=20';
-    const response = await fetch(apiUrl);
+    const url = 'http://api.mediastack.com/v1/news?access_key=' + MEDIASTACK_KEY + '&keywords=' + encodeURIComponent(keywords) + '&languages=en&limit=20&sort=published_desc';
+    const response = await fetch(url);
     const data = await response.json();
 
     document.getElementById(loadingId).style.display = 'none';
 
-    if (data.status === 'ok' && data.items && data.items.length > 0) {
+    if (data.data && data.data.length > 0) {
       document.getElementById(containerId).style.display = 'block';
-      const mainStories = data.items.slice(0, 5);
-      const sidebarStories = data.items.slice(5, 15);
+      const main = data.data.slice(0, 5);
+      const sidebar = data.data.slice(5, 15);
 
-      document.getElementById(mainId).innerHTML = mainStories.map(function(item) {
-        const desc = stripHtml(item.description || '').substring(0, 200) + '...';
+      document.getElementById(mainId).innerHTML = main.map(function(article) {
+        const desc = (article.description || '').substring(0, 200) + '...';
         return '<div class="headline-story">' +
-          '<div class="story-source">' + (item.author || data.feed.title || 'Pickleball News') + '</div>' +
-          '<div class="story-title"><a href="' + item.link + '" target="_blank">' + item.title + '</a></div>' +
+          '<div class="story-source">' + (article.source || 'Pickleball News') + '</div>' +
+          '<div class="story-title"><a href="' + article.url + '" target="_blank">' + article.title + '</a></div>' +
           '<div class="story-desc">' + desc + '</div>' +
-          '<div class="story-date">' + formatDate(item.pubDate) + '</div>' +
+          '<div class="story-date">' + formatDate(article.published_at) + '</div>' +
         '</div>';
       }).join('');
 
-      document.getElementById(sidebarId).innerHTML = sidebarStories.map(function(item) {
+      document.getElementById(sidebarId).innerHTML = sidebar.map(function(article) {
         return '<div class="sidebar-story">' +
-          '<div class="sidebar-source">' + (data.feed.title || 'Pickleball News') + '</div>' +
-          '<div class="sidebar-title"><a href="' + item.link + '" target="_blank">' + item.title + '</a></div>' +
-          '<div class="sidebar-date">' + formatDate(item.pubDate) + '</div>' +
+          '<div class="sidebar-source">' + (article.source || 'Pickleball News') + '</div>' +
+          '<div class="sidebar-title"><a href="' + article.url + '" target="_blank">' + article.title + '</a></div>' +
+          '<div class="sidebar-date">' + formatDate(article.published_at) + '</div>' +
         '</div>';
       }).join('');
     } else {
-      document.getElementById(loadingId).innerHTML = '<p>Refreshing news feed. Check back soon.</p>';
+      document.getElementById(loadingId).innerHTML = '<p>No recent news found. Check back soon.</p>';
       document.getElementById(loadingId).style.display = 'block';
     }
   } catch(error) {
-    document.getElementById(loadingId).innerHTML = '<p>Unable to load news right now. Check back soon.</p>';
+    document.getElementById(loadingId).innerHTML = '<p>News feed refreshing. Check back soon.</p>';
+    document.getElementById(loadingId).style.display = 'block';
   }
 }
 
-const PICKLEBALL_NEWS = 'https://news.google.com/rss/search?q=pickleball&hl=en-US&gl=US&ceid=US:en';
-const FLORIDA_NEWS = 'https://news.google.com/rss/search?q=pickleball+Florida&hl=en-US&gl=US&ceid=US:en';
-const CHARITY_NEWS = 'https://news.google.com/rss/search?q=pickleball+charity+community+fundraiser&hl=en-US&gl=US&ceid=US:en';
-
-loadRSSFeed(PICKLEBALL_NEWS, 'main-stories', 'sidebar-stories', 'loading-news', 'news-container');
-loadRSSFeed(FLORIDA_NEWS, 'florida-main', 'florida-sidebar', 'loading-florida', 'florida-container');
-loadRSSFeed(CHARITY_NEWS, 'charity-main', 'charity-sidebar', 'loading-charity', 'charity-container');
+loadNews('pickleball', 'main-stories', 'sidebar-stories', 'loading-news', 'news-container');
+loadNews('pickleball Florida', 'florida-main', 'florida-sidebar', 'loading-florida', 'florida-container');
 </script>
 
 </body>
