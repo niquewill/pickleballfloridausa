@@ -9,13 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --coral: #FF6F61;
-    --turquoise: #2CCCD3;
-    --green: #2E8B57;
-    --cream: #FFF7EB;
-    --navy: #16324F;
-  }
+  :root { --coral: #FF6F61; --turquoise: #2CCCD3; --green: #2E8B57; --cream: #FFF7EB; --navy: #16324F; }
   body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
   nav { background: var(--navy); padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
   .logo-wrap a { text-decoration: none; }
@@ -37,16 +31,15 @@
   .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; }
   .product-card { background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid rgba(22,50,79,0.08); transition: transform 0.2s; }
   .product-card:hover { transform: translateY(-4px); }
-  .product-img { height: 280px; background: var(--cream); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+  .product-img { height: 280px; background: var(--cream); overflow: hidden; position: relative; }
   .product-img img { width: 100%; height: 100%; object-fit: cover; }
-  .product-img .emoji { font-size: 4rem; }
-  .product-tag { position: absolute; top: 1rem; left: 1rem; background: var(--coral); color: #fff; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; }
+  .product-tag { position: absolute; top: 1rem; left: 1rem; background: var(--coral); color: #fff; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; z-index: 1; }
   .product-body { padding: 1.2rem; }
   .product-body h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 400; margin-bottom: 0.3rem; color: var(--navy); }
   .product-body p { font-size: 0.78rem; color: var(--navy); opacity: 0.6; line-height: 1.6; margin-bottom: 0.75rem; }
   .product-footer { display: flex; justify-content: space-between; align-items: center; }
   .price { font-size: 1rem; color: var(--coral); font-weight: 500; }
-  .buy-btn { background: var(--navy); color: var(--cream); border: none; padding: 0.5rem 1.2rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Montserrat', sans-serif; text-decoration: none; }
+  .buy-btn { background: var(--navy); color: var(--cream); border: none; padding: 0.5rem 1.2rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Montserrat', sans-serif; text-decoration: none; display: inline-block; }
   .buy-btn:hover { background: var(--coral); }
   .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
   .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
@@ -55,14 +48,8 @@
 </style>
 </head>
 <body>
-
 <nav>
-  <div class="logo-wrap">
-    <a href="../index.html">
-      <span class="logo-text">Pickleball Florida USA</span>
-      <span class="logo-sub">Coastal Lifestyle Collection</span>
-    </a>
-  </div>
+  <div class="logo-wrap"><a href="../index.html"><span class="logo-text">Pickleball Florida USA</span><span class="logo-sub">Coastal Lifestyle Collection</span></a></div>
   <div class="nav-links">
     <a href="../index.html">Home</a>
     <a href="shop.html" class="active">Shop</a>
@@ -71,24 +58,18 @@
     <a href="about.html">About</a>
   </div>
 </nav>
-
 <div class="shop-hero">
   <p>Resort-Inspired Essentials</p>
   <h1>The <em>Collection</em></h1>
 </div>
-<div class="wave">
-  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60">
-    <path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/>
-  </svg>
-</div>
-
+<div class="wave"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60"><path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/></svg></div>
 <div class="filters">
   <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
   <button class="filter-btn" onclick="filterProducts('tee', this)">Tees</button>
   <button class="filter-btn" onclick="filterProducts('tank', this)">Tanks</button>
   <button class="filter-btn" onclick="filterProducts('tote', this)">Bags</button>
+  <button class="filter-btn" onclick="filterProducts('bottle', this)">Water Bottles</button>
 </div>
-
 <div class="products-section">
   <div class="products-grid" id="grid">
 
@@ -100,113 +81,118 @@
       <div class="product-body">
         <h3>Palm Paddle Tee &mdash; Turquoise</h3>
         <p>Premium coastal tee inspired by Florida resort living.</p>
-        <div class="product-footer">
-          <span class="price">$45</span>
-          <a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a>
-        </div>
+        <div class="product-footer"><span class="price">$23.95</span><a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="tee">
       <div class="product-img">
-        <img src="../images/tee-turquoise-lifestyle.png" alt="Palm Paddle Tee White" />
+        <img src="../images/tee-white-front.png" alt="Palm Paddle Tee White" />
         <span class="product-tag">New Arrival</span>
       </div>
       <div class="product-body">
         <h3>Palm Paddle Tee &mdash; White</h3>
         <p>Classic white tee with our signature Palm Paddle logo.</p>
-        <div class="product-footer">
-          <span class="price">$45</span>
-          <a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a>
-        </div>
+        <div class="product-footer"><span class="price">$23.95</span><a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="tee">
       <div class="product-img">
-        <img src="../images/tee-turquoise-back.png" alt="Palm Paddle Tee Navy" />
+        <img src="../images/tee-navy-front.png" alt="Palm Paddle Tee Navy" />
       </div>
       <div class="product-body">
         <h3>Palm Paddle Tee &mdash; Navy</h3>
         <p>Yacht club navy with coral and turquoise logo detail.</p>
-        <div class="product-footer">
-          <span class="price">$45</span>
-          <a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a>
-        </div>
+        <div class="product-footer"><span class="price">$23.95</span><a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="tote">
       <div class="product-img">
-        <img src="../images/coastal-court-tote.png" alt="Coastal Court Tote" />
+        <img src="../images/tote-front.png" alt="Coastal Court Tote" />
         <span class="product-tag">Staff Pick</span>
       </div>
       <div class="product-body">
         <h3>Coastal Court Tote</h3>
         <p>All-over tropical print tote. Court to coast.</p>
-        <div class="product-footer">
-          <span class="price">$68</span>
-          <a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a>
-        </div>
+        <div class="product-footer"><span class="price">$52.00</span><a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="tank">
       <div class="product-img">
-        <div class="emoji">👚</div>
+        <img src="../images/coastal-tank-turquoise.png" alt="Coastal Serve Tank Turquoise" />
       </div>
       <div class="product-body">
         <h3>Coastal Serve Tank &mdash; Turquoise</h3>
         <p>Lightweight racerback perfect for Florida courts.</p>
-        <div class="product-footer">
-          <span class="price">$38</span>
-          <a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a>
-        </div>
+        <div class="product-footer"><span class="price">$22.95</span><a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="tank">
       <div class="product-img">
-        <div class="emoji">👚</div>
+        <img src="../images/coastal-tank-mint-front.png" alt="Coastal Serve Tank Mint" />
+      </div>
+      <div class="product-body">
+        <h3>Coastal Serve Tank &mdash; Mint</h3>
+        <p>Fresh mint racerback for sunny Florida days.</p>
+        <div class="product-footer"><span class="price">$22.95</span><a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-type="tank">
+      <div class="product-img">
+        <img src="../images/coastal-tank-white-front.png" alt="Coastal Serve Tank White" />
       </div>
       <div class="product-body">
         <h3>Coastal Serve Tank &mdash; White</h3>
-        <p>Breathable white racerback for sunny Florida days.</p>
-        <div class="product-footer">
-          <span class="price">$38</span>
-          <a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a>
-        </div>
+        <p>Breathable white racerback for active Florida living.</p>
+        <div class="product-footer"><span class="price">$22.95</span><a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-type="bottle">
+      <div class="product-img">
+        <img src="../images/coastal-waterbottle-front.png" alt="Coastal Hydration Bottle" />
+        <span class="product-tag">New</span>
+      </div>
+      <div class="product-body">
+        <h3>Coastal Hydration Bottle &mdash; Florida Edition</h3>
+        <p>Stay hydrated in Florida style. Premium stainless steel.</p>
+        <div class="product-footer"><span class="price">$27.00</span><a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-type="bottle">
+      <div class="product-img">
+        <img src="../images/gulf-bottle-front.png" alt="Gulf Breeze Hydration Bottle" />
+        <span class="product-tag">New</span>
+      </div>
+      <div class="product-body">
+        <h3>Gulf Breeze Hydration Bottle</h3>
+        <p>Inspired by Gulf Coast sunsets. Court to beach ready.</p>
+        <div class="product-footer"><span class="price">$38.00</span><a href="https://www.etsy.com/shop/PickleballFloridaUSA" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
   </div>
 </div>
-
 <div class="footer">
   <div class="footer-links">
-    <a href="../index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="courts.html">Courts</a>
-    <a href="about.html">About</a>
-    <a href="#">Contact</a>
-    <a href="#">Privacy</a>
+    <a href="../index.html">Home</a><a href="shop.html">Shop</a><a href="courts.html">Courts</a><a href="about.html">About</a><a href="#">Contact</a><a href="#">Privacy</a>
   </div>
   <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
 </div>
-
 <script>
 function filterProducts(type, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('.product-card').forEach(card => {
-    if (type === 'all' || card.dataset.type === type) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
+    card.style.display = (type === 'all' || card.dataset.type === type) ? 'block' : 'none';
   });
 }
 </script>
-
 </body>
 </html>
