@@ -1,1 +1,211 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About | Pickleball Florida USA</title>
+<meta name="description" content="Florida's luxury coastal pickleball lifestyle brand. Inspired by Palm Beach elegance, resort culture, and the joy of pickleball." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --coral: #FF6F61; --turquoise: #2CCCD3; --green: #2E8B57; --cream: #FFF7EB; --navy: #16324F; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
+  nav { background: var(--navy); padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .logo-wrap a { text-decoration: none; }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 1px; }
+  .logo-sub { font-size: 0.6rem; color: var(--turquoise); letter-spacing: 4px; text-transform: uppercase; display: block; margin-top: 2px; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
+  .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--coral); }
+
+  /* HERO */
+  .hero { background: var(--navy); padding: 5rem 2.5rem; text-align: center; position: relative; }
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--cream); font-weight: 400; line-height: 1.2; }
+  .hero h1 em { font-style: italic; color: var(--coral); }
+  .hero-tagline { font-size: 1rem; color: var(--cream); opacity: 0.7; margin-top: 1.5rem; line-height: 1.8; max-width: 600px; margin-left: auto; margin-right: auto; font-weight: 300; }
+  .wave { display: block; background: var(--navy); line-height: 0; }
+  .wave svg { display: block; width: 100%; }
+
+  /* STORY SECTION */
+  .story-section { padding: 5rem 2.5rem; max-width: 800px; margin: 0 auto; }
+  .section-eyebrow { font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--navy); font-weight: 400; margin-bottom: 2rem; line-height: 1.3; }
+  .story-text { font-size: 0.95rem; line-height: 1.9; color: var(--navy); opacity: 0.8; margin-bottom: 1.5rem; font-weight: 300; }
+  .story-text strong { font-weight: 500; opacity: 1; color: var(--navy); }
+  .pull-quote { border-left: 4px solid var(--coral); padding: 1.5rem 2rem; margin: 3rem 0; background: #fff; border-radius: 0 4px 4px 0; }
+  .pull-quote p { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-style: italic; color: var(--navy); line-height: 1.6; }
+
+  /* VALUES SECTION */
+  .values-section { background: var(--navy); padding: 5rem 2.5rem; }
+  .values-inner { max-width: 1000px; margin: 0 auto; }
+  .values-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--cream); font-weight: 400; text-align: center; margin-bottom: 0.5rem; }
+  .values-sub { font-size: 0.8rem; color: var(--cream); opacity: 0.5; text-align: center; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3rem; }
+  .values-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2rem; }
+  .value-card { text-align: center; }
+  .value-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .value-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--cream); margin-bottom: 0.5rem; }
+  .value-text { font-size: 0.78rem; color: var(--cream); opacity: 0.6; line-height: 1.7; font-weight: 300; }
+
+  /* FOUNDER SECTION */
+  .founder-section { padding: 5rem 2.5rem; max-width: 900px; margin: 0 auto; }
+  .founder-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
+  .founder-img-box { background: var(--navy); border-radius: 4px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 5rem; }
+  .founder-eyebrow { font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.5rem; }
+  .founder-name { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); font-weight: 400; margin-bottom: 0.25rem; }
+  .founder-title { font-size: 0.78rem; color: var(--coral); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .founder-bio { font-size: 0.88rem; line-height: 1.9; color: var(--navy); opacity: 0.8; font-weight: 300; }
+
+  /* MISSION STRIP */
+  .mission-strip { background: var(--green); padding: 4rem 2.5rem; text-align: center; }
+  .mission-strip h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--cream); font-weight: 400; margin-bottom: 1rem; }
+  .mission-strip p { font-size: 0.9rem; color: var(--cream); opacity: 0.85; max-width: 600px; margin: 0 auto 2rem; line-height: 1.8; font-weight: 300; }
+  .mission-btn { display: inline-block; background: var(--cream); color: var(--navy); padding: 0.85rem 2.5rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; border-radius: 2px; margin: 0.5rem; }
+  .mission-btn:hover { background: var(--coral); color: #fff; }
+  .mission-btn-outline { display: inline-block; border: 2px solid var(--cream); color: var(--cream); padding: 0.85rem 2.5rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; border-radius: 2px; margin: 0.5rem; }
+  .mission-btn-outline:hover { background: var(--cream); color: var(--navy); }
+
+  /* STATS */
+  .stats-section { background: #fff; padding: 4rem 2.5rem; }
+  .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
+  .stat-number { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--coral); font-weight: 700; }
+  .stat-label { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); opacity: 0.6; margin-top: 0.25rem; }
+
+  /* FOOTER */
+  .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
+  .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
+
+  @media (max-width: 700px) {
+    .founder-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-wrap"><a href="../index.html"><span class="logo-text">Pickleball Florida USA</span><span class="logo-sub">Coastal Lifestyle Collection</span></a></div>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="courts.html">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="about.html" class="active">About</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Our Story</p>
+  <h1>Where Palm Beach<br>Meets <em>Pickleball</em></h1>
+  <p class="hero-tagline">Florida's luxury coastal pickleball lifestyle brand — inspired by sunshine, sophistication, and the social spirit that makes this game unlike any other.</p>
+</div>
+<div class="wave"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60"><path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/></svg></div>
+
+<!-- STORY -->
+<div class="story-section">
+  <p class="section-eyebrow">How It All Began</p>
+  <h2 class="section-title">Born From A Love Of Florida & The Joy Of Pickleball</h2>
+
+  <p class="story-text">Pickleball Florida USA was born from a simple observation — the women playing pickleball across Florida's most beautiful communities deserved gear that actually matched their lifestyle. Women who winter in Naples. Who belong to country clubs in Boca Raton. Who brunch in Palm Beach after Saturday morning matches. Women who bring elegance to every court they step onto.</p>
+
+  <p class="story-text">We looked at what was available and saw a gap. The market was full of aggressive sports branding, neon colors, and generic athletic store aesthetics. Nothing that reflected the sophisticated, sun-kissed, socially vibrant world of Florida pickleball culture.</p>
+
+  <div class="pull-quote">
+    <p>"We believe pickleball is more than a game. It is a lifestyle. It is early morning matches in the Florida sunshine, laughing with friends on the court, and showing up looking and feeling your absolute best — on and off the court."</p>
+  </div>
+
+  <p class="story-text">So we created <strong>Pickleball Florida USA</strong> — a brand inspired by Palm Beach resort elegance, coastal living, and country club culture. Every piece in our collection is thoughtfully designed to reflect the warmth, sophistication, and vibrant spirit of Florida's coastal communities.</p>
+
+  <p class="story-text">Think Lilly Pulitzer meets the pickleball court. Think Palm Beach resort boutique meets athletic lifestyle brand. Think tropical botanicals, flamingos, coral sunsets, and navy yacht club elegance — all wrapped up in gear that makes you smile every time you put it on.</p>
+</div>
+
+<!-- VALUES -->
+<div class="values-section">
+  <div class="values-inner">
+    <h2 class="values-title">What We Stand For</h2>
+    <p class="values-sub">The values behind every piece we create</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🌴</div>
+        <div class="value-title">Florida First</div>
+        <div class="value-text">Everything we do celebrates the beauty, culture, and community of Florida's coastal lifestyle.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">✨</div>
+        <div class="value-title">Elevated Style</div>
+        <div class="value-text">Premium design that looks as beautiful off the court as it does on it. Never generic. Always refined.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🏓</div>
+        <div class="value-title">Community</div>
+        <div class="value-text">Pickleball brings people together. We celebrate that spirit in everything we create and every event we support.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌸</div>
+        <div class="value-title">Quality Always</div>
+        <div class="value-text">Every product is premium. No shortcuts. No compromises. Just beautiful coastal style delivered with care.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOUNDER -->
+<div class="founder-section">
+  <p class="section-eyebrow">Meet The Founder</p>
+  <div class="founder-grid">
+    <div class="founder-img-box">🌴</div>
+    <div>
+      <p class="founder-eyebrow">Founder & Creative Director</p>
+      <h2 class="founder-name">Monique Hawkins</h2>
+      <p class="founder-title">Founder &bull; Designer &bull; Florida Lifestyle Enthusiast</p>
+      <p class="founder-bio">Monique Hawkins is a technology instructional specialist, entrepreneur, and creative visionary with a passion for bringing coastal elegance to the pickleball court. Based in Louisiana with deep roots in Florida's vibrant lifestyle culture, Monique saw an opportunity to create something the pickleball world was missing — a luxury lifestyle brand that celebrates the sophistication, warmth, and social spirit of the women who make this sport so special.</p>
+      <br />
+      <p class="founder-bio">With a background in design, digital technology, and e-commerce, Monique built Pickleball Florida USA from the ground up — from the brand identity and product design to the website and community. Her vision is simple: create gear that makes women feel as beautiful on the court as they do everywhere else in their lives.</p>
+      <br />
+      <p class="founder-bio"><em>"Serve Style. Live Florida."</em> — those four words say everything about who we are and what we believe.</p>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-number">800+</div>
+      <div class="stat-label">Florida Courts Listed</div>
+    </div>
+    <div>
+      <div class="stat-number">9</div>
+      <div class="stat-label">Signature Products</div>
+    </div>
+    <div>
+      <div class="stat-number">12</div>
+      <div class="stat-label">Major Tournaments Tracked</div>
+    </div>
+    <div>
+      <div class="stat-number">6</div>
+      <div class="stat-label">Charity Partners</div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION STRIP -->
+<div class="mission-strip">
+  <h2>Join The Coastal Circle</h2>
+  <p>Pickleball Florida USA is more than a shop. It is a community of stylish, active, joyful women who love Florida, love pickleball, and love living beautifully. We are so glad you are here.</p>
+  <a href="shop.html" class="mission-btn">Shop The Collection</a>
+  <a href="courts.html" class="mission-btn-outline">Find Florida Courts</a>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="../index.html">Home</a><a href="shop.html">Shop</a><a href="courts.html">Courts</a><a href="tournaments.html">Tournaments</a><a href="about.html">About</a><a href="#">Contact</a>
+  </div>
+  <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle &middot; Serve Style. Live Florida.</p>
+</div>
+
+</body>
+</html>
