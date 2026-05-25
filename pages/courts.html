@@ -39,14 +39,19 @@
   .region-btn:hover, .region-btn.active { background: var(--navy); color: var(--cream); }
   .results-section { padding: 2rem 2.5rem 4rem; max-width: 900px; margin: 0 auto; }
   .results-header { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1.5rem; }
-  .court-card { background: #fff; border-radius: 4px; padding: 1.5rem; margin-bottom: 1.2rem; border: 1px solid rgba(22,50,79,0.08); border-left: 4px solid var(--coral); }
-  .court-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; color: var(--navy); margin-bottom: 0.3rem; }
-  .court-address { font-size: 0.8rem; color: var(--navy); opacity: 0.6; margin-bottom: 0.75rem; }
-  .court-meta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .courts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .court-card { background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid rgba(22,50,79,0.08); transition: transform 0.2s; }
+  .court-card:hover { transform: translateY(-4px); }
+  .court-photo { height: 180px; overflow: hidden; background: var(--navy); display: flex; align-items: center; justify-content: center; }
+  .court-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .court-photo-placeholder { font-size: 3rem; opacity: 0.3; }
+  .court-body { padding: 1.2rem; border-top: 3px solid var(--coral); }
+  .court-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 400; color: var(--navy); margin-bottom: 0.3rem; }
+  .court-address { font-size: 0.78rem; color: var(--navy); opacity: 0.6; margin-bottom: 0.75rem; line-height: 1.5; }
+  .court-meta { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 0.75rem; }
   .court-rating { font-size: 0.8rem; color: var(--coral); font-weight: 500; }
   .open { color: var(--green); font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
   .closed { color: var(--coral); font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
-  .court-actions { margin-top: 1rem; }
   .directions-btn { background: var(--navy); color: var(--cream); padding: 0.4rem 1rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; display: inline-block; }
   .directions-btn:hover { background: var(--coral); }
   .loading { text-align: center; padding: 3rem; }
@@ -108,7 +113,7 @@
 <div class="results-section">
   <div id="results-header" class="results-header"></div>
   <div id="loading" class="loading" style="display:none"><p>Finding courts near you...</p></div>
-  <div id="results"></div>
+  <div id="results" class="courts-grid"></div>
 </div>
 
 <div class="footer">
@@ -139,20 +144,41 @@ function initMap() {
   service = new google.maps.places.PlacesService(map);
 
   map.addListener('click', function(event) {
-    const lat = event.latLng.lat();
-    const lng = event.latLng.lng();
-    searchNearLocation(lat, lng, 'selected location');
+    searchNearLocation(event.latLng.lat(), event.latLng.lng(), 'selected location');
   });
 
   searchByCoords(26.1420, -81.7948, 'Naples');
 }
 
 function searchByCoords(lat, lng, cityName) {
-  document.querySelectorAll('.region-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.region-btn').forEach(function(b) { b.classList.remove('active'); });
   document.getElementById('cityInput').value = cityName;
   map.setCenter({ lat: lat, lng: lng });
   map.setZoom(12);
   searchNearLocation(lat, lng, cityName);
+}
+
+function searchCourts() {
+  var input = document.getElementById('cityInput').value.trim();
+  if (!input) return;
+
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('results').innerHTML = '';
+  document.getElementById('results-header').textContent = '';
+  clearMarkers();
+
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ address: input + ' Florida' }, function(results, status) {
+    if (status === 'OK' && results[0]) {
+      var loc = results[0].geometry.location;
+      map.setCenter(loc);
+      map.setZoom(12);
+      searchNearLocation(loc.lat(), loc.lng(), input);
+    } else {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('results-header').textContent = 'Location not found. Please try another city or ZIP code.';
+    }
+  });
 }
 
 function searchNearLocation(lat, lng, locationName) {
@@ -161,7 +187,7 @@ function searchNearLocation(lat, lng, locationName) {
   document.getElementById('results-header').textContent = '';
   clearMarkers();
 
-  const request = {
+  var request = {
     location: new google.maps.LatLng(lat, lng),
     radius: 10000,
     keyword: 'pickleball court'
@@ -169,7 +195,6 @@ function searchNearLocation(lat, lng, locationName) {
 
   service.nearbySearch(request, function(results, status) {
     document.getElementById('loading').style.display = 'none';
-
     if (status === google.maps.places.PlacesServiceStatus.OK && results.length > 0) {
       displayCourts(results, locationName);
     } else {
@@ -188,40 +213,18 @@ function searchNearLocation(lat, lng, locationName) {
   });
 }
 
-function searchCourts() {
-  const input = document.getElementById('cityInput').value.trim();
-  if (!input) return;
-
-  document.getElementById('loading').style.display = 'block';
-  document.getElementById('results').innerHTML = '';
-  document.getElementById('results-header').textContent = '';
-  clearMarkers();
-
-  const geocoder = new google.maps.Geocoder();
-  geocoder.geocode({ address: input + ' Florida' }, function(results, status) {
-    if (status === 'OK' && results[0]) {
-      const loc = results[0].geometry.location;
-      map.setCenter(loc);
-      map.setZoom(12);
-      searchNearLocation(loc.lat(), loc.lng(), input);
-    } else {
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('results-header').textContent = 'Location not found. Please try another city or ZIP code.';
-    }
-  });
-}
-
 function displayCourts(places, locationName) {
   document.getElementById('results-header').textContent = places.length + ' courts found near ' + locationName;
+  var resultsDiv = document.getElementById('results');
+  resultsDiv.innerHTML = '';
 
-  const resultsDiv = document.getElementById('results');
-  resultsDiv.innerHTML = places.map(function(place) {
-    const rating = place.rating ? '★ ' + place.rating + ' (' + (place.user_ratings_total || 0) + ' reviews)' : 'No reviews yet';
-    const status = place.opening_hours ? (place.opening_hours.open_now ? '<span class="open">Open Now</span>' : '<span class="closed">Closed</span>') : '';
-    const address = place.vicinity || place.formatted_address || '';
-    const mapsUrl = 'https://www.google.com/maps/place/?q=place_id:' + place.place_id;
+  places.forEach(function(place) {
+    var rating = place.rating ? '★ ' + place.rating + ' (' + (place.user_ratings_total || 0) + ' reviews)' : 'No reviews yet';
+    var status = place.opening_hours ? (place.opening_hours.open_now ? '<span class="open">Open Now</span>' : '<span class="closed">Closed</span>') : '';
+    var address = place.vicinity || place.formatted_address || '';
+    var mapsUrl = 'https://www.google.com/maps/place/?q=place_id:' + place.place_id;
 
-    const marker = new google.maps.Marker({
+    var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location,
       title: place.name,
@@ -236,18 +239,30 @@ function displayCourts(places, locationName) {
     });
     markers.push(marker);
 
-    return '<div class="court-card">' +
-      '<div class="court-name">' + place.name + '</div>' +
-      '<div class="court-address">' + address + '</div>' +
-      '<div class="court-meta">' +
-        '<span class="court-rating">' + rating + '</span>' +
-        '<span class="court-status">' + status + '</span>' +
-      '</div>' +
-      '<div class="court-actions">' +
+    var card = document.createElement('div');
+    card.className = 'court-card';
+
+    var photoHtml = '';
+    if (place.photos && place.photos.length > 0) {
+      var photoUrl = place.photos[0].getUrl({ maxWidth: 400, maxHeight: 200 });
+      photoHtml = '<div class="court-photo"><img src="' + photoUrl + '" alt="' + place.name + '" loading="lazy" /></div>';
+    } else {
+      photoHtml = '<div class="court-photo"><div class="court-photo-placeholder">🏓</div></div>';
+    }
+
+    card.innerHTML = photoHtml +
+      '<div class="court-body">' +
+        '<div class="court-name">' + place.name + '</div>' +
+        '<div class="court-address">' + address + '</div>' +
+        '<div class="court-meta">' +
+          '<span class="court-rating">' + rating + '</span>' +
+          status +
+        '</div>' +
         '<a href="' + mapsUrl + '" target="_blank" class="directions-btn">Get Directions</a>' +
-      '</div>' +
-    '</div>';
-  }).join('');
+      '</div>';
+
+    resultsDiv.appendChild(card);
+  });
 }
 
 function clearMarkers() {
