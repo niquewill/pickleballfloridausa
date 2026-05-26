@@ -429,68 +429,80 @@
   <p>We believe pickleball is more than a sport — it's a lifestyle. Every piece in our collection is chosen to reflect the sophistication, warmth, and spirit of Florida's coastal communities.</p>
   <div class="products">
     <div class="product">
-      <div class="product-img">🏓</div>
-      <div class="product-body">
+<div class="product-img"><img src="images/tee-turquoise-front.png" alt="Palm Paddle Tee" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div class="product-info">
         <span class="tag">Best Seller</span>
-        <h4>Palm Beach Signature Paddle</h4>
-        <span class="price">$129</span>
-        <a href="pages/shop.html" class="shop-link">Add to Cart</a>
+        <h4>Palm Paddle Tee &mdash; Turquoise</h4>
+        <span class="price">$23.95</span>
+        <a href="https://www.etsy.com/listing/4510739795/palm-paddle-tee-turquoise" target="_blank" class="shop-link">Shop Now</a>
       </div>
     </div>
     <div class="product">
-      <div class="product-img">👜</div>
-      <div class="product-body">
-        <span class="tag">New Arrival</span>
-        <h4>Coastal Court Tote</h4>
-        <span class="price">$89</span>
-        <a href="pages/shop.html" class="shop-link">Add to Cart</a>
-      </div>
-    </div>
-    <div class="product">
-      <div class="product-img">🧢</div>
-      <div class="product-body">
+      <div class="product-img"><img src="images/tote-front.png" alt="Coastal Court Tote" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div class="product-info">
         <span class="tag">Staff Pick</span>
-        <h4>Resort Visor &mdash; Coral</h4>
-        <span class="price">$48</span>
-        <a href="pages/shop.html" class="shop-link">Add to Cart</a>
+        <h4>Coastal Court Tote</h4>
+        <span class="price">$52.00</span>
+        <a href="https://www.etsy.com/listing/4510739864/coastal-court-tote" target="_blank" class="shop-link">Shop Now</a>
       </div>
     </div>
     <div class="product">
-      <div class="product-img">🎁</div>
-      <div class="product-body">
+      <div class="product-img"><img src="images/coastal-tank-turquoise.png" alt="Coastal Serve Tank" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div class="product-info">
+        <span class="tag">New Arrival</span>
+        <h4>Coastal Serve Tank &mdash; Turquoise</h4>
+        <span class="price">$22.95</span>
+        <a href="https://www.etsy.com/listing/4510739271/coastal-serve-tank-turquoise" target="_blank" class="shop-link">Shop Now</a>
+      </div>
+    </div>
+    <div class="product">
+      <div class="product-img"><img src="images/coastal-waterbottle-front.png" alt="Coastal Hydration Bottle" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div class="product-info">
         <span class="tag">Gift Ready</span>
-        <h4>The Sunshine Starter Set</h4>
-        <span class="price">$199</span>
-        <a href="pages/shop.html" class="shop-link">Add to Cart</a>
+        <h4>Coastal Hydration Bottle</h4>
+        <span class="price">$27.00</span>
+        <a href="https://www.etsy.com/listing/4510740360/coastal-hydration-bottle-florida-edition" target="_blank" class="shop-link">Shop Now</a>
       </div>
     </div>
   </div>
 </div>
 
 <!-- TESTIMONIALS -->
-<div class="testimonials">
-  <div class="testi-inner">
+<div class="testi-inner">
     <p class="section-eyebrow">From Our Community</p>
     <h2 class="section-title">Players Who Play Beautifully</h2>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <p>"Finally a pickleball brand that matches the lifestyle. I feel like I'm shopping at a boutique, not a sporting goods store."</p>
-        <strong>Sandra M.</strong><br>
-        <span>Naples, FL</span>
-      </div>
-      <div class="testi-card">
-        <p>"The paddle quality is exceptional and the bag is gorgeous. I get compliments every time I walk onto the court."</p>
-        <strong>Diane R.</strong><br>
-        <span>Boca Raton, FL</span>
-      </div>
-      <div class="testi-card">
-        <p>"Ordered the gift set for my club's holiday party. Everyone was obsessed. This is the only pickleball brand I recommend."</p>
-        <strong>Carol T.</strong><br>
-        <span>Sarasota, FL</span>
-      </div>
-    </div>
+    <div class="testi-grid" id="testi-grid"></div>
   </div>
-</div>
+  <script>
+  var testimonials = [
+    { quote: "Finally a pickleball brand that matches the lifestyle. I feel like I'm shopping at a boutique, not a sporting goods store.", name: "Sandra M.", location: "Naples, FL" },
+    { quote: "The paddle quality is exceptional and the bag is gorgeous. I get compliments every time I walk onto the court.", name: "Diane R.", location: "Boca Raton, FL" },
+    { quote: "Ordered the gift set for my club's holiday party. Everyone was obsessed. This is the only pickleball brand I recommend.", name: "Carol T.", location: "Sarasota, FL" },
+    { quote: "The tote bag is everything. I carry it to the court, to brunch, everywhere. People always ask where I got it.", name: "Patricia W.", location: "Palm Beach, FL" },
+    { quote: "These shirts are so well made and the fit is perfect. Finally something that looks good both on and off the court.", name: "Jennifer L.", location: "Sarasota, FL" },
+    { quote: "I bought the starter set as a gift and my friend called me immediately after opening it. She was absolutely thrilled.", name: "Margaret B.", location: "Fort Lauderdale, FL" },
+    { quote: "The quality blew me away. This is not your average pickleball gear. It feels like a luxury brand because it is.", name: "Susan K.", location: "Jupiter, FL" },
+    { quote: "I play four times a week and get compliments on my Pickleball Florida gear every single time. Worth every penny.", name: "Linda H.", location: "The Villages, FL" },
+    { quote: "My doubles partner and I both ordered matching tees and the court went wild. We felt like celebrities.", name: "Barbara A.", location: "Ponte Vedra, FL" },
+    { quote: "Shipped fast, quality is incredible, and the design is exactly what Florida pickleball needed. Love this brand.", name: "Donna M.", location: "Naples, FL" },
+    { quote: "I ordered for myself and ended up ordering three more as gifts. Everyone on my club team wants one now.", name: "Karen P.", location: "Boca Raton, FL" },
+    { quote: "This is the brand I have been waiting for. Stylish, coastal, and made for women who take their game seriously.", name: "Deborah S.", location: "Sarasota, FL" }
+  ];
+
+  function shuffle(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;
+    }
+    return arr;
+  }
+
+  var picked = shuffle(testimonials.slice()).slice(0, 3);
+  var grid = document.getElementById('testi-grid');
+  grid.innerHTML = picked.map(function(t) {
+    return '<div class="testi-card"><p>"' + t.quote + '"</p><strong>' + t.name + '</strong><br><span>' + t.location + '</span></div>';
+  }).join('');
+  </script></div>
 
 <!-- EMAIL SIGNUP -->
 <div class="email-strip">
