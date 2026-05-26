@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gear | Pickleball Florida USA</title>
+<meta name="description" content="Shop premium pickleball gear — paddles, shoes, sunglasses, balls and more. Curated by Pickleball Florida USA for the coastal lifestyle player." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --coral: #FF6F61; --turquoise: #2CCCD3; --green: #2E8B57; --cream: #FFF7EB; --navy: #16324F; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
+  nav { background: var(--navy); padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .logo-wrap a { text-decoration: none; }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 1px; }
+  .logo-sub { font-size: 0.6rem; color: var(--turquoise); letter-spacing: 4px; text-transform: uppercase; display: block; margin-top: 2px; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
+  .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--coral); }
+  .hero { background: var(--navy); padding: 3rem 2.5rem; text-align: center; }
+  .hero p { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1rem; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--cream); font-weight: 400; }
+  .hero h1 em { font-style: italic; color: var(--coral); }
+  .hero-sub { font-size: 0.85rem; color: var(--cream); opacity: 0.6; margin-top: 1rem; font-weight: 300; }
+  .wave { display: block; background: var(--navy); line-height: 0; }
+  .wave svg { display: block; width: 100%; }
+  .disclaimer { background: #fff; border-left: 4px solid var(--turquoise); padding: 1rem 1.5rem; max-width: 1100px; margin: 2rem auto 0; font-size: 0.78rem; color: var(--navy); opacity: 0.7; line-height: 1.6; }
+  .filters { padding: 1.5rem 2.5rem 0; max-width: 1100px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .filter-btn { background: transparent; border: 1px solid var(--navy); color: var(--navy); padding: 0.4rem 1.2rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Montserrat', sans-serif; }
+  .filter-btn.active, .filter-btn:hover { background: var(--navy); color: var(--cream); }
+  .gear-section { padding: 2rem 2.5rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(22,50,79,0.1); }
+  .gear-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+  .gear-card { background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid rgba(22,50,79,0.08); transition: transform 0.2s; }
+  .gear-card:hover { transform: translateY(-4px); }
+  .gear-badge { position: absolute; top: 1rem; left: 1rem; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; color: #fff; z-index: 1; }
+  .badge-premium { background: var(--navy); }
+  .badge-bestseller { background: var(--coral); }
+  .badge-beginner { background: var(--green); }
+  .badge-set { background: var(--turquoise); color: var(--navy); }
+  .gear-img-box { height: 200px; background: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative; }
+  .gear-body { padding: 1.2rem; border-top: 3px solid var(--coral); }
+  .gear-brand { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.3rem; }
+  .gear-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 400; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.4; }
+  .gear-desc { font-size: 0.75rem; color: var(--navy); opacity: 0.6; line-height: 1.6; margin-bottom: 0.75rem; }
+  .gear-footer { display: flex; justify-content: space-between; align-items: center; }
+  .gear-tag { font-size: 0.65rem; color: var(--navy); opacity: 0.5; letter-spacing: 1px; text-transform: uppercase; }
+  .shop-btn { background: var(--navy); color: var(--cream); padding: 0.5rem 1.2rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; display: inline-block; }
+  .shop-btn:hover { background: var(--coral); }
+  .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
+  .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
+  @media (max-width: 600px) { .gear-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-wrap"><a href="../index.html"><span class="logo-text">Pickleball Florida USA</span><span class="logo-sub">Coastal Lifestyle Collection</span></a></div>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="gear.html" class="active">Gear</a>
+    <a href="courts.html">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <p>Curated For The Coastal Player</p>
+  <h1>Premium <em>Pickleball Gear</em></h1>
+  <p class="hero-sub">Hand-selected paddles, shoes, sunglasses, and accessories for players who refuse to sacrifice style for sport.</p>
+</div>
+<div class="wave"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60"><path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/></svg></div>
+
+<div class="disclaimer">
+  &#9432; As an Amazon Associate, Pickleball Florida USA earns from qualifying purchases. This means if you click a link and make a purchase, we may earn a small commission at no extra cost to you. We only recommend gear we genuinely love and believe in.
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="filterGear('all', this)">All Gear</button>
+  <button class="filter-btn" onclick="filterGear('paddle', this)">Paddles</button>
+  <button class="filter-btn" onclick="filterGear('shoes', this)">Shoes</button>
+  <button class="filter-btn" onclick="filterGear('sunglasses', this)">Sunglasses</button>
+  <button class="filter-btn" onclick="filterGear('balls', this)">Balls</button>
+  <button class="filter-btn" onclick="filterGear('sets', this)">Sets & Nets</button>
+</div>
+
+<div class="gear-section">
+
+  <!-- PADDLES -->
+  <p class="section-label">Paddles — From Beginner to Pro</p>
+  <div class="gear-grid">
+
+    <div class="gear-card" data-type="paddle">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-premium">Premium</span>
+        🏓
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">Selkirk Sport</div>
+        <div class="gear-name">SLK Helix Pro — Carbon Fiber & Fiberglass Hybrid</div>
+        <div class="gear-desc">Thermoformed carbon fiber face for unmatched control. Designed for serious players who demand precision on every shot.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Advanced</span>
+          <a href="https://amzn.to/4uwilqq" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="paddle">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-premium">Premium</span>
+        🏓
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">TENVINA</div>
+        <div class="gear-name">T700SC Textured Carbon Fiber Paddle</div>
+        <div class="gear-desc">Multi-layer T700SC carbon fiber with strong spin and power surface. USAPA approved. Available in 4 shapes and thicknesses.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Advanced</span>
+          <a href="https://amzn.to/49hTs9E" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="paddle">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-bestseller">Best Seller</span>
+        🏓
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">JOOLA</div>
+        <div class="gear-name">Astral Perseus — Carbon Fiber with NFC Chip</div>
+        <div class="gear-desc">Beginner friendly lightweight paddle with carbon fiber sandblasted surface for spin and control. Moisture-wicking grip. NFC chip enabled.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Beginner — Intermediate</span>
+          <a href="https://amzn.to/49pmSCK" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="paddle">
+      <div class="gear-img-box">
+        🏓
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">JOOLA</div>
+        <div class="gear-name">Stratos — Lightweight Fiberglass with Large Sweet Spot</div>
+        <div class="gear-desc">Polypropylene core with fiberglass face for added control. USAPA approved. Multiple color options. Perfect for all skill levels.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">All Levels</span>
+          <a href="https://amzn.to/4e5nxvy" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="paddle">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-beginner">Beginner</span>
+        🏓
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">Generic</div>
+        <div class="gear-name">USAPA Approved Fiberglass Pickleball Rackets — Set of 2 or 4</div>
+        <div class="gear-desc">Affordable fiberglass surface rackets for men and women. Great starter option. Available as single paddle or set of 2 or 4.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Beginner</span>
+          <a href="https://amzn.to/3PKiJ5E" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHOES -->
+  <p class="section-label">Shoes — Court Ready & Coastal Stylish</p>
+  <div class="gear-grid">
+
+    <div class="gear-card" data-type="shoes">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-premium">Women</span>
+        👟
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">ASICS</div>
+        <div class="gear-name">Gel-Resolution X Tennis Shoes — Women's</div>
+        <div class="gear-desc">Premium court shoe with superior lateral support and grip. Designed for quick court movements. Perfect for pickleball on Florida hard courts.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Court Shoe</span>
+          <a href="https://amzn.to/4wK88YZ" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="shoes">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-premium">Women</span>
+        👟
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">ASICS</div>
+        <div class="gear-name">Gel-Nimbus 28 Running Shoes — Women's</div>
+        <div class="gear-desc">Premium cushioning and comfort for all day wear. Great for players who want comfort on and off the court.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Comfort</span>
+          <a href="https://amzn.to/4wWPhu3" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="shoes">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-bestseller">Women</span>
+        👟
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">ASICS</div>
+        <div class="gear-name">Gel-Pulse 17 Running Shoes — Women's</div>
+        <div class="gear-desc">Lightweight and responsive with Gel cushioning technology. Comfortable for extended court sessions in Florida heat.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Lightweight</span>
+          <a href="https://amzn.to/4uC0Uow" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="shoes">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-premium">Men</span>
+        👟
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">ASICS</div>
+        <div class="gear-name">Gel-Dedicate 8 Pickleball Shoes — Men's</div>
+        <div class="gear-desc">Purpose-built pickleball shoe with Gel cushioning and durable outsole. Designed specifically for pickleball court surfaces.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Pickleball Specific</span>
+          <a href="https://amzn.to/4dMdDxM" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="shoes">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-bestseller">Men</span>
+        👟
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">K-Swiss</div>
+        <div class="gear-name">Express Light Pickleball Shoe — Men's</div>
+        <div class="gear-desc">Lightweight court shoe built for speed and agility. Excellent lateral stability for quick pickleball movements.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Pickleball Specific</span>
+          <a href="https://amzn.to/4a7es2Y" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="shoes">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-premium">Men</span>
+        👟
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">ASICS</div>
+        <div class="gear-name">Gel-Contend 9 Running Shoes — Men's</div>
+        <div class="gear-desc">Reliable everyday trainer with Gel cushioning. Comfortable support for active Florida lifestyle players.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Comfort</span>
+          <a href="https://amzn.to/4wR1bW3" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SUNGLASSES -->
+  <p class="section-label">Sunglasses — Florida Sun Protection With Style</p>
+  <div class="gear-grid">
+
+    <div class="gear-card" data-type="sunglasses">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-premium">Premium</span>
+        🕶️
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">Oakley</div>
+        <div class="gear-name">Flak 2.0 XL Rectangle Sunglasses</div>
+        <div class="gear-desc">High-performance sport sunglasses with Prizm lens technology. UV protection and wrap-around fit perfect for Florida outdoor courts.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Men & Women</span>
+          <a href="https://amzn.to/4dx1Pk9" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="sunglasses">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-premium">Premium</span>
+        🕶️
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">Oakley</div>
+        <div class="gear-name">Radar EV Path Shield Sunglasses</div>
+        <div class="gear-desc">Iconic shield design with extended field of view. Lightweight O-Matter frame. Superior eye protection for outdoor Florida pickleball.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Men & Women</span>
+          <a href="https://amzn.to/4uwtOWX" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BALLS -->
+  <p class="section-label">Balls — Tournament Quality</p>
+  <div class="gear-grid">
+
+    <div class="gear-card" data-type="balls">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-premium">Tournament</span>
+        🥎
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">Selkirk Sport</div>
+        <div class="gear-name">Pro S1 Outdoor Pickleball Balls — USAPA Approved</div>
+        <div class="gear-desc">Crack-resistant with advanced aerodynamics. 38-hole design for outdoor tournament play. The choice of serious Florida players.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Outdoor Tournament</span>
+          <a href="https://amzn.to/3Prmz3A" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SETS & NETS -->
+  <p class="section-label">Sets & Nets — Everything You Need To Play</p>
+  <div class="gear-grid">
+
+    <div class="gear-card" data-type="sets">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-set">Complete Set</span>
+        🏸
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">JOOLA</div>
+        <div class="gear-name">Pickleball Paddles Set — 2 Rackets, Balls & Carry Bag</div>
+        <div class="gear-desc">Complete starter set with reinforced fiberglass paddles, balls, and storage bag. USAPA approved. Perfect gift for new players.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Beginner Set</span>
+          <a href="https://amzn.to/4ducqMF" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="sets">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-set">Complete Set</span>
+        🏸
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">niupipo</div>
+        <div class="gear-name">Pickleball Set of 2 or 4 with Balls and Bag</div>
+        <div class="gear-desc">USAPA approved fiberglass set with polypropylene honeycomb core paddles, balls, and bag. Lightweight and beginner friendly.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Family Set</span>
+          <a href="https://amzn.to/3RtgxA2" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="sets">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-set">Net System</span>
+        🏁
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">Portable Net</div>
+        <div class="gear-name">22FT Regulation Pickleball Net with Paddles Set & Bag</div>
+        <div class="gear-desc">Full regulation size portable net with paddles, outdoor balls, and carry bag. Easy setup for backyard, driveway, or court. Perfect Florida gift.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Complete System</span>
+          <a href="https://amzn.to/3RtvhyY" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="sets">
+      <div class="gear-img-box">
+        <span class="gear-badge badge-set">Premium Set</span>
+        🏸
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">Selkirk Sport</div>
+        <div class="gear-name">SLK Pickleball Paddles Set of 2</div>
+        <div class="gear-desc">Choose from SLK Neo Graphite, Neo Fiberglass, or Atlas Bundle. Designed in the USA. Premium quality for serious players.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Premium Set</span>
+          <a href="https://amzn.to/4fBIU96" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gear-card" data-type="sets">
+      <div class="gear-img-box">
+        🪧
+      </div>
+      <div class="gear-body">
+        <div class="gear-brand">Court Signage</div>
+        <div class="gear-name">2026 Official Pickleball Rules Sign — 12x18 Metal</div>
+        <div class="gear-desc">Durable aluminum waterproof rules sign for courts, gyms, and rec centers. Fade resistant. Perfect for Florida outdoor courts and clubs.</div>
+        <div class="gear-footer">
+          <span class="gear-tag">Court Accessory</span>
+          <a href="https://amzn.to/4dPiDBN" target="_blank" class="shop-btn">Shop Amazon</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="../index.html">Home</a><a href="shop.html">Shop</a><a href="gear.html">Gear</a><a href="courts.html">Courts</a><a href="tournaments.html">Tournaments</a><a href="about.html">About</a>
+  </div>
+  <p>&copy; 2025 PickleballFloridaUSA.com &middot; Amazon Associate &middot; Coastal Pickleball Lifestyle</p>
+</div>
+
+<script>
+function filterGear(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.gear-card').forEach(function(card) {
+    card.style.display = (type === 'all' || card.dataset.type === type) ? 'block' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
