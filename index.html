@@ -508,48 +508,26 @@
 <div class="email-strip">
   <h2>Join The Coastal Circle</h2>
   <p>Exclusive access to new collections, Florida tournament news, and members-only offers. No spam &mdash; ever.</p>
-<style>
-  #sib-container input::placeholder { font-family: 'Montserrat', sans-serif; color: #c0ccda; }
-  #sib-container a { text-decoration: underline; color: #2CCCD3; }
-</style>
-<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
-<div class="sib-form" style="text-align:center; background-color:transparent;">
-  <div id="sib-form-container" class="sib-form-container">
-    <div id="error-message" class="sib-form-message-panel" style="font-family:'Montserrat',sans-serif; font-size:14px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px; max-width:540px; margin:0 auto;">
-      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-        <span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
-      </div>
-    </div>
-    <div id="success-message" class="sib-form-message-panel" style="font-family:'Montserrat',sans-serif; font-size:14px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:3px; max-width:540px; margin:0 auto;">
-      <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-        <span class="sib-form-message-panel__inner-text">You are in. Welcome to the Coastal Circle.</span>
-      </div>
-    </div>
-<div id="sib-container" style="max-width:500px; margin:0 auto; direction:ltr">
-<form id="sib-form" method="POST" action="https://c8fbe7fc.sibforms.com/serve/MUIFAP3xhPHl9UFeyPIz2ya1etYh9nOvZY_of12LhroK1z8rlPiWQiB4y16Lu4a7mS_G3xcSbhIb9_rS3z_AJbnkfhKqtizT6pNgqIR_8yfJc1PaawrZ01y94EJoZWWEDGuxdBpmf0RI85w8CPVy39LlvVBrZHrvPwLSe7as4Fe893wiNtQVrrBOQs-1X7TFa6TznK2Z6AuxbAmy0w==" onsubmit="return handleSubmit(event)" style="display:flex; max-width:420px; margin:0 auto;">    <input type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your email address" required style="flex:1; padding:0.85rem 1.2rem; border:none; font-size:0.85rem; font-family:'Montserrat',sans-serif; background:#FFF7EB; color:#16324F;" />
+  <form id="sib-form" method="POST" action="https://c8fbe7fc.sibforms.com/serve/MUIFAP3xhPHl9UFeyPIz2ya1etYh9nOvZY_of12LhroK1z8rlPiWQiB4y16Lu4a7mS_G3xcSbhIb9_rS3z_AJbnkfhKqtizT6pNgqIR_8yfJc1PaawrZ01y94EJoZWWEDGuxdBpmf0RI85w8CPVy39LlvVBrZHrvPwLSe7as4Fe893wiNtQVrrBOQs-1X7TFa6TznK2Z6AuxbAmy0w==" onsubmit="return handleSubmit(event)" class="email-form">
+    <input type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your email address" required />
     <input type="text" name="email_address_check" value="" style="display:none;">
     <input type="hidden" name="locale" value="en">
-    <input type="hidden" name="redirectionUrl" value="https://www.pickleballfloridausa.com">
-    <button type="submit" style="background:#FF6F61; color:#fff; border:none; padding:0.85rem 1.5rem; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; font-family:'Montserrat',sans-serif;">JOIN</button>
+    <button type="submit">JOIN</button>
   </form>
+  <p id="success-msg" style="display:none; color:#2CCCD3; margin-top:1rem; letter-spacing:2px; text-transform:uppercase;">🎉 You are in! Welcome to the Coastal Circle.</p>
 </div>
+
 <script>
 function handleSubmit(e) {
   e.preventDefault();
   var form = document.getElementById('sib-form');
   var email = document.getElementById('EMAIL').value;
   if (!email) return false;
-  var url = form.action;
   var formData = new FormData(form);
-  fetch(url, { method: 'POST', body: formData, mode: 'no-cors' })
+  fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' })
   .then(function() {
     form.style.display = 'none';
-    document.getElementById('EMAIL').value = '';
-    var msg = document.createElement('p');
-    msg.innerHTML = '🎉 You are in! Welcome to the Coastal Circle.';
-    msg.style.cssText = 'color:#2CCCD3; font-size:1rem; letter-spacing:2px; text-transform:uppercase; font-family:Montserrat,sans-serif;';
-    form.parentNode.appendChild(msg);
+    document.getElementById('success-msg').style.display = 'block';
   });
   return false;
 }
