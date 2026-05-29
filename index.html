@@ -526,15 +526,22 @@
         <span class="sib-form-message-panel__inner-text">You are in. Welcome to the Coastal Circle.</span>
       </div>
     </div>
-    <div id="sib-container" style="max-width:500px; margin:0 auto; background-color:transparent; border:none; direction:ltr">
-      <form id="sib-form" method="POST" action="https://c8fbe7fc.sibforms.com/serve/MUIFAP3xhPHl9UFeyPIz2ya1etYh9nOvZY_of12LhroK1z8rlPiWQiB4y16Lu4a7mS_G3xcSbhIb9_rS3z_AJbnkfhKqtizT6pNgqIR_8yfJc1PaawrZ01y94EJoZWWEDGuxdBpmf0RI85w8CPVy39LlvVBrZHrvPwLSe7as4Fe893wiNtQVrrBOQs-1X7TFa6TznK2Z6AuxbAmy0w==" data-type="subscription" style="display:flex; max-width:420px; margin:0 auto; border-radius:2px; overflow:hidden;">
-        <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your email address" data-required="true" required style="flex:1; padding:0.85rem 1.2rem; border:none; font-size:0.85rem; font-family:'Montserrat',sans-serif; background:#FFF7EB; color:#16324F;" />
-        <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
-        <input type="hidden" name="locale" value="en">
-        <button type="submit" style="background:#FF6F61; color:#fff; border:none; padding:0.85rem 1.5rem; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; font-family:'Montserrat',sans-serif;">Join</button>
-      </form>
+    <div id="sib-container" class="sib-container--large sib-container--vertical" style="max-width:500px; margin:0 auto; background-color:transparent; border:none; direction:ltr">
+  <form id="sib-form" method="POST" action="https://c8fbe7fc.sibforms.com/serve/MUIFAP3xhPHl9UFeyPIz2ya1etYh9nOvZY_of12LhroK1z8rlPiWQiB4y16Lu4a7mS_G3xcSbhIb9_rS3z_AJbnkfhKqtizT6pNgqIR_8yfJc1PaawrZ01y94EJoZWWEDGuxdBpmf0RI85w8CPVy39LlvVBrZHrvPwLSe7as4Fe893wiNtQVrrBOQs-1X7TFa6TznK2Z6AuxbAmy0w==" data-type="subscription" style="display:flex; max-width:420px; margin:0 auto;">
+    <div class="sib-input sib-form-block" style="flex:1;">
+      <div class="form__entry entry_block">
+        <div class="entry__field">
+          <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your email address" data-required="true" required style="width:100%; padding:0.85rem 1.2rem; border:none; font-size:0.85rem; font-family:'Montserrat',sans-serif; background:#FFF7EB; color:#16324F;" />
+        </div>
+        <label class="entry__error entry__error--primary" style="display:none;"></label>
+      </div>
     </div>
-  </div>
+    <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+    <input type="hidden" name="locale" value="en">
+    <div class="sib-form-block" style="text-align:left;">
+      <button class="sib-form-block__button sib-form-block__button-with-loader" type="submit" form="sib-form" style="background:#FF6F61; color:#fff; border:none; padding:0.85rem 1.5rem; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; font-family:'Montserrat',sans-serif;">JOIN</button>
+    </div>
+  </form>
 </div>
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
