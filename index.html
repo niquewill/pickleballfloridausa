@@ -537,16 +537,19 @@
 <script>
 function handleSubmit(e) {
   e.preventDefault();
+  var form = document.getElementById('sib-form');
   var email = document.getElementById('EMAIL').value;
-  var url = 'https://c8fbe7fc.sibforms.com/serve/MUIFAP3xhPHl9UFeyPIz2ya1etYh9nOvZY_of12LhroK1z8rlPiWQiB4y16Lu4a7mS_G3xcSbhIb9_rS3z_AJbnkfhKqtizT6pNgqIR_8yfJc1PaawrZ01y94EJoZWWEDGuxdBpmf0RI85w8CPVy39LlvVBrZHrvPwLSe7as4Fe893wiNtQVrrBOQs-1X7TFa6TznK2Z6AuxbAmy0w==';
-  var formData = new FormData();
-  formData.append('EMAIL', email);
-  formData.append('email_address_check', '');
-  formData.append('locale', 'en');
+  if (!email) return false;
+  var url = form.action;
+  var formData = new FormData(form);
   fetch(url, { method: 'POST', body: formData, mode: 'no-cors' })
   .then(function() {
-    document.getElementById('success-message').style.display = 'block';
+    form.style.display = 'none';
     document.getElementById('EMAIL').value = '';
+    var msg = document.createElement('p');
+    msg.innerHTML = '🎉 You are in! Welcome to the Coastal Circle.';
+    msg.style.cssText = 'color:#2CCCD3; font-size:1rem; letter-spacing:2px; text-transform:uppercase; font-family:Montserrat,sans-serif;';
+    form.parentNode.appendChild(msg);
   });
   return false;
 }
