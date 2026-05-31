@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Coastal Circle Chronicles | Pickleball Florida USA</title>
+<meta name="description" content="Four Florida pickleball socialites share their court-side dispatches from Palm Beach, Naples, The Villages, and Sarasota. Real courts, real gossip, real Florida." />
+<link rel="icon" type="image/x-icon" href="../images/pfufavicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --coral: #FF6F61;
+    --turquoise: #2CCCD3;
+    --green: #2E8B57;
+    --cream: #FFF7EB;
+    --navy: #16324F;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 1.2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .logo-sub {
+    font-size: 0.6rem;
+    color: var(--turquoise);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--turquoise); }
+  .nav-links a.active { opacity: 1; color: var(--turquoise); }
+
+  /* HERO */
+  .blog-hero {
+    background: var(--navy);
+    padding: 4rem 2.5rem;
+    text-align: center;
+  }
+  .blog-hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--turquoise);
+    margin-bottom: 1rem;
+  }
+  .blog-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--cream);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .blog-hero h1 em { font-style: italic; color: var(--coral); }
+  .blog-hero p {
+    color: var(--cream);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    max-width: 550px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* WAVE */
+  .wave { display: block; background: var(--navy); line-height: 0; }
+  .wave svg { display: block; width: 100%; }
+
+  /* WRITERS STRIP */
+  .writers-strip {
+    background: #fff;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(22,50,79,0.08);
+  }
+  .writers-strip p {
+    font-size: 0.65rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--turquoise);
+    margin-bottom: 2rem;
+  }
+  .writers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .writer-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .writer-pill:hover { transform: translateY(-3px); }
+  .writer-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: 3px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .writer-pill:hover .writer-avatar { border-color: var(--coral); }
+  .avatar-patrice { background: #E8D5C4; }
+  .avatar-nicolette { background: #C4D5E8; }
+  .avatar-vivian { background: #D5E8C4; }
+  .avatar-stella { background: #E8C4D5; }
+  .writer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: var(--navy);
+    font-weight: 400;
+  }
+  .writer-location {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--turquoise);
+  }
+
+  /* BLOG GRID */
+  .blog-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2.5rem;
+  }
+  .blog-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .blog-section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--navy);
+  }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 2rem;
+  }
+
+  /* BLOG CARD */
+  .blog-card {
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(22,50,79,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(22,50,79,0.1);
+  }
+  .blog-card-header {
+    padding: 1.5rem 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .card-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .card-meta { flex: 1; }
+  .card-author {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .card-location {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--turquoise);
+  }
+  .card-date {
+    font-size: 0.7rem;
+    color: var(--navy);
+    opacity: 0.4;
+    letter-spacing: 1px;
+  }
+  .blog-card-body { padding: 1.5rem 2rem 2rem; }
+  .blog-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  .blog-card-title em { font-style: italic; color: var(--coral); }
+  .blog-card-text {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: var(--navy);
+    opacity: 0.8;
+    font-weight: 300;
+  }
+  .blog-card-text p { margin-bottom: 1rem; }
+  .blog-card-text p:last-child { margin-bottom: 0; }
+  .blog-card-footer {
+    padding: 0 2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-tag {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--coral);
+    border: 1px solid var(--coral);
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+  }
+
+  /* LOCATION TAGS */
+  .location-tag {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.4;
+  }
+
+  /* DIVIDER */
+  .section-divider {
+    border: none;
+    border-top: 1px solid rgba(22,50,79,0.08);
+    margin: 0 2.5rem;
+  }
+
+  /* EMAIL STRIP */
+  .email-strip {
+    background: var(--navy);
+    padding: 4rem 2.5rem;
+    text-align: center;
+  }
+  .email-strip h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--cream);
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+  }
+  .email-strip p {
+    color: var(--cream);
+    opacity: 0.7;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+  .email-form {
+    display: flex;
+    max-width: 420px;
+    margin: 0 auto;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .email-form input {
+    flex: 1;
+    padding: 0.85rem 1.2rem;
+    border: none;
+    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+  }
+  .email-form button {
+    background: var(--coral);
+    color: #fff;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+  #blog-success-msg {
+    display: none;
+    color: var(--turquoise);
+    margin-top: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+
+  /* FOOTER */
+  .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
+  .footer .logo-text { display: block; margin-bottom: 1rem; color: var(--cream); font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .footer-links a {
+    color: var(--cream);
+    opacity: 0.5;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
+
+  @media (max-width: 600px) {
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-hero h1 { font-size: 2rem; }
+    .writers-grid { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="../index.html">
+    <span class="logo-text">Pickleball Florida USA</span>
+    <span class="logo-sub">Coastal Lifestyle Collection</span>
+  </a>
+  <div class="nav-links">
+    <a href="shop.html">Shop</a>
+    <a href="courts.html">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <p class="blog-hero-eyebrow">The Coastal Circle Chronicles</p>
+  <h1>Four Women.<br>Four Cities.<br><em>One Obsession.</em></h1>
+  <p>Court-side dispatches from Palm Beach, Naples, The Villages, and Sarasota. Real courts, real people, real Florida pickleball life — served with a side of gossip.</p>
+</div>
+
+<!-- WAVE -->
+<div class="wave">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60">
+    <path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/>
+  </svg>
+</div>
+
+<!-- WRITERS -->
+<div class="writers-strip">
+  <p>Meet Your Correspondents</p>
+  <div class="writers-grid">
+    <div class="writer-pill">
+      <div class="writer-avatar avatar-patrice">🌴</div>
+      <span class="writer-name">Patrice</span>
+      <span class="writer-location">Palm Beach</span>
+    </div>
+    <div class="writer-pill">
+      <div class="writer-avatar avatar-nicolette">🎾</div>
+      <span class="writer-name">Nicolette</span>
+      <span class="writer-location">Naples</span>
+    </div>
+    <div class="writer-pill">
+      <div class="writer-avatar avatar-vivian">🏘️</div>
+      <span class="writer-name">Vivian</span>
+      <span class="writer-location">The Villages</span>
+    </div>
+    <div class="writer-pill">
+      <div class="writer-avatar avatar-stella">🌊</div>
+      <span class="writer-name">Stella</span>
+      <span class="writer-location">Sarasota</span>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG POSTS -->
+<div class="blog-section">
+  <div class="blog-section-header">
+    <h2>Latest Dispatches</h2>
+    <span class="location-tag">May 2026</span>
+  </div>
+
+  <div class="blog-grid">
+
+    <!-- PATRICE -->
+    <div class="blog-card">
+      <div class="blog-card-header">
+        <div class="card-avatar avatar-patrice">🌴</div>
+        <div class="card-meta">
+          <div class="card-author">Patrice Waverly-Fontaine</div>
+          <div class="card-location">Palm Beach, FL</div>
+        </div>
+        <div class="card-date">May 26</div>
+      </div>
+      <div class="blog-card-body">
+        <h3 class="blog-card-title">The Courts Are Back and <em>So Are We</em></h3>
+        <div class="blog-card-text">
+          <p>The Phipps Ocean Park courts got resurfaced last week and Bunny called me before my coffee was even finished to deliver this news like it was a stock tip. By nine o'clock we were out there and I will say — the new surface is extraordinary. Geoffrey thinks I'm being dramatic but Geoffrey also plays golf at Seminole and has never once had to negotiate court time with a retired dermatologist from Boca who shows up twenty minutes early to every open play and then complains about the wind. I wore my new Loro Piana sun hat and not a single person commented on it, which tells me everything I need to know about where we are culturally.</p>
+          <p>Bunny and I grabbed lunch at Ta-boo after and she told me — in complete confidence, which is why I'm sharing it here — that the couple who used to dominate the Tuesday round robin at Bath & Tennis have apparently switched to tennis. Tennis. At their age. I said a prayer for them and ordered the crab salad. The courts are ours again, darlings, and the season is looking very promising.</p>
+        </div>
+      </div>
+      <div class="blog-card-footer">
+        <span class="card-tag">Palm Beach</span>
+        <span class="location-tag">Courts · Social</span>
+      </div>
+    </div>
+
+    <!-- NICOLETTE -->
+    <div class="blog-card">
+      <div class="blog-card-header">
+        <div class="card-avatar avatar-nicolette">🎾</div>
+        <div class="card-meta">
+          <div class="card-author">Nicolette Hargrove</div>
+          <div class="card-location">Naples, FL</div>
+        </div>
+        <div class="card-date">May 27</div>
+      </div>
+      <div class="blog-card-body">
+        <h3 class="blog-card-title">Derek Found His People and <em>I Found a New Restaurant</em></h3>
+        <div class="blog-card-text">
+          <p>I don't know what Thomas said to Derek at that beginner clinic last Thursday but my husband has become a completely different person. He came home, looked up three YouTube videos on the third shot drop, and asked me if we could "hit some balls" before dinner. We have been married twenty two years and this man has never once suggested physical activity before dinner. We went to Pelican Bay and honestly? He's not terrible. Camille saw us from across the court and gave me a thumbs up which I chose to interpret as encouragement rather than pity.</p>
+          <p>After we stopped at The French on Fifth for a glass of rosé and I need to tell you about their new small plates menu because it is absolutely worth the parking situation on Fifth Avenue which has gotten completely out of hand since they redid the streetscape. Camille joined us and we sat outside until it got dark and talked about the mixed doubles tournament at Naples Grande next month and whether Derek is remotely ready for it. He is not. We are signing him up anyway.</p>
+        </div>
+      </div>
+      <div class="blog-card-footer">
+        <span class="card-tag">Naples</span>
+        <span class="location-tag">Lifestyle · Food</span>
+      </div>
+    </div>
+
+    <!-- VIVIAN -->
+    <div class="blog-card">
+      <div class="blog-card-header">
+        <div class="card-avatar avatar-vivian">🏘️</div>
+        <div class="card-meta">
+          <div class="card-author">Vivian Kowalski-Reed</div>
+          <div class="card-location">The Villages, FL</div>
+        </div>
+        <div class="card-date">May 28</div>
+      </div>
+      <div class="blog-card-body">
+        <h3 class="blog-card-title">Kenny Moved Up a Level and <em>Now It's Personal</em></h3>
+        <div class="blog-card-text">
+          <p>Honey, I come to you this week with news that has shaken the Knudson court community to its absolute core — Kenny self-rated to 4.0 and signed up for the advanced round robin on Wednesday mornings. Frank found out from Dottie who found out from the sign-up sheet and called me while I was in the Publix on Rolling Acres. I had to put down my cantaloupe. The advanced group over there includes Barbara who played in nationals last year and two brothers from New Jersey who are absolutely no joke, and Kenny — bless his heart — is going to learn some things about himself.</p>
+          <p>Dottie and I watched from the bleachers with our coffee and I want to be very clear that we were there to be supportive. We were completely supportive. We only laughed twice and both times were when he called the ball out on a shot that was so clearly in that Barbara turned around and looked at the sky like she was asking God for patience. Lake Sumter Landing has that new café opening next to the smoothie place and we've decided to make it our post-Wednesday tradition whether Kenny improves or not. Some things you just have to look forward to.</p>
+        </div>
+      </div>
+      <div class="blog-card-footer">
+        <span class="card-tag">The Villages</span>
+        <span class="location-tag">Community · Courts</span>
+      </div>
+    </div>
+
+    <!-- STELLA -->
+    <div class="blog-card">
+      <div class="blog-card-header">
+        <div class="card-avatar avatar-stella">🌊</div>
+        <div class="card-meta">
+          <div class="card-author">Stella Marchetti</div>
+          <div class="card-location">Sarasota, FL</div>
+        </div>
+        <div class="card-date">May 29</div>
+      </div>
+      <div class="blog-card-body">
+        <h3 class="blog-card-title">The Tuesday Crew Survives <em>Another Florida Summer</em></h3>
+        <div class="blog-card-text">
+          <p>Here's the thing about playing pickleball in Sarasota in May — you either commit fully or you move somewhere with a functioning atmosphere. The Tuesday crew showed up to Pompano at seven thirty and by eight fifteen Gabi had already declared it "too hot to be legal" which, fair, but also she was the one who scheduled it. Marco wore a hat for the first time in his life because I threatened consequences and I have to say it looked genuinely good on him, which I told him, and then immediately regretted because now he'll never take it off. I finally caved and got the JOOLA Ben Johns paddle that Diane has been quietly evangelizing for three months and I owe her a full apology because it's extraordinary.</p>
+          <p>We cooled down at Piccolo Italian Market after and sat in the back with sandwiches and sparkling water like civilized people and talked about the tournament at Urfer next month. Diane is in. Gabi is in but "only if it's not on a Sunday because of the farmers market" which, same honestly. Marco said he'd "think about it" which in Marco language means he's already looked up the bracket format and has opinions. The summer is brutal but the Tuesday crew shows up every single week and that, I think, is the whole point.</p>
+        </div>
+      </div>
+      <div class="blog-card-footer">
+        <span class="card-tag">Sarasota</span>
+        <span class="location-tag">Community · Gear</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- EMAIL SIGNUP -->
+<div class="email-strip">
+  <h2>Join The Coastal Circle</h2>
+  <p>Get the Chronicles delivered weekly plus Florida court guides, tournament alerts, and members-only offers.</p>
+  <form id="blog-signup-form" method="POST" action="https://c8fbe7fc.sibforms.com/serve/MUIFAP3xhPHl9UFeyPIz2ya1etYh9nOvZY_of12LhroK1z8rlPiWQiB4y16Lu4a7mS_G3xcSbhIb9_rS3z_AJbnkfhKqtizT6pNgqIR_8yfJc1PaawrZ01y94EJoZWWEDGuxdBpmf0RI85w8CPVy39LlvVBrZHrvPwLSe7as4Fe893wiNtQVrrBOQs-1X7TFa6TznK2Z6AuxbAmy0w==" onsubmit="return handleBlogSubmit(event)" class="email-form">
+    <input type="text" id="BLOG_EMAIL" name="EMAIL" autocomplete="off" placeholder="Your email address" required />
+    <input type="text" name="email_address_check" value="" style="display:none;">
+    <input type="hidden" name="locale" value="en">
+    <button type="submit">Join</button>
+  </form>
+  <p id="blog-success-msg">🎉 You are in! Welcome to the Coastal Circle.</p>
+</div>
+
+<script>
+function handleBlogSubmit(e) {
+  e.preventDefault();
+  var form = document.getElementById('blog-signup-form');
+  var email = document.getElementById('BLOG_EMAIL').value;
+  if (!email) return false;
+  var formData = new FormData(form);
+  fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' })
+  .then(function() {
+    form.style.display = 'none';
+    document.getElementById('blog-success-msg').style.display = 'block';
+  });
+  return false;
+}
+</script>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span class="logo-text">Pickleball Florida USA</span>
+  <div class="footer-links">
+    <a href="shop.html">Shop</a>
+    <a href="courts.html">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Privacy</a>
+  </div>
+  <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
+</div>
+
+</body>
+</html>
