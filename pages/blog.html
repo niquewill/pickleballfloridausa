@@ -439,24 +439,25 @@
       <button onclick="closeAll()" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:20px; cursor:pointer; color:#aaa; line-height:1;">✕</button>
     </div>
     <div style="padding:1.25rem 1.5rem;">
+          <div style="padding:1.25rem 1.5rem;">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:1.25rem;">
-        <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
-          <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">Skill level</p>
-          <p id="m-skill" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
-        </div>
-        <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
-          <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">Drop shot score</p>
-          <p id="m-drop" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
-        </div>
-        <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
-          <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">Home court</p>
-          <p id="m-court" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
-        </div>
-        <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
-          <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">Playing since</p>
-          <p id="m-since" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
-        </div>
-      </div>
+  <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
+    <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">DUPR Rating</p>
+    <p id="m-dupr" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
+  </div>
+  <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
+    <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">Playing style</p>
+    <p id="m-style" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
+  </div>
+  <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
+    <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">Preferred side</p>
+    <p id="m-side" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
+  </div>
+  <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
+    <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">Paddle of choice</p>
+    <p id="m-paddle" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
+  </div>
+</div>
       <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 8px;">Favorite spots</p>
       <div id="m-spots" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1.25rem;"></div>
       <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 8px;">Always on court with</p>
@@ -471,15 +472,17 @@ const personaData = {
   patrice: {
     photo: '../images/patrice.png', name: 'Patrice Waverly-Fontaine',
     sub: 'Palm Beach · Age 61', hood: '📍 South Ocean Blvd, Palm Beach Island',
-    skill: '4.0', drop: '7.2 / 10', court: 'Bath & Tennis Club', since: '2022',
+    dupr: '4.012', style: 'Dinker', side: 'Even (right)', court: 'Bath & Tennis Club',
+    paddle: 'HEAD Radical Pro',
     spots: ['Ta-boo', 'Café Boulud', 'Worth Avenue', 'The Breakers', "Green's Pharmacy"],
-    gear: ['Loro Piana sun hat', 'K-Swiss Ultrashot', 'Coastal Circle Tee', 'HEAD Radical paddle'],
+    gear: ['Loro Piana sun hat', 'K-Swiss Ultrashot', 'Coastal Circle Tee', 'Hermès court bag'],
     quote: '"Bunny called me at seven this morning — SEVEN — to tell me the Phipps courts were completely redone. I told her I needed at least forty minutes because I was not going to show up looking like I\'d rolled out of bed."'
   },
   nicolette: {
     photo: '../images/nicolette.png', name: 'Nicolette Hargrove',
     sub: 'Naples · Age 54', hood: '📍 Pelican Bay, Naples',
-    skill: '3.5', drop: '6.8 / 10', court: 'Pelican Bay Community Park', since: '2021',
+    dupr: '3.541', style: 'All-court', side: 'Odd (left)', court: 'Pelican Bay Community Park',
+    paddle: 'Selkirk AMPED Epic',
     spots: ['The French on Fifth', 'Mediterrano', 'Mercato', 'Seed to Table', 'Vanderbilt Beach'],
     gear: ['Alo set', 'Vuori shorts', 'Palm Paddle Tee', 'JOOLA bag'],
     quote: '"Derek showed up to his first clinic in basketball shorts and a University of Michigan shirt from 2003. Thomas — bless that man — did not even flinch."'
@@ -487,7 +490,8 @@ const personaData = {
   vivian: {
     photo: '../images/vivian.png', name: 'Vivian Kowalski-Reed',
     sub: 'The Villages · Age 68', hood: '📍 Brownwood Paddock Square, The Villages',
-    skill: '3.5', drop: '6.1 / 10', court: 'Knudson Recreation Center', since: '2020',
+    dupr: '3.489', style: 'Dinker', side: 'Even (right)', court: 'Knudson Recreation Center',
+    paddle: 'Selkirk AMPED',
     spots: ['Lake Sumter Landing', "Katie Belle's", 'Brownwood Square', 'Publix on Rolling Acres'],
     gear: ['Coastal Circle Hat', 'Selkirk AMPED', 'Franklin X-40 balls', 'Cooling towel'],
     quote: '"I am not a gossip. I am a community historian. There is a difference. Frank understands this. Marge does not."'
@@ -495,7 +499,8 @@ const personaData = {
   stella: {
     photo: '../images/stella.png', name: 'Stella Marchetti',
     sub: 'Sarasota · Age 47', hood: '📍 Rosemary District, Sarasota',
-    skill: '4.0', drop: '8.1 / 10', court: 'Pompano Park', since: '2021',
+    dupr: '4.187', style: 'All-court', side: 'Odd (left)', court: 'Pompano Park',
+    paddle: 'JOOLA Ben Johns Hyperion',
     spots: ['Piccolo Italian Market', 'Indigenous', 'Burns Court', 'Siesta Key', 'Ringling Museum'],
     gear: ['JOOLA Ben Johns paddle', 'Coastal Serve Tank', 'ASICS court shoes', 'Coastal Court Tote'],
     quote: '"Here\'s the thing — I waited three months to try the JOOLA because I thought Diane was being dramatic. I owe her a full apology and possibly lunch."'
@@ -509,10 +514,10 @@ function openPersonaModal(id) {
   document.getElementById('m-name').textContent = p.name;
   document.getElementById('m-sub').textContent = p.sub;
   document.getElementById('m-hood').textContent = p.hood;
-  document.getElementById('m-skill').textContent = p.skill;
-  document.getElementById('m-drop').textContent = p.drop;
-  document.getElementById('m-court').textContent = p.court;
-  document.getElementById('m-since').textContent = p.since;
+ document.getElementById('m-dupr').textContent = p.dupr;
+document.getElementById('m-style').textContent = p.style;
+document.getElementById('m-side').textContent = p.side;
+document.getElementById('m-paddle').textContent = p.paddle;
   document.getElementById('m-spots').innerHTML = p.spots.map(s => `<span style="font-size:12px; padding:3px 10px; border-radius:999px; border:1px solid #e8e8e8; color:#666; background:#f8f8f6;">${s}</span>`).join('');
   document.getElementById('m-gear').innerHTML = p.gear.map(g => `<span style="font-size:12px; padding:3px 10px; border-radius:999px; border:1px solid #e8e8e8; color:#666; background:#f8f8f6;">${g}</span>`).join('');
   document.getElementById('m-quote').textContent = p.quote;
