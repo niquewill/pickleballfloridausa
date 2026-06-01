@@ -10,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   :root {
     --coral: #FF6F61;
     --turquoise: #2CCCD3;
@@ -18,347 +17,136 @@
     --cream: #FFF7EB;
     --navy: #16324F;
   }
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: var(--cream);
-    color: var(--navy);
-  }
+  body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
 
   /* NAV */
-  nav {
-    background: var(--navy);
-    padding: 1.2rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--cream);
-    letter-spacing: 1px;
-    text-decoration: none;
-  }
-  .logo-sub {
-    font-size: 0.6rem;
-    color: var(--turquoise);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    display: block;
-    margin-top: 2px;
-  }
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .nav-links a {
-    color: var(--cream);
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.8;
-  }
+  nav { background: var(--navy); padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 1px; text-decoration: none; }
+  .logo-sub { font-size: 0.6rem; color: var(--turquoise); letter-spacing: 4px; text-transform: uppercase; display: block; margin-top: 2px; }
+  .nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
   .nav-links a:hover { opacity: 1; color: var(--turquoise); }
   .nav-links a.active { opacity: 1; color: var(--turquoise); }
 
   /* HERO */
-  .blog-hero {
-    background: var(--navy);
-    padding: 4rem 2.5rem;
-    text-align: center;
-  }
-  .blog-hero-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--turquoise);
-    margin-bottom: 1rem;
-  }
-  .blog-hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: var(--cream);
-    font-weight: 400;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-  }
+  .blog-hero { background: var(--navy); padding: 4rem 2.5rem; text-align: center; }
+  .blog-hero-eyebrow { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1rem; }
+  .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--cream); font-weight: 400; margin-bottom: 1rem; line-height: 1.2; }
   .blog-hero h1 em { font-style: italic; color: var(--coral); }
-  .blog-hero p {
-    color: var(--cream);
-    opacity: 0.7;
-    font-size: 0.9rem;
-    max-width: 550px;
-    margin: 0 auto;
-    line-height: 1.8;
-    font-weight: 300;
-  }
+  .blog-hero p { color: var(--cream); opacity: 0.7; font-size: 0.9rem; max-width: 550px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
 
   /* WAVE */
   .wave { display: block; background: var(--navy); line-height: 0; }
   .wave svg { display: block; width: 100%; }
 
   /* WRITERS STRIP */
-  .writers-strip {
-    background: #fff;
-    padding: 3rem 2.5rem;
-    text-align: center;
-    border-bottom: 1px solid rgba(22,50,79,0.08);
-  }
-  .writers-strip p {
-    font-size: 0.65rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--turquoise);
-    margin-bottom: 2rem;
-  }
-  .writers-grid {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-  }
-  .writer-pill {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
+  .writers-strip { background: #fff; padding: 3rem 2.5rem; text-align: center; border-bottom: 1px solid rgba(22,50,79,0.08); }
+  .writers-strip > p { font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 2rem; }
+  .writers-grid { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+  .writer-pill { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; cursor: pointer; transition: transform 0.2s; }
   .writer-pill:hover { transform: translateY(-3px); }
-  .writer-avatar {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    border: 3px solid transparent;
-    transition: border-color 0.2s;
-  }
+  .writer-avatar { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 3px solid transparent; transition: border-color 0.2s; overflow: hidden; }
   .writer-pill:hover .writer-avatar { border-color: var(--coral); }
   .avatar-patrice { background: #E8D5C4; }
   .avatar-nicolette { background: #C4D5E8; }
   .avatar-vivian { background: #D5E8C4; }
   .avatar-stella { background: #E8C4D5; }
-  .writer-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.9rem;
-    color: var(--navy);
-    font-weight: 400;
-  }
-  .writer-location {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--turquoise);
-  }
+  .writer-name { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--navy); font-weight: 400; }
+  .writer-location { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); }
 
-  /* BLOG GRID */
-  .blog-section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 4rem 2.5rem;
-  }
-  .blog-section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .blog-section-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: var(--navy);
-  }
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-    gap: 2rem;
-  }
-
-  /* BLOG CARD */
-  .blog-card {
-    background: #fff;
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid rgba(22,50,79,0.08);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .blog-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(22,50,79,0.1);
-  }
-  .blog-card-header {
-    padding: 1.5rem 2rem 0;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .card-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
+  /* MODAL OVERLAY */
+  #persona-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.55);
+    z-index: 9999;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+  }
+  .modal-box {
+    background: white;
+    border-radius: 16px;
+    width: 500px;
+    max-width: 94vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  .modal-header {
+    padding: 1.5rem;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+  }
+  .modal-header img {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f0f0f0;
     flex-shrink: 0;
   }
+  .modal-header-text { flex: 1; }
+  .modal-header-text h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; color: #1a1a1a; margin: 0 0 3px; }
+  .modal-header-text .m-sub { font-size: 12px; color: #888; margin: 0 0 4px; }
+  .modal-header-text .m-hood { font-size: 12px; color: #2a7a5a; margin: 0; font-weight: 500; }
+  .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 22px; cursor: pointer; color: #aaa; line-height: 1; padding: 4px 8px; }
+  .modal-close:hover { color: #333; }
+  .modal-body { padding: 1.25rem 1.5rem; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.25rem; }
+  .stat-box { background: #f8f8f6; border-radius: 8px; padding: 10px 12px; }
+  .stat-label { font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 3px; font-family: 'Montserrat', sans-serif; }
+  .stat-val { font-size: 14px; font-weight: 600; margin: 0; color: #1a1a1a; font-family: 'Montserrat', sans-serif; }
+  .modal-section-label { font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 8px; font-family: 'Montserrat', sans-serif; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+  .pill { font-size: 12px; padding: 3px 10px; border-radius: 999px; border: 1px solid #e8e8e8; color: #666; background: #f8f8f6; font-family: 'Montserrat', sans-serif; }
+  .modal-quote { font-size: 13px; color: #666; border-left: 2px solid #ddd; padding-left: 12px; margin: 0; line-height: 1.65; font-style: italic; font-family: 'Playfair Display', serif; }
+
+  /* BLOG GRID */
+  .blog-section { max-width: 1100px; margin: 0 auto; padding: 4rem 2.5rem; }
+  .blog-section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+  .blog-section-header h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; color: var(--navy); }
+  .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 2rem; }
+
+  /* BLOG CARD */
+  .blog-card { background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid rgba(22,50,79,0.08); transition: transform 0.2s, box-shadow 0.2s; }
+  .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(22,50,79,0.1); }
+  .blog-card-header { padding: 1.5rem 2rem 0; display: flex; align-items: center; gap: 1rem; }
+  .card-avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
   .card-meta { flex: 1; }
-  .card-author {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 2px;
-  }
-  .card-location {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--turquoise);
-  }
-  .card-date {
-    font-size: 0.7rem;
-    color: var(--navy);
-    opacity: 0.4;
-    letter-spacing: 1px;
-  }
+  .card-author { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 400; color: var(--navy); margin-bottom: 2px; }
+  .card-location { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); }
+  .card-date { font-size: 0.7rem; color: var(--navy); opacity: 0.4; letter-spacing: 1px; }
   .blog-card-body { padding: 1.5rem 2rem 2rem; }
-  .blog-card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 1rem;
-    line-height: 1.4;
-  }
+  .blog-card-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; color: var(--navy); margin-bottom: 1rem; line-height: 1.4; }
   .blog-card-title em { font-style: italic; color: var(--coral); }
-  .blog-card-text {
-    font-size: 0.85rem;
-    line-height: 1.9;
-    color: var(--navy);
-    opacity: 0.8;
-    font-weight: 300;
-  }
+  .blog-card-text { font-size: 0.85rem; line-height: 1.9; color: var(--navy); opacity: 0.8; font-weight: 300; }
   .blog-card-text p { margin-bottom: 1rem; }
   .blog-card-text p:last-child { margin-bottom: 0; }
-  .blog-card-footer {
-    padding: 0 2rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .card-tag {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--coral);
-    border: 1px solid var(--coral);
-    padding: 0.3rem 0.75rem;
-    border-radius: 2px;
-  }
-
-  /* LOCATION TAGS */
-  .location-tag {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--navy);
-    opacity: 0.4;
-  }
+  .blog-card-footer { padding: 0 2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .card-tag { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); border: 1px solid var(--coral); padding: 0.3rem 0.75rem; border-radius: 2px; }
+  .location-tag { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); opacity: 0.4; }
 
   /* DIVIDER */
-  .section-divider {
-    border: none;
-    border-top: 1px solid rgba(22,50,79,0.08);
-    margin: 0 2.5rem;
-  }
+  .section-divider { border: none; border-top: 1px solid rgba(22,50,79,0.08); margin: 0 2.5rem; }
 
   /* EMAIL STRIP */
-  .email-strip {
-    background: var(--navy);
-    padding: 4rem 2.5rem;
-    text-align: center;
-  }
-  .email-strip h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: var(--cream);
-    font-weight: 400;
-    margin-bottom: 0.75rem;
-  }
-  .email-strip p {
-    color: var(--cream);
-    opacity: 0.7;
-    font-size: 0.85rem;
-    margin-bottom: 2rem;
-    font-weight: 300;
-  }
-  .email-form {
-    display: flex;
-    max-width: 420px;
-    margin: 0 auto;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .email-form input {
-    flex: 1;
-    padding: 0.85rem 1.2rem;
-    border: none;
-    font-size: 0.85rem;
-    font-family: 'Montserrat', sans-serif;
-    background: var(--cream);
-    color: var(--navy);
-  }
-  .email-form button {
-    background: var(--coral);
-    color: #fff;
-    border: none;
-    padding: 0.85rem 1.5rem;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-  }
-  #blog-success-msg {
-    display: none;
-    color: var(--turquoise);
-    margin-top: 1rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-  }
+  .email-strip { background: var(--navy); padding: 4rem 2.5rem; text-align: center; }
+  .email-strip h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--cream); font-weight: 400; margin-bottom: 0.75rem; }
+  .email-strip p { color: var(--cream); opacity: 0.7; font-size: 0.85rem; margin-bottom: 2rem; font-weight: 300; }
+  .email-form { display: flex; max-width: 420px; margin: 0 auto; border-radius: 2px; overflow: hidden; }
+  .email-form input { flex: 1; padding: 0.85rem 1.2rem; border: none; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
+  .email-form button { background: var(--coral); color: #fff; border: none; padding: 0.85rem 1.5rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; font-family: 'Montserrat', sans-serif; }
+  #blog-success-msg { display: none; color: var(--turquoise); margin-top: 1rem; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; }
 
   /* FOOTER */
   .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
   .footer .logo-text { display: block; margin-bottom: 1rem; color: var(--cream); font-family: 'Playfair Display', serif; font-size: 1.1rem; }
-  .footer-links {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-  }
-  .footer-links a {
-    color: var(--cream);
-    opacity: 0.5;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
   .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
 
   @media (max-width: 600px) {
@@ -399,134 +187,80 @@
   </svg>
 </div>
 
-<!-- WRITERS -->
+<!-- WRITERS STRIP -->
 <div class="writers-strip">
   <p>Meet Your Correspondents</p>
   <div class="writers-grid">
-    <div class="writer-pill" onclick="openPersonaModal('patrice')" style="cursor:pointer;">
-      <div class="writer-avatar avatar-patrice"><img src="../images/patrice.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+    <div class="writer-pill" onclick="openPersonaModal('patrice')">
+      <div class="writer-avatar avatar-patrice">
+        <img src="../images/patrice.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+      </div>
       <span class="writer-name">Patrice</span>
       <span class="writer-location">South Ocean Blvd, Palm Beach</span>
     </div>
-    <div class="writer-pill" onclick="openPersonaModal('nicolette')" style="cursor:pointer;">
-      <div class="writer-avatar avatar-nicolette"><img src="../images/nicolette.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+    <div class="writer-pill" onclick="openPersonaModal('nicolette')">
+      <div class="writer-avatar avatar-nicolette">
+        <img src="../images/nicolette.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+      </div>
       <span class="writer-name">Nicolette</span>
       <span class="writer-location">Pelican Bay, Naples</span>
     </div>
-    <div class="writer-pill" onclick="openPersonaModal('vivian')" style="cursor:pointer;">
-      <div class="writer-avatar avatar-vivian"><img src="../images/vivian.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+    <div class="writer-pill" onclick="openPersonaModal('vivian')">
+      <div class="writer-avatar avatar-vivian">
+        <img src="../images/vivian.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+      </div>
       <span class="writer-name">Vivian</span>
       <span class="writer-location">Brownwood, The Villages</span>
     </div>
-    <div class="writer-pill" onclick="openPersonaModal('stella')" style="cursor:pointer;">
-      <div class="writer-avatar avatar-stella"><img src="../images/stella.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+    <div class="writer-pill" onclick="openPersonaModal('stella')">
+      <div class="writer-avatar avatar-stella">
+        <img src="../images/stella.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+      </div>
       <span class="writer-name">Stella</span>
       <span class="writer-location">Rosemary District, Sarasota</span>
     </div>
   </div>
 </div>
 
-<!-- Persona Profile Modal -->
-<div style="display:none; position:fixed; inset:0; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
-  <div style="background:white; border-radius:16px; width:480px; max-width:94vw; max-height:90vh; overflow-y:auto; position:relative;">
-    <div style="padding:1.5rem; display:flex; gap:16px; align-items:center; border-bottom:1px solid #f0f0f0;">
-      <img id="m-photo" src="" alt="" style="width:72px; height:72px; border-radius:50%; object-fit:cover; border:2px solid #f0f0f0; flex-shrink:0;">
-      <div>
-        <p id="m-name" style="font-size:17px; font-weight:600; margin:0 0 3px; color:#1a1a1a;"></p>
-        <p id="m-sub" style="font-size:12px; color:#888; margin:0 0 4px;"></p>
-        <p id="m-hood" style="font-size:12px; color:#2a7a5a; margin:0; font-weight:500;"></p>
+<!-- PERSONA MODAL -->
+<div id="persona-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <img id="m-photo" src="" alt="" />
+      <div class="modal-header-text">
+        <h3 id="m-name"></h3>
+        <p class="m-sub" id="m-sub"></p>
+        <p class="m-hood" id="m-hood"></p>
       </div>
-      <button onclick="closeAll()" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:20px; cursor:pointer; color:#aaa; line-height:1;">✕</button>
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
     </div>
-    <div style="padding:1.25rem 1.5rem;">
-          <div style="padding:1.25rem 1.5rem;">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:1.25rem;">
-  <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
-    <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">DUPR Rating</p>
-    <p id="m-dupr" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
-  </div>
-  <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
-    <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">Playing style</p>
-    <p id="m-style" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
-  </div>
-  <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
-    <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">Preferred side</p>
-    <p id="m-side" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
-  </div>
-  <div style="background:#f8f8f6; border-radius:8px; padding:10px 12px;">
-    <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">Paddle of choice</p>
-    <p id="m-paddle" style="font-size:14px; font-weight:600; margin:0; color:#1a1a1a;"></p>
+    <div class="modal-body">
+      <div class="stat-grid">
+        <div class="stat-box">
+          <p class="stat-label">DUPR Rating</p>
+          <p class="stat-val" id="m-dupr"></p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-label">Playing Style</p>
+          <p class="stat-val" id="m-style"></p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-label">Preferred Side</p>
+          <p class="stat-val" id="m-side"></p>
+        </div>
+        <div class="stat-box">
+          <p class="stat-label">Paddle of Choice</p>
+          <p class="stat-val" id="m-paddle"></p>
+        </div>
+      </div>
+      <p class="modal-section-label">Favorite Spots</p>
+      <div class="pill-row" id="m-spots"></div>
+      <p class="modal-section-label">Always on Court With</p>
+      <div class="pill-row" id="m-gear"></div>
+      <p class="modal-quote" id="m-quote"></p>
+    </div>
   </div>
 </div>
-      <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 8px;">Favorite spots</p>
-      <div id="m-spots" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1.25rem;"></div>
-      <p style="font-size:10px; color:#999; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 8px;">Always on court with</p>
-      <div id="m-gear" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1.25rem;"></div>
-      <p id="m-quote" style="font-size:13px; color:#666; border-left:2px solid #ddd; padding-left:12px; margin:0; line-height:1.65; font-style:italic;"></p>
-    </div>
-  </div>
-</div>
-
-<script>
-const personaData = {
-  patrice: {
-    photo: '../images/patrice.png', name: 'Patrice Waverly-Fontaine',
-    sub: 'Palm Beach · Age 61', hood: '📍 South Ocean Blvd, Palm Beach Island',
-    dupr: '4.012', style: 'Dinker', side: 'Even (right)', court: 'Bath & Tennis Club',
-    paddle: 'HEAD Radical Pro',
-    spots: ['Ta-boo', 'Café Boulud', 'Worth Avenue', 'The Breakers', "Green's Pharmacy"],
-    gear: ['Loro Piana sun hat', 'K-Swiss Ultrashot', 'Coastal Circle Tee', 'Hermès court bag'],
-    quote: '"Bunny called me at seven this morning — SEVEN — to tell me the Phipps courts were completely redone. I told her I needed at least forty minutes because I was not going to show up looking like I\'d rolled out of bed."'
-  },
-  nicolette: {
-    photo: '../images/nicolette.png', name: 'Nicolette Hargrove',
-    sub: 'Naples · Age 54', hood: '📍 Pelican Bay, Naples',
-    dupr: '3.541', style: 'All-court', side: 'Odd (left)', court: 'Pelican Bay Community Park',
-    paddle: 'Selkirk AMPED Epic',
-    spots: ['The French on Fifth', 'Mediterrano', 'Mercato', 'Seed to Table', 'Vanderbilt Beach'],
-    gear: ['Alo set', 'Vuori shorts', 'Palm Paddle Tee', 'JOOLA bag'],
-    quote: '"Derek showed up to his first clinic in basketball shorts and a University of Michigan shirt from 2003. Thomas — bless that man — did not even flinch."'
-  },
-  vivian: {
-    photo: '../images/vivian.png', name: 'Vivian Kowalski-Reed',
-    sub: 'The Villages · Age 68', hood: '📍 Brownwood Paddock Square, The Villages',
-    dupr: '3.489', style: 'Dinker', side: 'Even (right)', court: 'Knudson Recreation Center',
-    paddle: 'Selkirk AMPED',
-    spots: ['Lake Sumter Landing', "Katie Belle's", 'Brownwood Square', 'Publix on Rolling Acres'],
-    gear: ['Coastal Circle Hat', 'Selkirk AMPED', 'Franklin X-40 balls', 'Cooling towel'],
-    quote: '"I am not a gossip. I am a community historian. There is a difference. Frank understands this. Marge does not."'
-  },
-  stella: {
-    photo: '../images/stella.png', name: 'Stella Marchetti',
-    sub: 'Sarasota · Age 47', hood: '📍 Rosemary District, Sarasota',
-    dupr: '4.187', style: 'All-court', side: 'Odd (left)', court: 'Pompano Park',
-    paddle: 'JOOLA Ben Johns Hyperion',
-    spots: ['Piccolo Italian Market', 'Indigenous', 'Burns Court', 'Siesta Key', 'Ringling Museum'],
-    gear: ['JOOLA Ben Johns paddle', 'Coastal Serve Tank', 'ASICS court shoes', 'Coastal Court Tote'],
-    quote: '"Here\'s the thing — I waited three months to try the JOOLA because I thought Diane was being dramatic. I owe her a full apology and possibly lunch."'
-  }
-};
-
-function openPersonaModal(id) {
-  const p = personaData[id];
-  document.getElementById('m-photo').src = p.photo;
-  document.getElementById('m-photo').alt = p.name;
-  document.getElementById('m-name').textContent = p.name;
-  document.getElementById('m-sub').textContent = p.sub;
-  document.getElementById('m-hood').textContent = p.hood;
- document.getElementById('m-dupr').textContent = p.dupr;
-document.getElementById('m-style').textContent = p.style;
-document.getElementById('m-side').textContent = p.side;
-document.getElementById('m-paddle').textContent = p.paddle;
-  document.getElementById('m-spots').innerHTML = p.spots.map(s => `<span style="font-size:12px; padding:3px 10px; border-radius:999px; border:1px solid #e8e8e8; color:#666; background:#f8f8f6;">${s}</span>`).join('');
-  document.getElementById('m-gear').innerHTML = p.gear.map(g => `<span style="font-size:12px; padding:3px 10px; border-radius:999px; border:1px solid #e8e8e8; color:#666; background:#f8f8f6;">${g}</span>`).join('');
-  document.getElementById('m-quote').textContent = p.quote;
-  const overlay = document.getElementById('persona-overlay');
-  overlay.style.display = 'flex';
-}
-function closePersonaModal(e) { if(e.target === document.getElementById('persona-overlay')) closeAll(); }
-function closeAll() { document.getElementById('persona-overlay').style.display = 'none'; }
-</script>
 
 <!-- BLOG POSTS -->
 <div class="blog-section">
@@ -534,13 +268,12 @@ function closeAll() { document.getElementById('persona-overlay').style.display =
     <h2>Latest Dispatches</h2>
     <span class="location-tag">May 2026</span>
   </div>
-
   <div class="blog-grid">
 
     <!-- PATRICE -->
     <div class="blog-card">
       <div class="blog-card-header">
-        <div class="card-avatar avatar-patrice"><img src="../images/patrice.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+        <div class="card-avatar avatar-patrice"><img src="../images/patrice.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
         <div class="card-meta">
           <div class="card-author">Patrice Waverly-Fontaine</div>
           <div class="card-location">Palm Beach, FL</div>
@@ -563,7 +296,7 @@ function closeAll() { document.getElementById('persona-overlay').style.display =
     <!-- NICOLETTE -->
     <div class="blog-card">
       <div class="blog-card-header">
-        <div class="card-avatar avatar-nicolette"><img src="../images/nicolette.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+        <div class="card-avatar avatar-nicolette"><img src="../images/nicolette.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
         <div class="card-meta">
           <div class="card-author">Nicolette Hargrove</div>
           <div class="card-location">Naples, FL</div>
@@ -586,7 +319,7 @@ function closeAll() { document.getElementById('persona-overlay').style.display =
     <!-- VIVIAN -->
     <div class="blog-card">
       <div class="blog-card-header">
-        <div class="card-avatar avatar-vivian"><img src="../images/vivian.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+        <div class="card-avatar avatar-vivian"><img src="../images/vivian.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
         <div class="card-meta">
           <div class="card-author">Vivian Kowalski-Reed</div>
           <div class="card-location">The Villages, FL</div>
@@ -609,7 +342,7 @@ function closeAll() { document.getElementById('persona-overlay').style.display =
     <!-- STELLA -->
     <div class="blog-card">
       <div class="blog-card-header">
-        <div class="card-avatar avatar-stella"><img src="../images/stella.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+        <div class="card-avatar avatar-stella"><img src="../images/stella.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div>
         <div class="card-meta">
           <div class="card-author">Stella Marchetti</div>
           <div class="card-location">Sarasota, FL</div>
@@ -647,22 +380,6 @@ function closeAll() { document.getElementById('persona-overlay').style.display =
   <p id="blog-success-msg">🎉 You are in! Welcome to the Coastal Circle.</p>
 </div>
 
-<script>
-function handleBlogSubmit(e) {
-  e.preventDefault();
-  var form = document.getElementById('blog-signup-form');
-  var email = document.getElementById('BLOG_EMAIL').value;
-  if (!email) return false;
-  var formData = new FormData(form);
-  fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' })
-  .then(function() {
-    form.style.display = 'none';
-    document.getElementById('blog-success-msg').style.display = 'block';
-  });
-  return false;
-}
-</script>
-
 <!-- FOOTER -->
 <div class="footer">
   <span class="logo-text">Pickleball Florida USA</span>
@@ -677,6 +394,93 @@ function handleBlogSubmit(e) {
   </div>
   <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
 </div>
+
+<script>
+const personaData = {
+  patrice: {
+    photo: '../images/patrice.png',
+    name: 'Patrice Waverly-Fontaine',
+    sub: 'Palm Beach · Age 61',
+    hood: '📍 South Ocean Blvd, Palm Beach Island',
+    dupr: '4.012', style: 'Dinker', side: 'Even (right)', paddle: 'HEAD Radical Pro',
+    spots: ['Ta-boo','Café Boulud','Worth Avenue','The Breakers',"Green's Pharmacy"],
+    gear: ['Loro Piana sun hat','K-Swiss Ultrashot','Coastal Circle Tee','Hermès court bag'],
+    quote: '"Bunny called me at seven this morning — SEVEN — to tell me the Phipps courts were completely redone. I told her I needed at least forty minutes because I was not going to show up looking like I\'d rolled out of bed."'
+  },
+  nicolette: {
+    photo: '../images/nicolette.png',
+    name: 'Nicolette Hargrove',
+    sub: 'Naples · Age 54',
+    hood: '📍 Pelican Bay, Naples',
+    dupr: '3.541', style: 'All-court', side: 'Odd (left)', paddle: 'Selkirk AMPED Epic',
+    spots: ['The French on Fifth','Mediterrano','Mercato','Seed to Table','Vanderbilt Beach'],
+    gear: ['Alo set','Vuori shorts','Palm Paddle Tee','JOOLA bag'],
+    quote: '"Derek showed up to his first clinic in basketball shorts and a University of Michigan shirt from 2003. Thomas — bless that man — did not even flinch."'
+  },
+  vivian: {
+    photo: '../images/vivian.png',
+    name: 'Vivian Kowalski-Reed',
+    sub: 'The Villages · Age 68',
+    hood: '📍 Brownwood Paddock Square, The Villages',
+    dupr: '3.489', style: 'Dinker', side: 'Even (right)', paddle: 'Selkirk AMPED',
+    spots: ['Lake Sumter Landing',"Katie Belle's",'Brownwood Square','Publix on Rolling Acres'],
+    gear: ['Coastal Circle Hat','Selkirk AMPED','Franklin X-40 balls','Cooling towel'],
+    quote: '"I am not a gossip. I am a community historian. There is a difference. Frank understands this. Marge does not."'
+  },
+  stella: {
+    photo: '../images/stella.png',
+    name: 'Stella Marchetti',
+    sub: 'Sarasota · Age 47',
+    hood: '📍 Rosemary District, Sarasota',
+    dupr: '4.187', style: 'All-court', side: 'Odd (left)', paddle: 'JOOLA Ben Johns Hyperion',
+    spots: ['Piccolo Italian Market','Indigenous','Burns Court','Siesta Key','Ringling Museum'],
+    gear: ['JOOLA Ben Johns paddle','Coastal Serve Tank','ASICS court shoes','Coastal Court Tote'],
+    quote: '"Here\'s the thing — I waited three months to try the JOOLA because I thought Diane was being dramatic. I owe her a full apology and possibly lunch."'
+  }
+};
+
+function openPersonaModal(id) {
+  const p = personaData[id];
+  document.getElementById('m-photo').src = p.photo;
+  document.getElementById('m-photo').alt = p.name;
+  document.getElementById('m-name').textContent = p.name;
+  document.getElementById('m-sub').textContent = p.sub;
+  document.getElementById('m-hood').textContent = p.hood;
+  document.getElementById('m-dupr').textContent = p.dupr;
+  document.getElementById('m-style').textContent = p.style;
+  document.getElementById('m-side').textContent = p.side;
+  document.getElementById('m-paddle').textContent = p.paddle;
+  document.getElementById('m-spots').innerHTML = p.spots.map(s => `<span class="pill">${s}</span>`).join('');
+  document.getElementById('m-gear').innerHTML = p.gear.map(g => `<span class="pill">${g}</span>`).join('');
+  document.getElementById('m-quote').textContent = p.quote;
+  const overlay = document.getElementById('persona-overlay');
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('persona-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('persona-overlay')) closeModal();
+}
+
+function handleBlogSubmit(e) {
+  e.preventDefault();
+  var form = document.getElementById('blog-signup-form');
+  var email = document.getElementById('BLOG_EMAIL').value;
+  if (!email) return false;
+  var formData = new FormData(form);
+  fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' })
+  .then(function() {
+    form.style.display = 'none';
+    document.getElementById('blog-success-msg').style.display = 'block';
+  });
+  return false;
+}
+</script>
 
 </body>
 </html>
