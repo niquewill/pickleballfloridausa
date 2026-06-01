@@ -4,8 +4,81 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="../images/pfufavicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Find Pickleball Courts | Pickleball Florida USA</title>
-<meta name="description" content="Find pickleball courts near you across Florida. The most complete Florida pickleball court directory." />
+<title>Pickleball Courts in Florida — Find Courts Near You | Pickleball Florida USA</title>
+<meta name="description" content="Find pickleball courts near you across Florida. Search by city or ZIP code — Naples, Miami, Tampa, Orlando, Sarasota and more. Real-time hours, photos, ratings and directions." />
+<meta name="keywords" content="pickleball courts Florida, pickleball courts near me Florida, best pickleball courts Florida, Florida pickleball locations" />
+<link rel="canonical" href="https://pickleballfloridausa.com/pages/courts.html" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Pickleball Courts in Florida — Find Courts Near You" />
+<meta property="og:description" content="The most complete Florida pickleball court finder. Search by city, see photos, hours, ratings and best times to play." />
+<meta property="og:url" content="https://pickleballfloridausa.com/pages/courts.html" />
+<meta property="og:type" content="website" />
+
+<!-- Schema: WebPage + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pickleball Courts in Florida",
+  "description": "Find pickleball courts near you across Florida. Search by city or ZIP code with real-time hours, photos, ratings and best times to play.",
+  "url": "https://pickleballfloridausa.com/pages/courts.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pickleball Florida USA",
+    "url": "https://pickleballfloridausa.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where are the best pickleball courts in Florida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Florida has world-class pickleball courts in Naples, The Villages, Palm Beach, Sarasota, Tampa, Miami, and Orlando. Top facilities include East Naples Community Park, Pelican Bay Community Park, and numerous indoor clubs across the state."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best time to play pickleball in Florida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best time to play pickleball in Florida is early morning between 7am and 9am to beat the heat, or late afternoon after 4pm. Avoid midday play especially in summer months due to high temperatures and humidity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there free pickleball courts in Florida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Florida has hundreds of free public pickleball courts at community parks and recreation centers. Many cities including Naples, Sarasota, Tampa and Orlando have dedicated free outdoor pickleball facilities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many pickleball courts are in Florida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Florida has over 1,000 pickleball courts across the state, making it one of the top pickleball destinations in the United States. The sport is especially popular in retirement communities, resorts, and recreation centers throughout the state."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Florida city has the most pickleball courts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Villages in Central Florida is widely considered the pickleball capital of Florida with hundreds of courts spread across its massive retirement community. Naples and Sarasota also rank among Florida's top pickleball cities."
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
@@ -21,11 +94,20 @@
   .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--coral); }
   .hero { background: var(--navy); padding: 3rem 2.5rem; text-align: center; }
   .hero p { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1rem; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--cream); font-weight: 400; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--cream); font-weight: 400; margin-bottom: 1rem; }
   .hero h1 em { font-style: italic; color: var(--coral); }
+  .hero-desc { color: var(--cream); opacity: 0.7; font-size: 0.9rem; max-width: 600px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
   .wave { display: block; background: var(--navy); line-height: 0; }
   .wave svg { display: block; width: 100%; }
-  .search-section { padding: 2.5rem 2.5rem 0; max-width: 900px; margin: 0 auto; }
+
+  /* INTRO SECTION */
+  .intro-section { max-width: 900px; margin: 0 auto; padding: 2.5rem 2.5rem 0; }
+  .intro-section p { font-size: 0.88rem; line-height: 1.9; color: var(--navy); opacity: 0.8; font-weight: 300; margin-bottom: 1rem; }
+  .city-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 0; }
+  .city-link { font-size: 0.72rem; color: var(--turquoise); text-decoration: none; border: 1px solid var(--turquoise); padding: 0.3rem 0.75rem; border-radius: 2px; letter-spacing: 1px; text-transform: uppercase; }
+  .city-link:hover { background: var(--turquoise); color: #fff; }
+
+  .search-section { padding: 2rem 2.5rem 0; max-width: 900px; margin: 0 auto; }
   .search-box { display: flex; gap: 1rem; flex-wrap: wrap; }
   .search-input { flex: 1; padding: 0.85rem 1.2rem; border: 1px solid rgba(22,50,79,0.2); border-radius: 2px; font-size: 0.9rem; font-family: 'Montserrat', sans-serif; color: var(--navy); background: #fff; min-width: 200px; }
   .search-btn { background: var(--coral); color: #fff; border: none; padding: 0.85rem 2rem; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Montserrat', sans-serif; }
@@ -38,11 +120,9 @@
   .region-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
   .region-btn { background: transparent; border: 1px solid var(--navy); color: var(--navy); padding: 0.4rem 1rem; font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Montserrat', sans-serif; }
   .region-btn:hover, .region-btn.active { background: var(--navy); color: var(--cream); }
-  .results-section { padding: 2rem 2.5rem 4rem; max-width: 900px; margin: 0 auto; }
+  .results-section { padding: 2rem 2.5rem; max-width: 900px; margin: 0 auto; }
   .results-header { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1.5rem; }
   .courts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
-
-  /* COURT CARD */
   .court-card { background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid rgba(22,50,79,0.08); transition: transform 0.2s; }
   .court-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(22,50,79,0.1); }
   .court-photo { height: 180px; overflow: hidden; background: var(--navy); display: flex; align-items: center; justify-content: center; }
@@ -55,12 +135,10 @@
   .court-rating { font-size: 0.8rem; color: var(--coral); font-weight: 500; }
   .open { color: var(--green); font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
   .closed { color: var(--coral); font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
-
-  /* POPULAR TIMES WIDGET */
   .popular-times { background: #f8f8f6; border-radius: 6px; padding: 0.85rem 1rem; margin-bottom: 0.85rem; }
   .popular-times-title { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); opacity: 0.5; margin-bottom: 0.6rem; }
   .times-row { display: flex; gap: 4px; align-items: flex-end; height: 32px; margin-bottom: 0.4rem; }
-  .time-bar { flex: 1; border-radius: 2px 2px 0 0; transition: opacity 0.2s; cursor: default; }
+  .time-bar { flex: 1; border-radius: 2px 2px 0 0; }
   .time-bar.peak { background: var(--coral); }
   .time-bar.good { background: var(--turquoise); }
   .time-bar.slow { background: rgba(22,50,79,0.15); }
@@ -69,20 +147,41 @@
   .time-label { font-size: 0.6rem; color: var(--navy); opacity: 0.4; }
   .times-tips { display: flex; flex-direction: column; gap: 3px; margin-top: 0.6rem; }
   .times-tip { font-size: 0.7rem; color: var(--navy); opacity: 0.7; display: flex; align-items: center; gap: 4px; }
-
-  /* CARD BUTTONS */
   .card-buttons { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.75rem; }
   .directions-btn { background: var(--navy); color: var(--cream); padding: 0.4rem 1rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; display: inline-block; }
   .directions-btn:hover { background: var(--coral); }
   .popular-btn { background: transparent; color: var(--turquoise); padding: 0.4rem 1rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; display: inline-block; border: 1px solid var(--turquoise); }
   .popular-btn:hover { background: var(--turquoise); color: #fff; }
-
   .loading { text-align: center; padding: 3rem; }
   .loading p { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); opacity: 0.6; }
+
+  /* FAQ SECTION */
+  .faq-section { max-width: 900px; margin: 0 auto; padding: 0 2.5rem 4rem; }
+  .faq-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; color: var(--navy); margin-bottom: 2rem; }
+  .faq-item { border-bottom: 1px solid rgba(22,50,79,0.1); padding: 1.25rem 0; }
+  .faq-question { font-size: 0.9rem; font-weight: 500; color: var(--navy); margin-bottom: 0.6rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .faq-question::after { content: '+'; font-size: 1.2rem; color: var(--coral); font-weight: 300; }
+  .faq-question.open::after { content: '−'; }
+  .faq-answer { font-size: 0.85rem; line-height: 1.8; color: var(--navy); opacity: 0.7; font-weight: 300; display: none; padding-top: 0.5rem; }
+  .faq-answer.open { display: block; }
+
+  /* INTERNAL LINKS SECTION */
+  .related-section { background: var(--navy); padding: 3rem 2.5rem; text-align: center; }
+  .related-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream); font-weight: 400; margin-bottom: 0.5rem; }
+  .related-section p { color: var(--cream); opacity: 0.6; font-size: 0.85rem; margin-bottom: 2rem; font-weight: 300; }
+  .related-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .related-link { color: var(--cream); text-decoration: none; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3); padding: 0.6rem 1.2rem; border-radius: 2px; }
+  .related-link:hover { background: var(--coral); border-color: var(--coral); }
+
   .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
   .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
   .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
   .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
+
+  @media (max-width: 600px) {
+    .courts-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.8rem; }
+  }
 </style>
 </head>
 <body>
@@ -102,9 +201,26 @@
 
 <div class="hero">
   <p>Florida Court Finder</p>
-  <h1>Find Your <em>Perfect Court</em></h1>
+  <h1>Pickleball Courts in <em>Florida</em></h1>
+  <p class="hero-desc">The most complete Florida pickleball court directory. Search by city or ZIP code — find real-time hours, photos, ratings, and the best times to play.</p>
 </div>
 <div class="wave"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60"><path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/></svg></div>
+
+<!-- INTRO CONTENT — SEO text block -->
+<div class="intro-section">
+  <p>Florida is the pickleball capital of the United States — with over 1,000 courts spread across retirement communities, public parks, luxury resorts, and dedicated indoor facilities. Whether you're a local looking for open play near home, a snowbird arriving for the season, or a traveler wanting to get a game in, this court finder makes it easy to discover the best pickleball courts near you anywhere in Florida.</p>
+  <p>Search any Florida city or ZIP code below to see courts with real-time open/closed status, Google ratings, court photos, and our smart Florida-specific best times to play guide. Popular destinations include Naples, The Villages, Palm Beach, Sarasota, Tampa, Miami, and Orlando.</p>
+  <div class="city-links">
+    <a class="city-link" href="#" onclick="searchByCoords(26.1420,-81.7948,'Naples');return false;">Naples</a>
+    <a class="city-link" href="#" onclick="searchByCoords(28.9005,-81.9648,'The Villages');return false;">The Villages</a>
+    <a class="city-link" href="#" onclick="searchByCoords(27.3364,-82.5307,'Sarasota');return false;">Sarasota</a>
+    <a class="city-link" href="#" onclick="searchByCoords(27.9506,-82.4572,'Tampa');return false;">Tampa</a>
+    <a class="city-link" href="#" onclick="searchByCoords(25.7617,-80.1918,'Miami');return false;">Miami</a>
+    <a class="city-link" href="#" onclick="searchByCoords(28.5383,-81.3792,'Orlando');return false;">Orlando</a>
+    <a class="city-link" href="#" onclick="searchByCoords(26.7153,-80.0534,'Palm Beach');return false;">Palm Beach</a>
+    <a class="city-link" href="#" onclick="searchByCoords(26.1224,-80.1373,'Fort Lauderdale');return false;">Fort Lauderdale</a>
+  </div>
+</div>
 
 <div class="search-section">
   <div class="search-box">
@@ -120,18 +236,18 @@
     <div id="map"></div>
   </div>
   <div class="region-buttons">
-    <button class="region-btn" onclick="searchByCoords(26.1420, -81.7948, 'Naples')">Naples</button>
-    <button class="region-btn" onclick="searchByCoords(26.7153, -80.0534, 'Palm Beach')">Palm Beach</button>
-    <button class="region-btn" onclick="searchByCoords(26.3683, -80.1289, 'Boca Raton')">Boca Raton</button>
-    <button class="region-btn" onclick="searchByCoords(27.3364, -82.5307, 'Sarasota')">Sarasota</button>
-    <button class="region-btn" onclick="searchByCoords(27.9506, -82.4572, 'Tampa')">Tampa</button>
-    <button class="region-btn" onclick="searchByCoords(28.5383, -81.3792, 'Orlando')">Orlando</button>
-    <button class="region-btn" onclick="searchByCoords(30.3322, -81.6557, 'Jacksonville')">Jacksonville</button>
-    <button class="region-btn" onclick="searchByCoords(25.7617, -80.1918, 'Miami')">Miami</button>
-    <button class="region-btn" onclick="searchByCoords(28.9005, -81.9648, 'The Villages')">The Villages</button>
-    <button class="region-btn" onclick="searchByCoords(26.1224, -80.1373, 'Fort Lauderdale')">Fort Lauderdale</button>
-    <button class="region-btn" onclick="searchByCoords(27.7676, -80.4198, 'Vero Beach')">Vero Beach</button>
-    <button class="region-btn" onclick="searchByCoords(30.4213, -87.2169, 'Pensacola')">Pensacola</button>
+    <button class="region-btn" onclick="searchByCoords(26.1420,-81.7948,'Naples')">Naples</button>
+    <button class="region-btn" onclick="searchByCoords(26.7153,-80.0534,'Palm Beach')">Palm Beach</button>
+    <button class="region-btn" onclick="searchByCoords(26.3683,-80.1289,'Boca Raton')">Boca Raton</button>
+    <button class="region-btn" onclick="searchByCoords(27.3364,-82.5307,'Sarasota')">Sarasota</button>
+    <button class="region-btn" onclick="searchByCoords(27.9506,-82.4572,'Tampa')">Tampa</button>
+    <button class="region-btn" onclick="searchByCoords(28.5383,-81.3792,'Orlando')">Orlando</button>
+    <button class="region-btn" onclick="searchByCoords(30.3322,-81.6557,'Jacksonville')">Jacksonville</button>
+    <button class="region-btn" onclick="searchByCoords(25.7617,-80.1918,'Miami')">Miami</button>
+    <button class="region-btn" onclick="searchByCoords(28.9005,-81.9648,'The Villages')">The Villages</button>
+    <button class="region-btn" onclick="searchByCoords(26.1224,-80.1373,'Fort Lauderdale')">Fort Lauderdale</button>
+    <button class="region-btn" onclick="searchByCoords(27.7676,-80.4198,'Vero Beach')">Vero Beach</button>
+    <button class="region-btn" onclick="searchByCoords(30.4213,-87.2169,'Pensacola')">Pensacola</button>
   </div>
 </div>
 
@@ -141,11 +257,60 @@
   <div id="results" class="courts-grid"></div>
 </div>
 
+<!-- FAQ SECTION -->
+<div class="faq-section">
+  <h2>Florida Pickleball Courts — Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">Where are the best pickleball courts in Florida?</div>
+    <div class="faq-answer">Florida has world-class pickleball courts across the state. Top destinations include East Naples Community Park, Pelican Bay Community Park in Naples, The Villages (which has hundreds of courts), Pompano Park in Sarasota, and numerous indoor facilities in Tampa and Miami. Use the court finder above to discover the best courts near any Florida city.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">What is the best time to play pickleball in Florida?</div>
+    <div class="faq-answer">The best time to play pickleball in Florida is early morning between 7am and 9am — courts are less crowded and temperatures are manageable even in summer. Late afternoon after 4pm is also popular once the heat breaks. Avoid playing between 11am and 2pm during Florida summer months when heat and humidity peak. Our smart times widget on every court card shows you the optimal windows for each day.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">Are there free pickleball courts in Florida?</div>
+    <div class="faq-answer">Yes — Florida has hundreds of free public pickleball courts at community parks and recreation centers. Cities like Naples, Sarasota, Tampa, Orlando, and Miami all have free outdoor courts with dedicated pickleball lines. Search your city above and look for parks and recreation facilities in the results.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">What Florida city has the most pickleball courts?</div>
+    <div class="faq-answer">The Villages in Central Florida is widely considered the pickleball capital of Florida — and arguably the world — with hundreds of dedicated courts across its massive retirement community. Naples and Sarasota also rank among Florida's top pickleball cities per capita, with excellent facilities for all skill levels.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">Can tourists and visitors play pickleball in Florida?</div>
+    <div class="faq-answer">Absolutely. Most public park courts in Florida are open to anyone — no membership required. Many Florida resorts also have pickleball courts available to guests. If you're visiting, search the city you're staying in above, and look for parks and recreation centers with open play hours. Bring your paddle or ask the facility if rentals are available.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">Do Florida pickleball courts require reservations?</div>
+    <div class="faq-answer">It depends on the facility. Most public outdoor courts in Florida operate on a first-come, first-served basis during open play hours. Private clubs and indoor facilities often require reservations, especially during peak season (October through April). We recommend calling ahead or checking the facility's website for current reservation policies.</div>
+  </div>
+</div>
+
+<!-- INTERNAL LINKS / RELATED CONTENT -->
+<div class="related-section">
+  <h2>Explore More Florida Pickleball</h2>
+  <p>Courts found — now plan your game, gear up, and join the community.</p>
+  <div class="related-links">
+    <a href="tournaments.html" class="related-link">Florida Tournaments</a>
+    <a href="gear.html" class="related-link">Pickleball Gear Guide</a>
+    <a href="blog.html" class="related-link">The Coastal Circle Blog</a>
+    <a href="shop.html" class="related-link">Shop Florida Pickleball</a>
+    <a href="about.html" class="related-link">About Us</a>
+  </div>
+</div>
+
 <div class="footer">
   <div class="footer-links">
     <a href="../index.html">Home</a>
     <a href="shop.html">Shop</a>
     <a href="courts.html">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
     <a href="blog.html">Blog</a>
     <a href="about.html">About</a>
     <a href="#">Contact</a>
@@ -157,12 +322,9 @@
 <script>
 let map, markers = [], service;
 
-// Florida pickleball smart times — based on real Florida court culture
-// Bars represent hourly busyness 6am-8pm (14 hours)
-// Heights as percentages
 const FLORIDA_TIMES = {
-  weekday: [15, 85, 90, 70, 40, 20, 15, 20, 35, 60, 75, 65, 50, 30],
-  weekend: [20, 90, 95, 80, 60, 45, 40, 50, 65, 75, 70, 55, 40, 25]
+  weekday: [15,85,90,70,40,20,15,20,35,60,75,65,50,30],
+  weekend: [20,90,95,80,60,45,40,50,65,75,70,55,40,25]
 };
 const TIME_LABELS = ['6a','7a','8a','9a','10a','11a','12p','1p','2p','3p','4p','5p','6p','7p'];
 
@@ -176,11 +338,10 @@ function getBarClass(val) {
 function buildTimesWidget(isWeekend) {
   var data = isWeekend ? FLORIDA_TIMES.weekend : FLORIDA_TIMES.weekday;
   var day = isWeekend ? 'Weekend' : 'Weekday';
-  var bars = data.map(function(val, i) {
+  var bars = data.map(function(val) {
     var h = Math.max(4, Math.round(val * 0.32));
-    return '<div class="time-bar ' + getBarClass(val) + '" style="height:' + h + 'px;" title="' + TIME_LABELS[i] + ': ' + (val >= 80 ? 'Very busy' : val >= 55 ? 'Busy' : val >= 35 ? 'Good time' : 'Quiet') + '"></div>';
+    return '<div class="time-bar ' + getBarClass(val) + '" style="height:' + h + 'px;"></div>';
   }).join('');
-
   return '<div class="popular-times">' +
     '<div class="popular-times-title">🕐 Best Times to Play · ' + day + '</div>' +
     '<div class="times-row">' + bars + '</div>' +
@@ -189,8 +350,7 @@ function buildTimesWidget(isWeekend) {
       '<span class="times-tip">🟢 Sweet spot: 7–9am · Beat the Florida heat</span>' +
       '<span class="times-tip">🟠 Peak hours: 7–9am &amp; 4–5pm · Arrive early</span>' +
       '<span class="times-tip">☀️ Avoid 11am–2pm in summer · Heat advisory</span>' +
-    '</div>' +
-  '</div>';
+    '</div></div>';
 }
 
 function initMap() {
@@ -267,57 +427,38 @@ function searchNearLocation(lat, lng, locationName) {
 }
 
 function displayCourts(places, locationName) {
-  document.getElementById('results-header').textContent = places.length + ' courts found near ' + locationName;
+  document.getElementById('results-header').textContent = places.length + ' pickleball courts found near ' + locationName + ', Florida';
   var resultsDiv = document.getElementById('results');
   resultsDiv.innerHTML = '';
-
   var today = new Date();
   var isWeekend = today.getDay() === 0 || today.getDay() === 6;
-
   places.forEach(function(place) {
     var rating = place.rating ? '★ ' + place.rating + ' (' + (place.user_ratings_total || 0) + ' reviews)' : 'No reviews yet';
     var status = place.opening_hours ? (place.opening_hours.open_now ? '<span class="open">Open Now</span>' : '<span class="closed">Closed</span>') : '';
     var address = place.vicinity || place.formatted_address || '';
     var mapsUrl = 'https://www.google.com/maps/place/?q=place_id:' + place.place_id;
     var popularTimesUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(place.name) + '&query_place_id=' + place.place_id;
-
     var marker = new google.maps.Marker({
-      map: map,
-      position: place.geometry.location,
-      title: place.name,
-      icon: {
-        path: google.maps.SymbolPath.CIRCLE,
-        scale: 10,
-        fillColor: '#FF6F61',
-        fillOpacity: 1,
-        strokeColor: '#16324F',
-        strokeWeight: 2
-      }
+      map: map, position: place.geometry.location, title: place.name,
+      icon: { path: google.maps.SymbolPath.CIRCLE, scale: 10, fillColor: '#FF6F61', fillOpacity: 1, strokeColor: '#16324F', strokeWeight: 2 }
     });
     markers.push(marker);
-
     var card = document.createElement('div');
     card.className = 'court-card';
-
     var photoHtml = place.photos && place.photos.length > 0
-      ? '<div class="court-photo"><img src="' + place.photos[0].getUrl({ maxWidth: 400, maxHeight: 200 }) + '" alt="' + place.name + '" loading="lazy" /></div>'
+      ? '<div class="court-photo"><img src="' + place.photos[0].getUrl({ maxWidth: 400, maxHeight: 200 }) + '" alt="' + place.name + ' pickleball court" loading="lazy" /></div>'
       : '<div class="court-photo"><div class="court-photo-placeholder">🏓</div></div>';
-
     card.innerHTML = photoHtml +
       '<div class="court-body">' +
         '<div class="court-name">' + place.name + '</div>' +
         '<div class="court-address">' + address + '</div>' +
-        '<div class="court-meta">' +
-          '<span class="court-rating">' + rating + '</span>' +
-          status +
-        '</div>' +
+        '<div class="court-meta"><span class="court-rating">' + rating + '</span>' + status + '</div>' +
         buildTimesWidget(isWeekend) +
         '<div class="card-buttons">' +
           '<a href="' + mapsUrl + '" target="_blank" class="directions-btn">Get Directions</a>' +
           '<a href="' + popularTimesUrl + '" target="_blank" class="popular-btn">Popular Times</a>' +
         '</div>' +
       '</div>';
-
     resultsDiv.appendChild(card);
   });
 }
@@ -325,6 +466,11 @@ function displayCourts(places, locationName) {
 function clearMarkers() {
   markers.forEach(function(m) { m.setMap(null); });
   markers = [];
+}
+
+function toggleFaq(el) {
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
 }
 </script>
 
