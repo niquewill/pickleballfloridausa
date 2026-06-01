@@ -1,0 +1,158 @@
+const { Anthropic } = require("@anthropic-ai/sdk");
+const { Octokit } = require("@octokit/rest");
+
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+
+const GITHUB_OWNER = "niquewill";
+const GITHUB_REPO = "pickleballfloridausa";
+const BLOG_FILE_PATH = "pages/blog.html";
+
+// Persona prompts
+const personas = [
+  {
+    name: "Patrice Waverly-Fontaine",
+    location: "Palm Beach, FL",
+    avatar: "avatar-patrice",
+    tag: "Palm Beach",
+    tagline: "Courts · Social",
+    date: getFormattedDate(0),
+    prompt: `You are Patrice Waverly-Fontaine, a 61-year-old elegant Palm Beach socialite who plays pickleball at Phipps Ocean Park and The Bath & Tennis Club. Your husband is Geoffrey (retired hedge fund), your doubles partner is Bunny, your trainer is Carlos, and your daughter is Margaux. Write a 2-paragraph blog post about your week in pickleball. Mention a real Palm Beach local business (Ta-boo, Café Boulud, The Breakers, Worth Avenue, Green's Pharmacy, The Henry). Naturally mention one Pickleball Florida USA product (Palm Paddle Tee, Coastal Court Tote, Coastal Serve Tank, Coastal Hydration Bottle) paired with a luxury brand. Mention one Amazon affiliate pickleball product (Selkirk, JOOLA, K-Swiss, HEAD, Franklin paddle or shoes or bag) naturally in context. Never mention religion or politics. Be conspiratorial, slightly breathless, drop brand names casually, use "darling" when mildly annoyed. End with something that makes readers want to come back next week. Write ONLY the two paragraphs, no title.`
+  },
+  {
+    name: "Nicolette Hargrove",
+    location: "Naples, FL",
+    avatar: "avatar-nicolette",
+    tag: "Naples",
+    tagline: "Lifestyle · Food",
+    date: getFormattedDate(1),
+    prompt: `You are Nicolette Hargrove, a warm enthusiastic 54-year-old Naples lifestyle queen who plays at Naples Grande and Pelican Bay. Your husband is Derek (commercial real estate, bad at pickleball but loves it), best friend is Camille (from Atlanta), coach is Thomas, and labrador is Rosie. Write a 2-paragraph blog post about your week in pickleball. Mention a real Naples local business (The French on Fifth, Mediterrano, Mercato, Seed to Table, Venetian Village, Third Street South, Fifth Avenue South). Naturally mention one Pickleball Florida USA product paired with a wellness brand like Alo or Vuori. Mention one Amazon affiliate pickleball product naturally. Never mention religion or politics. Use "honestly" and "I cannot" frequently. Be warm, food-obsessed, notice everything. End with something that makes readers want to come back. Write ONLY the two paragraphs, no title.`
+  },
+  {
+    name: "Vivian Kowalski-Reed",
+    location: "The Villages, FL",
+    avatar: "avatar-vivian",
+    tag: "The Villages",
+    tagline: "Community · Courts",
+    date: getFormattedDate(2),
+    prompt: `You are Vivian Kowalski-Reed, a sharp hilarious 68-year-old retired nurse from Cleveland living in The Villages Florida. You play at Knudson Courts, Richmond Courts, Tierra Del Sol. Your husband is Frank (retired electrician, plays at 7am sharp), doubles partner is Dottie (from New Jersey, very competitive), neighbor is Marge (doesn't play, judges everyone), and Kenny is the guy at Knudson who thinks he's a 4.5 but is not. Write a 2-paragraph blog post about your week in pickleball. Mention a real Villages local business (Katie Belle's, Lake Sumter Landing, Spanish Springs, Brownwood Paddock Square, Publix on Rolling Acres). Naturally mention one Pickleball Florida USA product as a practical delight. Mention one Amazon affiliate pickleball product naturally. Never mention religion or politics. Use "honey" and "listen" to start sentences. Reference golf carts. Be direct, plain-spoken, hilarious. End with something that makes readers want to come back. Write ONLY the two paragraphs, no title.`
+  },
+  {
+    name: "Stella Marchetti",
+    location: "Sarasota, FL",
+    avatar: "avatar-stella",
+    tag: "Sarasota",
+    tagline: "Community · Gear",
+    date: getFormattedDate(3),
+    prompt: `You are Stella Marchetti, a sharp opinionated 47-year-old graphic designer from Brooklyn living in Sarasota for 6 years. You play at Pompano Park, Urfer Family Park, Bay Front Park. Your neighbor and pickleball introducer is Gabi (Brazilian, hilarious), boyfriend is Marco (architect, plays reluctantly but is good), doubles partner is Diane (retired teacher, steady), and your Tuesday crew is 8-10 regulars at Pompano. Write a 2-paragraph blog post about your week in pickleball. Mention a real Sarasota local business (Piccolo Italian Market, Keke's Breakfast Cafe, Indigenous restaurant, Sarasota Farmers Market, Burns Court, St. Armands Circle, Selby Gardens). Naturally mention one Pickleball Florida USA product with a design opinion. Mention one Amazon affiliate pickleball product naturally as part of a strong opinion. Never mention religion or politics. Use "here's the thing" and "I'm not going to lie." Be quick, sharp, self-aware, funny. End with something that makes readers want to come back. Write ONLY the two paragraphs, no title.`
+  }
+];
+
+function getFormattedDate(daysAgo) {
+  const date = new Date();
+  date.setDate(date.getDate() - daysAgo);
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
+function getMonthYear() {
+  return new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }).toUpperCase();
+}
+
+async function generatePost(persona) {
+  const message = await client.messages.create({
+    model: "claude-sonnet-4-20250514",
+    max_tokens: 500,
+    messages: [{ role: "user", content: persona.prompt }]
+  });
+  return message.content[0].text;
+}
+
+function buildBlogCard(persona, postText) {
+  const paragraphs = postText.trim().split('\n\n').filter(p => p.trim());
+  const para1 = paragraphs[0] || '';
+  const para2 = paragraphs[1] || '';
+
+  return `
+    <!-- ${persona.name.split(' ')[0].toUpperCase()} -->
+    <div class="blog-card">
+      <div class="blog-card-header">
+        <div class="card-avatar ${persona.avatar}"><img src="../images/${persona.name.split(' ')[0].toLowerCase()}.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+        <div class="card-meta">
+          <div class="card-author">${persona.name}</div>
+          <div class="card-location">${persona.location}</div>
+        </div>
+        <div class="card-date">${persona.date}</div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-text">
+          <p>${para1}</p>
+          <p>${para2}</p>
+        </div>
+      </div>
+      <div class="blog-card-footer">
+        <span class="card-tag">${persona.tag}</span>
+        <span class="location-tag">${persona.tagline}</span>
+      </div>
+    </div>`;
+}
+
+exports.handler = async function(event, context) {
+  try {
+    console.log("Generating new blog posts...");
+
+    // Generate all 4 posts
+    const posts = await Promise.all(personas.map(generatePost));
+
+    // Build the blog cards HTML
+    const blogCardsHTML = personas.map((persona, i) =>
+      buildBlogCard(persona, posts[i])
+    ).join('\n');
+
+    // Get current blog file from GitHub
+    const { data: fileData } = await octokit.repos.getContent({
+      owner: GITHUB_OWNER,
+      repo: GITHUB_REPO,
+      path: BLOG_FILE_PATH
+    });
+
+    const currentContent = Buffer.from(fileData.content, 'base64').toString('utf8');
+
+    // Replace the blog grid content and month/year
+    const monthYear = getMonthYear();
+    let newContent = currentContent.replace(
+      /<!-- PALM BEACH[\s\S]*?<!-- END BLOG CARDS -->/,
+      `${blogCardsHTML}\n  <!-- END BLOG CARDS -->`
+    );
+
+    // Update the month/year display
+    newContent = newContent.replace(
+      /<span class="location-tag">[A-Z]+ \d{4}<\/span>/,
+      `<span class="location-tag">${monthYear}</span>`
+    );
+
+    // Push updated file back to GitHub
+    await octokit.repos.createOrUpdateFileContents({
+      owner: GITHUB_OWNER,
+      repo: GITHUB_REPO,
+      path: BLOG_FILE_PATH,
+      message: `Auto-update blog posts - ${new Date().toLocaleDateString()}`,
+      content: Buffer.from(newContent).toString('base64'),
+      sha: fileData.sha
+    });
+
+    console.log("Blog posts updated successfully!");
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: "Blog posts updated successfully!" })
+    };
+
+  } catch (error) {
+    console.error("Error:", error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: error.message })
+    };
+  }
+};
+
+exports.schedule = "@weekly";

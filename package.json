@@ -1,0 +1,10 @@
+{
+  "name": "pickleballfloridausa",
+  "version": "1.0.0",
+  "description": "Pickleball Florida USA - Coastal Lifestyle Platform",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.0",
+    "@octokit/rest": "^20.0.0",
+    "@netlify/plugin-scheduled-functions": "^1.0.0"
+  }
+}
