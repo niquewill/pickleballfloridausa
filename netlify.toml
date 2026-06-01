@@ -2,5 +2,5 @@
   publish = "."
   functions = "netlify/functions"
 
-[[plugins]]
-  package = "@netlify/plugin-scheduled-functions"
+[functions]
+  node_bundler = "esbuild"
