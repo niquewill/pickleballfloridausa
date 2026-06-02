@@ -4,8 +4,37 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="../images/pfufavicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shop | Pickleball Florida USA</title>
-<meta name="description" content="Shop luxury coastal pickleball apparel, totes, and accessories. Florida's premier pickleball lifestyle brand." />
+<title>Florida Pickleball Apparel & Gear — Shop the Coastal Collection | Pickleball Florida USA</title>
+<meta name="description" content="Shop Florida pickleball apparel, totes, tanks, tees and water bottles. Resort-inspired coastal lifestyle collection designed for Florida pickleball players." />
+<meta name="keywords" content="Florida pickleball apparel, pickleball shirts Florida, pickleball clothing, coastal pickleball gear, Florida pickleball gifts" />
+<link rel="canonical" href="https://pickleballfloridausa.com/pages/shop.html" />
+<meta property="og:title" content="Florida Pickleball Apparel — Shop the Coastal Collection" />
+<meta property="og:description" content="Resort-inspired pickleball apparel designed for Florida players. Tees, tanks, totes and water bottles." />
+<meta property="og:url" content="https://pickleballfloridausa.com/pages/shop.html" />
+<meta property="og:type" content="website" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Florida Pickleball Apparel — Coastal Collection",
+  "description": "Resort-inspired Florida pickleball apparel and accessories. Tees, tanks, totes and water bottles designed for Florida pickleball players.",
+  "url": "https://pickleballfloridausa.com/pages/shop.html",
+  "publisher": { "@type": "Organization", "name": "Pickleball Florida USA", "url": "https://pickleballfloridausa.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Florida Pickleball Coastal Collection",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Palm Paddle Tee — Turquoise","offers":{"@type":"Offer","price":"23.95","priceCurrency":"USD","availability":"https://schema.org/InStock"}},
+    {"@type":"ListItem","position":2,"name":"Coastal Court Tote","offers":{"@type":"Offer","price":"52.00","priceCurrency":"USD","availability":"https://schema.org/InStock"}},
+    {"@type":"ListItem","position":3,"name":"Coastal Serve Tank — Turquoise","offers":{"@type":"Offer","price":"22.95","priceCurrency":"USD","availability":"https://schema.org/InStock"}},
+    {"@type":"ListItem","position":4,"name":"Coastal Hydration Bottle — Florida Edition","offers":{"@type":"Offer","price":"27.00","priceCurrency":"USD","availability":"https://schema.org/InStock"}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
@@ -21,17 +50,23 @@
   .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--coral); }
   .shop-hero { background: var(--navy); padding: 3rem 2.5rem; text-align: center; }
   .shop-hero p { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1rem; }
-  .shop-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--cream); font-weight: 400; }
+  .shop-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--cream); font-weight: 400; margin-bottom: 1rem; }
   .shop-hero h1 em { font-style: italic; color: var(--coral); }
+  .shop-hero-desc { color: var(--cream); opacity: 0.7; font-size: 0.88rem; max-width: 560px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
   .wave { display: block; background: var(--navy); line-height: 0; }
   .wave svg { display: block; width: 100%; }
-  .filters { padding: 2rem 2.5rem 0; max-width: 1100px; margin: 0 auto; display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  /* INTRO */
+  .intro-section { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2.5rem 0; }
+  .intro-section p { font-size: 0.88rem; line-height: 1.9; color: var(--navy); opacity: 0.8; font-weight: 300; margin-bottom: 0.5rem; }
+
+  .filters { padding: 1.5rem 2.5rem 0; max-width: 1100px; margin: 0 auto; display: flex; gap: 1rem; flex-wrap: wrap; }
   .filter-btn { background: transparent; border: 1px solid var(--navy); color: var(--navy); padding: 0.5rem 1.5rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Montserrat', sans-serif; }
   .filter-btn.active, .filter-btn:hover { background: var(--navy); color: var(--cream); }
-  .products-section { padding: 2rem 2.5rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .products-section { padding: 2rem 2.5rem; max-width: 1100px; margin: 0 auto; }
   .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; }
   .product-card { background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid rgba(22,50,79,0.08); transition: transform 0.2s; }
-  .product-card:hover { transform: translateY(-4px); }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(22,50,79,0.1); }
   .product-img { height: 280px; background: var(--cream); overflow: hidden; position: relative; }
   .product-img img { width: 100%; height: 100%; object-fit: cover; }
   .product-tag { position: absolute; top: 1rem; left: 1rem; background: var(--coral); color: #fff; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; z-index: 1; }
@@ -42,10 +77,34 @@
   .price { font-size: 1rem; color: var(--coral); font-weight: 500; }
   .buy-btn { background: var(--navy); color: var(--cream); border: none; padding: 0.5rem 1.2rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'Montserrat', sans-serif; text-decoration: none; display: inline-block; }
   .buy-btn:hover { background: var(--coral); }
+
+  /* FAQ */
+  .faq-section { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem 4rem; }
+  .faq-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; color: var(--navy); margin-bottom: 2rem; }
+  .faq-item { border-bottom: 1px solid rgba(22,50,79,0.1); padding: 1.25rem 0; }
+  .faq-question { font-size: 0.9rem; font-weight: 500; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .faq-question::after { content: '+'; font-size: 1.2rem; color: var(--coral); font-weight: 300; }
+  .faq-question.open::after { content: '−'; }
+  .faq-answer { font-size: 0.85rem; line-height: 1.8; color: var(--navy); opacity: 0.7; font-weight: 300; display: none; padding-top: 0.75rem; }
+  .faq-answer.open { display: block; }
+
+  /* RELATED */
+  .related-section { background: var(--navy); padding: 3rem 2.5rem; text-align: center; }
+  .related-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream); font-weight: 400; margin-bottom: 0.5rem; }
+  .related-section p { color: var(--cream); opacity: 0.6; font-size: 0.85rem; margin-bottom: 2rem; font-weight: 300; }
+  .related-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .related-link { color: var(--cream); text-decoration: none; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3); padding: 0.6rem 1.2rem; border-radius: 2px; }
+  .related-link:hover { background: var(--coral); border-color: var(--coral); }
+
   .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
   .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
   .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
   .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
+
+  @media (max-width: 600px) {
+    .products-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .shop-hero h1 { font-size: 1.8rem; }
+  }
 </style>
 </head>
 <body>
@@ -61,11 +120,19 @@
     <a href="about.html">About</a>
   </div>
 </nav>
+
 <div class="shop-hero">
-  <p>Resort-Inspired Essentials</p>
-  <h1>The <em>Collection</em></h1>
+  <p>Resort-Inspired Florida Pickleball Apparel</p>
+  <h1>The Coastal <em>Collection</em></h1>
+  <p class="shop-hero-desc">Pickleball apparel designed for the Florida lifestyle — from court to coast. Premium tees, tanks, totes and accessories inspired by Florida's resort culture and pickleball community.</p>
 </div>
 <div class="wave"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60"><path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/></svg></div>
+
+<!-- INTRO -->
+<div class="intro-section">
+  <p>The Coastal Collection is Florida pickleball apparel built for players who take their game seriously and their style even more so. Every piece is designed with the Florida court lifestyle in mind — breathable fabrics for the heat, coastal aesthetics for the lifestyle, and quality that holds up from morning open play through sunset cocktails at the club.</p>
+</div>
+
 <div class="filters">
   <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
   <button class="filter-btn" onclick="filterProducts('tee', this)">Tees</button>
@@ -73,121 +140,165 @@
   <button class="filter-btn" onclick="filterProducts('tote', this)">Bags</button>
   <button class="filter-btn" onclick="filterProducts('bottle', this)">Water Bottles</button>
 </div>
+
 <div class="products-section">
   <div class="products-grid" id="grid">
 
     <div class="product-card" data-type="tee">
       <div class="product-img">
-        <img src="../images/tee-turquoise-front.png" alt="Palm Paddle Tee Turquoise" />
+        <img src="../images/tee-turquoise-front.png" alt="Palm Paddle Pickleball Tee Turquoise Florida" />
         <span class="product-tag">Best Seller</span>
       </div>
       <div class="product-body">
         <h3>Palm Paddle Tee &mdash; Turquoise</h3>
-        <p>Premium coastal tee inspired by Florida resort living.</p>
+        <p>Premium coastal tee inspired by Florida resort living. The signature piece of the collection.</p>
         <div class="product-footer"><span class="price">$23.95</span><a href="https://www.etsy.com/listing/4510739795/palm-paddle-tee-turquoise" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="tee">
       <div class="product-img">
-        <img src="../images/tee-white-front.png" alt="Palm Paddle Tee White" />
+        <img src="../images/tee-white-front.png" alt="Palm Paddle Pickleball Tee White Florida" />
         <span class="product-tag">New Arrival</span>
       </div>
       <div class="product-body">
         <h3>Palm Paddle Tee &mdash; White</h3>
-        <p>Classic white tee with our signature Palm Paddle logo.</p>
+        <p>Classic white tee with our signature Palm Paddle logo. Clean, coastal, and court-ready.</p>
         <div class="product-footer"><span class="price">$23.95</span><a href="https://www.etsy.com/listing/4510740049/pickleball-shirt-florida-palm-paddle-tee" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="tee">
       <div class="product-img">
-        <img src="../images/tee-navy-front.png" alt="Palm Paddle Tee Navy" />
+        <img src="../images/tee-navy-front.png" alt="Palm Paddle Pickleball Tee Navy Florida" />
       </div>
       <div class="product-body">
         <h3>Palm Paddle Tee &mdash; Navy</h3>
-        <p>Yacht club navy with coral and turquoise logo detail.</p>
+        <p>Yacht club navy with coral and turquoise logo detail. Perfect for the Bath & Tennis set.</p>
         <div class="product-footer"><span class="price">$23.95</span><a href="https://www.etsy.com/listing/4510740253/palm-paddle-tee-navy" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="tote">
       <div class="product-img">
-        <img src="../images/tote-front.png" alt="Coastal Court Tote" />
+        <img src="../images/tote-front.png" alt="Coastal Court Tote Pickleball Bag Florida" />
         <span class="product-tag">Staff Pick</span>
       </div>
       <div class="product-body">
         <h3>Coastal Court Tote</h3>
-        <p>All-over tropical print tote. Court to coast.</p>
+        <p>All-over tropical print tote built for Florida court days. Fits everything from your paddle to your post-game essentials.</p>
         <div class="product-footer"><span class="price">$52.00</span><a href="https://www.etsy.com/listing/4510739864/coastal-court-tote" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="tank">
       <div class="product-img">
-        <img src="../images/coastal-tank-turquoise.png" alt="Coastal Serve Tank Turquoise" />
+        <img src="../images/coastal-tank-turquoise.png" alt="Coastal Serve Tank Turquoise Pickleball Florida" />
       </div>
       <div class="product-body">
         <h3>Coastal Serve Tank &mdash; Turquoise</h3>
-        <p>Lightweight racerback perfect for Florida courts.</p>
+        <p>Lightweight racerback tank built for Florida courts. Breathable, coastal, and as seen on Stella.</p>
         <div class="product-footer"><span class="price">$22.95</span><a href="https://www.etsy.com/listing/4510739271/coastal-serve-tank-turquoise" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="tank">
       <div class="product-img">
-        <img src="../images/coastal-tank-mint-front.png" alt="Coastal Serve Tank Mint" />
+        <img src="../images/coastal-tank-mint-front.png" alt="Coastal Serve Tank Mint Pickleball Florida" />
       </div>
       <div class="product-body">
         <h3>Coastal Serve Tank &mdash; Mint</h3>
-        <p>Fresh mint racerback for sunny Florida days.</p>
+        <p>Fresh mint racerback for sunny Florida court days. Light, cool, and effortlessly coastal.</p>
         <div class="product-footer"><span class="price">$22.95</span><a href="https://www.etsy.com/listing/4510740206/coastal-serve-tank-mint" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="tank">
       <div class="product-img">
-        <img src="../images/coastal-tank-white-front.png" alt="Coastal Serve Tank White" />
+        <img src="../images/coastal-tank-white-front.png" alt="Coastal Serve Tank White Pickleball Florida" />
       </div>
       <div class="product-body">
         <h3>Coastal Serve Tank &mdash; White</h3>
-        <p>Breathable white racerback for active Florida living.</p>
+        <p>Breathable white racerback for active Florida living. Court to brunch in one clean look.</p>
         <div class="product-footer"><span class="price">$22.95</span><a href="https://www.etsy.com/listing/4510739405/coastal-serve-tank-white" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="bottle">
       <div class="product-img">
-        <img src="../images/coastal-waterbottle-front.png" alt="Coastal Hydration Bottle" />
+        <img src="../images/coastal-waterbottle-front.png" alt="Coastal Hydration Water Bottle Florida Pickleball" />
         <span class="product-tag">New</span>
       </div>
       <div class="product-body">
         <h3>Coastal Hydration Bottle &mdash; Florida Edition</h3>
-        <p>Stay hydrated in Florida style. Premium stainless steel.</p>
+        <p>Stay hydrated in Florida style. Premium stainless steel insulated bottle built for the heat.</p>
         <div class="product-footer"><span class="price">$27.00</span><a href="https://www.etsy.com/listing/4510740360/coastal-hydration-bottle-florida-edition" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
     <div class="product-card" data-type="bottle">
       <div class="product-img">
-        <img src="../images/gulf-bottle-front.png" alt="Gulf Breeze Hydration Bottle" />
+        <img src="../images/gulf-bottle-front.png" alt="Gulf Breeze Hydration Water Bottle Pickleball" />
         <span class="product-tag">New</span>
       </div>
       <div class="product-body">
         <h3>Gulf Breeze Hydration Bottle</h3>
-        <p>Inspired by Gulf Coast sunsets. Court to beach ready.</p>
+        <p>Inspired by Gulf Coast sunsets. Insulated stainless steel — from court to beach and back.</p>
         <div class="product-footer"><span class="price">$38.00</span><a href="https://www.etsy.com/listing/4511126044/gulf-breeze-hydration-bottle" target="_blank" class="buy-btn">Shop Now</a></div>
       </div>
     </div>
 
   </div>
 </div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <h2>Florida Pickleball Apparel — FAQ</h2>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">Where is the Coastal Collection made and shipped from?</div>
+    <div class="faq-answer">The Coastal Collection is available through our Etsy storefront. All orders are processed and shipped through Etsy's trusted fulfillment network. Shipping times and options are shown at checkout on Etsy.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">What makes this pickleball apparel designed for Florida?</div>
+    <div class="faq-answer">Every piece in the Coastal Collection is designed with Florida's court conditions in mind — lightweight breathable fabrics for the heat and humidity, coastal color palettes inspired by Florida's turquoise waters and coral sunsets, and a resort-lifestyle aesthetic that feels at home from the pickleball court to the club.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">Do you offer Florida pickleball gift ideas?</div>
+    <div class="faq-answer">Absolutely — the Coastal Collection makes excellent gifts for Florida pickleball players. The Coastal Court Tote, Palm Paddle Tees, and Coastal Hydration Bottles are all popular gift choices. Perfect for birthdays, Father's Day, retirement gifts, and holiday shopping for the pickleball player in your life.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">Can I wear these on the pickleball court?</div>
+    <div class="faq-answer">Yes — all apparel in the collection is designed to be court-ready. The tanks and tees are lightweight and breathable, built for active play in Florida's warm climate. The Coastal Court Tote fits paddles, balls, and all your court essentials.</div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="related-section">
+  <h2>Explore More Florida Pickleball</h2>
+  <p>Geared up — now find your court and join the community.</p>
+  <div class="related-links">
+    <a href="courts.html" class="related-link">Find Florida Courts</a>
+    <a href="tournaments.html" class="related-link">Florida Tournaments</a>
+    <a href="gear.html" class="related-link">Pickleball Gear Guide</a>
+    <a href="blog.html" class="related-link">The Coastal Circle Blog</a>
+  </div>
+</div>
+
 <div class="footer">
   <div class="footer-links">
-    <a href="../index.html">Home</a><a href="shop.html">Shop</a><a href="courts.html">Courts</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="#">Contact</a><a href="#">Privacy</a>
+    <a href="../index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="gear.html">Gear</a>
+    <a href="courts.html">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Privacy</a>
   </div>
   <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
 </div>
+
 <script>
 function filterProducts(type, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -195,6 +306,10 @@ function filterProducts(type, btn) {
   document.querySelectorAll('.product-card').forEach(card => {
     card.style.display = (type === 'all' || card.dataset.type === type) ? 'block' : 'none';
   });
+}
+function toggleFaq(el) {
+  el.classList.toggle('open');
+  el.nextElementSibling.classList.toggle('open');
 }
 </script>
 </body>
