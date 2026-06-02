@@ -446,9 +446,14 @@ function displayCourts(places, locationName) {
     markers.push(marker);
     var card = document.createElement('div');
     card.className = 'court-card';
-    var photoHtml = place.photos && place.photos.length > 0
-      ? '<div class="court-photo"><img src="' + place.photos[0].getUrl({ maxWidth: 400, maxHeight: 200 }) + '" alt="' + place.name + ' pickleball court" loading="lazy" /></div>'
-      : '<div class="court-photo"><div class="court-photo-placeholder">🏓</div></div>';
+    var photoHtml = '<div class="court-photo">';
+    if (place.photos && place.photos.length > 0) {
+    var photoUrl = place.photos[0].getUrl({ maxWidth: 400, maxHeight: 200 });
+    photoHtml += '<img src="' + photoUrl + '" alt="' + place.name + ' pickleball court" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=court-photo-placeholder>🏓</div>\'" />';
+  } else {
+    photoHtml += '<div class="court-photo-placeholder">🏓</div>';
+  }
+photoHtml += '</div>';
 card.innerHTML = photoHtml +
       '<div class="court-body">' +
         '<div class="court-name" onclick="window.open(\'' + mapsUrl + '\', \'_blank\')" style="cursor:pointer; text-decoration:underline; text-underline-offset:3px;">' + place.name + '</div>' +
