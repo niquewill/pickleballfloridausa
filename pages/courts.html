@@ -346,11 +346,11 @@ function buildTimesWidget(isWeekend) {
     '<div class="popular-times-title">🕐 Best Times to Play · ' + day + '</div>' +
     '<div class="times-row">' + bars + '</div>' +
     '<div class="times-labels"><span class="time-label">6am</span><span class="time-label">9am</span><span class="time-label">12pm</span><span class="time-label">3pm</span><span class="time-label">6pm</span></div>' +
-    '<div class="times-tips">' +
-      '<span class="times-tip">🟢 Sweet spot: 7–9am · Beat the Florida heat</span>' +
-      '<span class="times-tip">🟠 Peak hours: 7–9am &amp; 4–5pm · Arrive early</span>' +
-      '<span class="times-tip">☀️ Avoid 11am–2pm in summer · Heat advisory</span>' +
-    '</div></div>';
+ '<div class="times-tips">' +
+  '<span class="times-tip"><span style="display:inline-block;width:10px;height:10px;background:#2E8B57;border-radius:2px;"></span> Sweet spot: 7–9am · Beat the Florida heat</span>' +
+  '<span class="times-tip"><span style="display:inline-block;width:10px;height:10px;background:#FF6F61;border-radius:2px;"></span> Peak hours: 7–9am &amp; 4–5pm · Arrive early</span>' +
+  '<span class="times-tip"><span style="display:inline-block;width:10px;height:10px;background:#FFD700;border-radius:2px;"></span> Avoid 11am–2pm in summer · Heat advisory</span>' +
+ '</div>'
 }
 
 function initMap() {
@@ -448,9 +448,9 @@ function displayCourts(places, locationName) {
     var photoHtml = place.photos && place.photos.length > 0
       ? '<div class="court-photo"><img src="' + place.photos[0].getUrl({ maxWidth: 400, maxHeight: 200 }) + '" alt="' + place.name + ' pickleball court" loading="lazy" /></div>'
       : '<div class="court-photo"><div class="court-photo-placeholder">🏓</div></div>';
-    card.innerHTML = photoHtml +
+card.innerHTML = photoHtml +
       '<div class="court-body">' +
-        '<div class="court-name">' + place.name + '</div>' +
+        '<div class="court-name" onclick="window.open(\'' + mapsUrl + '\', \'_blank\')" style="cursor:pointer; text-decoration:underline; text-underline-offset:3px;">' + place.name + '</div>' +
         '<div class="court-address">' + address + '</div>' +
         '<div class="court-meta"><span class="court-rating">' + rating + '</span>' + status + '</div>' +
         buildTimesWidget(isWeekend) +
