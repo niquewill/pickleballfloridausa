@@ -508,18 +508,84 @@
   </script></div>
 
 <!-- EMAIL SIGNUP -->
-<div class="email-strip">
-  <h2>Join The Coastal Circle</h2>
-  <img src="images/joincircle.png" alt="Join The Coastal Circle" style="width:100%; height:400px; object-fit:cover; object-position:center; display:block;" />
-  <p>Exclusive access to new collections, Florida tournament news, and members-only offers. No spam &mdash; ever.</p>
-  <form id="sib-form" method="POST" action="https://c8fbe7fc.sibforms.com/serve/MUIFAP3xhPHl9UFeyPIz2ya1etYh9nOvZY_of12LhroK1z8rlPiWQiB4y16Lu4a7mS_G3xcSbhIb9_rS3z_AJbnkfhKqtizT6pNgqIR_8yfJc1PaawrZ01y94EJoZWWEDGuxdBpmf0RI85w8CPVy39LlvVBrZHrvPwLSe7as4Fe893wiNtQVrrBOQs-1X7TFa6TznK2Z6AuxbAmy0w==" onsubmit="return handleSubmit(event)" class="email-form">
-    <input type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="Your email address" required />
-    <input type="text" name="email_address_check" value="" style="display:none;">
-    <input type="hidden" name="locale" value="en">
-    <button type="submit">JOIN</button>
-  </form>
-  <p id="success-msg" style="display:none; color:#2CCCD3; margin-top:1rem; letter-spacing:2px; text-transform:uppercase;">🎉 You are in! Welcome to the Coastal Circle.</p>
+<!-- LEAD MAGNET SECTION — paste this into any page where you want the signup form -->
+<!-- Add the stylesheet link in the <head> of the page -->
+<!-- <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css"> -->
+
+<div style="background-color:#16324F; padding:4rem 2.5rem;">
+  <div style="max-width:700px; margin:0 auto; text-align:center;">
+
+    <!-- Eyebrow -->
+    <p style="margin:0 0 0.75rem; font-size:0.65rem; letter-spacing:5px; text-transform:uppercase; color:#2CCCD3; font-family:'Montserrat',sans-serif;">Free Download</p>
+
+    <!-- Headline -->
+    <h2 style="margin:0 0 0.75rem; font-family:'Playfair Display',Georgia,serif; font-size:2rem; font-weight:400; color:#FFF7EB; line-height:1.2;">The Ultimate Florida Pickleball<br><em style="font-style:italic; color:#FF6F61;">Court Guide — 2026 Edition</em></h2>
+
+    <!-- Description -->
+    <p style="margin:0 0 2rem; font-size:0.85rem; color:#FFF7EB; opacity:0.7; line-height:1.8; font-family:'Montserrat',sans-serif; font-weight:300;">20+ Florida cities · Insider court tips · Best times to play · Free for Coastal Circle members</p>
+
+    <!-- Brevo Form (restyled to match brand) -->
+    <style>
+      #sib-container { background-color: transparent !important; border: none !important; max-width: 100% !important; }
+      #sib-form .sib-form-block:first-child { display: none !important; }
+      #sib-form .sib-form-block:nth-child(2) { display: none !important; }
+      .entry__label { display: none !important; }
+      .entry__specification { display: none !important; }
+      .sib-form { background-color: transparent !important; padding: 0 !important; }
+      .sib-form-container { background-color: transparent !important; }
+      #sib-form .entry__field input {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 0.9rem !important;
+        padding: 0.85rem 1.2rem !important;
+        border: none !important;
+        border-radius: 2px 0 0 2px !important;
+        background: #FFF7EB !important;
+        color: #16324F !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .sib-form-block__button {
+        background-color: #FF6F61 !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 0.75rem !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        padding: 0.85rem 1.5rem !important;
+        border-radius: 2px !important;
+        border: none !important;
+        cursor: pointer !important;
+        white-space: nowrap !important;
+      }
+      .form__entry { text-align: left !important; }
+      #sib-form-container { display: flex; justify-content: center; }
+      .sib-container--large { width: 100% !important; }
+      .entry__error { font-family: 'Montserrat', sans-serif !important; font-size: 0.8rem !important; }
+    </style>
+
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
+    <div class="sib-form" style="text-align:center; background-color:transparent;">
+      <div id="sib-form-container" class="sib-form-container">
+        <div id="sib-container" class="sib-container--large sib-container--vertical" style="max-width:540px; text-align:center; background-color:transparent; border:none;">
+          <form id="sib-form" method="POST" action="https://c8fbe7fc.sibforms.com/serve/MUIFAFHHhUOR6d69VoB_kVTk_l31VAm3TEhQXRHo6qFlUkIexP_wGE7a156dfNzSZspWzx-NxUDwmlMr_V2CRK7tY7EDLM4VrfsLDFsicYoYaw_sNq79v4iLVqH7pJzc8r4wLqi1wVmEDBjxMAud0MqNKVpCObpgR0P5c1rfGpmJ3IGCH0knb7c6IYWmmJlxIu_4RHXsLxJX1VygGw==" style="display:flex; gap:0; max-width:480px; margin:0 auto;">
+            <div style="flex:1;">
+              <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="Your email address" data-required="true" required style="font-family:'Montserrat',sans-serif; font-size:0.9rem; padding:0.85rem 1.2rem; border:none; border-radius:2px 0 0 2px; background:#FFF7EB; color:#16324F; width:100%; box-sizing:border-box;" />
+            </div>
+            <button class="sib-form-block__button" style="background-color:#FF6F61; color:#fff; border:none; padding:0.85rem 1.5rem; font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; font-family:'Montserrat',sans-serif; border-radius:0 2px 2px 0; white-space:nowrap;" form="sib-form" type="submit">
+              Get the Free Guide
+            </button>
+            <input type="text" name="email_address_check" value="" style="display:none;">
+            <input type="hidden" name="locale" value="en">
+            <input type="hidden" name="html_type" value="simple">
+          </form>
+          <p style="margin:0.75rem 0 0; font-size:0.7rem; color:#FFF7EB; opacity:0.4; font-family:'Montserrat',sans-serif;">No spam, ever. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
+<!-- END LEAD MAGNET SECTION -->
 
 <script>
 function handleSubmit(e) {
