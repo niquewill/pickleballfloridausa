@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YW5F1Z6KC"></script>
 <meta name="google-site-verification" content="kmKepSeI11e4paPKIfwgAlNmaj6rnLet9pigW8Kx75I" />
 <script>
@@ -19,370 +18,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --coral: #FF6F61;
-    --turquoise: #2CCCD3;
-    --green: #2E8B57;
-    --cream: #FFF7EB;
-    --navy: #16324F;
-  }
-
-  body {
-    font-family: 'Montserrat', sans-serif;
-    background: var(--cream);
-    color: var(--navy);
-  }
-
-  /* NAV */
-  nav {
-    background: var(--navy);
-    padding: 1.2rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--cream);
-    letter-spacing: 1px;
-  }
-  .logo-sub {
-    font-size: 0.6rem;
-    color: var(--turquoise);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    display: block;
-    margin-top: 2px;
-  }
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-  }
-  .nav-links a {
-    color: var(--cream);
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.8;
-  }
+  :root { --coral: #FF6F61; --turquoise: #2CCCD3; --green: #2E8B57; --cream: #FFF7EB; --navy: #16324F; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
+  nav { background: var(--navy); padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 1px; }
+  .logo-sub { font-size: 0.6rem; color: var(--turquoise); letter-spacing: 4px; text-transform: uppercase; display: block; margin-top: 2px; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
   .nav-links a:hover { opacity: 1; color: var(--turquoise); }
   .nav-right { display: flex; gap: 1.2rem; align-items: center; }
-  .nav-right a {
-    color: var(--cream);
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    text-decoration: none;
-    opacity: 0.7;
-  }
-
-  /* HERO */
-  .hero {
-    background: var(--navy);
-    padding: 5rem 2.5rem 6rem;
-    text-align: center;
-  }
-  .hero-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--turquoise);
-    margin-bottom: 1.5rem;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    color: var(--cream);
-    line-height: 1.15;
-    margin-bottom: 1.5rem;
-    font-weight: 400;
-  }
+  .nav-right a { color: var(--cream); font-size: 0.75rem; letter-spacing: 1px; text-decoration: none; opacity: 0.7; }
+  .hero { background: var(--navy); padding: 5rem 2.5rem 6rem; text-align: center; }
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--cream); line-height: 1.15; margin-bottom: 1.5rem; font-weight: 400; }
   .hero h1 em { font-style: italic; color: var(--coral); }
-  .hero p {
-    color: var(--cream);
-    opacity: 0.75;
-    max-width: 500px;
-    margin: 0 auto 2.5rem;
-    font-size: 0.9rem;
-    line-height: 1.8;
-    font-weight: 300;
-  }
+  .hero p { color: var(--cream); opacity: 0.75; max-width: 500px; margin: 0 auto 2.5rem; font-size: 0.9rem; line-height: 1.8; font-weight: 300; }
   .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .btn-coral {
-    background: var(--coral);
-    color: #fff;
-    padding: 0.85rem 2.5rem;
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    border-radius: 2px;
-  }
-  .btn-ghost {
-    border: 1px solid rgba(255,255,255,0.4);
-    color: var(--cream);
-    padding: 0.85rem 2.5rem;
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    border-radius: 2px;
-  }
-
-  /* WAVE DIVIDER */
+  .btn-coral { background: var(--coral); color: #fff; padding: 0.85rem 2.5rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; border-radius: 2px; }
+  .btn-ghost { border: 1px solid rgba(255,255,255,0.4); color: var(--cream); padding: 0.85rem 2.5rem; text-decoration: none; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; border-radius: 2px; }
   .wave { display: block; background: var(--navy); line-height: 0; }
   .wave svg { display: block; width: 100%; }
-
-  /* SECTIONS */
   .section { padding: 4rem 2.5rem; max-width: 1100px; margin: 0 auto; }
-  .section-eyebrow {
-    font-size: 0.65rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--turquoise);
-    margin-bottom: 0.75rem;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: var(--navy);
-    margin-bottom: 0.5rem;
-    font-weight: 400;
-  }
-  .section-sub {
-    font-size: 0.85rem;
-    color: var(--navy);
-    opacity: 0.6;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-    line-height: 1.7;
-  }
-
-  /* COLLECTION CARDS */
-  .collections {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-  }
-  .col-card {
-    background: #fff;
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid rgba(22,50,79,0.08);
-  }
-  .col-img {
-    height: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-  }
-  .col-img.coral { background: var(--coral); }
-  .col-img.turq  { background: var(--turquoise); }
-  .col-img.green { background: var(--green); }
-  .col-img.navy  { background: var(--navy); }
-  .col-body { padding: 1.2rem; }
-  .col-body h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 0.3rem;
-    color: var(--navy);
-  }
-  .col-body p {
-    font-size: 0.78rem;
-    color: var(--navy);
-    opacity: 0.6;
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-  }
-  .col-body a {
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--coral);
-    text-decoration: none;
-  }
-
-  /* LIFESTYLE STRIP */
-  .lifestyle-strip {
-    background: var(--green);
-    padding: 4rem 2.5rem;
-    text-align: center;
-  }
-  .lifestyle-strip h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: var(--cream);
-    font-weight: 400;
-    margin-bottom: 1rem;
-  }
-  .lifestyle-strip p {
-    color: var(--cream);
-    opacity: 0.85;
-    font-size: 0.85rem;
-    line-height: 1.8;
-    max-width: 520px;
-    margin: 0 auto 2.5rem;
-    font-weight: 300;
-  }
-
-  /* PRODUCT GRID */
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .section-eyebrow { font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); margin-bottom: 0.5rem; font-weight: 400; }
+  .section-sub { font-size: 0.85rem; color: var(--navy); opacity: 0.6; margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7; }
+  .lifestyle-strip { background: var(--green); padding: 4rem 2.5rem; text-align: center; }
+  .lifestyle-strip h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--cream); font-weight: 400; margin-bottom: 1rem; }
+  .lifestyle-strip p { color: var(--cream); opacity: 0.85; font-size: 0.85rem; line-height: 1.8; max-width: 520px; margin: 0 auto 2.5rem; font-weight: 300; }
+  .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; max-width: 1100px; margin: 0 auto; }
   .product { background: var(--cream); border-radius: 4px; overflow: hidden; }
-  .product-img {
-    height: 130px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.8rem;
-    background: #fff;
-  }
-  .product-body { padding: 1rem; }
-  .product-body h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.9rem;
-    font-weight: 400;
-    margin-bottom: 0.25rem;
-    color: var(--navy);
-  }
+  .product-img { height: 130px; display: flex; align-items: center; justify-content: center; font-size: 2.8rem; background: #fff; }
+  .product-body h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 400; margin-bottom: 0.25rem; color: var(--navy); }
   .product-body .price { font-size: 0.9rem; color: var(--coral); font-weight: 500; }
-  .product-body .tag {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--turquoise);
-    display: block;
-    margin-bottom: 0.4rem;
-  }
-  .shop-link {
-    display: block;
-    margin-top: 0.75rem;
-    text-align: center;
-    background: var(--navy);
-    color: var(--cream);
-    padding: 0.5rem;
-    border-radius: 2px;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-
-  /* TESTIMONIALS */
+  .product-body .tag { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); display: block; margin-bottom: 0.4rem; }
+  .shop-link { display: block; margin-top: 0.75rem; text-align: center; background: var(--navy); color: var(--cream); padding: 0.5rem; border-radius: 2px; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
   .testimonials { background: #fff; padding: 4rem 2.5rem; }
   .testi-inner { max-width: 1100px; margin: 0 auto; }
-  .testi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  .testi-card {
-    background: var(--cream);
-    padding: 1.5rem;
-    border-radius: 4px;
-    border-left: 3px solid var(--turquoise);
-  }
-  .testi-card p {
-    font-size: 0.85rem;
-    line-height: 1.7;
-    color: var(--navy);
-    opacity: 0.8;
-    font-style: italic;
-    margin-bottom: 1rem;
-  }
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+  .testi-card { background: var(--cream); padding: 1.5rem; border-radius: 4px; border-left: 3px solid var(--turquoise); }
+  .testi-card p { font-size: 0.85rem; line-height: 1.7; color: var(--navy); opacity: 0.8; font-style: italic; margin-bottom: 1rem; }
   .testi-card strong { font-size: 0.75rem; letter-spacing: 1px; color: var(--navy); }
   .testi-card span { font-size: 0.7rem; color: var(--turquoise); letter-spacing: 1px; }
-
-  /* EMAIL STRIP */
-  .email-strip {
-    background: var(--navy);
-    padding: 4rem 2.5rem;
-    text-align: center;
-  }
-  .email-strip h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: var(--cream);
-    font-weight: 400;
-    margin-bottom: 0.75rem;
-  }
-  .email-strip p {
-    color: var(--cream);
-    opacity: 0.7;
-    font-size: 0.85rem;
-    margin-bottom: 2rem;
-    font-weight: 300;
-  }
-  .email-form {
-    display: flex;
-    max-width: 420px;
-    margin: 0 auto;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .email-form input {
-    flex: 1;
-    padding: 0.85rem 1.2rem;
-    border: none;
-    font-size: 0.85rem;
-    font-family: 'Montserrat', sans-serif;
-    background: var(--cream);
-    color: var(--navy);
-  }
-  .email-form input::placeholder { color: var(--navy); opacity: 0.5; }
-  .email-form button {
-    background: var(--coral);
-    color: #fff;
-    border: none;
-    padding: 0.85rem 1.5rem;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  /* FOOTER */
   .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
   .footer .logo-text { display: block; margin-bottom: 1rem; }
-  .footer-links {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-  }
-  .footer-links a {
-    color: var(--cream);
-    opacity: 0.5;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
+  .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
   .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
 </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <nav>
   <div>
     <span class="logo-text">Pickleball Florida USA</span>
     <span class="logo-sub">Coastal Lifestyle Collection</span>
   </div>
   <div class="nav-links">
-<a href="pages/shop.html">Shop</a>
+    <a href="pages/shop.html">Shop</a>
     <a href="pages/gear.html">Gear</a>
     <a href="pages/courts.html">Courts</a>
     <a href="pages/tournaments.html">Tournaments</a>
@@ -395,7 +87,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <p class="hero-eyebrow">Florida's Premier Pickleball Lifestyle Brand</p>
   <h1>Where Palm Beach<br>Meets <em>Pickleball</em></h1>
@@ -406,33 +97,30 @@
   </div>
 </div>
 
-<!-- WAVE DIVIDER -->
 <div class="wave">
   <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60">
     <path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/>
   </svg>
 </div>
 
-<!-- COLLECTIONS -->
 <div class="section">
   <p class="section-eyebrow">Shop by collection</p>
   <h2 class="section-title">Resort-Inspired Essentials</h2>
   <p class="section-sub">Thoughtfully curated for players who bring elegance to every match.</p>
- <div style="border-radius:4px; overflow:hidden;">
-  <img src="images/resortinspired.png" alt="Resort Style Pickleball Collection" style="width:100%; display:block; border-radius:4px;" />
-</div>
-<div style="text-align:center; margin-top:2rem;">
-  <a href="https://www.etsy.com/shop/PickleballFloridaUSA" style="background:#FF6F61; color:#fff; padding:0.85rem 2.5rem; text-decoration:none; font-size:0.75rem; letter-spacing:3px; text-transform:uppercase; border-radius:2px; font-family:'Montserrat',sans-serif;">Shop The Collection</a>
-</div>
+  <div style="border-radius:4px; overflow:hidden;">
+    <img src="images/resortinspired.png" alt="Resort Style Pickleball Collection" style="width:100%; display:block; border-radius:4px;" />
+  </div>
+  <div style="text-align:center; margin-top:2rem;">
+    <a href="https://www.etsy.com/shop/PickleballFloridaUSA" style="background:#FF6F61; color:#fff; padding:0.85rem 2.5rem; text-decoration:none; font-size:0.75rem; letter-spacing:3px; text-transform:uppercase; border-radius:2px; font-family:'Montserrat',sans-serif;">Shop The Collection</a>
   </div>
 </div>
-<!-- LIFESTYLE + PRODUCTS -->
+
 <div class="lifestyle-strip">
   <h2>Elevated Gear For Life<br>On &amp; Off The Court</h2>
   <p>We believe pickleball is more than a sport — it's a lifestyle. Every piece in our collection is chosen to reflect the sophistication, warmth, and spirit of Florida's coastal communities.</p>
   <div class="products">
     <div class="product">
-<div class="product-img"><img src="images/tee-turquoise-front.png" alt="Palm Paddle Tee" style="width:100%;height:100%;object-fit:cover;" /></div>
+      <div class="product-img"><img src="images/tee-turquoise-front.png" alt="Palm Paddle Tee" style="width:100%;height:100%;object-fit:cover;" /></div>
       <div class="product-info">
         <span class="tag">Best Seller</span>
         <h4>Palm Paddle Tee &mdash; Turquoise</h4>
@@ -470,140 +158,37 @@
   </div>
 </div>
 
-<!-- TESTIMONIALS -->
-<div class="testi-inner">
+<div class="testimonials">
+  <div class="testi-inner">
     <p class="section-eyebrow">From Our Community</p>
     <h2 class="section-title">Players Who Play Beautifully</h2>
     <div class="testi-grid" id="testi-grid"></div>
   </div>
-  <script>
-  var testimonials = [
-    { quote: "Finally a pickleball brand that matches the lifestyle. I feel like I'm shopping at a boutique, not a sporting goods store.", name: "Sandra M.", location: "Naples, FL" },
-    { quote: "The paddle quality is exceptional and the bag is gorgeous. I get compliments every time I walk onto the court.", name: "Diane R.", location: "Boca Raton, FL" },
-    { quote: "Ordered the gift set for my club's holiday party. Everyone was obsessed. This is the only pickleball brand I recommend.", name: "Carol T.", location: "Sarasota, FL" },
-    { quote: "The tote bag is everything. I carry it to the court, to brunch, everywhere. People always ask where I got it.", name: "Patricia W.", location: "Palm Beach, FL" },
-    { quote: "These shirts are so well made and the fit is perfect. Finally something that looks good both on and off the court.", name: "Jennifer L.", location: "Sarasota, FL" },
-    { quote: "I bought the starter set as a gift and my friend called me immediately after opening it. She was absolutely thrilled.", name: "Margaret B.", location: "Fort Lauderdale, FL" },
-    { quote: "The quality blew me away. This is not your average pickleball gear. It feels like a luxury brand because it is.", name: "Susan K.", location: "Jupiter, FL" },
-    { quote: "I play four times a week and get compliments on my Pickleball Florida gear every single time. Worth every penny.", name: "Linda H.", location: "The Villages, FL" },
-    { quote: "My doubles partner and I both ordered matching tees and the court went wild. We felt like celebrities.", name: "Barbara A.", location: "Ponte Vedra, FL" },
-    { quote: "Shipped fast, quality is incredible, and the design is exactly what Florida pickleball needed. Love this brand.", name: "Donna M.", location: "Naples, FL" },
-    { quote: "I ordered for myself and ended up ordering three more as gifts. Everyone on my club team wants one now.", name: "Karen P.", location: "Boca Raton, FL" },
-    { quote: "This is the brand I have been waiting for. Stylish, coastal, and made for women who take their game seriously.", name: "Deborah S.", location: "Sarasota, FL" }
-  ];
-
-  function shuffle(arr) {
-    for (var i = arr.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;
-    }
-    return arr;
-  }
-
-  var picked = shuffle(testimonials.slice()).slice(0, 3);
-  var grid = document.getElementById('testi-grid');
-  grid.innerHTML = picked.map(function(t) {
-    return '<div class="testi-card"><p>"' + t.quote + '"</p><strong>' + t.name + '</strong><br><span>' + t.location + '</span></div>';
-  }).join('');
-  </script></div>
+</div>
 
 <!-- EMAIL SIGNUP -->
-<!-- LEAD MAGNET SECTION — paste this into any page where you want the signup form -->
-<!-- Add the stylesheet link in the <head> of the page -->
-<!-- <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css"> -->
-
 <div style="background-color:#16324F; padding:4rem 2.5rem;">
   <div style="max-width:700px; margin:0 auto; text-align:center;">
-
-    <!-- Eyebrow -->
     <p style="margin:0 0 0.75rem; font-size:0.65rem; letter-spacing:5px; text-transform:uppercase; color:#2CCCD3; font-family:'Montserrat',sans-serif;">Free Download</p>
-
-    <!-- Headline -->
     <h2 style="margin:0 0 0.75rem; font-family:'Playfair Display',Georgia,serif; font-size:2rem; font-weight:400; color:#FFF7EB; line-height:1.2;">The Ultimate Florida Pickleball<br><em style="font-style:italic; color:#FF6F61;">Court Guide — 2026 Edition</em></h2>
-
-    <!-- Description -->
     <p style="margin:0 0 2rem; font-size:0.85rem; color:#FFF7EB; opacity:0.7; line-height:1.8; font-family:'Montserrat',sans-serif; font-weight:300;">20+ Florida cities · Insider court tips · Best times to play · Free for Coastal Circle members</p>
 
-    <!-- Brevo Form (restyled to match brand) -->
-    <style>
-      #sib-container { background-color: transparent !important; border: none !important; max-width: 100% !important; }
-      #sib-form .sib-form-block:first-child { display: none !important; }
-      #sib-form .sib-form-block:nth-child(2) { display: none !important; }
-      .entry__label { display: none !important; }
-      .entry__specification { display: none !important; }
-      .sib-form { background-color: transparent !important; padding: 0 !important; }
-      .sib-form-container { background-color: transparent !important; }
-      #sib-form .entry__field input {
-        font-family: 'Montserrat', sans-serif !important;
-        font-size: 0.9rem !important;
-        padding: 0.85rem 1.2rem !important;
-        border: none !important;
-        border-radius: 2px 0 0 2px !important;
-        background: #FFF7EB !important;
-        color: #16324F !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .sib-form-block__button {
-        background-color: #FF6F61 !important;
-        font-family: 'Montserrat', sans-serif !important;
-        font-size: 0.75rem !important;
-        letter-spacing: 2px !important;
-        text-transform: uppercase !important;
-        padding: 0.85rem 1.5rem !important;
-        border-radius: 2px !important;
-        border: none !important;
-        cursor: pointer !important;
-        white-space: nowrap !important;
-      }
-      .form__entry { text-align: left !important; }
-      #sib-form-container { display: flex; justify-content: center; }
-      .sib-container--large { width: 100% !important; }
-      .entry__error { font-family: 'Montserrat', sans-serif !important; font-size: 0.8rem !important; }
-    </style>
-
-    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
-    <div class="sib-form" style="text-align:center; background-color:transparent;">
-      <div id="sib-form-container" class="sib-form-container">
-        <div id="sib-container" class="sib-container--large sib-container--vertical" style="max-width:540px; text-align:center; background-color:transparent; border:none;">
-          <form id="sib-form" method="POST" action="https://c8fbe7fc.sibforms.com/..." onsubmit="return handleBrevoSubmit(event)">
-            <div style="flex:1;">
-              <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="Your email address" data-required="true" required style="font-family:'Montserrat',sans-serif; font-size:0.9rem; padding:0.85rem 1.2rem; border:none; border-radius:2px 0 0 2px; background:#FFF7EB; color:#16324F; width:100%; box-sizing:border-box;" />
-            </div>
-            <button class="sib-form-block__button" style="background-color:#FF6F61; color:#fff; border:none; padding:0.85rem 1.5rem; font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; font-family:'Montserrat',sans-serif; border-radius:0 2px 2px 0; white-space:nowrap;" form="sib-form" type="submit">
-              Get the Free Guide
-            </button>
-            <input type="text" name="email_address_check" value="" style="display:none;">
-            <input type="hidden" name="locale" value="en">
-            <input type="hidden" name="html_type" value="simple">
-          <p id="brevo-success" style="display:none; color:#2CCCD3; margin-top:1rem; letter-spacing:2px; text-transform:uppercase; font-size:0.8rem;">🎉 Check your email — your guide is on the way!</p>
-          </form>
-          <p style="margin:0.75rem 0 0; font-size:0.7rem; color:#FFF7EB; opacity:0.4; font-family:'Montserrat',sans-serif;">No spam, ever. Unsubscribe anytime.</p>
-        </div>
-      </div>
+    <!-- Form -->
+    <div style="display:flex; max-width:480px; margin:0 auto;">
+      <input type="email" id="brevo-email" placeholder="Your email address" required
+        style="flex:1; font-family:'Montserrat',sans-serif; font-size:0.9rem; padding:0.85rem 1.2rem; border:none; border-radius:2px 0 0 2px; background:#FFF7EB; color:#16324F;" />
+      <button onclick="submitBrevo()" 
+        style="background-color:#FF6F61; color:#fff; border:none; padding:0.85rem 1.5rem; font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; font-family:'Montserrat',sans-serif; border-radius:0 2px 2px 0; white-space:nowrap;">
+        Get the Free Guide
+      </button>
     </div>
 
+    <!-- Success message — OUTSIDE the form so it shows correctly -->
+    <p id="brevo-success" style="display:none; color:#2CCCD3; margin-top:1rem; letter-spacing:2px; text-transform:uppercase; font-size:0.8rem;">🎉 Check your email — your guide is on the way!</p>
+    <p style="margin:0.75rem 0 0; font-size:0.7rem; color:#FFF7EB; opacity:0.4; font-family:'Montserrat',sans-serif;">No spam, ever. Unsubscribe anytime.</p>
   </div>
 </div>
-<!-- END LEAD MAGNET SECTION -->
 
-<script>
-function handleSubmit(e) {
-  e.preventDefault();
-  var form = document.getElementById('sib-form');
-  var email = document.getElementById('EMAIL').value;
-  if (!email) return false;
-  var formData = new FormData(form);
-  fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' })
-  .then(function() {
-    form.style.display = 'none';
-    document.getElementById('success-msg').style.display = 'block';
-  });
-  return false;
-}
-</script>
-<!-- FOOTER -->
 <div class="footer">
   <span class="logo-text">Pickleball Florida USA</span>
   <div class="footer-links">
@@ -615,20 +200,56 @@ function handleSubmit(e) {
     <a href="#">Contact</a>
     <a href="#">Privacy</a>
   </div>
-  <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
+  <p>&copy; 2026 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
 </div>
+
 <script>
-function handleBrevoSubmit(e) {
-  e.preventDefault();
-  var form = document.getElementById('sib-form');
-  var formData = new FormData(form);
-  fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' })
-  .then(function() {
-    form.style.display = 'none';
+var testimonials = [
+  { quote: "Finally a pickleball brand that matches the lifestyle. I feel like I'm shopping at a boutique, not a sporting goods store.", name: "Sandra M.", location: "Naples, FL" },
+  { quote: "The paddle quality is exceptional and the bag is gorgeous. I get compliments every time I walk onto the court.", name: "Diane R.", location: "Boca Raton, FL" },
+  { quote: "Ordered the gift set for my club's holiday party. Everyone was obsessed. This is the only pickleball brand I recommend.", name: "Carol T.", location: "Sarasota, FL" },
+  { quote: "The tote bag is everything. I carry it to the court, to brunch, everywhere. People always ask where I got it.", name: "Patricia W.", location: "Palm Beach, FL" },
+  { quote: "These shirts are so well made and the fit is perfect. Finally something that looks good both on and off the court.", name: "Jennifer L.", location: "Sarasota, FL" },
+  { quote: "I bought the starter set as a gift and my friend called me immediately after opening it. She was absolutely thrilled.", name: "Margaret B.", location: "Fort Lauderdale, FL" },
+  { quote: "The quality blew me away. This is not your average pickleball gear. It feels like a luxury brand because it is.", name: "Susan K.", location: "Jupiter, FL" },
+  { quote: "I play four times a week and get compliments on my Pickleball Florida gear every single time. Worth every penny.", name: "Linda H.", location: "The Villages, FL" },
+  { quote: "My doubles partner and I both ordered matching tees and the court went wild. We felt like celebrities.", name: "Barbara A.", location: "Ponte Vedra, FL" },
+  { quote: "Shipped fast, quality is incredible, and the design is exactly what Florida pickleball needed. Love this brand.", name: "Donna M.", location: "Naples, FL" },
+  { quote: "I ordered for myself and ended up ordering three more as gifts. Everyone on my club team wants one now.", name: "Karen P.", location: "Boca Raton, FL" },
+  { quote: "This is the brand I have been waiting for. Stylish, coastal, and made for women who take their game seriously.", name: "Deborah S.", location: "Sarasota, FL" }
+];
+function shuffle(arr) {
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;
+  }
+  return arr;
+}
+var picked = shuffle(testimonials.slice()).slice(0, 3);
+var grid = document.getElementById('testi-grid');
+grid.innerHTML = picked.map(function(t) {
+  return '<div class="testi-card"><p>"' + t.quote + '"</p><strong>' + t.name + '</strong><br><span>' + t.location + '</span></div>';
+}).join('');
+
+function submitBrevo() {
+  var email = document.getElementById('brevo-email').value;
+  if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  var formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'en');
+  formData.append('html_type', 'simple');
+  fetch('https://c8fbe7fc.sibforms.com/serve/MUIFAFHHhUOR6d69VoB_kVTk_l31VAm3TEhQXRHo6qFlUkIexP_wGE7a156dfNzSZspWzx-NxUDwmlMr_V2CRK7tY7EDLM4VrfsLDFsicYoYaw_sNq79v4iLVqH7pJzc8r4wLqi1wVmEDBjxMAud0MqNKVpCObpgR0P5c1rfGpmJ3IGCH0knb7c6IYWmmJlxIu_4RHXsLxJX1VygGw==', {
+    method: 'POST', body: formData, mode: 'no-cors'
+  }).then(function() {
+    document.getElementById('brevo-email').style.display = 'none';
+    document.querySelector('[onclick="submitBrevo()"]').style.display = 'none';
+    document.getElementById('brevo-success').style.display = 'block';
+  }).catch(function() {
     document.getElementById('brevo-success').style.display = 'block';
   });
-  return false;
 }
 </script>
+
 </body>
 </html>
