@@ -567,7 +567,7 @@
     <div class="sib-form" style="text-align:center; background-color:transparent;">
       <div id="sib-form-container" class="sib-form-container">
         <div id="sib-container" class="sib-container--large sib-container--vertical" style="max-width:540px; text-align:center; background-color:transparent; border:none;">
-          <form id="sib-form" method="POST" action="https://c8fbe7fc.sibforms.com/serve/MUIFAFHHhUOR6d69VoB_kVTk_l31VAm3TEhQXRHo6qFlUkIexP_wGE7a156dfNzSZspWzx-NxUDwmlMr_V2CRK7tY7EDLM4VrfsLDFsicYoYaw_sNq79v4iLVqH7pJzc8r4wLqi1wVmEDBjxMAud0MqNKVpCObpgR0P5c1rfGpmJ3IGCH0knb7c6IYWmmJlxIu_4RHXsLxJX1VygGw==" style="display:flex; gap:0; max-width:480px; margin:0 auto;">
+          <form id="sib-form" method="POST" action="https://c8fbe7fc.sibforms.com/..." onsubmit="return handleBrevoSubmit(event)">
             <div style="flex:1;">
               <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="Your email address" data-required="true" required style="font-family:'Montserrat',sans-serif; font-size:0.9rem; padding:0.85rem 1.2rem; border:none; border-radius:2px 0 0 2px; background:#FFF7EB; color:#16324F; width:100%; box-sizing:border-box;" />
             </div>
@@ -577,6 +577,7 @@
             <input type="text" name="email_address_check" value="" style="display:none;">
             <input type="hidden" name="locale" value="en">
             <input type="hidden" name="html_type" value="simple">
+          <p id="brevo-success" style="display:none; color:#2CCCD3; margin-top:1rem; letter-spacing:2px; text-transform:uppercase; font-size:0.8rem;">🎉 Check your email — your guide is on the way!</p>
           </form>
           <p style="margin:0.75rem 0 0; font-size:0.7rem; color:#FFF7EB; opacity:0.4; font-family:'Montserrat',sans-serif;">No spam, ever. Unsubscribe anytime.</p>
         </div>
@@ -616,6 +617,18 @@ function handleSubmit(e) {
   </div>
   <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
 </div>
-
+<script>
+function handleBrevoSubmit(e) {
+  e.preventDefault();
+  var form = document.getElementById('sib-form');
+  var formData = new FormData(form);
+  fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' })
+  .then(function() {
+    form.style.display = 'none';
+    document.getElementById('brevo-success').style.display = 'block';
+  });
+  return false;
+}
+</script>
 </body>
 </html>
