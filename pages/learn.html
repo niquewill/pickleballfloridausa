@@ -38,7 +38,8 @@
   .hero h1 em { font-style: italic; color: var(--coral); }
   .hero-sub { font-size: 0.9rem; color: var(--cream); opacity: 0.7; max-width: 650px; margin: 0 auto 2rem; line-height: 1.9; font-weight: 300; }
   .hero-pills { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
-  .hero-pill { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(44,204,211,0.4); color: var(--turquoise); padding: 0.35rem 0.9rem; border-radius: 2px; }
+  .hero-pill { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(44,204,211,0.4); color: var(--turquoise); padding: 0.35rem 0.9rem; border-radius: 2px; text-decoration: none; }
+  .hero-pill:hover { background: var(--turquoise); color: var(--navy); }
   .hero-cta { display: inline-block; background: var(--coral); color: #fff; padding: 0.9rem 2.5rem; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; text-decoration: none; border-radius: 2px; }
   .hero-cta:hover { background: var(--turquoise); color: var(--navy); }
   .wave { display: block; background: var(--navy); line-height: 0; }
@@ -236,12 +237,12 @@
   <h1>Learn <em>Pickleball</em></h1>
   <p class="hero-sub">Everything you need to go from your first serve to confidently playing with friends — in Florida's fastest-growing sport.</p>
   <div class="hero-pills">
-    <span class="hero-pill">Rules</span>
-    <span class="hero-pill">Scoring</span>
-    <span class="hero-pill">The Kitchen</span>
-    <span class="hero-pill">DUPR Ratings</span>
-    <span class="hero-pill">Beginner Strategy</span>
-    <span class="hero-pill">Florida Resources</span>
+    <a href="#court" class="hero-pill">Rules</a>
+    <a href="#scoring" class="hero-pill">Scoring</a>
+    <a href="#kitchen" class="hero-pill">The Kitchen</a>
+    <a href="#dupr" class="hero-pill">DUPR Ratings</a>
+    <a href="#strategy" class="hero-pill">Beginner Strategy</a>
+    <a href="#community" class="hero-pill">Florida Resources</a>
   </div>
   <a href="#what-is" class="hero-cta">Start Learning</a>
 </div>
