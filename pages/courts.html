@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -24,7 +24,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root { --coral: #FF6F61; --turquoise: #2CCCD3; --green: #2E8B57; --cream: #FFF7EB; --navy: #16324F; }
   body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
-  nav { background: var(--navy); padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+  nav { position: relative; background: var(--navy); padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
   .logo-wrap a { text-decoration: none; }
   .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 1px; }
   .logo-sub { font-size: 0.6rem; color: var(--turquoise); letter-spacing: 4px; text-transform: uppercase; display: block; margin-top: 2px; }
@@ -145,7 +145,22 @@
   .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
 
   @media (max-width: 600px) { .courts-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 1.8rem; } .city-guides-grid { grid-template-columns: repeat(2, 1fr); } .nav-links { display: none; } }
-</style>
+  /* â”€â”€ HAMBURGER NAV â”€â”€ */
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 200; }
+  .nav-toggle span { display: block; width: 24px; height: 2px; background: #FFF7EB; border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #16324F; border-top: 1px solid rgba(255,255,255,0.1); flex-direction: column; z-index: 100; padding: 1rem 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: #FFF7EB; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; padding: 0.75rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover, .mobile-menu a.active { opacity: 1; color: #2CCCD3; }
+  @media (max-width: 900px) {
+    .nav-links { display: none !important; }
+    .nav-toggle { display: flex !important; }
+    nav { position: relative; padding: 1rem 1.5rem; }
+  }</style>
 </head>
 <body>
 
@@ -160,7 +175,19 @@
     <a href="blog.html">Blog</a>
     <a href="about.html">About</a>
   </div>
-</nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="gear.html">Gear</a>
+    <a href="courts.html" class="active">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="blog.html">Blog</a>
+    <a href="learn.html">Learn</a>
+    <a href="about.html">About</a>
+  </div></nav>
 
 <div class="hero">
   <p>Florida Court Finder</p>
@@ -403,7 +430,22 @@
       #sib-form-container { display: flex; justify-content: center; }
       .sib-container--large { width: 100% !important; }
       .entry__error { font-family: 'Montserrat', sans-serif !important; font-size: 0.8rem !important; }
-    </style>
+      /* â”€â”€ HAMBURGER NAV â”€â”€ */
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 200; }
+  .nav-toggle span { display: block; width: 24px; height: 2px; background: #FFF7EB; border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #16324F; border-top: 1px solid rgba(255,255,255,0.1); flex-direction: column; z-index: 100; padding: 1rem 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: #FFF7EB; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; padding: 0.75rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover, .mobile-menu a.active { opacity: 1; color: #2CCCD3; }
+  @media (max-width: 900px) {
+    .nav-links { display: none !important; }
+    .nav-toggle { display: flex !important; }
+    nav { position: relative; padding: 1rem 1.5rem; }
+  }</style>
 
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
