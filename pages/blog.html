@@ -132,12 +132,22 @@
   .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
   .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
 
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     .blog-grid { grid-template-columns: 1fr; }
     .blog-hero h1 { font-size: 2rem; }
     .writers-grid { gap: 1.5rem; }
     .writer-avatar { width: 250px; height: 250px; }
   }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 200; }
+  .nav-toggle span { display: block; width: 24px; height: 2px; background: #FFF7EB; border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #16324F; border-top: 1px solid rgba(255,255,255,0.1); flex-direction: column; z-index: 100; padding: 1rem 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: #FFF7EB; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; padding: 0.75rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .mobile-menu a:hover, .mobile-menu a.active { opacity: 1; color: #2CCCD3; }
+  @media (max-width: 900px) { .nav-links { display: none !important; } .nav-toggle { display: flex !important; } nav { padding: 1rem 1.5rem; } }
 </style>
 </head>
 <body>
