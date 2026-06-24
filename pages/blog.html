@@ -1,158 +1,376 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Coastal Circle Chronicles — Florida Pickleball Lifestyle Blog | Pickleball Florida USA</title>
-<meta name="description" content="The Coastal Circle Chronicles — a Florida pickleball lifestyle blog following four women from Palm Beach, Naples, The Villages, and Sarasota. Real courts, real gossip, real Florida." />
-<meta name="keywords" content="Florida pickleball blog, pickleball lifestyle Florida, Florida pickleball community, pickleball Palm Beach Naples Sarasota The Villages" />
-<link rel="canonical" href="https://pickleballfloridausa.com/pages/blog.html" />
+<title>The Coastal Circle Chronicles | Pickleball Florida USA</title>
+<meta name="description" content="Four Florida pickleball socialites share their court-side dispatches from Palm Beach, Naples, The Villages, and Sarasota. Real courts, real gossip, real Florida." />
 <link rel="icon" type="image/x-icon" href="../images/pfufavicon.ico">
-<meta property="og:title" content="The Coastal Circle Chronicles — Florida Pickleball Lifestyle Blog" />
-<meta property="og:description" content="Court-side dispatches from Palm Beach, Naples, The Villages, and Sarasota. Real Florida pickleball life served with a side of gossip." />
-<meta property="og:url" content="https://pickleballfloridausa.com/pages/blog.html" />
-<meta property="og:type" content="website" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Blog","name":"The Coastal Circle Chronicles","description":"A Florida pickleball lifestyle blog following four women from Palm Beach, Naples, The Villages, and Sarasota.","url":"https://pickleballfloridausa.com/pages/blog.html","publisher":{"@type":"Organization","name":"Pickleball Florida USA","url":"https://pickleballfloridausa.com"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ItemList","name":"The Coastal Circle Chronicles — Latest Posts","itemListElement":[{"@type":"ListItem","position":1,"name":"The Courts Are Back and So Are We","author":{"@type":"Person","name":"Patrice Waverly-Fontaine"},"description":"Patrice reports from Palm Beach as the Phipps Ocean Park courts reopen after resurfacing."},{"@type":"ListItem","position":2,"name":"Derek Found His People and I Found a New Restaurant","author":{"@type":"Person","name":"Nicolette Hargrove"},"description":"Nicolette's husband discovers pickleball at Pelican Bay in Naples."},{"@type":"ListItem","position":3,"name":"Kenny Moved Up a Level and Now It's Personal","author":{"@type":"Person","name":"Vivian Kowalski-Reed"},"description":"Vivian reports on the Knudson court drama unfolding in The Villages."},{"@type":"ListItem","position":4,"name":"The Tuesday Crew Survives Another Florida Summer","author":{"@type":"Person","name":"Stella Marchetti"},"description":"Stella and the Tuesday crew battle the Sarasota summer heat at Pompano Park."}]}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root { --coral: #FF6F61; --turquoise: #2CCCD3; --green: #2E8B57; --cream: #FFF7EB; --navy: #16324F; }
-  body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
-  
-  $match = $args[0]
-  if ($match.Value -notmatch 'position') {
-    $match.Value -replace '(\})', ' position: relative; }'
-  } else {
-    $match.Value
+
+  :root {
+    --coral: #FF6F61;
+    --turquoise: #2CCCD3;
+    --green: #2E8B57;
+    --cream: #FFF7EB;
+    --navy: #16324F;
   }
 
-  .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 1px; text-decoration: none; }
-  .logo-sub { font-size: 0.6rem; color: var(--turquoise); letter-spacing: 4px; text-transform: uppercase; display: block; margin-top: 2px; }
-  .nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
-  .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
-  .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--turquoise); }
-  .blog-hero { background: var(--navy); padding: 4rem 2.5rem; text-align: center; }
-  .blog-hero-eyebrow { font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1rem; }
-  .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--cream); font-weight: 400; margin-bottom: 1rem; line-height: 1.2; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 1.2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .logo-sub {
+    font-size: 0.6rem;
+    color: var(--turquoise);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--turquoise); }
+  .nav-links a.active { opacity: 1; color: var(--turquoise); }
+
+  /* HERO */
+  .blog-hero {
+    background: var(--navy);
+    padding: 4rem 2.5rem;
+    text-align: center;
+  }
+  .blog-hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--turquoise);
+    margin-bottom: 1rem;
+  }
+  .blog-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--cream);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
   .blog-hero h1 em { font-style: italic; color: var(--coral); }
-  .blog-hero-desc { color: var(--cream); opacity: 0.7; font-size: 0.9rem; max-width: 600px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
+  .blog-hero p {
+    color: var(--cream);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    max-width: 550px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* WAVE */
   .wave { display: block; background: var(--navy); line-height: 0; }
   .wave svg { display: block; width: 100%; }
 
-  /* INTRO */
-  .intro-section { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2.5rem 0; }
-  .intro-section p { font-size: 0.88rem; line-height: 1.9; color: var(--navy); opacity: 0.8; font-weight: 300; margin-bottom: 0.5rem; }
-
-  /* WRITERS */
-  .writers-strip { background: #fff; padding: 3rem 2.5rem; text-align: center; border-bottom: 1px solid rgba(22,50,79,0.08); }
-  .writers-strip > p { font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 2rem; }
-  .writers-grid { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
-  .writer-pill { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; cursor: pointer; transition: transform 0.2s; }
+  /* WRITERS STRIP */
+  .writers-strip {
+    background: #fff;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(22,50,79,0.08);
+  }
+  .writers-strip p {
+    font-size: 0.65rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--turquoise);
+    margin-bottom: 2rem;
+  }
+  .writers-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .writer-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
   .writer-pill:hover { transform: translateY(-3px); }
-  .writer-avatar { width: 250px; height: 250px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 3px solid transparent; transition: border-color 0.2s; overflow: hidden; }
+  .writer-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: 3px solid transparent;
+    transition: border-color 0.2s;
+  }
   .writer-pill:hover .writer-avatar { border-color: var(--coral); }
   .avatar-patrice { background: #E8D5C4; }
   .avatar-nicolette { background: #C4D5E8; }
   .avatar-vivian { background: #D5E8C4; }
   .avatar-stella { background: #E8C4D5; }
-  .writer-name { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--navy); font-weight: 400; }
-  .writer-location { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); }
+  .writer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: var(--navy);
+    font-weight: 400;
+  }
+  .writer-location {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--turquoise);
+  }
 
-  /* MODAL */
-  #persona-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.55); z-index: 9999; align-items: center; justify-content: center; }
-  .modal-box { background: white; border-radius: 16px; width: 500px; max-width: 94vw; max-height: 90vh; overflow-y: auto; position: relative; }
-  .modal-header { padding: 1.5rem; display: flex; gap: 16px; align-items: center; border-bottom: 1px solid #f0f0f0; position: relative; }
-  .modal-header img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid #f0f0f0; flex-shrink: 0; }
-  .modal-header-text { flex: 1; }
-  .modal-header-text h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; color: #1a1a1a; margin: 0 0 3px; }
-  .modal-header-text .m-sub { font-size: 12px; color: #888; margin: 0 0 4px; }
-  .modal-header-text .m-hood { font-size: 12px; color: #2a7a5a; margin: 0; font-weight: 500; }
-  .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 22px; cursor: pointer; color: #aaa; line-height: 1; padding: 4px 8px; }
-  .modal-close:hover { color: #333; }
-  .modal-body { padding: 1.25rem 1.5rem; }
-  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.25rem; }
-  .stat-box { background: #f8f8f6; border-radius: 8px; padding: 10px 12px; }
-  .stat-label { font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 3px; }
-  .stat-val { font-size: 14px; font-weight: 600; margin: 0; color: #1a1a1a; }
-  .modal-section-label { font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 8px; }
-  .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
-  .pill { font-size: 12px; padding: 3px 10px; border-radius: 999px; border: 1px solid #e8e8e8; color: #666; background: #f8f8f6; }
-  .modal-quote { font-size: 13px; color: #666; border-left: 2px solid #ddd; padding-left: 12px; margin: 0; line-height: 1.65; font-style: italic; font-family: 'Playfair Display', serif; }
+  /* BLOG GRID */
+  .blog-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2.5rem;
+  }
+  .blog-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .blog-section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--navy);
+  }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 2rem;
+  }
 
-  /* BLOG */
-  .blog-section { max-width: 1100px; margin: 0 auto; padding: 4rem 2.5rem; }
-  .blog-section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
-  .blog-section-header h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 400; color: var(--navy); }
-  .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 2rem; }
-  .blog-card { background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid rgba(22,50,79,0.08); transition: transform 0.2s, box-shadow 0.2s; }
-  .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(22,50,79,0.1); }
-  .blog-card-header { padding: 1.5rem 2rem 0; display: flex; align-items: center; gap: 1rem; }
-  .card-avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+  /* BLOG CARD */
+  .blog-card {
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(22,50,79,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(22,50,79,0.1);
+  }
+  .blog-card-header {
+    padding: 1.5rem 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .card-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
   .card-meta { flex: 1; }
-  .card-author { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 400; color: var(--navy); margin-bottom: 2px; }
-  .card-location { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); }
-  .card-date { font-size: 0.7rem; color: var(--navy); opacity: 0.4; letter-spacing: 1px; }
+  .card-author {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .card-location {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--turquoise);
+  }
+  .card-date {
+    font-size: 0.7rem;
+    color: var(--navy);
+    opacity: 0.4;
+    letter-spacing: 1px;
+  }
   .blog-card-body { padding: 1.5rem 2rem 2rem; }
-  .blog-card-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 400; color: var(--navy); margin-bottom: 1rem; line-height: 1.4; }
+  .blog-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
   .blog-card-title em { font-style: italic; color: var(--coral); }
-  .blog-card-text { font-size: 0.85rem; line-height: 1.9; color: var(--navy); opacity: 0.8; font-weight: 300; }
+  .blog-card-text {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: var(--navy);
+    opacity: 0.8;
+    font-weight: 300;
+  }
   .blog-card-text p { margin-bottom: 1rem; }
   .blog-card-text p:last-child { margin-bottom: 0; }
-  .blog-card-footer { padding: 0 2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-  .card-tag { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); border: 1px solid var(--coral); padding: 0.3rem 0.75rem; border-radius: 2px; }
-  .location-tag { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); opacity: 0.4; }
-  .section-divider { border: none; border-top: 1px solid rgba(22,50,79,0.08); margin: 0 2.5rem; }
+  .blog-card-footer {
+    padding: 0 2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-tag {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--coral);
+    border: 1px solid var(--coral);
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+  }
 
-  /* RELATED */
-  .related-section { background: var(--navy); padding: 3rem 2.5rem; text-align: center; }
-  .related-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream); font-weight: 400; margin-bottom: 0.5rem; }
-  .related-section p { color: var(--cream); opacity: 0.6; font-size: 0.85rem; margin-bottom: 2rem; font-weight: 300; }
-  .related-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-  .related-link { color: var(--cream); text-decoration: none; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3); padding: 0.6rem 1.2rem; border-radius: 2px; }
-  .related-link:hover { background: var(--coral); border-color: var(--coral); }
+  /* LOCATION TAGS */
+  .location-tag {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.4;
+  }
 
-  /* EMAIL */
-  .email-strip { background: var(--navy); padding: 4rem 2.5rem; text-align: center; }
-  .email-strip h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--cream); font-weight: 400; margin-bottom: 0.75rem; }
-  .email-strip p { color: var(--cream); opacity: 0.7; font-size: 0.85rem; margin-bottom: 2rem; font-weight: 300; }
-  .email-form { display: flex; max-width: 420px; margin: 0 auto; border-radius: 2px; overflow: hidden; }
-  .email-form input { flex: 1; padding: 0.85rem 1.2rem; border: none; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
-  .email-form button { background: var(--coral); color: #fff; border: none; padding: 0.85rem 1.5rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; font-family: 'Montserrat', sans-serif; }
-  #blog-success-msg { display: none; color: var(--turquoise); margin-top: 1rem; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; }
+  /* DIVIDER */
+  .section-divider {
+    border: none;
+    border-top: 1px solid rgba(22,50,79,0.08);
+    margin: 0 2.5rem;
+  }
 
+  /* EMAIL STRIP */
+  .email-strip {
+    background: var(--navy);
+    padding: 4rem 2.5rem;
+    text-align: center;
+  }
+  .email-strip h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--cream);
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+  }
+  .email-strip p {
+    color: var(--cream);
+    opacity: 0.7;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+  .email-form {
+    display: flex;
+    max-width: 420px;
+    margin: 0 auto;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .email-form input {
+    flex: 1;
+    padding: 0.85rem 1.2rem;
+    border: none;
+    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+  }
+  .email-form button {
+    background: var(--coral);
+    color: #fff;
+    border: none;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+  #blog-success-msg {
+    display: none;
+    color: var(--turquoise);
+    margin-top: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+
+  /* FOOTER */
   .footer { background: #0d2035; padding: 2.5rem; text-align: center; }
   .footer .logo-text { display: block; margin-bottom: 1rem; color: var(--cream); font-family: 'Playfair Display', serif; font-size: 1.1rem; }
-  .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
-  .footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .footer-links a {
+    color: var(--cream);
+    opacity: 0.5;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
   .footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
 
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
     .blog-grid { grid-template-columns: 1fr; }
     .blog-hero h1 { font-size: 2rem; }
     .writers-grid { gap: 1.5rem; }
-    .writer-avatar { width: 250px; height: 250px; }
   }
-  .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 200; }
-  .nav-toggle span { display: block; width: 24px; height: 2px; background: #FFF7EB; border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
-  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #16324F; border-top: 1px solid rgba(255,255,255,0.1); flex-direction: column; z-index: 100; padding: 1rem 0; }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a { color: #FFF7EB; text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; padding: 0.75rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .mobile-menu a:hover, .mobile-menu a.active { opacity: 1; color: #2CCCD3; }
-    nav { background: #16324F; padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; position: relative; }
-  @media (max-width: 900px) { .nav-links { display: none !important; } .nav-toggle { display: flex !important; } nav { padding: 1rem 1.5rem; } }
 </style>
 </head>
 <body>
 
+<!-- NAVIGATION -->
 <nav>
   <a href="../index.html">
     <span class="logo-text">Pickleball Florida USA</span>
@@ -160,88 +378,50 @@
   </a>
   <div class="nav-links">
     <a href="shop.html">Shop</a>
-    <a href="gear.html">Gear</a>
     <a href="courts.html">Courts</a>
     <a href="tournaments.html">Tournaments</a>
     <a href="blog.html" class="active">Blog</a>
-    <a href="learn.html">Learn</a>
     <a href="about.html">About</a>
   </div>
-  
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="shop.html">Shop</a>
-    <a href="gear.html">Gear</a>
-    <a href="courts.html">Courts</a>
-    <a href="tournaments.html">Tournaments</a>
-    <a href="blog.html" class="active">Blog</a>
-    <a href="learn.html">Learn</a>
-    <a href="about.html">About</a>
-  </div></nav>
+</nav>
 
+<!-- HERO -->
 <div class="blog-hero">
-  <p class="blog-hero-eyebrow">The Coastal Circle Chronicles — Florida Pickleball Lifestyle Blog</p>
+  <p class="blog-hero-eyebrow">The Coastal Circle Chronicles</p>
   <h1>Four Women.<br>Four Cities.<br><em>One Obsession.</em></h1>
-  <p class="blog-hero-desc">Court-side dispatches from Palm Beach, Naples, The Villages, and Sarasota. Real courts, real people, real Florida pickleball life — served with a side of gossip.</p>
+  <p>Court-side dispatches from Palm Beach, Naples, The Villages, and Sarasota. Real courts, real people, real Florida pickleball life — served with a side of gossip.</p>
 </div>
-<div class="wave"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60"><path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/></svg></div>
 
-<!-- INTRO -->
-<div class="intro-section">
-  <p>The Coastal Circle Chronicles is a Florida pickleball lifestyle blog following four real women living, playing, and gossiping their way through Florida's most vibrant pickleball communities. Patrice reports from Palm Beach's Bath & Tennis Club scene. Nicolette dispatches from Pelican Bay in Naples. Vivian covers the legendary courts of The Villages. And Stella brings Sarasota's Rosemary District energy every week. New dispatches published weekly — click a correspondent below to meet them.</p>
+<!-- WAVE -->
+<div class="wave">
+  <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60">
+    <path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/>
+  </svg>
 </div>
 
 <!-- WRITERS -->
 <div class="writers-strip">
   <p>Meet Your Correspondents</p>
   <div class="writers-grid">
-    <div class="writer-pill" onclick="openPersonaModal('patrice')">
-      <div class="writer-avatar avatar-patrice"><img src="../images/patrice.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Patrice Palm Beach pickleball correspondent" /></div>
+    <div class="writer-pill">
+      <div class="writer-avatar avatar-patrice">🌴</div>
       <span class="writer-name">Patrice</span>
-      <span class="writer-location">South Ocean Blvd, Palm Beach</span>
+      <span class="writer-location">Palm Beach</span>
     </div>
-    <div class="writer-pill" onclick="openPersonaModal('nicolette')">
-      <div class="writer-avatar avatar-nicolette"><img src="../images/nicolette.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Nicolette Naples pickleball correspondent" /></div>
+    <div class="writer-pill">
+      <div class="writer-avatar avatar-nicolette">🎾</div>
       <span class="writer-name">Nicolette</span>
-      <span class="writer-location">Pelican Bay, Naples</span>
+      <span class="writer-location">Naples</span>
     </div>
-    <div class="writer-pill" onclick="openPersonaModal('vivian')">
-      <div class="writer-avatar avatar-vivian"><img src="../images/vivian.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Vivian The Villages pickleball correspondent" /></div>
+    <div class="writer-pill">
+      <div class="writer-avatar avatar-vivian">🏘️</div>
       <span class="writer-name">Vivian</span>
-      <span class="writer-location">Brownwood, The Villages</span>
+      <span class="writer-location">The Villages</span>
     </div>
-    <div class="writer-pill" onclick="openPersonaModal('stella')">
-      <div class="writer-avatar avatar-stella"><img src="../images/stella.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Stella Sarasota pickleball correspondent" /></div>
+    <div class="writer-pill">
+      <div class="writer-avatar avatar-stella">🌊</div>
       <span class="writer-name">Stella</span>
-      <span class="writer-location">Rosemary District, Sarasota</span>
-    </div>
-  </div>
-</div>
-
-<!-- PERSONA MODAL -->
-<div id="persona-overlay" onclick="handleOverlayClick(event)">
-  <div class="modal-box">
-    <div class="modal-header">
-      <img id="m-photo" src="" alt="" />
-      <div class="modal-header-text">
-        <h3 id="m-name"></h3>
-        <p class="m-sub" id="m-sub"></p>
-        <p class="m-hood" id="m-hood"></p>
-      </div>
-      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
-    </div>
-    <div class="modal-body">
-      <div class="stat-grid">
-        <div class="stat-box"><p class="stat-label">DUPR Rating</p><p class="stat-val" id="m-dupr"></p></div>
-        <div class="stat-box"><p class="stat-label">Playing Style</p><p class="stat-val" id="m-style"></p></div>
-        <div class="stat-box"><p class="stat-label">Preferred Side</p><p class="stat-val" id="m-side"></p></div>
-        <div class="stat-box"><p class="stat-label">Paddle of Choice</p><p class="stat-val" id="m-paddle"></p></div>
-      </div>
-      <p class="modal-section-label">Favorite Spots</p>
-      <div class="pill-row" id="m-spots"></div>
-      <p class="modal-section-label">Always on Court With</p>
-      <div class="pill-row" id="m-gear"></div>
-      <p class="modal-quote" id="m-quote"></p>
+      <span class="writer-location">Sarasota</span>
     </div>
   </div>
 </div>
@@ -252,27 +432,24 @@
     <h2>Latest Dispatches</h2>
     <span class="location-tag">May 2026</span>
   </div>
+
   <div class="blog-grid">
-    
-    
-    
-    
-    
+
     <!-- PATRICE -->
     <div class="blog-card">
       <div class="blog-card-header">
-        <div class="card-avatar avatar-patrice"><img src="../images/patrice.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+        <div class="card-avatar avatar-patrice">🌴</div>
         <div class="card-meta">
           <div class="card-author">Patrice Waverly-Fontaine</div>
           <div class="card-location">Palm Beach, FL</div>
         </div>
-        <div class="card-date">Jun 23</div>
+        <div class="card-date">May 26</div>
       </div>
       <div class="blog-card-body">
-        <h3 class="blog-card-title">*The Week Bunny Nearly Caused an International Incident with Her Backhand*</h3>
+        <h3 class="blog-card-title">The Courts Are Back and <em>So Are We</em></h3>
         <div class="blog-card-text">
-          <p>Darlings, I simply must tell you about Tuesday at The Bath & Tennis Club, because honestly, I'm still recovering and it's already Friday. Bunny—my doubles partner and the only person in Palm Beach who can make a visor look both sporty and slightly dangerous—decided her new Selkirk Vela paddle needed to be "properly christened" against the Delancey sisters. Well. Let's just say things got rather heated when a questionable line call occurred, and I had to step in wearing my new Coastal Serve Tank (which, paired with my Hermès tennis bracelet, struck exactly the right note of "I'm athletic but also have a trust fund"). The paddle, by the way, is an absolute dream—something about the carbon fiber face makes even my mediocre serves look intentional. Geoffrey watched from the terrace with his Bloody Mary and later said it was "better than Wimbledon," which I think was a compliment?</p>
-          <p>The real drama, though, happened Thursday at Phipps when I arrived with my Coastal Court Tote—honestly the only bag capacious enough for my Lululemon change of clothes, my Coastal Hydration Bottle, and the emergency croissant from Cafe Boulud that Carlos doesn't know about (darling, he means well with his macro counting, but a girl needs carbs). I ran into Margaux, who was supposedly "working from home" but was clearly sneaking in a morning match. She tried to hide behind the pro shop, but I spotted her new K-Swiss Hypercourt Express shoes immediately—I'd been eyeing the same pair on Amazon just last week. We played a mother-daughter match that ended in a draw, though I suspect she let me win the last game because she felt guilty about the work-from-home fib. Now I'm having everyone over on Monday for what Bunny is calling "Pickleball and Prosecco," and I have a feeling someone might end up in the pool, fully clothed. </p>
+          <p>The Phipps Ocean Park courts got resurfaced last week and Bunny called me before my coffee was even finished to deliver this news like it was a stock tip. By nine o'clock we were out there and I will say — the new surface is extraordinary. Geoffrey thinks I'm being dramatic but Geoffrey also plays golf at Seminole and has never once had to negotiate court time with a retired dermatologist from Boca who shows up twenty minutes early to every open play and then complains about the wind. I wore my new Loro Piana sun hat and not a single person commented on it, which tells me everything I need to know about where we are culturally.</p>
+          <p>Bunny and I grabbed lunch at Ta-boo after and she told me — in complete confidence, which is why I'm sharing it here — that the couple who used to dominate the Tuesday round robin at Bath & Tennis have apparently switched to tennis. Tennis. At their age. I said a prayer for them and ordered the crab salad. The courts are ours again, darlings, and the season is looking very promising.</p>
         </div>
       </div>
       <div class="blog-card-footer">
@@ -284,18 +461,18 @@
     <!-- NICOLETTE -->
     <div class="blog-card">
       <div class="blog-card-header">
-        <div class="card-avatar avatar-nicolette"><img src="../images/nicolette.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+        <div class="card-avatar avatar-nicolette">🎾</div>
         <div class="card-meta">
           <div class="card-author">Nicolette Hargrove</div>
           <div class="card-location">Naples, FL</div>
         </div>
-        <div class="card-date">Jun 22</div>
+        <div class="card-date">May 27</div>
       </div>
       <div class="blog-card-body">
-        <h3 class="blog-card-title">When Your Backhand Clicks <em>The Burrata Calls Your Name</em></h3>
+        <h3 class="blog-card-title">Derek Found His People and <em>I Found a New Restaurant</em></h3>
         <div class="blog-card-text">
-          <p>Honestly, I cannot believe it's already Thursday and I'm just now sitting down with my oat milk latte (Rosie's sweet face resting on my foot) to tell you about the absolute whirlwind this week has been on the courts! Tuesday morning at Naples Grande was one of those magical sessions where everything just clicked—Thomas has been working with me on my backhand dink for weeks, and suddenly it was like my paddle and I were speaking the same language. You know that feeling? When muscle memory finally takes over and you're not thinking anymore, just playing? Derek was there attempting his serves (bless him, he tries SO hard), and even he noticed the difference. We celebrated afterward with the most incredible burrata appetizer at Mediterrano—I'm talking creamy, cloud-like perfection with heirloom tomatoes that tasted like actual sunshine.</p>
-          <p>Wednesday's drill session at Pelican Bay was intense in the best way possible. Camille drove down from Atlanta for a long weekend (she's staying through Sunday, and I'm already planning our Mercato shopping trip), and we partnered up for some competitive games that had us both sweating through our gear. I've been living in my new Pickleball Florida USA performance skort paired with an Alo tank, and honestly, the moisture-wicking situation is a game-changer when you're playing three hours straight in this humidity. Between matches, I noticed one of the newer players struggling with her grip, so I recommended the Gamma Supreme Overgrip from Amazon—it's like twelve dollars for a three-pack and genuinely transforms how your paddle feels in your hand. Small investments, big returns! Now I'm eyeing Saturday morning's round robin and already thinking about whether we'll do lunch at The French on Fifth or maybe something lighter at Seed to Table, because Sunday Thomas wants to work on my serves and I cannot show up feeling heavy and sluggish.</p>
+          <p>I don't know what Thomas said to Derek at that beginner clinic last Thursday but my husband has become a completely different person. He came home, looked up three YouTube videos on the third shot drop, and asked me if we could "hit some balls" before dinner. We have been married twenty two years and this man has never once suggested physical activity before dinner. We went to Pelican Bay and honestly? He's not terrible. Camille saw us from across the court and gave me a thumbs up which I chose to interpret as encouragement rather than pity.</p>
+          <p>After we stopped at The French on Fifth for a glass of rosé and I need to tell you about their new small plates menu because it is absolutely worth the parking situation on Fifth Avenue which has gotten completely out of hand since they redid the streetscape. Camille joined us and we sat outside until it got dark and talked about the mixed doubles tournament at Naples Grande next month and whether Derek is remotely ready for it. He is not. We are signing him up anyway.</p>
         </div>
       </div>
       <div class="blog-card-footer">
@@ -307,18 +484,18 @@
     <!-- VIVIAN -->
     <div class="blog-card">
       <div class="blog-card-header">
-        <div class="card-avatar avatar-vivian"><img src="../images/vivian.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+        <div class="card-avatar avatar-vivian">🏘️</div>
         <div class="card-meta">
           <div class="card-author">Vivian Kowalski-Reed</div>
           <div class="card-location">The Villages, FL</div>
         </div>
-        <div class="card-date">Jun 21</div>
+        <div class="card-date">May 28</div>
       </div>
       <div class="blog-card-body">
-        <h3 class="blog-card-title">Kenny's Meltdown, Dottie's New Paddle, <em>Why I'm Never Wearing White Shorts Again</em></h3>
+        <h3 class="blog-card-title">Kenny Moved Up a Level and <em>Now It's Personal</em></h3>
         <div class="blog-card-text">
-          <p>Honey, let me tell you about the week I've had. Monday started innocent enough—Frank dragged himself to his 7am game at Richmond like always, which gave me time to grab coffee at Katie Belle's before meeting Dottie at Knudson. Listen, I made the mistake of wearing white shorts. WHITE. At 68 years old, I should know better, but there I was, diving for a dink like I'm some kind of professional, and let's just say the red clay court and my backside became very well acquainted. Marge saw me pull into the driveway in my golf cart and actually came outside to stare. "Interesting look, Vivian," she says. The woman doesn't even play and she's got opinions about my mud-streaked behind. I smiled real big and told her it's called "effort," then drove off before she could respond.</p>
-          <p>Wednesday was the real show though. Kenny—KENNY—shows up at Knudson wearing his new Selkirk paddle like he's suddenly Ben Johns. Honey, this man still hits everything with his palm facing sideways, but now he's lecturing everyone about paddle technology. Dottie absolutely demolished him 11-3, 11-2, and he blamed the sun. THE SUN, which was behind him the entire time. Listen, after that humiliation, Dottie and I rewarded ourselves with lunch at Lake Sumter Landing, then I stopped at that Publix on Rolling Acres because we were out of everything. Frank had eaten all the good snacks again. I did grab myself one of those Pickleball Florida USA visors though—the one with the moisture-wicking band—because apparently I sweat like a construction worker now. Game changer for these humid mornings.</p>
+          <p>Honey, I come to you this week with news that has shaken the Knudson court community to its absolute core — Kenny self-rated to 4.0 and signed up for the advanced round robin on Wednesday mornings. Frank found out from Dottie who found out from the sign-up sheet and called me while I was in the Publix on Rolling Acres. I had to put down my cantaloupe. The advanced group over there includes Barbara who played in nationals last year and two brothers from New Jersey who are absolutely no joke, and Kenny — bless his heart — is going to learn some things about himself.</p>
+          <p>Dottie and I watched from the bleachers with our coffee and I want to be very clear that we were there to be supportive. We were completely supportive. We only laughed twice and both times were when he called the ball out on a shot that was so clearly in that Barbara turned around and looked at the sky like she was asking God for patience. Lake Sumter Landing has that new café opening next to the smoothie place and we've decided to make it our post-Wednesday tradition whether Kenny improves or not. Some things you just have to look forward to.</p>
         </div>
       </div>
       <div class="blog-card-footer">
@@ -330,18 +507,18 @@
     <!-- STELLA -->
     <div class="blog-card">
       <div class="blog-card-header">
-        <div class="card-avatar avatar-stella"><img src="../images/stella.png" style="width:100%; height:100%; object-fit:cover; border-radius:50%;" /></div>
+        <div class="card-avatar avatar-stella">🌊</div>
         <div class="card-meta">
           <div class="card-author">Stella Marchetti</div>
           <div class="card-location">Sarasota, FL</div>
         </div>
-        <div class="card-date">Jun 20</div>
+        <div class="card-date">May 29</div>
       </div>
       <div class="blog-card-body">
-        <h3 class="blog-card-title">The Week My Third Shot Drop Actually Worked (And Other Miracles)</h3>
+        <h3 class="blog-card-title">The Tuesday Crew Survives <em>Another Florida Summer</em></h3>
         <div class="blog-card-text">
-          <p>Here is the thing: I finally figured out why Marco's been giving me that look every time I line up for a third shot drop. Turns out I've been hitting it like I'm slapping sense into a design client who wants everything in Comic Sans. Tuesday morning at Pompano, Diane—bless her retired-teacher patience—spent twenty minutes showing me you're supposed to lift the ball, not murder it. Who knew? By Thursday at Urfer, I actually won a rally with one, and Marco looked at me like I'd just parallel parked perfectly on the first try. The man plays pickleball like he does everything else: reluctantly, competently, and with better form than people who actually care. I am not going to lie, it's infuriating.</p>
-          <p>Saturday I dragged Gabi to the Sarasota Farmers Market before our 9am at Bay Front, which was either brilliant or stupid depending on how you feel about playing pickleball on a stomach full of empanadas. She bought one of those Pickleball Florida USA visors—the navy one with the clean logo, thank god, not those tragic tie-dye situations some companies are pushing. Simple, readable, doesn't look like a Instagram filter threw up on your head. Anyway, we played terribly but laughed through three games, and I finally replaced my dead paddle grip with one of those Gamma Supreme overgrips from Amazon because my old one had the texture of a used yoga mat from 2003. The difference is obscene. Why did I wait this long? Pride? Laziness? Brooklyn stubbornness?</p>
+          <p>Here's the thing about playing pickleball in Sarasota in May — you either commit fully or you move somewhere with a functioning atmosphere. The Tuesday crew showed up to Pompano at seven thirty and by eight fifteen Gabi had already declared it "too hot to be legal" which, fair, but also she was the one who scheduled it. Marco wore a hat for the first time in his life because I threatened consequences and I have to say it looked genuinely good on him, which I told him, and then immediately regretted because now he'll never take it off. I finally caved and got the JOOLA Ben Johns paddle that Diane has been quietly evangelizing for three months and I owe her a full apology because it's extraordinary.</p>
+          <p>We cooled down at Piccolo Italian Market after and sat in the back with sandwiches and sparkling water like civilized people and talked about the tournament at Urfer next month. Diane is in. Gabi is in but "only if it's not on a Sunday because of the farmers market" which, same honestly. Marco said he'd "think about it" which in Marco language means he's already looked up the bracket format and has opinions. The summer is brutal but the Tuesday crew shows up every single week and that, I think, is the whole point.</p>
         </div>
       </div>
       <div class="blog-card-footer">
@@ -349,28 +526,13 @@
         <span class="location-tag">Community · Gear</span>
       </div>
     </div>
-  <!-- END BLOG CARDS -->
-      <div class="blog-card-footer"><span class="card-tag">Sarasota</span><span class="location-tag">Community · Gear</span></div>
-    </div>
+
   </div>
 </div>
 
 <hr class="section-divider" />
 
-<!-- RELATED -->
-<div class="related-section">
-  <h2>Explore More Florida Pickleball</h2>
-  <p>Find courts, gear up, and follow the full Florida pickleball scene.</p>
-  <div class="related-links">
-    <a href="courts.html" class="related-link">Find Florida Courts</a>
-    <a href="tournaments.html" class="related-link">Florida Tournaments</a>
-    <a href="gear.html" class="related-link">Pickleball Gear Guide</a>
-    <a href="learn.html" class="related-link">Learn to Play</a>
-    <a href="shop.html" class="related-link">Shop the Collection</a>
-  </div>
-</div>
-
-<!-- EMAIL -->
+<!-- EMAIL SIGNUP -->
 <div class="email-strip">
   <h2>Join The Coastal Circle</h2>
   <p>Get the Chronicles delivered weekly plus Florida court guides, tournament alerts, and members-only offers.</p>
@@ -383,24 +545,25 @@
   <p id="blog-success-msg">🎉 You are in! Welcome to the Coastal Circle.</p>
 </div>
 
+<script>
+function handleBlogSubmit(e) {
+  e.preventDefault();
+  var form = document.getElementById('blog-signup-form');
+  var email = document.getElementById('BLOG_EMAIL').value;
+  if (!email) return false;
+  var formData = new FormData(form);
+  fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' })
+  .then(function() {
+    form.style.display = 'none';
+    document.getElementById('blog-success-msg').style.display = 'block';
+  });
+  return false;
+}
+</script>
+
+<!-- FOOTER -->
 <div class="footer">
   <span class="logo-text">Pickleball Florida USA</span>
-  <!-- PASTE THIS INSIDE EVERY FOOTER DIV, BEFORE THE footer-links div -->
-<div class="footer-social" style="display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.5rem;">
-  <a href="https://www.instagram.com/pickleballfloridausa" target="_blank" style="color:#FFF7EB; opacity:0.5; text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:0.4rem;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-    Instagram
-  </a>
-  <a href="https://www.facebook.com/pickleballfloridausa" target="_blank" style="color:#FFF7EB; opacity:0.5; text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:0.4rem;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-    Facebook
-  </a>
-  <a href="https://www.pinterest.com/pickleballfloridausa" target="_blank" style="color:#FFF7EB; opacity:0.5; text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:0.4rem;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.62-.31-1.54c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .89-.57 2.23-.86 3.47-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.09-2.36 3.09-5.15 0-2.13-1.43-3.63-3.48-3.63-2.37 0-3.76 1.78-3.76 3.62 0 .72.28 1.48.62 1.9.07.08.08.15.06.24-.06.26-.21.83-.23.94-.04.15-.13.18-.29.11-1.08-.5-1.76-2.1-1.76-3.38 0-2.74 1.99-5.26 5.74-5.26 3.01 0 5.35 2.14 5.35 5.01 0 2.99-1.88 5.39-4.49 5.39-.88 0-1.7-.46-1.98-1l-.54 2.02c-.2.75-.72 1.69-1.07 2.26.8.25 1.65.38 2.53.38 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
-    Pinterest
-  </a>
-</div>
-
   <div class="footer-links">
     <a href="shop.html">Shop</a>
     <a href="courts.html">Courts</a>
@@ -413,57 +576,5 @@
   <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
 </div>
 
-<script>
-const personaData = {
-  patrice: { photo:'../images/patrice.png', name:'Patrice Waverly-Fontaine', sub:'Palm Beach · Age 61', hood:'📍 South Ocean Blvd, Palm Beach Island', dupr:'4.012', style:'Dinker', side:'Even (right)', paddle:'HEAD Radical Pro', spots:['Ta-boo','Café Boulud','Worth Avenue','The Breakers',"Green's Pharmacy"], gear:['Loro Piana sun hat','K-Swiss Ultrashot','Coastal Circle Tee','Hermès court bag'], quote:'"Bunny called me at seven this morning — SEVEN — to tell me the Phipps courts were completely redone. I told her I needed at least forty minutes because I was not going to show up looking like I\'d rolled out of bed."' },
-  nicolette: { photo:'../images/nicolette.png', name:'Nicolette Hargrove', sub:'Naples · Age 54', hood:'📍 Pelican Bay, Naples', dupr:'3.541', style:'All-court', side:'Odd (left)', paddle:'Selkirk AMPED Epic', spots:['The French on Fifth','Mediterrano','Mercato','Seed to Table','Vanderbilt Beach'], gear:['Alo set','Vuori shorts','Palm Paddle Tee','JOOLA bag'], quote:'"Derek showed up to his first clinic in basketball shorts and a University of Michigan shirt from 2003. Thomas — bless that man — did not even flinch."' },
-  vivian: { photo:'../images/vivian.png', name:'Vivian Kowalski-Reed', sub:'The Villages · Age 68', hood:'📍 Brownwood Paddock Square, The Villages', dupr:'3.489', style:'Dinker', side:'Even (right)', paddle:'Selkirk AMPED', spots:['Lake Sumter Landing',"Katie Belle's",'Brownwood Square','Publix on Rolling Acres'], gear:['Coastal Circle Hat','Selkirk AMPED','Franklin X-40 balls','Cooling towel'], quote:'"I am not a gossip. I am a community historian. There is a difference. Frank understands this. Marge does not."' },
-  stella: { photo:'../images/stella.png', name:'Stella Marchetti', sub:'Sarasota · Age 47', hood:'📍 Rosemary District, Sarasota', dupr:'4.187', style:'All-court', side:'Odd (left)', paddle:'JOOLA Ben Johns Hyperion', spots:['Piccolo Italian Market','Indigenous','Burns Court','Siesta Key','Ringling Museum'], gear:['JOOLA Ben Johns paddle','Coastal Serve Tank','ASICS court shoes','Coastal Court Tote'], quote:'"Here\'s the thing — I waited three months to try the JOOLA because I thought Diane was being dramatic. I owe her a full apology and possibly lunch."' }
-};
-
-function openPersonaModal(id) {
-  const p = personaData[id];
-  document.getElementById('m-photo').src = p.photo;
-  document.getElementById('m-photo').alt = p.name;
-  document.getElementById('m-name').textContent = p.name;
-  document.getElementById('m-sub').textContent = p.sub;
-  document.getElementById('m-hood').textContent = p.hood;
-  document.getElementById('m-dupr').textContent = p.dupr;
-  document.getElementById('m-style').textContent = p.style;
-  document.getElementById('m-side').textContent = p.side;
-  document.getElementById('m-paddle').textContent = p.paddle;
-  document.getElementById('m-spots').innerHTML = p.spots.map(s=>`<span class="pill">${s}</span>`).join('');
-  document.getElementById('m-gear').innerHTML = p.gear.map(g=>`<span class="pill">${g}</span>`).join('');
-  document.getElementById('m-quote').textContent = p.quote;
-  document.getElementById('persona-overlay').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeModal() { document.getElementById('persona-overlay').style.display = 'none'; document.body.style.overflow = ''; }
-function handleOverlayClick(e) { if(e.target===document.getElementById('persona-overlay')) closeModal(); }
-function handleBlogSubmit(e) {
-  e.preventDefault();
-  var form = document.getElementById('blog-signup-form');
-  var email = document.getElementById('BLOG_EMAIL').value;
-  if (!email) return false;
-  fetch(form.action, { method:'POST', body:new FormData(form), mode:'no-cors' }).then(function() { form.style.display='none'; document.getElementById('blog-success-msg').style.display='block'; });
-  return false;
-}
-</script>
-<script>
-(function() {
-  var toggle = document.getElementById('navToggle');
-  var menu = document.getElementById('mobileMenu');
-  if (!toggle || !menu) return;
-  toggle.addEventListener('click', function() {
-    toggle.classList.toggle('open');
-    menu.classList.toggle('open');
-  });
-  menu.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      toggle.classList.remove('open');
-      menu.classList.remove('open');
-    });
-  });
-})();
-</script></body>
+</body>
 </html>
