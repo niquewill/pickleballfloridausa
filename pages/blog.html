@@ -24,7 +24,14 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root { --coral: #FF6F61; --turquoise: #2CCCD3; --green: #2E8B57; --cream: #FFF7EB; --navy: #16324F; }
   body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); }
-  nav { background: var(--navy); padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  
+  $match = $args[0]
+  if ($match.Value -notmatch 'position') {
+    $match.Value -replace '(\})', ' position: relative; }'
+  } else {
+    $match.Value
+  }
+
   .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 1px; text-decoration: none; }
   .logo-sub { font-size: 0.6rem; color: var(--turquoise); letter-spacing: 4px; text-transform: uppercase; display: block; margin-top: 2px; }
   .nav-links { display: flex; gap: 2rem; flex-wrap: wrap; }
