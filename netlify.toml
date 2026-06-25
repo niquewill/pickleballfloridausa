@@ -1,4 +1,4 @@
-[build]
+﻿[build]
   publish = "."
   functions = "netlify/functions"
 
@@ -7,3 +7,15 @@
 
 [functions."update-blog"]
   schedule = "@weekly"
+
+[[redirects]]
+  from = "/pages/courts/:city-florida"
+  to = "/pages/courts/:city-florida.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pages/:page"
+  to = "/pages/:page.html"
+  status = 301
+  force = true
