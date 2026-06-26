@@ -1,0 +1,656 @@
+# write-blog-final.ps1
+# Final clean rebuild of blog.html
+# Run from: C:\Users\edupg\Documents\pickleballfloridausa
+
+$html = @'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Dink Diaries - Florida Pickleball Lifestyle Blog | Pickleball Florida USA</title>
+<meta name="description" content="The Dink Diaries - a Florida pickleball lifestyle blog following four women from Palm Beach, Naples, The Villages, and Sarasota." />
+<link rel="canonical" href="https://pickleballfloridausa.com/pages/blog.html" />
+<link rel="icon" type="image/x-icon" href="../images/pfufavicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --coral: #FF6F61; --turquoise: #2CCCD3; --green: #2E8B57; --cream: #FFF7EB; --navy: #16324F; }
+body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
+
+nav { background: var(--navy); padding: 1.2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; position: relative; }
+.logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--cream); letter-spacing: 1px; text-decoration: none; }
+.logo-sub { font-size: 0.6rem; color: var(--turquoise); letter-spacing: 4px; text-transform: uppercase; display: block; margin-top: 2px; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { color: var(--cream); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
+.nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--turquoise); }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 200; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--cream); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy); border-top: 1px solid rgba(255,255,255,0.1); flex-direction: column; z-index: 100; padding: 1rem 0; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: var(--cream); text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; padding: 0.75rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover, .mobile-menu a.active { opacity: 1; color: var(--turquoise); }
+
+/* BANNER */
+.dink-banner { width: 100%; display: block; line-height: 0; }
+.dink-banner img { width: 100%; height: 280px; object-fit: cover; object-position: center 30%; display: block; }
+
+/* HERO */
+.blog-hero { background: var(--navy); padding: 4rem 2.5rem; text-align: center; }
+.blog-hero-eyebrow { font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 1.25rem; }
+.blog-hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--cream); font-weight: 400; margin-bottom: 1.25rem; line-height: 1.2; }
+.blog-hero h1 em { font-style: italic; color: var(--coral); }
+.blog-hero-desc { color: var(--cream); opacity: 0.9; font-size: 1.15rem; max-width: 700px; margin: 0 auto; line-height: 1.9; font-weight: 300; }
+.wave { display: block; background: var(--navy); line-height: 0; }
+.wave svg { display: block; width: 100%; }
+
+/* INTRO */
+.intro-section { max-width: 900px; margin: 0 auto; padding: 3rem 2.5rem 0; text-align: center; }
+.intro-section p { font-size: 1.05rem; line-height: 1.9; color: var(--navy); opacity: 0.8; font-weight: 300; }
+
+/* WRITERS */
+.writers-strip { background: #fff; padding: 4rem 2.5rem; text-align: center; border-bottom: 1px solid rgba(22,50,79,0.08); }
+.writers-strip > p { font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 2.5rem; }
+.writers-grid { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+.writer-pill { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; cursor: pointer; transition: transform 0.2s; }
+.writer-pill:hover { transform: translateY(-3px); }
+.writer-avatar { width: 180px; height: 180px; border-radius: 50%; border: 3px solid transparent; transition: border-color 0.2s; overflow: hidden; }
+.writer-pill:hover .writer-avatar { border-color: var(--coral); }
+.writer-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--navy); font-weight: 400; }
+.writer-location { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); }
+
+/* MODAL */
+#persona-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.55); z-index: 9999; align-items: center; justify-content: center; }
+.modal-box { background: white; border-radius: 16px; width: 500px; max-width: 94vw; max-height: 90vh; overflow-y: auto; position: relative; }
+.modal-header { padding: 1.5rem; display: flex; gap: 16px; align-items: center; border-bottom: 1px solid #f0f0f0; position: relative; }
+.modal-header img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid #f0f0f0; flex-shrink: 0; }
+.modal-header-text { flex: 1; }
+.modal-header-text h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; color: #1a1a1a; margin: 0 0 3px; }
+.modal-header-text .m-sub { font-size: 12px; color: #888; margin: 0 0 4px; }
+.modal-header-text .m-hood { font-size: 12px; color: #2a7a5a; margin: 0; font-weight: 500; }
+.modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 22px; cursor: pointer; color: #aaa; line-height: 1; padding: 4px 8px; }
+.modal-body { padding: 1.25rem 1.5rem; }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.25rem; }
+.stat-box { background: #f8f8f6; border-radius: 8px; padding: 10px 12px; }
+.stat-label { font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 3px; }
+.stat-val { font-size: 14px; font-weight: 600; margin: 0; color: #1a1a1a; }
+.modal-section-label { font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 8px; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+.pill { font-size: 12px; padding: 3px 10px; border-radius: 999px; border: 1px solid #e8e8e8; color: #666; background: #f8f8f6; }
+.modal-quote { font-size: 13px; color: #666; border-left: 2px solid #ddd; padding-left: 12px; margin: 0; line-height: 1.65; font-style: italic; font-family: 'Playfair Display', serif; }
+
+/* BLOG */
+.blog-section { max-width: 1200px; margin: 0 auto; padding: 4rem 2.5rem; }
+.blog-section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+.blog-section-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 400; color: var(--navy); }
+.blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+
+.card-wrapper { position: relative; display: flex; gap: 0; }
+.blog-card { background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid rgba(22,50,79,0.08); transition: box-shadow 0.2s; flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.card-wrapper:not(.archive-open) .blog-card { border-radius: 4px; }
+.blog-card:hover { box-shadow: 0 8px 30px rgba(22,50,79,0.08); }
+.blog-card-header { padding: 1.5rem 2rem 0; display: flex; align-items: center; gap: 1rem; }
+.card-avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+.card-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.card-meta { flex: 1; }
+.card-author { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 400; color: var(--navy); margin-bottom: 2px; }
+.card-location { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); }
+.card-date { font-size: 0.7rem; color: var(--navy); opacity: 0.4; letter-spacing: 1px; }
+.blog-card-body { padding: 1.5rem 2rem 1rem; flex: 1; }
+.blog-card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 400; color: var(--navy); margin-bottom: 1rem; line-height: 1.4; }
+.blog-card-title em { font-style: italic; color: var(--coral); }
+.blog-card-text { font-size: 0.9rem; line-height: 1.9; color: var(--navy); opacity: 0.8; font-weight: 300; }
+.blog-card-text p { margin-bottom: 1rem; }
+.blog-card-text p:last-child { margin-bottom: 0; }
+.blog-card-footer { padding: 1rem 2rem 0; display: flex; justify-content: space-between; align-items: center; }
+.card-tag { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--coral); border: 1px solid var(--coral); padding: 0.3rem 0.75rem; border-radius: 2px; }
+.location-tag { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); opacity: 0.4; }
+
+/* ARCHIVE TAB */
+.archive-tab { width: 36px; background: var(--navy); display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 0 4px 4px 0; border: 1px solid rgba(255,255,255,0.1); border-left: none; flex-shrink: 0; transition: background 0.2s; }
+.archive-tab:hover { background: #1e4a73; }
+.archive-tab-label { writing-mode: vertical-rl; text-orientation: mixed; font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: var(--turquoise); transform: rotate(180deg); white-space: nowrap; }
+.archive-panel { width: 0; overflow: hidden; transition: width 0.3s ease; background: #fff; border: 0px solid rgba(22,50,79,0.08); border-radius: 0 4px 4px 0; flex-shrink: 0; }
+.card-wrapper.archive-open .archive-panel { width: 220px; border-width: 1px; border-left: none; }
+.archive-panel-inner { width: 220px; height: 100%; display: flex; flex-direction: column; }
+.archive-panel-header { padding: 1rem 1.25rem; border-bottom: 1px solid rgba(22,50,79,0.08); background: #f8f8f5; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+.archive-panel-header p { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: var(--turquoise); }
+.archive-close { background: none; border: none; cursor: pointer; color: var(--navy); opacity: 0.4; font-size: 1rem; line-height: 1; padding: 0; }
+.archive-close:hover { opacity: 1; }
+.archive-list { overflow-y: auto; flex: 1; }
+.archive-item { padding: 0.875rem 1.25rem; border-bottom: 1px solid rgba(22,50,79,0.06); cursor: pointer; transition: background 0.15s; }
+.archive-item:last-child { border-bottom: none; }
+.archive-item:hover { background: #fdf8f2; }
+.archive-item.active { background: #fff3ef; border-left: 3px solid var(--coral); padding-left: calc(1.25rem - 3px); }
+.archive-item-date { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 4px; }
+.archive-item-title { font-family: 'Playfair Display', serif; font-size: 0.85rem; color: var(--navy); line-height: 1.4; font-weight: 400; }
+
+/* MOBILE BOTTOM SHEET */
+.sheet-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 8000; }
+.sheet-overlay.open { display: block; }
+.bottom-sheet { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-radius: 16px 16px 0 0; z-index: 8001; transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); max-height: 70vh; display: flex; flex-direction: column; }
+.bottom-sheet.open { transform: translateY(0); }
+.sheet-handle { width: 40px; height: 4px; background: rgba(22,50,79,0.15); border-radius: 2px; margin: 12px auto 0; flex-shrink: 0; }
+.sheet-header { padding: 1rem 1.5rem; border-bottom: 1px solid rgba(22,50,79,0.08); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+.sheet-header p { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--turquoise); }
+.sheet-close { background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--navy); opacity: 0.4; }
+.sheet-list { overflow-y: auto; flex: 1; padding: 0.5rem 0; }
+.sheet-item { padding: 1rem 1.5rem; border-bottom: 1px solid rgba(22,50,79,0.06); cursor: pointer; }
+.sheet-item:last-child { border-bottom: none; }
+.sheet-item-date { font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 4px; }
+.sheet-item-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy); line-height: 1.4; }
+.mobile-archive-btn { display: none; width: 100%; background: none; border: none; border-top: 1px solid rgba(22,50,79,0.08); padding: 0.9rem 2rem; text-align: left; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); opacity: 0.5; justify-content: space-between; align-items: center; }
+.mobile-archive-btn:hover { opacity: 1; }
+
+.section-divider { border: none; border-top: 1px solid rgba(22,50,79,0.08); margin: 0 2.5rem; }
+.related-section { background: var(--navy); padding: 3rem 2.5rem; text-align: center; }
+.related-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--cream); font-weight: 400; margin-bottom: 0.5rem; }
+.related-section p { color: var(--cream); opacity: 0.6; font-size: 0.85rem; margin-bottom: 2rem; font-weight: 300; }
+.related-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.related-link { color: var(--cream); text-decoration: none; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.3); padding: 0.6rem 1.2rem; border-radius: 2px; }
+.related-link:hover { background: var(--coral); border-color: var(--coral); }
+.email-strip { background: var(--navy); padding: 4rem 2.5rem; text-align: center; }
+.email-strip h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--cream); font-weight: 400; margin-bottom: 0.75rem; }
+.email-strip p { color: var(--cream); opacity: 0.7; font-size: 0.9rem; margin-bottom: 2rem; font-weight: 300; }
+.email-form { display: flex; max-width: 420px; margin: 0 auto; border-radius: 2px; overflow: hidden; }
+.email-form input { flex: 1; padding: 0.85rem 1.2rem; border: none; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--navy); min-width: 0; }
+.email-form button { background: var(--coral); color: #fff; border: none; padding: 0.85rem 1.5rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; font-family: 'Montserrat', sans-serif; white-space: nowrap; }
+#blog-success-msg { display: none; color: var(--turquoise); margin-top: 1rem; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; }
+.footer { background: #0d2035; padding: 2.5rem; text-align: center; }
+.footer .logo-text { display: block; margin-bottom: 1rem; color: var(--cream); font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+.footer-social { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.footer-social a { color: var(--cream); opacity: 0.5; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; gap: 0.4rem; }
+.footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.footer-links a { color: var(--cream); opacity: 0.5; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; }
+.footer p { color: var(--cream); opacity: 0.3; font-size: 0.75rem; }
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  nav { padding: 1rem 1.5rem; }
+  .dink-banner img { height: 160px; }
+  .blog-hero { padding: 3rem 1.5rem; }
+  .blog-hero h1 { font-size: 2.2rem; }
+  .blog-hero-desc { font-size: 1rem; }
+  .writers-grid { gap: 2rem; }
+  .writer-avatar { width: 120px; height: 120px; }
+  .writer-name { font-size: 1rem; }
+  .blog-section { padding: 2.5rem 1rem; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .archive-tab { display: none; }
+  .archive-panel { display: none; }
+  .mobile-archive-btn { display: flex; }
+  .blog-card { border-radius: 4px; }
+  .blog-card-header { padding: 1.2rem 1.2rem 0; }
+  .blog-card-body { padding: 1.2rem 1.2rem 0.75rem; }
+  .blog-card-footer { padding: 0.75rem 1.2rem 0; }
+  .email-strip { padding: 3rem 1.5rem; }
+  .email-form { flex-direction: column; }
+  .intro-section { padding: 2rem 1.5rem 0; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html">
+    <span class="logo-text">Pickleball Florida USA</span>
+    <span class="logo-sub">Coastal Lifestyle Collection</span>
+  </a>
+  <div class="nav-links">
+    <a href="shop.html">Shop</a>
+    <a href="gear.html">Gear</a>
+    <a href="courts.html">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="learn.html">Learn</a>
+    <a href="about.html">About</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="shop.html">Shop</a>
+    <a href="gear.html">Gear</a>
+    <a href="courts.html">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="learn.html">Learn</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<div class="dink-banner">
+  <img src="../images/dink-diaries-header.png" alt="The Dink Diaries Florida" />
+</div>
+
+<div class="blog-hero">
+  <p class="blog-hero-eyebrow">The Dink Diaries</p>
+  <h1>Four Women.<br>Four Cities.<br><em>One Obsession.</em></h1>
+  <p class="blog-hero-desc">Court-side stories from Palm Beach, Naples, The Villages, and Sarasota. Real courts, real people, real Florida pickleball life served with a side of gossip.</p>
+</div>
+<div class="wave"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60"><path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/></svg></div>
+
+<div class="intro-section">
+  <p>The Dink Diaries follows four real women living, playing, and gossiping their way through Florida's most vibrant pickleball communities. New stories published every week.</p>
+</div>
+
+<div class="writers-strip">
+  <p>Meet Your Correspondents</p>
+  <div class="writers-grid">
+    <div class="writer-pill" onclick="openPersonaModal('patrice')">
+      <div class="writer-avatar"><img src="../images/patrice.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Patrice" /></div>
+      <span class="writer-name">Patrice</span>
+      <span class="writer-location">Palm Beach</span>
+    </div>
+    <div class="writer-pill" onclick="openPersonaModal('nicolette')">
+      <div class="writer-avatar"><img src="../images/nicolette.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Nicolette" /></div>
+      <span class="writer-name">Nicolette</span>
+      <span class="writer-location">Naples</span>
+    </div>
+    <div class="writer-pill" onclick="openPersonaModal('vivian')">
+      <div class="writer-avatar"><img src="../images/vivian.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Vivian" /></div>
+      <span class="writer-name">Vivian</span>
+      <span class="writer-location">The Villages</span>
+    </div>
+    <div class="writer-pill" onclick="openPersonaModal('stella')">
+      <div class="writer-avatar"><img src="../images/stella.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Stella" /></div>
+      <span class="writer-name">Stella</span>
+      <span class="writer-location">Sarasota</span>
+    </div>
+  </div>
+</div>
+
+<div id="persona-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <img id="m-photo" src="" alt="" />
+      <div class="modal-header-text">
+        <h3 id="m-name"></h3>
+        <p class="m-sub" id="m-sub"></p>
+        <p class="m-hood" id="m-hood"></p>
+      </div>
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <div class="stat-grid">
+        <div class="stat-box"><p class="stat-label">DUPR Rating</p><p class="stat-val" id="m-dupr"></p></div>
+        <div class="stat-box"><p class="stat-label">Playing Style</p><p class="stat-val" id="m-style"></p></div>
+        <div class="stat-box"><p class="stat-label">Preferred Side</p><p class="stat-val" id="m-side"></p></div>
+        <div class="stat-box"><p class="stat-label">Paddle of Choice</p><p class="stat-val" id="m-paddle"></p></div>
+      </div>
+      <p class="modal-section-label">Favorite Spots</p>
+      <div class="pill-row" id="m-spots"></div>
+      <p class="modal-section-label">Always on Court With</p>
+      <div class="pill-row" id="m-gear"></div>
+      <p class="modal-quote" id="m-quote"></p>
+    </div>
+  </div>
+</div>
+
+<div class="sheet-overlay" id="sheetOverlay" onclick="closeSheet()"></div>
+<div class="bottom-sheet" id="bottomSheet">
+  <div class="sheet-handle"></div>
+  <div class="sheet-header">
+    <p id="sheetTitle">The Dink Diaries</p>
+    <button class="sheet-close" onclick="closeSheet()">&#x2715;</button>
+  </div>
+  <div class="sheet-list" id="sheetList"></div>
+</div>
+
+<div class="blog-section">
+  <div class="blog-section-header">
+    <h2>Latest from The Dink Diaries</h2>
+    <span class="location-tag">June 2026</span>
+  </div>
+  <div class="blog-grid">
+
+    <div class="card-wrapper" id="wrapper-patrice">
+      <div class="blog-card" id="card-patrice">
+        <div class="blog-card-header">
+          <div class="card-avatar"><img src="../images/patrice.png" alt="Patrice" /></div>
+          <div class="card-meta">
+            <div class="card-author">Patrice Waverly-Fontaine</div>
+            <div class="card-location">Palm Beach, FL</div>
+          </div>
+          <div class="card-date">Jun 9</div>
+        </div>
+        <div class="blog-card-body">
+          <h3 class="blog-card-title" id="title-patrice">The Week Bunny Served Straight Into Lady Ashford's Hermes</h3>
+          <div class="blog-card-text" id="text-patrice">
+            <p>Darlings, where do I even BEGIN with this week? Monday morning at Phipps was absolutely electric and I am not just talking about the humidity that required three touch-ups of my Chantecaille foundation by noon. Bunny and I were paired against the Ashford twins and during the most crucial point of the third game, Bunny executed what can only be described as a demonic serve that ricocheted off the net and somehow ended up lodging itself in Lady Ashford's Kelly bag courtside. The silence. The DRAMA.</p>
+            <p>Wednesday I finally debuted my Coastal Court Tote paired with my new Loro Piana tennis whites. Even Mitzi Caldwell asked where I got it during our cooldown at The Bath and Tennis Club.</p>
+          </div>
+        </div>
+        <div class="blog-card-footer">
+          <span class="card-tag">Palm Beach</span>
+          <span class="location-tag">Courts and Social</span>
+        </div>
+        <button class="mobile-archive-btn" onclick="openSheet('patrice')">The Dink Diaries Archive <span>&#8250;</span></button>
+      </div>
+      <div class="archive-tab" onclick="toggleArchivePanel('patrice')" title="View archive">
+        <span class="archive-tab-label">Archive</span>
+      </div>
+      <div class="archive-panel" id="panel-patrice">
+        <div class="archive-panel-inner">
+          <div class="archive-panel-header">
+            <p>Patrice's Dink Diaries</p>
+            <button class="archive-close" onclick="toggleArchivePanel('patrice')">&#x2715;</button>
+          </div>
+          <div class="archive-list" id="list-patrice"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper" id="wrapper-nicolette">
+      <div class="blog-card" id="card-nicolette">
+        <div class="blog-card-header">
+          <div class="card-avatar"><img src="../images/nicolette.png" alt="Nicolette" /></div>
+          <div class="card-meta">
+            <div class="card-author">Nicolette Hargrove</div>
+            <div class="card-location">Naples, FL</div>
+          </div>
+          <div class="card-date">Jun 8</div>
+        </div>
+        <div class="blog-card-body">
+          <h3 class="blog-card-title" id="title-nicolette">Court Drama, Crosscourt Dreams, and the Creamiest Burrata I Have Had All Month</h3>
+          <div class="blog-card-text" id="text-nicolette">
+            <p>Honestly this week has been an absolute whirlwind of pickleball and pure Naples magic. Tuesday morning started with the most glorious sunrise session at Naples Grande. Thomas had me working on my third shot drops until my legs were absolutely screaming but I cannot even complain because afterwards Camille and I treated ourselves to lunch at The French on Fifth. The burrata with heirloom tomatoes was life-changing.</p>
+            <p>Derek joined us for mixed doubles on Thursday and I wore my new Pickleball Florida USA moisture-wicking dress. We grabbed Rosie afterward and walked through Venetian Village where she charmed every single person on the sidewalk.</p>
+          </div>
+        </div>
+        <div class="blog-card-footer">
+          <span class="card-tag">Naples</span>
+          <span class="location-tag">Lifestyle and Food</span>
+        </div>
+        <button class="mobile-archive-btn" onclick="openSheet('nicolette')">The Dink Diaries Archive <span>&#8250;</span></button>
+      </div>
+      <div class="archive-tab" onclick="toggleArchivePanel('nicolette')" title="View archive">
+        <span class="archive-tab-label">Archive</span>
+      </div>
+      <div class="archive-panel" id="panel-nicolette">
+        <div class="archive-panel-inner">
+          <div class="archive-panel-header">
+            <p>Nicolette's Dink Diaries</p>
+            <button class="archive-close" onclick="toggleArchivePanel('nicolette')">&#x2715;</button>
+          </div>
+          <div class="archive-list" id="list-nicolette"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper" id="wrapper-vivian">
+      <div class="blog-card" id="card-vivian">
+        <div class="blog-card-header">
+          <div class="card-avatar"><img src="../images/vivian.png" alt="Vivian" /></div>
+          <div class="card-meta">
+            <div class="card-author">Vivian Kowalski-Reed</div>
+            <div class="card-location">The Villages, FL</div>
+          </div>
+          <div class="card-date">Jun 7</div>
+        </div>
+        <div class="blog-card-body">
+          <h3 class="blog-card-title" id="title-vivian">Kenny Called a Foot Fault on Dottie. Now We Are in a Cold War.</h3>
+          <div class="blog-card-text" id="text-vivian">
+            <p>Listen, I have been playing pickleball in this retirement paradise for three years now and I thought I had seen everything. But this week Kenny called a foot fault on Dottie during our Tuesday morning game. Honey, you could have heard a pin drop across all of Lake Sumter Landing. Dottie is from Jersey. She does not forget and she does not forgive. Now she has got me driving our golf cart the long way to courts just to avoid passing his driveway.</p>
+            <p>The rest of the week was actually pretty great. I finally broke down and ordered one of those Pickleball Florida USA paddle covers and honey it has been a practical delight. Thursday we played at Tierra Del Sol and celebrated with Key lime pie from Katie Belle's.</p>
+          </div>
+        </div>
+        <div class="blog-card-footer">
+          <span class="card-tag">The Villages</span>
+          <span class="location-tag">Community and Courts</span>
+        </div>
+        <button class="mobile-archive-btn" onclick="openSheet('vivian')">The Dink Diaries Archive <span>&#8250;</span></button>
+      </div>
+      <div class="archive-tab" onclick="toggleArchivePanel('vivian')" title="View archive">
+        <span class="archive-tab-label">Archive</span>
+      </div>
+      <div class="archive-panel" id="panel-vivian">
+        <div class="archive-panel-inner">
+          <div class="archive-panel-header">
+            <p>Vivian's Dink Diaries</p>
+            <button class="archive-close" onclick="toggleArchivePanel('vivian')">&#x2715;</button>
+          </div>
+          <div class="archive-list" id="list-vivian"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper" id="wrapper-stella">
+      <div class="blog-card" id="card-stella">
+        <div class="blog-card-header">
+          <div class="card-avatar"><img src="../images/stella.png" alt="Stella" /></div>
+          <div class="card-meta">
+            <div class="card-author">Stella Marchetti</div>
+            <div class="card-location">Sarasota, FL</div>
+          </div>
+          <div class="card-date">Jun 6</div>
+        </div>
+        <div class="blog-card-body">
+          <h3 class="blog-card-title" id="title-stella">The Week I Played Through a Meltdown Mine Not Marco's For Once</h3>
+          <div class="blog-card-text" id="text-stella">
+            <p>Here is the thing. I thought moving to Sarasota would mellow me out. Six years later I am standing at Pompano Park on Tuesday morning having what can only be described as a graphic designer's existential crisis over paddle grip colors while Diane patiently waits for me to serve. Last month I lectured everyone for fifteen minutes about kerning after someone made a tournament flyer in Papyrus. PAPYRUS.</p>
+            <p>Monday at Urfer was brutal. Marco came along and proceeded to hit perfect third-shot drops while I shanked balls into the next county. Then Wednesday happened and Diane and I absolutely demolished a doubles match at Bay Front. We stopped at Piccolo Italian Market after because winning requires prosciutto. It is science.</p>
+          </div>
+        </div>
+        <div class="blog-card-footer">
+          <span class="card-tag">Sarasota</span>
+          <span class="location-tag">Community and Gear</span>
+        </div>
+        <button class="mobile-archive-btn" onclick="openSheet('stella')">The Dink Diaries Archive <span>&#8250;</span></button>
+      </div>
+      <div class="archive-tab" onclick="toggleArchivePanel('stella')" title="View archive">
+        <span class="archive-tab-label">Archive</span>
+      </div>
+      <div class="archive-panel" id="panel-stella">
+        <div class="archive-panel-inner">
+          <div class="archive-panel-header">
+            <p>Stella's Dink Diaries</p>
+            <button class="archive-close" onclick="toggleArchivePanel('stella')">&#x2715;</button>
+          </div>
+          <div class="archive-list" id="list-stella"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider" />
+<div class="related-section">
+  <h2>Explore More Florida Pickleball</h2>
+  <p>Find courts, gear up, and follow the full Florida pickleball scene.</p>
+  <div class="related-links">
+    <a href="courts.html" class="related-link">Find Florida Courts</a>
+    <a href="tournaments.html" class="related-link">Florida Tournaments</a>
+    <a href="gear.html" class="related-link">Pickleball Gear Guide</a>
+    <a href="learn.html" class="related-link">Learn to Play</a>
+    <a href="shop.html" class="related-link">Shop the Collection</a>
+  </div>
+</div>
+
+<div class="email-strip">
+  <h2>Get The Dink Diaries</h2>
+  <p>Weekly court gossip, player stories, and Florida pickleball life delivered straight to your inbox every Tuesday.</p>
+  <form id="blog-signup-form" method="POST" action="https://c8fbe7fc.sibforms.com/serve/MUIFAJ3RvEFb32OIhRG8j32KEbtI6qIgYYuwBEeC0UhWV1pI6aWnhR0QdupLuRQw6YiwNiansr7lMLxyJi0sYfRMbEiwh6wRKlLE4y201o3I4XjfZxt7tSmECJA29qmEaunpiSZeI56qnMwJUHxknljYY2VJViT9VYmvJP6KCTRKAQa73cT4ng3593tZ6RwpTYPJNKoP0IhsFheJsA==" onsubmit="return handleBlogSubmit(event)" class="email-form">
+    <input type="text" id="BLOG_EMAIL" name="EMAIL" autocomplete="off" placeholder="Your email address" required />
+    <input type="text" name="email_address_check" value="" style="display:none;">
+    <input type="hidden" name="locale" value="en">
+    <button type="submit">Subscribe</button>
+  </form>
+  <p id="blog-success-msg">You are in! The Dink Diaries hits your inbox every Tuesday.</p>
+</div>
+
+<div class="footer">
+  <span class="logo-text">Pickleball Florida USA</span>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/pickleballfloridausa" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/pickleballfloridausa" target="_blank">Facebook</a>
+    <a href="https://www.pinterest.com/pickleballfloridausa" target="_blank">Pinterest</a>
+  </div>
+  <div class="footer-links">
+    <a href="shop.html">Shop</a>
+    <a href="courts.html">Courts</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Privacy</a>
+  </div>
+  <p>2026 PickleballFloridaUSA.com Coastal Pickleball Lifestyle</p>
+</div>
+
+<script>
+var archiveData = {
+  patrice: {
+    posts: [
+      { date: "May 26", title: "The Courts Are Back and So Are We", text: "<p>The Phipps Ocean Park courts got resurfaced and Bunny called me before my coffee was even finished. By nine o'clock we were out there and I will say the new surface is extraordinary. I wore my new Loro Piana sun hat and not a single person commented on it, which tells me everything I need to know about where we are culturally.</p><p>Bunny and I grabbed lunch at Ta-boo after and she told me in complete confidence that the couple who used to dominate the Tuesday round robin have apparently switched to tennis. I said a prayer for them and ordered the crab salad.</p>" },
+      { date: "May 12", title: "Geoffrey Finally Watched a Full Match and Had Opinions", text: "<p>Against all reasonable expectations, Geoffrey sat through our entire Tuesday round robin at Phipps and afterward declared that pickleball was more strategic than it looks. I have been saying this for three years. He has since purchased a paddle. We are monitoring the situation closely.</p><p>Margaux called from the city that evening and there was a very long silence on the line before she said she would pray for us both. I found that unnecessarily dramatic.</p>" },
+      { date: "Apr 28", title: "The Charity Tournament at The Breakers", text: "<p>The annual spring charity tournament at The Breakers was as always an exercise in Palm Beach doing Palm Beach things. Everyone was very competitive and also wearing something from Net-a-Porter. Bunny and I made it to the semifinals. I am choosing to be proud of that.</p><p>Geoffrey attended for the first time and spent most of the afternoon talking to a former hedge fund manager about court surfaces.</p>" },
+      { date: "Apr 14", title: "Carlos Says I Need More Spin. Carlos Is Not Wrong.", text: "<p>My trainer Carlos has crossed fully from fitness advisor into pickleball coach and I have mixed feelings. On one hand he has genuinely improved my third shot drop. On the other hand he now has opinions about my grip and expressed them in front of Margaux who was visiting from the city.</p><p>I did finally cave and try the paddle he recommended and my backhand has improved considerably and Bunny noticed immediately which is the only metric that matters.</p>" }
+    ]
+  },
+  nicolette: {
+    posts: [
+      { date: "May 25", title: "Derek Found His People and I Found a New Restaurant", text: "<p>Derek came home, looked up three YouTube videos on the third shot drop, and asked me if we could hit some balls before dinner. We have been married twenty-two years and this man has never once suggested physical activity before dinner. We went to Pelican Bay and honestly he is not terrible.</p><p>After we stopped at The French on Fifth for a glass of rose and I need to tell you about their new small plates menu because it is absolutely worth the parking situation on Fifth Avenue.</p>" },
+      { date: "May 11", title: "Thomas Told Me I Am Ready for the 3.5 Tournament", text: "<p>Thursday lesson with Thomas ended with him saying very casually that he thought I was ready to enter the 3.5 bracket at Naples Grande next month. I smiled and said thank you and then called Camille from the parking lot and had a complete meltdown which she handled beautifully by immediately suggesting dinner at Mediterrano.</p><p>Derek thinks I should do it. Rosie is neutral. I am still deciding.</p>" },
+      { date: "Apr 27", title: "The Snowbird Exodus and What It Does to Court Availability", text: "<p>It is officially post-season in Naples which means the snowbirds have returned north and suddenly we have actual court time before 10am again. Camille and I celebrated by booking Pelican Bay for Tuesday and Thursday morning for the next six weeks. Rosie is thrilled.</p><p>Derek asked if he could come to the Thursday session. We said yes but only if he stops calling every third shot drop a dink.</p>" },
+      { date: "Apr 13", title: "Camille Won the Round Robin and I Made Peace With It", text: "<p>Camille won the Naples Grande monthly round robin and I am genuinely completely one hundred percent happy for her. I am also switching to a heavier paddle next week.</p><p>We celebrated at Vanderbilt Beach and the sunset was so beautiful that I briefly forgot I lost in the quarterfinals. Rosie ran into the waves approximately eleven times.</p>" }
+    ]
+  },
+  vivian: {
+    posts: [
+      { date: "May 24", title: "Kenny Moved Up a Level and Now It Is Personal", text: "<p>Kenny self-rated to 4.0 and signed up for the advanced round robin on Wednesday mornings. Frank found out from Dottie who found out from the sign-up sheet and called me while I was in the Publix on Rolling Acres. I had to put down my cantaloupe.</p><p>Dottie and I watched from the bleachers with our coffee and I want to be very clear that we were there to be supportive. We only laughed twice.</p>" },
+      { date: "May 10", title: "The Knudson Morning Crew Gets a New Member", text: "<p>A new couple moved into Buttonwood neighborhood last week and showed up at Knudson Tuesday morning with matching outfits and brand new Selkirk paddles still in the packaging. Dottie said bless their hearts in that way she has. They were actually quite good. We have revised our opinions.</p><p>Frank thinks the husband might have played tennis competitively at some point. The way he moves at the kitchen line is suspicious in the best possible way.</p>" },
+      { date: "Apr 26", title: "Frank Wants to Enter a Tournament and I Have Questions", text: "<p>Frank came home from his 7am game and announced he wants to enter the senior men's doubles tournament at Hacienda Hills next month. I said Frank you have been playing for eight months. He said Vivian I have been practicing. These are two different things.</p><p>Dottie says we should let him enter and watch from the bleachers with coffee. This is why she is my best friend.</p>" },
+      { date: "Apr 12", title: "Marge Came to Watch and Now She Wants to Play", text: "<p>In thirty-seven years of knowing Marge I have never seen her express interest in a sport of any kind. She came to watch our Tuesday game because her book club got cancelled. Forty-five minutes later she asked if there was a beginner clinic.</p><p>Dottie says we created a monster. I think we created a teammate.</p>" }
+    ]
+  },
+  stella: {
+    posts: [
+      { date: "May 23", title: "The Tuesday Crew Survives Another Florida Summer", text: "<p>Here is the thing about playing pickleball in Sarasota in May. You either commit fully or you move somewhere with a functioning atmosphere. Marco wore a hat for the first time in his life because I threatened consequences.</p><p>I finally caved and got the JOOLA Ben Johns paddle that Diane has been quietly evangelizing about for three months and I owe her a full apology because it is extraordinary.</p>" },
+      { date: "May 9", title: "Gabi Talked Me Into a 6am Game and I Am Still Not Over It", text: "<p>Gabi texted at 10pm to ask if I wanted to beat the heat with a 6am session at Urfer. I said yes because I am weak and she is persuasive. Marco materialized at 6:05 with coffee which is the only reason I forgave him for being annoyingly good at a sport he claims not to care about.</p><p>We played until 8 and got breakfast sandwiches at a place on Fruitville I cannot believe I have been sleeping on.</p>" },
+      { date: "Apr 25", title: "I Entered a Tournament and Told No One Until Afterward", text: "<p>I entered the Urfer Family Park spring tournament under the reasoning that if I did not tell anyone and I lost badly it would be like it never happened. I did not lose badly. I made it to the final and lost to a woman named Carol from Bradenton who was sixty-one years old and absolutely merciless at the net.</p><p>I told Diane first. She was annoyingly calm about it. Marco sent three fire emojis.</p>" },
+      { date: "Apr 11", title: "Diane Has Been Right About Everything and I Am Formally Acknowledging It", text: "<p>A partial list of things Diane has been right about that I initially dismissed includes the JOOLA paddle, the ASICS court shoes, arriving ten minutes early to warm up, and Piccolo Italian Market on Laurel.</p><p>This is my formal acknowledgment. She will not make a big deal of it. That is why she is my doubles partner.</p>" }
+    ]
+  }
+};
+
+var personaData = {
+  patrice: { photo:'../images/patrice.png', name:'Patrice Waverly-Fontaine', sub:'Palm Beach, Age 61', hood:'South Ocean Blvd, Palm Beach Island', dupr:'4.012', style:'Dinker', side:'Even right', paddle:'HEAD Radical Pro', spots:['Ta-boo','Cafe Boulud','Worth Avenue','The Breakers','Greens Pharmacy'], gear:['Loro Piana sun hat','K-Swiss Ultrashot','Coastal Circle Tee','Hermes court bag'], quote:'Bunny called me at seven this morning to tell me the Phipps courts were completely redone. I told her I needed at least forty minutes because I was not going to show up looking like I had rolled out of bed.' },
+  nicolette: { photo:'../images/nicolette.png', name:'Nicolette Hargrove', sub:'Naples, Age 54', hood:'Pelican Bay, Naples', dupr:'3.541', style:'All-court', side:'Odd left', paddle:'Selkirk AMPED Epic', spots:['The French on Fifth','Mediterrano','Mercato','Seed to Table','Vanderbilt Beach'], gear:['Alo set','Vuori shorts','Palm Paddle Tee','JOOLA bag'], quote:'Derek showed up to his first clinic in basketball shorts and a University of Michigan shirt from 2003. Thomas bless that man did not even flinch.' },
+  vivian: { photo:'../images/vivian.png', name:'Vivian Kowalski-Reed', sub:'The Villages, Age 68', hood:'Brownwood Paddock Square, The Villages', dupr:'3.489', style:'Dinker', side:'Even right', paddle:'Selkirk AMPED', spots:['Lake Sumter Landing','Katie Belles','Brownwood Square','Publix on Rolling Acres'], gear:['Coastal Circle Hat','Selkirk AMPED','Franklin X-40 balls','Cooling towel'], quote:'I am not a gossip. I am a community historian. There is a difference. Frank understands this. Marge does not.' },
+  stella: { photo:'../images/stella.png', name:'Stella Marchetti', sub:'Sarasota, Age 47', hood:'Rosemary District, Sarasota', dupr:'4.187', style:'All-court', side:'Odd left', paddle:'JOOLA Ben Johns Hyperion', spots:['Piccolo Italian Market','Indigenous','Burns Court','Siesta Key','Ringling Museum'], gear:['JOOLA Ben Johns paddle','Coastal Serve Tank','ASICS court shoes','Coastal Court Tote'], quote:'Here is the thing. I waited three months to try the JOOLA because I thought Diane was being dramatic. I owe her a full apology and possibly lunch.' }
+};
+
+function buildArchiveLists() {
+  Object.keys(archiveData).forEach(function(id) {
+    var list = document.getElementById('list-' + id);
+    if (!list) return;
+    archiveData[id].posts.forEach(function(post, i) {
+      var item = document.createElement('div');
+      item.className = 'archive-item';
+      item.innerHTML = '<div class="archive-item-date">' + post.date + '</div><div class="archive-item-title">' + post.title + '</div>';
+      item.onclick = function() { loadPost(id, i); };
+      list.appendChild(item);
+    });
+  });
+}
+
+function loadPost(persona, index) {
+  var post = archiveData[persona].posts[index];
+  document.getElementById('title-' + persona).textContent = post.title;
+  document.getElementById('text-' + persona).innerHTML = post.text;
+  document.querySelectorAll('#list-' + persona + ' .archive-item').forEach(function(el, i) { el.classList.toggle('active', i === index); });
+  document.querySelectorAll('#sheetList .sheet-item').forEach(function(el, i) { el.classList.toggle('active', i === index); });
+}
+
+function toggleArchivePanel(persona) {
+  var wrapper = document.getElementById('wrapper-' + persona);
+  var isOpen = wrapper.classList.contains('archive-open');
+  document.querySelectorAll('.card-wrapper').forEach(function(w) { w.classList.remove('archive-open'); });
+  if (!isOpen) wrapper.classList.add('archive-open');
+}
+
+function openSheet(persona) {
+  document.getElementById('sheetTitle').textContent = persona.charAt(0).toUpperCase() + persona.slice(1) + "'s Dink Diaries";
+  var list = document.getElementById('sheetList');
+  list.innerHTML = '';
+  archiveData[persona].posts.forEach(function(post, i) {
+    var item = document.createElement('div');
+    item.className = 'sheet-item';
+    item.innerHTML = '<div class="sheet-item-date">' + post.date + '</div><div class="sheet-item-title">' + post.title + '</div>';
+    item.onclick = function() { loadPost(persona, i); closeSheet(); };
+    list.appendChild(item);
+  });
+  document.getElementById('sheetOverlay').classList.add('open');
+  document.getElementById('bottomSheet').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSheet() {
+  document.getElementById('sheetOverlay').classList.remove('open');
+  document.getElementById('bottomSheet').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function openPersonaModal(id) {
+  var p = personaData[id];
+  document.getElementById('m-photo').src = p.photo;
+  document.getElementById('m-name').textContent = p.name;
+  document.getElementById('m-sub').textContent = p.sub;
+  document.getElementById('m-hood').textContent = p.hood;
+  document.getElementById('m-dupr').textContent = p.dupr;
+  document.getElementById('m-style').textContent = p.style;
+  document.getElementById('m-side').textContent = p.side;
+  document.getElementById('m-paddle').textContent = p.paddle;
+  document.getElementById('m-spots').innerHTML = p.spots.map(function(s){ return '<span class="pill">'+s+'</span>'; }).join('');
+  document.getElementById('m-gear').innerHTML = p.gear.map(function(g){ return '<span class="pill">'+g+'</span>'; }).join('');
+  document.getElementById('m-quote').textContent = p.quote;
+  document.getElementById('persona-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() { document.getElementById('persona-overlay').style.display = 'none'; document.body.style.overflow = ''; }
+function handleOverlayClick(e) { if (e.target === document.getElementById('persona-overlay')) closeModal(); }
+function handleBlogSubmit(e) {
+  e.preventDefault();
+  var form = document.getElementById('blog-signup-form');
+  fetch(form.action, { method:'POST', body: new FormData(form), mode:'no-cors' }).then(function() {
+    form.style.display = 'none';
+    document.getElementById('blog-success-msg').style.display = 'block';
+  });
+  return false;
+}
+
+document.getElementById('navToggle').addEventListener('click', function() {
+  this.classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+document.querySelectorAll('#mobileMenu a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('navToggle').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+
+buildArchiveLists();
+</script>
+</body>
+</html>
+'@
+
+[System.IO.File]::WriteAllText(
+  (Join-Path (Get-Location) "pages\blog.html"),
+  $html,
+  [System.Text.Encoding]::UTF8
+)
+Write-Host "blog.html written perfectly!" -ForegroundColor Green
+Write-Host "Now run:" -ForegroundColor Cyan
+Write-Host "  git add pages/blog.html" -ForegroundColor Yellow
+Write-Host "  git commit -m 'Final clean blog rebuild'" -ForegroundColor Yellow
+Write-Host "  git push" -ForegroundColor Yellow
