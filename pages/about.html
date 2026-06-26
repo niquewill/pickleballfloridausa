@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -58,6 +58,25 @@
   .founder-title { font-size: 0.78rem; color: var(--coral); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1.5rem; }
   .founder-bio { font-size: 0.88rem; line-height: 1.9; color: var(--navy); opacity: 0.8; font-weight: 300; }
 
+  /* PUBLICATIONS SECTION */
+  .publications-section { background: #fff; padding: 5rem 2.5rem; }
+  .publications-inner { max-width: 900px; margin: 0 auto; }
+  .publications-header { text-align: center; margin-bottom: 3rem; }
+  .publications-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; }
+  .pub-book-cover { border-radius: 4px; overflow: hidden; box-shadow: 0 12px 40px rgba(22,50,79,0.15); }
+  .pub-book-cover img { width: 100%; display: block; border-radius: 4px; }
+  .pub-label { font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.75rem; display: inline-block; }
+  .pub-badge { display: inline-block; background: var(--coral); color: #fff; font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 2px; margin-bottom: 1.25rem; }
+  .pub-title { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--navy); font-weight: 400; line-height: 1.3; margin-bottom: 1.25rem; }
+  .pub-description { font-size: 0.88rem; line-height: 1.9; color: var(--navy); opacity: 0.75; font-weight: 300; margin-bottom: 2rem; }
+  .pub-btn { display: inline-block; background: var(--navy); color: var(--cream); padding: 0.85rem 2rem; text-decoration: none; font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; border-radius: 2px; transition: background 0.2s; }
+  .pub-btn:hover { background: var(--coral); }
+
+  @media (max-width: 700px) {
+    .publications-grid { grid-template-columns: 1fr; }
+    .pub-book-cover { max-width: 240px; margin: 0 auto; }
+  }
+
   /* MISSION STRIP */
   .mission-strip { background: var(--green); padding: 4rem 2.5rem; text-align: center; }
   .mission-strip h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--cream); font-weight: 400; margin-bottom: 1rem; }
@@ -83,7 +102,8 @@
     .founder-grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 2.2rem; }
   }
-  /* â”€â”€ HAMBURGER NAV â”€â”€ */
+
+  /* HAMBURGER NAV */
   .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 200; }
   .nav-toggle span { display: block; width: 24px; height: 2px; background: #FFF7EB; border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
   .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -98,7 +118,8 @@
     .nav-links { display: none !important; }
     .nav-toggle { display: flex !important; }
     nav { position: relative; padding: 1rem 1.5rem; }
-  }</style>
+  }
+</style>
 </head>
 <body>
 
@@ -106,10 +127,10 @@
   <div class="logo-wrap"><a href="../index.html"><span class="logo-text">Pickleball Florida USA</span><span class="logo-sub">Coastal Lifestyle Collection</span></a></div>
   <div class="nav-links">
     <a href="../index.html">Home</a>
- <a href="shop.html">Shop</a>
+    <a href="shop.html">Shop</a>
     <a href="gear.html">Gear</a>
     <a href="courts.html">Courts</a>
-    <a href="tournaments.html">Tournaments</a>   
+    <a href="tournaments.html">Tournaments</a>
     <a href="blog.html">Blog</a>
     <a href="learn.html">Learn</a>
     <a href="about.html" class="active">About</a>
@@ -126,7 +147,8 @@
     <a href="blog.html">Blog</a>
     <a href="learn.html">Learn</a>
     <a href="about.html" class="active">About</a>
-  </div></nav>
+  </div>
+</nav>
 
 <div class="hero">
   <p class="hero-eyebrow">Our Story</p>
@@ -163,13 +185,14 @@
     </div>
   </div>
 </div>
+
 <!-- FOUNDER -->
 <div class="founder-section">
   <p class="section-eyebrow">Meet The Founder</p>
   <div class="founder-grid">
-<div class="founder-img-box" style="overflow:hidden; border-radius:4px;">
-  <img src="../images/aboutpersonal.png" alt="Monique Hawkins — Founder Pickleball Florida USA" style="width:100%; height:100%; object-fit:cover;" />
-</div>
+    <div class="founder-img-box" style="overflow:hidden; border-radius:4px;">
+      <img src="../images/aboutpersonal.png" alt="Monique Hawkins — Founder Pickleball Florida USA" style="width:100%; height:100%; object-fit:cover;" />
+    </div>
     <div>
       <p class="founder-eyebrow">Founder & Creative Director</p>
       <h2 class="founder-name">Monique Hawkins</h2>
@@ -179,6 +202,27 @@
       <p class="founder-bio">With a background in design, digital technology, and e-commerce, Monique built Pickleball Florida USA from the ground up — from the brand identity and product design to the website and community. Her vision is simple: create gear that makes women feel as beautiful on the court as they do everywhere else in their lives.</p>
       <br />
       <p class="founder-bio"><em>"Serve Style. Live Florida."</em> — those four words say everything about who we are and what we believe.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="publications-section">
+  <div class="publications-inner">
+    <div class="publications-header">
+      <p class="section-eyebrow">Beyond The Brand</p>
+      <h2 class="section-title" style="margin-bottom:0;">Published Works</h2>
+    </div>
+    <div class="publications-grid">
+      <div class="pub-book-cover">
+        <img src="../images/publications/Thrive_10_Ways_to_Help_Your_Child_Grow_and_Flourish.jpg" alt="Thrive: 10 Ways to Help Your Child Grow and Flourish by Monique Hawkins" />
+      </div>
+      <div>
+        <span class="pub-badge">Published Author</span>
+        <h3 class="pub-title">Thrive: 10 Ways to Help Your Child Grow and Flourish</h3>
+        <p class="pub-description">The practical, honest guide a trusted teacher friend might hand you over coffee — 10 actionable ways to help your child grow and flourish.</p>
+        <a href="https://www.amazon.com/dp/B0H6J2263Y" target="_blank" rel="noopener noreferrer" class="pub-btn">View on Amazon &rarr;</a>
+      </div>
     </div>
   </div>
 </div>
@@ -214,22 +258,20 @@
 </div>
 
 <div class="footer">
-  <!-- PASTE THIS INSIDE EVERY FOOTER DIV, BEFORE THE footer-links div -->
-<div class="footer-social" style="display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.5rem;">
-  <a href="https://www.instagram.com/pickleballfloridausa" target="_blank" style="color:#FFF7EB; opacity:0.5; text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:0.4rem;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-    Instagram
-  </a>
-  <a href="https://www.facebook.com/pickleballfloridausa" target="_blank" style="color:#FFF7EB; opacity:0.5; text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:0.4rem;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-    Facebook
-  </a>
-  <a href="https://www.pinterest.com/pickleballfloridausa" target="_blank" style="color:#FFF7EB; opacity:0.5; text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:0.4rem;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.62-.31-1.54c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .89-.57 2.23-.86 3.47-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.09-2.36 3.09-5.15 0-2.13-1.43-3.63-3.48-3.63-2.37 0-3.76 1.78-3.76 3.62 0 .72.28 1.48.62 1.9.07.08.08.15.06.24-.06.26-.21.83-.23.94-.04.15-.13.18-.29.11-1.08-.5-1.76-2.1-1.76-3.38 0-2.74 1.99-5.26 5.74-5.26 3.01 0 5.35 2.14 5.35 5.01 0 2.99-1.88 5.39-4.49 5.39-.88 0-1.7-.46-1.98-1l-.54 2.02c-.2.75-.72 1.69-1.07 2.26.8.25 1.65.38 2.53.38 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
-    Pinterest
-  </a>
-</div>
-
+  <div class="footer-social" style="display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.5rem;">
+    <a href="https://www.instagram.com/pickleballfloridausa" target="_blank" style="color:#FFF7EB; opacity:0.5; text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:0.4rem;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Instagram
+    </a>
+    <a href="https://www.facebook.com/pickleballfloridausa" target="_blank" style="color:#FFF7EB; opacity:0.5; text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:0.4rem;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      Facebook
+    </a>
+    <a href="https://www.pinterest.com/pickleballfloridausa" target="_blank" style="color:#FFF7EB; opacity:0.5; text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; display:flex; align-items:center; gap:0.4rem;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.62-.31-1.54c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .89-.57 2.23-.86 3.47-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.09-2.36 3.09-5.15 0-2.13-1.43-3.63-3.48-3.63-2.37 0-3.76 1.78-3.76 3.62 0 .72.28 1.48.62 1.9.07.08.08.15.06.24-.06.26-.21.83-.23.94-.04.15-.13.18-.29.11-1.08-.5-1.76-2.1-1.76-3.38 0-2.74 1.99-5.26 5.74-5.26 3.01 0 5.35 2.14 5.35 5.01 0 2.99-1.88 5.39-4.49 5.39-.88 0-1.7-.46-1.98-1l-.54 2.02c-.2.75-.72 1.69-1.07 2.26.8.25 1.65.38 2.53.38 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+      Pinterest
+    </a>
+  </div>
   <div class="footer-links">
     <a href="../index.html">Home</a><a href="shop.html">Shop</a><a href="courts.html">Courts</a><a href="tournaments.html">Tournaments</a><a href="blog.html">Blog</a><a href="learn.html">Learn</a><a href="about.html">About</a><a href="#">Contact</a>
   </div>
@@ -252,5 +294,6 @@
     });
   });
 })();
-</script></body>
+</script>
+</body>
 </html>
