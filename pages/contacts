@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us | Pickleball Florida USA</title>
+<meta name="description" content="Get in touch with Pickleball Florida USA — questions, court tips, partnership and sponsorship inquiries for Florida's pickleball community." />
+<link rel="canonical" href="https://pickleballfloridausa.com/pages/contact.html" />
+<link rel="icon" type="image/x-icon" href="/images/pfufavicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Montserrat',sans-serif; background:#FFF7EB; color:#16324F; }
+nav { background:#16324F; padding:1.2rem 2.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+.logo-text { font-family:'Playfair Display',serif; font-size:1.3rem; color:#FFF7EB; letter-spacing:1px; text-decoration:none; }
+.nav-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+.nav-links a { color:#FFF7EB; text-decoration:none; font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; opacity:0.8; }
+.nav-links a:hover { opacity:1; color:#2CCCD3; }
+main { max-width:760px; margin:0 auto; padding:3.5rem 1.5rem 4rem; text-align:center; }
+h1 { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:400; margin-bottom:0.75rem; }
+.sub { font-size:0.9rem; font-weight:300; opacity:0.7; line-height:1.8; max-width:520px; margin:0 auto 2.5rem; }
+.card { background:#fff; border-radius:6px; padding:2.5rem 2rem; margin-bottom:1.5rem; box-shadow:0 2px 12px rgba(22,50,79,0.06); text-align:left; border-left:3px solid #2CCCD3; }
+.card h2 { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:400; margin-bottom:0.6rem; }
+.card p { font-size:0.88rem; line-height:1.8; font-weight:300; opacity:0.85; margin-bottom:1rem; }
+.email-btn { display:inline-block; background:#FF6F61; color:#fff; padding:0.85rem 2.2rem; text-decoration:none; font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; border-radius:2px; }
+.social-row { margin-top:2.5rem; }
+.social-row a { color:#16324F; font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; text-decoration:none; margin:0 1rem; border-bottom:1px solid #2CCCD3; padding-bottom:3px; }
+footer { background:#0d2035; padding:2.5rem; text-align:center; color:#FFF7EB; }
+footer a { color:#FFF7EB; opacity:0.5; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; text-decoration:none; margin:0 0.8rem; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo-text">Pickleball Florida USA</a>
+  <div class="nav-links">
+    <a href="/pages/shop.html">Shop</a>
+    <a href="/pages/gear.html">Gear</a>
+    <a href="/pages/courts.html">Courts</a>
+    <a href="/pages/tournaments.html">Tournaments</a>
+    <a href="/pages/blog.html">Blog</a>
+    <a href="/pages/learn.html">Learn</a>
+    <a href="/pages/about.html">About</a>
+  </div>
+</nav>
+
+<main>
+  <h1>Get In Touch</h1>
+  <p class="sub">Court tip? Tournament we should know about? Just want to say hi? We read everything — and yes, a real Florida pickleball person answers.</p>
+
+  <div class="card">
+    <h2>General Questions &amp; Court Tips</h2>
+    <p>Found a hidden gem court? Spotted outdated info on one of our city guides? Tell us — community tips keep our guides the most accurate in Florida.</p>
+    <a class="email-btn" href="mailto:hello@pickleballfloridausa.com">Email Us</a>
+  </div>
+
+  <div class="card">
+    <h2>Partnerships &amp; Sponsorships</h2>
+    <p>We work with paddle brands, facilities, resorts, tournament organizers, and local businesses across Florida. If you want to reach an engaged audience of Florida pickleball players, let's talk — featured listings, sponsored content, tournament promotion, and more.</p>
+    <a class="email-btn" href="mailto:hello@pickleballfloridausa.com?subject=Partnership%20Inquiry">Partner With Us</a>
+  </div>
+
+  <div class="card">
+    <h2>Tournament Organizers</h2>
+    <p>Hosting a tournament in Florida? Basic listings on our tournament calendar are free. Send us the name, date, location, and registration link and we'll get it added.</p>
+    <a class="email-btn" href="mailto:hello@pickleballfloridausa.com?subject=Tournament%20Listing">Submit a Tournament</a>
+  </div>
+
+  <div class="social-row">
+    <a href="https://www.instagram.com/pickleballfloridausa" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/pickleballfloridausa" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.pinterest.com/pickleballfloridausa" target="_blank" rel="noopener">Pinterest</a>
+  </div>
+</main>
+
+<footer>
+  <a href="/pages/courts.html">Courts</a>
+  <a href="/pages/tournaments.html">Tournaments</a>
+  <a href="/pages/shop.html">Shop</a>
+  <a href="/pages/contact.html">Contact</a>
+  <a href="/pages/privacy.html">Privacy</a>
+  <p style="opacity:0.3; font-size:0.75rem; margin-top:1.5rem;">© 2026 PickleballFloridaUSA.com · Coastal Pickleball Lifestyle</p>
+</footer>
+</body>
+</html>
