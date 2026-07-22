@@ -5,9 +5,6 @@
 [functions]
   node_bundler = "esbuild"
 
-[functions."update-blog"]
-  schedule = "@weekly"
-
 [[redirects]]
   from = "/pages/courts/:city-florida"
   to = "/pages/courts/:city-florida.html"
