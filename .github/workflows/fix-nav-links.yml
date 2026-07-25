@@ -1,0 +1,56 @@
+name: Fix Nav Links (one-time)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-nav:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Rewrite nav links to root-relative
+        run: |
+          python3 << 'PYEOF'
+          import re, os, glob
+
+          # Update every .html page except the two special-purpose ones we already handled
+          candidates = ['index.html'] + glob.glob('pages/*.html') + glob.glob('pages/courts/*.html')
+          files = [f for f in candidates if os.path.exists(f)]
+
+          replacements = [
+              (r'href="\.\./index\.html"', 'href="/"'),
+              (r'href="index\.html"',      'href="/"'),
+          ]
+          for page in ['shop','gear','courts','tournaments','blog','learn','about','contact','privacy']:
+              replacements.append((r'href="' + page + r'\.html"', 'href="/pages/' + page + '.html"'))
+              replacements.append((r'href="\.\./' + page + r'\.html"', 'href="/pages/' + page + '.html"'))
+              replacements.append((r'href="pages/' + page + r'\.html"', 'href="/pages/' + page + '.html"'))
+
+          total_all = 0
+          for f in files:
+              src = open(f).read()
+              orig = src
+              n_file = 0
+              for pat, rep in replacements:
+                  src, n = re.subn(pat, rep, src)
+                  n_file += n
+              if src != orig:
+                  open(f, 'w').write(src)
+              if n_file:
+                  print(f'  {n_file:>3}  {f}')
+              total_all += n_file
+          print(f'\nTotal links rewritten: {total_all}')
+          PYEOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Fix nav links to root-relative for SEO"
+          git push
