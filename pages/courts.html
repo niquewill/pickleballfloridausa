@@ -1,11 +1,19 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3YW5F1Z6KC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3YW5F1Z6KC');
+</script>
 <meta charset="UTF-8" />
 <link rel="icon" type="image/x-icon" href="../images/pfufavicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pickleball Courts in Florida — Find Courts Near You | Pickleball Florida USA</title>
-<meta name="description" content="Find pickleball courts near you across Florida. Search by city or ZIP code — Naples, Miami, Tampa, Orlando, Sarasota and more. Real-time hours, photos, ratings and directions." />
+<title>Pickleball Courts in Florida — Public, Indoor &amp; Near You | Pickleball Florida USA</title>
+<meta name="description" content="Find pickleball courts near you in Florida. Free public parks, indoor courts and open play in Naples, Miami, Tampa, Orlando, Sarasota, The Villages and 14 more cities." />
 <meta name="keywords" content="pickleball courts Florida, pickleball courts near me Florida, best pickleball courts Florida, Florida pickleball locations" />
 <link rel="canonical" href="https://pickleballfloridausa.com/pages/courts.html" />
 <meta property="og:title" content="Pickleball Courts in Florida — Find Courts Near You" />
@@ -15,9 +23,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"Pickleball Courts in Florida","description":"Find pickleball courts near you across Florida.","url":"https://pickleballfloridausa.com/pages/courts.html","publisher":{"@type":"Organization","name":"Pickleball Florida USA","url":"https://pickleballfloridausa.com"}}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where are the best pickleball courts in Florida?","acceptedAnswer":{"@type":"Answer","text":"Florida has world-class pickleball courts in Naples, The Villages, Palm Beach, Sarasota, Tampa, Miami, and Orlando. Top facilities include East Naples Community Park, Pelican Bay Community Park, and numerous indoor clubs across the state."}},{"@type":"Question","name":"What is the best time to play pickleball in Florida?","acceptedAnswer":{"@type":"Answer","text":"The best time to play pickleball in Florida is early morning between 7am and 9am to beat the heat, or late afternoon after 4pm. Avoid midday play especially in summer months."}},{"@type":"Question","name":"Are there free pickleball courts in Florida?","acceptedAnswer":{"@type":"Answer","text":"Yes, Florida has hundreds of free public pickleball courts at community parks and recreation centers."}},{"@type":"Question","name":"What Florida city has the most pickleball courts?","acceptedAnswer":{"@type":"Answer","text":"The Villages in Central Florida is widely considered the pickleball capital of Florida. Naples and Sarasota also rank among Florida's top pickleball cities per capita."}}]}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where are the best pickleball courts in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Florida has world-class pickleball courts in Naples, The Villages, Palm Beach, Sarasota, Tampa, Miami, and Orlando. Top facilities include East Naples Community Park, Pelican Bay Community Park, and numerous indoor clubs across the state."}}, {"@type": "Question", "name": "What is the best time to play pickleball in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "The best time to play pickleball in Florida is early morning between 7am and 9am to beat the heat, or late afternoon after 4pm. Avoid midday play especially in summer months."}}, {"@type": "Question", "name": "Are there free pickleball courts in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Florida has hundreds of free public pickleball courts at community parks and recreation centers."}}, {"@type": "Question", "name": "What Florida city has the most pickleball courts?", "acceptedAnswer": {"@type": "Answer", "text": "The Villages in Central Florida is widely considered the pickleball capital of Florida. Naples and Sarasota also rank among Florida's top pickleball cities per capita."}}, {"@type": "Question", "name": "Where are the best indoor pickleball courts in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Florida's indoor pickleball is concentrated in Tampa Bay, Orlando, Naples, Gainesville and South Florida, where dedicated indoor clubs, YMCAs and city recreation centers offer air-conditioned courts. Indoor play is the best option from June through September, when afternoon heat and daily storms close outdoor courts. See our city guides for Tampa, Orlando, Naples and Gainesville for indoor options."}}, {"@type": "Question", "name": "Where can I find public pickleball courts in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Almost every Florida city and county parks department runs public pickleball courts, and most are free and first-come, first-served. Pick your city from our Florida pickleball city guides above for addresses, court counts and open play tips, or use the court finder to search pickleball courts near you by city or ZIP code."}}, {"@type": "Question", "name": "How do I find pickleball courts near me in Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Use the court finder at the top of this page and search by city or ZIP code. It shows nearby courts with hours, photos, ratings and directions. Our city guides add local tips on when courts are busiest and which parks run organized open play."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
@@ -197,7 +203,7 @@
 <div class="wave"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60"><path d="M0,0 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="#FFF7EB"/></svg></div>
 
 <!-- ── CITY GUIDES ────────────────────────────────────────────── -->
-<div class="city-guides-section">
+<div class="city-guides-section" id="cities">
   <p class="section-eyebrow">In-Depth Local Guides</p>
   <h2 class="section-title">Florida Pickleball City Guides</h2>
   <p class="section-sub">Go beyond the map. Every city guide includes the best courts, local insider tips, gear recommendations, and what to do after your match — written by players, for players.</p>
@@ -476,7 +482,7 @@
   <h2>Florida Pickleball Courts — Frequently Asked Questions</h2>
   <div class="faq-item">
     <div class="faq-question" onclick="toggleFaq(this)">Where are the best pickleball courts in Florida?</div>
-    <div class="faq-answer">Florida has world-class pickleball courts across the state. Top destinations include East Naples Community Park, Pelican Bay Community Park in Naples, The Villages (which has hundreds of courts), Pompano Park in Sarasota, and numerous indoor facilities in Tampa and Miami.</div>
+    <div class="faq-answer">Florida has world-class pickleball courts across the state. Top destinations include East Naples Community Park, Pelican Bay Community Park in Naples, The Villages (which has hundreds of courts), the free 16-court Veterans Community Park in Naples, and a fast-growing list of indoor clubs in Tampa Bay, Orlando, Miami and Naples.</div>
   </div>
   <div class="faq-item">
     <div class="faq-question" onclick="toggleFaq(this)">What is the best time to play pickleball in Florida?</div>
@@ -498,6 +504,18 @@
     <div class="faq-question" onclick="toggleFaq(this)">Do Florida pickleball courts require reservations?</div>
     <div class="faq-answer">It depends on the facility. Most public outdoor courts in Florida operate on a first-come, first-served basis. Private clubs and indoor facilities often require reservations, especially during peak season (October through April).</div>
   </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">Where are the best indoor pickleball courts in Florida?</div>
+    <div class="faq-answer">Florida's indoor pickleball is concentrated in Tampa Bay, Orlando, Naples, Gainesville and South Florida, where dedicated indoor clubs, YMCAs and city recreation centers offer air-conditioned courts. Indoor play is the best option from June through September, when afternoon heat and daily storms close outdoor courts. See our city guides for <a href="/pages/courts/tampa-florida.html">Tampa</a>, <a href="/pages/courts/orlando-florida.html">Orlando</a>, <a href="/pages/courts/naples-florida.html">Naples</a> and <a href="/pages/courts/gainesville-florida.html">Gainesville</a> for indoor options.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">Where can I find public pickleball courts in Florida?</div>
+    <div class="faq-answer">Almost every Florida city and county parks department runs public pickleball courts, and most are free and first-come, first-served. Pick your city from our <a href="#cities">Florida pickleball city guides</a> above for addresses, court counts and open play tips, or use the court finder to search pickleball courts near you by city or ZIP code.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFaq(this)">How do I find pickleball courts near me in Florida?</div>
+    <div class="faq-answer">Use the court finder at the top of this page and search by city or ZIP code. It shows nearby courts with hours, photos, ratings and directions. Our city guides add local tips on when courts are busiest and which parks run organized open play.</div>
+  </div>
 </div>
 
 <div class="related-section">
@@ -505,6 +523,9 @@
   <p>Courts found — now plan your game, gear up, and join the community.</p>
   <div class="related-links">
     <a href="/pages/tournaments.html" class="related-link">Florida Tournaments</a>
+    <a href="/pages/pickleball-clubs-florida.html" class="related-link">Clubs &amp; Open Play</a>
+    <a href="/pages/pickleball-lessons-florida.html" class="related-link">Lessons &amp; Clinics</a>
+    <a href="/pages/pickleball-resorts-florida.html" class="related-link">Resorts &amp; Camps</a>
     <a href="/pages/gear.html" class="related-link">Pickleball Gear Guide</a>
     <a href="/pages/blog.html" class="related-link">The Coastal Circle Blog</a>
     <a href="/pages/shop.html" class="related-link">Shop Florida Pickleball</a>
@@ -518,10 +539,13 @@
     <a href="/pages/shop.html">Shop</a>
     <a href="/pages/courts.html">Courts</a>
     <a href="/pages/tournaments.html">Tournaments</a>
+    <a href="/pages/pickleball-clubs-florida.html">Clubs</a>
+    <a href="/pages/pickleball-lessons-florida.html">Lessons</a>
+    <a href="/pages/pickleball-resorts-florida.html">Resorts</a>
     <a href="/pages/blog.html">Blog</a>
     <a href="/pages/about.html">About</a>
-    <a href="#">Contact</a>
-    <a href="#">Privacy</a>
+    <a href="/pages/contact.html">Contact</a>
+    <a href="/pages/privacy.html">Privacy</a>
   </div>
   <p>&copy; 2025 PickleballFloridaUSA.com &middot; Coastal Pickleball Lifestyle</p>
 </div>
