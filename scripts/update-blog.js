@@ -57,6 +57,43 @@ const personas = [
   }
 ];
 
+
+// ---------- real-world context (from the daily feed job) ----------
+const TRAVEL_DESTINATIONS = ['the Amalfi Coast in Italy', 'Tuscany', 'the Algarve in Portugal', 'Barcelona', 'Seville and southern Spain', 'the Dalmatian coast of Croatia', 'the Greek Islands', 'the Swiss Alps', 'Amsterdam'];
+
+async function loadContext() {
+  const ctx = { news: [], travel: [], events: [] };
+  try {
+    const feeds = JSON.parse((await readRepoFile('data/feeds.json')).content);
+    const s = feeds.sections || {};
+    ctx.news = [...(s.florida || []).slice(0, 4), ...(s.tournaments || []).slice(0, 2), ...(s.world || []).slice(0, 2)];
+    ctx.travel = (s.travel || []).slice(0, 3);
+  } catch (e) { console.log('No feeds.json yet, writing without news context.'); }
+  try {
+    const t = JSON.parse((await readRepoFile('data/tournaments.json')).content);
+    const today = todayISO();
+    ctx.events = t.events.filter(e => e.florida && e.end >= today).sort((a, b) => a.start.localeCompare(b.start)).slice(0, 4);
+  } catch (e) { console.log('No tournaments.json, skipping events context.'); }
+  return ctx;
+}
+
+function contextPrompt(ctx, travelFocus) {
+  const clean = t => String(t).replace(/"/g, "'");
+  let p = '';
+  if (ctx.news.length || ctx.events.length) {
+    p += '\n\nREAL PICKLEBALL NEWS THIS WEEK (true headlines; use only what the headline says and never invent extra facts, scores, quotes or names):\n' +
+      ctx.news.map(n => '- ' + clean(n.title) + ' (' + clean(n.source) + ')').join('\n');
+    if (ctx.events.length) p += '\nREAL UPCOMING FLORIDA EVENTS:\n' + ctx.events.map(e => '- ' + clean(e.name) + ', ' + e.city + ', ' + e.start + ' to ' + e.end).join('\n');
+    p += '\nWork ONE of these news items or events into your post naturally, in your own voice, as something you read about, heard at the courts, or plan to watch or play. Keep it to a sentence or two.';
+  }
+  if (travelFocus) {
+    const dest = TRAVEL_DESTINATIONS[Math.floor(Date.now() / 604800000) % TRAVEL_DESTINATIONS.length];
+    p += '\n\nTRAVEL STORYLINE THIS WEEK: you are daydreaming about, planning, or chatting with friends about a pickleball trip to ' + dest + '. Make it a fun thread in your post, in character, and leave readers curious whether the trip will happen. Mention that Pickleball Florida USA has a pickleball vacations guide if it fits. Rules: do not name or recommend any specific tour company, hotel or travel brand for this trip, do not claim you booked or took a trip with any company, and do not invent prices or dates.';
+    if (ctx.travel.length) p += ' For inspiration, real travel headlines: ' + ctx.travel.map(t => clean(t.title)).join('; ') + '.';
+  }
+  return p;
+}
+
 // ---------- helpers ----------
 
 function parsePost(rawText) {
@@ -254,14 +291,15 @@ async function getShaIfExists(path) {
   }
 }
 
-async function generatePost(persona) {
+async function generatePost(persona, extra) {
   if (LOCAL_TEST) {
+    if (extra) console.log('--- added prompt context for ' + persona.id + ' ---' + extra + '\n');
     return 'TITLE: Test Post for ' + persona.name + '\nBODY:\nThis is test paragraph one for ' + persona.id + ' mentioning the Coastal Court Tote at a local spot.\n\nThis is test paragraph two with a Selkirk paddle and a reason to come back next week.';
   }
   const message = await client.messages.create({
     model: 'claude-sonnet-4-6',
     max_tokens: 700,
-    messages: [{ role: 'user', content: persona.prompt }]
+    messages: [{ role: 'user', content: persona.prompt.replace(/\nFormat your response EXACTLY/, (extra || '') + '\nFormat your response EXACTLY') }]
   });
   return message.content[0].text;
 }
@@ -273,7 +311,12 @@ async function main() {
   const longDate = todayLong();
   console.log('Generating posts for week of ' + longDate + '...');
 
-  const rawPosts = await Promise.all(personas.map(generatePost));
+  // real news + a rotating travel storyline (one persona per week)
+  const ctx = await loadContext();
+  const weekNum = Math.floor(Date.now() / 604800000);
+  const travelPersona = personas[weekNum % personas.length].id;
+  console.log('Travel storyline this week: ' + travelPersona + '; news items: ' + ctx.news.length);
+  const rawPosts = await Promise.all(personas.map(p => generatePost(p, contextPrompt(ctx, p.id === travelPersona))));
   const personaPosts = personas.map((persona, i) => ({ persona, post: parsePost(rawPosts[i]) }));
 
   // 1) permanent weekly page
