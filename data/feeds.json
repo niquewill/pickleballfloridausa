@@ -1,9 +1,181 @@
 {
-  "updated": "2026-10-06T00:39:14.047Z",
+  "updated": "2026-10-06T23:22:45.025Z",
   "sections": {
-    "florida": [],
-    "tournaments": [],
-    "world": [],
-    "travel": []
+    "florida": [
+      {
+        "title": "Jay Devilliers Is Heading to Naples — With Plans to Help Build Pickleball’s Best Academy",
+        "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQ28yUzkxRFlhVUJGSDQwdXg0YXdmeXYycG1zaERiQWFXMFZGQng2Z1Q5N2F2Sko4dlhrYVdPRlpHa05UUUhSV3VwUWpTV2xMN0wxdThZbXphMGkyUW82bU1QUWNOUmF0M1F3R1JkVkdTM0RKRGYtbF82UldwbERBMUhnaEpKbjBfRXNmWFlZTGY5bE8yOGlrN0VHSmRKcjlHemhha0hXR3Y2ZDRNM29QMEQxSzFVeFdXZXp6Xw?oc=5",
+        "source": "The Dink Pickleball",
+        "date": "2026-10-06T22:45:09.000Z"
+      },
+      {
+        "title": "PADEL. Boca Raton to see what Boca Paddle by CityPickle offers on Nov. 18",
+        "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMmVfQ2djSzhmeG5MWlZMX3ZIZUFKWGc4N1UybnRFZ0ZwSUdqUnRmaEp6dXlfZ1dEV2poeWZiemlTb1d6YnM4WTUtS2EtZ0ZkYTdObGhwaHJTWTFMS19fQ2U5RVd5NzZUeVcwNWoxN0tmcTZxNHl6RzlVWHpsaDhrNGxKRGlzelF4bFdPbjZBVDZ6blhwY1E5MWx6VWE4dllqUVRyRHpyTXQ3TkZXazhTYUYwSjZPNlU?oc=5",
+        "source": "Tennis Tonic",
+        "date": "2026-10-06T17:14:53.000Z"
+      },
+      {
+        "title": "Why Pickleball Clubs Are Closing: The Real, Brutal Math",
+        "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYUtnajRXLVpsYkFTSGlBSk1zdzMtbmNNRzBpQ2hnS2lvX084Q1k4OEk3U09FT0N1akhBMDdtSzREVDZwWkM0aFNLOVEtY0k4N3dGTjJVaE9EdGZVY2F5ek05VWxfX3BmMUk2Mk5qT05TUXJLd1lQMmlta3U4RE1SSzFEVURTTmh2SnVSVGlNU183dw?oc=5",
+        "source": "The Dink Pickleball",
+        "date": "2026-10-06T14:50:09.000Z"
+      },
+      {
+        "title": "Boca Paddle Pickleball And Padel Club Set to Open In Boca Raton Next Month",
+        "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPaHVMZlZ2WUZlWWlfaGhia1FxeGtQN2lwOHRVSkdJZmpkR2xFd1M4VFpxdFVFLVQxREZrb2E1cjV1bmZ3Zkw3T084U0xPTHNkOUJaWVN2STlSY2l0Ym1SekotbEdsXy1qeGlkbGtZeEg3OHFBRmk0djBOTm1seHg0RW5XWEc3U2M2YWdDQkkzLV91YUxJYktzblltekNQVEttSHJ6eGxkbEI4R3hmcWZIQlZaVnYyUnc2aTRjdF82S1p6dkRYRWlIdEZnV3FtaHYyTG9FNzBoY1dfSnZaVEpZMHZjTTVWcVh6RGc?oc=5",
+        "source": "TAPinto",
+        "date": "2026-10-05T22:45:28.000Z"
+      },
+      {
+        "title": "West Boca Raton Tennis And Pickleball Pro Sues Homeowners Association Over Theft Accusation",
+        "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOeTlPYllwcnNIN2tWM1dXa2o4Y2prMGdsLXNmOWF1NlVoZnJwOWY1bTFyYkpwS0JWT2VoTTlaUndTMHMwVnY4a0t0cEI0WTVnRHRVZFQ0QjFtbmFySmFYUFlTcUxjUllYcVAzU2tNNzRIeGJweEhZb2NSem9RV2s5WXpKQUFuVkMwUUhCRndSMFlSLUlUeGNVRU05aU5oN29lal8ybGhFQjlhbVZnNDFyWnNacmp3MUJlU3BaRlVtaS1kVF9SM25ublhxZ1owenh0a3ZSOXZreUFWSjZnWWxteDZjcjVSVzhXOVZGUkZNQTl5M3Fu?oc=5",
+        "source": "TAPinto",
+        "date": "2026-10-05T20:00:00.000Z"
+      },
+      {
+        "title": "The Ex-Tennis Stars Making Their Mark on the Pickleball Court",
+        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOR2d4ZV9yRkZPc1dWT3hjR3dRM2lmVnVrY2Ezc3pQVWlSekc1bElvOUUtcll0bm5UUm9HVXU5dDlqWTFJRUluSTMxQk5XQ3M5SGgxVUNBR0FweVNVdkV6a2FMbGY2bWh3eGRWVTdrUjVScDZaRVFDQ2tmc0lvak01YjNMakpjM3RWbWpNLWVnZWtzRzNOVE85MHgyZzQ5MEpz?oc=5",
+        "source": "Sports Illustrated",
+        "date": "2026-10-04T13:00:03.000Z"
+      },
+      {
+        "title": "See Florida's new largest indoor pickleball, padel club",
+        "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQOGR3TTJjQWIzOW51S2lLMVBWX2xVaUpSOXNXZzNORmZhWU5ONFd4azM2TTB0MjZJYWxoRVhFR0lhQk52Q3NpOF9vRnhyRjlnSTNkRjY5S2FsaGxUT2VodlcwZHQyVG90WTdUZFRBRXRuNFQ2UHktOFJkU1pPT1Z3cG52MHJXR1ctWXcxa1dHbi1xanpvRHVCWTk1VktkSDlIeld2T2RIT0dsOVNNd3J3dEdqVHRMQmE3aHZJRXpDMTZlQzFjZkNQaGpLMjZCUjNwLVFnWWc5WQ?oc=5",
+        "source": "The Palm Beach Post",
+        "date": "2026-10-03T20:12:03.000Z"
+      },
+      {
+        "title": "Boca Raton soon to get Florida's largest indoor pickleball, padel club",
+        "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE8xM0V1YW44TXo2SmxRQjFrX2gtUm85aElVMUhQSWdaeHhXT3B1anRWd21Ndk1BYlBxTW5ORjVNZU1xMTQ4M2RHYXpRNTU3UmhCXzlPM0R6VUNwbmNteXFiWXhvVU85bHZLRDlXUk54bw?oc=5",
+        "source": "Pembroke Pines News",
+        "date": "2026-10-02T21:43:58.000Z"
+      }
+    ],
+    "tournaments": [
+      {
+        "title": "Boca Paddle Pickleball And Padel Club Opens In Boca Raton On Nov. 18",
+        "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOb29HSHFlRVVjdVRCQ0dyX05lLU1yaHVLdUNJRzJrbWtpdHA1c19ma3VsS05Oc0syUTlaOXlMUGNVNFlwdzhGQjh5eFd2ZUFfLTJkS2lfR2Q4QktobmFENzNtZXd2Tzl4SDlWOWxNcVZtd2pXQ01sa2pOajFlRTVZNnpLLTFTR0ppQVlsVVF2elNRb3c0WlBWd3QwWHhWalBOVEx3M1FDZWpGY3cxZ3F2RzlzdVpXMjV6?oc=5",
+        "source": "TAPinto",
+        "date": "2026-10-02T11:00:00.000Z"
+      },
+      {
+        "title": "Registration closing soon for Rally in the Valley pickleball tournament",
+        "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQQ1ByRi16cm0tWGVzaTdhTVlxXzdRdy1wUXpuOGtrQUtIX0M4djhWQXRXZ3dqNXFfcWFaYkIwVldEVVlpMzJTWENhOVFseGJGcTBMTU9SLWtRWUZETkRLcHAyZU5RV21YQ1NJaVZqdXVvUlJ1TWxEWXVwN1p6Y0ZfQmFxNUdTd2EzWFE?oc=5",
+        "source": "The Shippensburg News-Chronicle",
+        "date": "2026-10-01T04:00:00.000Z"
+      },
+      {
+        "title": "Registration underway for BBBS pickleball tournament",
+        "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNN2hrZGE4MnNnR0JBNVh2aE5RM3F2VDhEX2NIcmk5YWNRVUN0UWV2OGpBTzlCd3JBTnQtSkdfZktXNy0yZjNnM0RoR1UxbE1sNkQxSGxmaEdPQk15V2RsX2JXbjdKc3ktR0dEaER3X0Q5SE4xMXF0MFhXRE5qamx2elU0bmxndmlUdG1YNU95a0g1RGQwOFJfeDVsSFJQOFdQd1FZUVl0SFJYdXYzOTJPbDRDQXlwQWVPOTY1RzZyUlJCbzMxOTQ4NWczd0l4QQ?oc=5",
+        "source": "CBS 19 News",
+        "date": "2026-09-30T22:00:00.000Z"
+      },
+      {
+        "title": "Pickleball becomes a new bridge for China-US youth friendship",
+        "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNNm5WSUozVjBKNUhnMzhrbWloeTZJMWRvcDB3YUNWQjRLVnhnV2wzWlRZUnlUb2FOVUhHaC1zWF9wOFN0bHd1Qk5sTE1zb21keXpRQ2MyUGYzTWN0bG9UOUVDc2M4UmtSbVZfVXF4U2hvMmdjcVlMZE9CNWRwYm05WGNIcDNHN3lvbmFFVGJnaTh2ZkFZTDlUR1M0OElDSEU0eUlPa1ZGUURpWXUwUnp5SWdDUkNESlZyNmh5bHVzYWFwN3VlX21fLU5xS2VPZDhsNmJma19lVndLbG1nc1dNZ3JOcXQ3QUtKVGFmZjFfdEVmdw?oc=5",
+        "source": "Mid Florida Newspapers",
+        "date": "2026-09-30T08:45:37.000Z"
+      },
+      {
+        "title": "Premier Sports Campus North: New pickleball and swim hub coming soon to Manatee County",
+        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPSjdqelp4aENudGhlYUhzZ25YNHFvb0oyeEdWQUpTaWZfaldKaXNsVzhpYTFLc2lJU2RZSUhZbzFiNEpjU3Y4TDVKWjVCTEE4SVFOWmU4bkIyT1JybnRaZmVBemhMNXh2MF9ORUMwUnNCakJZNFlmblF3dnYtbFEzTFo3UGR0T3A4Q0VtRjhoeU8?oc=5",
+        "source": "Yahoo Sports",
+        "date": "2026-09-29T21:50:36.000Z"
+      },
+      {
+        "title": "PPA Tour to operate, invest in Arizona Athletic Grounds pickleball",
+        "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQUHdhbXF2eXNjaEtXUjVnQUdFbVd5ejlfXzNiWUlUS3YyZXV6Q0NkM0dUWGdqZG9EZDBoUjZPLVdrbUhNVV84eFY5ZEFtOWxHelBHZjU1U3FZQTZvZVJIUTBTMzZFdWswQ29FQ0JXNU05VG1wa1lYVEdBX2duOWZJMEdFTUFmWWc0Um44Sk1MY0VoZUtMajk3YXE1NVVuSDhkQlowVkp5UkRRNnUxMlM5T1VuNkVpZUVUZ0hQeEVzazlRZw?oc=5",
+        "source": "Sports Business Journal",
+        "date": "2026-09-29T19:25:44.000Z"
+      }
+    ],
+    "world": [
+      {
+        "title": "The Veolia Chicago Cup Tournament Preview",
+        "link": "https://www.thedinkpickleball.com/the-veolia-chicago-cup-tournament-preview/",
+        "source": "The Dink",
+        "date": "2026-10-06T15:31:24.000Z"
+      },
+      {
+        "title": "Pickleball Clubs Are Closing, Here’s the Math Behind Why",
+        "link": "https://www.thedinkpickleball.com/why-pickleball-clubs-are-closing-the-real-brutal-math/",
+        "source": "The Dink",
+        "date": "2026-10-06T14:46:17.000Z"
+      },
+      {
+        "title": "The Best Dressed Pros at the PPA Rate Las Vegas Open",
+        "link": "https://www.thedinkpickleball.com/photos-the-best-dressed-at-the-ppa-rate-las-vegas-open/",
+        "source": "The Dink",
+        "date": "2026-10-05T16:45:04.000Z"
+      },
+      {
+        "title": "Stunning Upsets Highlight the PPA Las Vegas Open",
+        "link": "https://www.thedinkpickleball.com/hunter-johnson-dominates-alshon-and-daescu-get-revenge-and-bright-and-patriquin-stun-top-seeds-at-ppa-las-vegas-open/",
+        "source": "The Dink",
+        "date": "2026-10-05T15:52:06.000Z"
+      },
+      {
+        "title": "The Right Side Rules Most Pickleball Players Never Learn",
+        "link": "https://www.thedinkpickleball.com/right-side-pickleball-rules-most-players-never-learn/",
+        "source": "The Dink",
+        "date": "2026-10-05T14:54:09.000Z"
+      },
+      {
+        "title": "5 Drills That Work No Matter Your Partner's Skill Level",
+        "link": "https://www.thedinkpickleball.com/5-pickleball-practice-drills-for-any-skill-level/",
+        "source": "The Dink",
+        "date": "2026-10-05T14:52:37.000Z"
+      },
+      {
+        "title": "Why Your Hands Battle Practice Is Failing You (And How to Fix It)",
+        "link": "https://www.thedinkpickleball.com/how-to-win-a-pickleball-hands-battle-every-time-2/",
+        "source": "The Dink",
+        "date": "2026-10-05T14:47:12.000Z"
+      },
+      {
+        "title": "Why You Keep Losing to Players Who Scare You (And 3 Fixes That Work)",
+        "link": "https://www.thedinkpickleball.com/beat-an-intimidating-pickleball-opponent-3-fixes/",
+        "source": "The Dink",
+        "date": "2026-10-05T14:46:24.000Z"
+      }
+    ],
+    "travel": [
+      {
+        "title": "Holland America to Host Pickleball Invitational at Half Moon Cay in 2027",
+        "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPXzc2a01YOEJOQkhPSDM3YjR1YXRKLXpzYWozNzM1dUdTV094X2NOY3k0LXFkUXVCYWVEODl6RXBEbXFYRXZjaWFzS3R2TG5pU09iNHNYS1JOZ2RreU8xZDE0OVdmMmJBRnNUSE84SmlKTzhfQnU0eEVHRUMyUXNJWlNRTUlIMExrUG5FZ3NuV1hDNTh0Wi0xTVhrMk0?oc=5",
+        "source": "Cruise Critic",
+        "date": "2026-09-30T15:22:25.000Z"
+      },
+      {
+        "title": "VAIR and DreamTrips Partner to Build a Global Pickleball Travel Community",
+        "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOZWJtTXZvd053d1NHcy1PbEIyQ2t6SGNtMld1S2FkQmN5bjhGa0hmeXN5c2VQMktvQzZMZmN4VWhNdHdaRWpSMjV5UHVHV2ZhT1dPemNGdWRtUURlS0stN1ZlM2V6TDJseDkyYl9YLXNYa3dmSGIyWkZMX2lGUnc2RGR0bGNVN1VEVEJsbDR5MzVPLXBnTGNwNlpUbVdxQ0NLM0lsVWtTTHg0LXRTWUNqc0JVNlJLVVdnWTh3WmFBczlNZWJxcndTTnUzeGpTS0tweHpNM0dJWk5xYms?oc=5",
+        "source": "FinancialContent",
+        "date": "2026-09-14T07:00:00.000Z"
+      },
+      {
+        "title": "USA Dominate, New Powers Emerge: Pickleball’s Global Shift Takes Shape at Da Nang World Cup",
+        "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQUEQwd1lBaUpJX0txWG5ud0pqWHl6THl6VTQ1U05scERMVHlOeGtEczRxOUlzZTFRUUZMMGhKM0tiV0ZFNEJ4cmRlWFlFb3NtNktjVV9qLWNKVDdUUjRKNFpzWUNqNlJiQllFM0JtLTczeFE0UVM3VWZSX3JESHlkcm5qcW5RM0ZydUExV1MtU3lJcFNnVGY5TXo0NjEwMThhb19nZFB6UlVDUjBQQmZhb3Q5eXEwSF9wZGlZY1hiRGFBd0czTWZJQUZUc3ZtLVZXUG1MSGpZWWN1bWQwMTNuX0RkNzVqbk1t0gHuAUFVX3lxTFA1a0VoN0lwYmc0ekN2cjlWRW9HdXpUQ0UzYWM5Umw2OUNoOTEySldBbkMzQS05Y25NTmMwS2ZLRXB1VEdxMU52WTNxbnkxYWhqN3JYcG5MQVMyQ3hBNGlLRU80MjVSaVk3M1Z1YTJDXzVHQXg5WUFjYldsV1A5WkFSY1lQdEc4QVFBeVhJMmJJc0xlSjlpU2N3dlBGTlpVSm5kNzdLalAxcFUxLTlVc3pKbnppc1FmMUZwUXBXaDU2VzVjYjd5RXMwZ0tXdGJJS0dBajNfLS1JcVlzaU91VFhMUFRhM3pDUTQ1YlVneWc?oc=5",
+        "source": "Times Now",
+        "date": "2026-09-08T07:00:00.000Z"
+      },
+      {
+        "title": "Bright And Waters Claim Double Golds In The North Carolina Heat At The Pro Pickleball Association Season Opener",
+        "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcEd0czNRS3hVdzRpMW5BbmdrblE5ZFB0a0lnb2NsbXFQclMwNTM1ZVRoSTF1eE5WeUpweUNUZW1WR1FzNXllbVZrWUVmWUx0U2dMRkprWjR5YUstdHFfalZscW5RQ0x3bVF5cVc1WGJfdDFZa2JIbS10ZEdoS1FKanhsM2pwaDQt?oc=5",
+        "source": "Yahoo Sports",
+        "date": "2026-09-07T07:00:00.000Z"
+      },
+      {
+        "title": "Pickleball Breaks New Ground in Europe, World Cup Offers a Glimpse of What’s to Come",
+        "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTlJWMkVoUDZqTDU0RUxOcVZBN1I4dWRLdFYtQ2RSUGJTcWd1SS1MMVhRdlJzSFBxY2xxNTlpa1NtZ1ZtaktLQ0FTZ3VaQVZlOEdXSWMwT2NmaXViN2NNTkhqZExkZ1gtVUxLWWYzZUlTX3UzVTRrVFNiUlVQMGxMZGV5TTRpQmRzMFpEZF9FLVZkTFMyYmZ2ckJvUUd2eHF4UGx5RUFMLU1DRmVlOFFEYlktTUJUNHB4Szg5MHptb2pKTnRZREo1Mmtkc0N6SER0ME00MlBWWXhOSlFSaFlkUg?oc=5",
+        "source": "Times Now",
+        "date": "2026-09-07T07:00:00.000Z"
+      },
+      {
+        "title": "Stobreč ovog vikenda postaje europski centar pickleballa: stiže više od 230 igrača iz 15 zemalja",
+        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPRkxSZWN6cWtvdkp2VmhneWdnbVB6VFRLMjBZNkJRQ21neWhKTmR4YUdoTUk1aW1qTG9mUVZKNExMcEF3LUxKV2FLZ3poRWJJWEhZMTFfMVdFU2Q0UUllVV9ReEFTMzQ0NXh1R1lrVzhKS1V4M1hlZGJwTDd1c1dWaUlmLWc2QW1ETjB2WnF5TE05UlcwUkZzTEFVWjI1SlZBcWpfLXVNczU?oc=5",
+        "source": "Portal.hr",
+        "date": "2026-08-27T07:00:00.000Z"
+      }
+    ]
   }
 }
