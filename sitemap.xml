@@ -284,4 +284,11 @@
     <priority>0.8</priority>
   </url>
 >>>>>>> 95db601 (Live RSS feeds, verified tournament schedule, vacations page, travel storyline)
+  <url>
+    <loc>https://pickleballfloridausa.com/pages/blog/2026-10-13.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
