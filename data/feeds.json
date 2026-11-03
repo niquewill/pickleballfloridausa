@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T20:23:06.437Z",
+  "updated": "2026-11-03T17:52:32.099Z",
   "sections": {
     "florida": [
       {
@@ -19,6 +19,12 @@
         "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQOU5KU0hyZU9hbGZNa3dOSzlvOEh6T0d1WjdtSk4tZEVvaG5hcGtIajVwRVNCU1VMbUVTeXpieDRjWV9HZ2ZXYldXN3FDMUMyekRCQzlSeVk0YlVxY0kxR1JJcVlCd1lHb0l3OUYxMTBsWU9tUGNPdWpfRWJoODRnV25MTlhFN0dUZ1U3VlBvUHYtQ3VSZmdFY2tNUVNVblNPeEpJczNjWkJDeDRVWEdlUHppajBkd1RUSXphUEZ3?oc=5",
         "source": "Barstool Sports",
         "date": "2026-11-02T00:08:43.000Z"
+      },
+      {
+        "title": "Ave Maria Pickleball Dispute Ends in Battery Arrest",
+        "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQR2lrd24xbGFrbU5GMEtyUkFCMTJGclQ5ajIyeWdEQ0l1akg0WGVSQjlwSHBMdFAwUkI5eWVTcXhPVUNHakUwU0pOUHRfY0hBY044dkF4eFdaNzBQc3Vxek9XR0lpYTZWamUxVU81SmRlLUhaQmptLVFTTGUybzk3NEc3NjN0NnM1a0dMUm1ReGRuQmJRbTdoQm5JQ3ZfcWEwSEVCOEpB?oc=5",
+        "source": "Hoodline",
+        "date": "2026-10-30T16:32:05.000Z"
       },
       {
         "title": "Diadem’s Vice Paddle",
@@ -43,15 +49,21 @@
         "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORElwbndQMUFGLXZpYWU2TkNubEFvMVBOOTh0NGJRV0gtUEtCZDFhUDNGbVBwamVyRVl4VFZPVGRBWm1PYkR3YWlKanhnTVdmcmptalhRRzdRdjdObEpiYjdDRmZpOWhEWGhLYWlKNlFmbkZLMUREaldFZEpxV3NSZExPdXhkM0FrbVhhNXBYR00tX1M1VDFTOG9rVjA4eGZUVkZiMjNHQVZHZ3JVTFcw?oc=5",
         "source": "Hoodline",
         "date": "2026-10-29T16:17:02.000Z"
-      },
-      {
-        "title": "Ave Maria pickleball dispute leads to arrest after woman shoved, slow cooker grabbed, deputies say",
-        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbnZUeEhrUFVoeWU5WFhiQk9NUmkxaFluSWJpZ2N3QWtUX1d4VWZCMEFYWXUtLTFWNGdndWZHcHZnZEtCeDRNWUdQTXllTjgxN21uSmVfUnlielFpR2gtVEotOXVOWjFsOElnZWIxazUxMmdZS1Z0d3VpdXlhTzMyR0h6WmFrWVFRUWNOT1MyU1FERnRLQmdDMGdyTXhCYXR3U09nVWpUMlQ?oc=5",
-        "source": "Gulf Coast News and Weather",
-        "date": "2026-10-28T22:49:00.000Z"
       }
     ],
     "tournaments": [
+      {
+        "title": "Opendoor Pickleball World Championships Preview, from the Stats Desk",
+        "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1IZ3ltT2xnbVU2VzFUWDBnOVo3dmxxMlJTYUx5SERpRXJQYnVRZzNHN0ZYWmJVWDNpeXIyMGtNS2hpcVhhTllNMEk5YmRIbllSQi1HYnRKLTRDeEFUZHozMExSd195bE0wMThv?oc=5",
+        "source": "PPA Tour",
+        "date": "2026-11-02T21:35:02.000Z"
+      },
+      {
+        "title": "Pickleball tournament benefits The Call in Arkansas, Miller, Little River counties",
+        "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQRHRsT1daejFicFNudWw0dXYxc0U0R2NnNHRiOW9Udk5fVnhEbG5zRm1XbjZTcjduSkY4OUFtc2hEdndVYTN3Yks4cjRMZmQ0OGhjOGxHRTk0OFk1dnhhR3RVMUNOV3ZUMmNjUUhKTUMwQTFWSVhfdkUyNkNJNFNzR2RUZGxxOWRfYjhhS01QYWFnbW1yR01kTkJQVl95bW55cFRMNGI3Z1JvSHVpV00xQkE1cHF5TDRCSjZzNzlHMi16eERkMmF5ZDU4SHRTUjBKTUdLS2pacVFZand0Y3RPQkhQNDREYklPOFJxNXdLb1RnWXc?oc=5",
+        "source": "The Killeen Daily Herald",
+        "date": "2026-11-02T20:27:22.000Z"
+      },
       {
         "title": "Team USA Wins The Inaugural Major League Pickleball Nations Cup In Dominant Fashion",
         "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNYnc1aWpWNHJyd2lNUnVaSnR5cWRIbDR2Tmh1RzFHRXFraW91QWk1V1pWVG1mczJhU0pNOFlMX2R3dXp5YjlmOVc4Y0xYeVJ4MzdISngyRks5UWVBTFlSZDBLOU1PWm9KcFQ2OHlTSVQ4R25wSF9OMmNVSU9rUEtzSEVrRko3cno1X0dlQi1fQ2NGNjZDM3ZQZHlRRkpfWmtRaTcxT3lBR3gwbzBubUw2LVUwNUNZcmdRLUFSSHJYQ1VaaU05bHJNMXJVTnZ4dw?oc=5",
@@ -75,18 +87,6 @@
         "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeGEtd2h4Ri1QM1NCMG9DYV9CNkFHSDRCZ1FtTURWQURrSVRqVkUxYmJ6bWM5V0xUX0trUC1hMEp2NUkwLXVBOW5Td1V6a3J6UGNYQkhKNTMzQ0htaXBLUE1JWm9xTkp0eTQxemQ4dHo4a0VwR0NRSjBhRWoxeDJXWG5MSUxvcm12?oc=5",
         "source": "Yahoo Sports",
         "date": "2026-11-01T04:36:21.000Z"
-      },
-      {
-        "title": "Pickleball tournament benefits The Call in Arkansas, Miller and Little River Counties",
-        "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNS2JQOXYtdlhhZnFNVllXMVJPT056bXEyWTRiY25rX1VzSXZkbXZJOVRjNm5jUDh4N1RWQUtDSHRySUdvODVlQ18wSFJCRDlhZkNra1RvTGk2Y1Y1UnhZdDVaVEE0ajd4WXdSZG1hLVp4MzU3aFBzNHlRdVlZZ0k2X1JVU1JESHZfN3RXUDVTYUJ0dWFDMWU2ZTlYS1FBSlBmNFJJcXVMQ0RoWWV2dmNjajItd0R0blNVXzFpdlZYOERpMjl0eGNOc2tteXJ3dnpQQlBCMzFBamlYRTMxSlVQbUl1b0g1TVJaS1lZLU02TmFnWk1lRnhhemJ3?oc=5",
-        "source": "KTEN",
-        "date": "2026-10-31T21:44:00.000Z"
-      },
-      {
-        "title": "Country Pickleball Tournaments",
-        "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA3QkYtRDN5bXVqYmNVY29rQU5UR195aTRJYlY5N1pzSHRYck1XQVg5TDJiMTc0UlBKZUcxdUN0WGVzeDdGVHUwVlNycDBQWUg4Wnh5SlVfSmJtNlM5U2ptQTBuVW9tQkdqMUtOS0pZQTBmbnc?oc=5",
-        "source": "Trend Hunter",
-        "date": "2026-10-30T06:58:24.000Z"
       }
     ],
     "world": [
@@ -97,16 +97,34 @@
         "date": "2026-11-02T16:10:47.000Z"
       },
       {
-        "title": "Team USA Dominates Inaugural MLP Nations Cup, but International Pickleball is the Real Winner",
-        "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNaGo1ZllsY0ZqNGNJLVdpWFh6UkZPelBSdVdvZUdUUVJ1UW5rWkNUUjhXZm05b0s2X25kUVVWZkxteW4zc1EyRWRVUm1wZEE3U3JlSmt0MGRRN3lsXy1lbGRBRXpYb2tfSGhYdmpMcVZRNThGSWZQTjBCUnpOR1ItY0dUNklQbTc2bE4xMzg5X082Z2JjaVdmZlhqV0ZfZWItWXVWY1haTWFpejBjdUVRNVdLVG9ZTDF5TTgzUDlmd1RZUnUzVEE?oc=5",
-        "source": "The Dink Pickleball",
-        "date": "2026-11-02T15:57:53.000Z"
-      },
-      {
         "title": "Team USA Dominates Inaugural MLP Nations Cup",
         "link": "https://www.thedinkpickleball.com/team-usa-dominates-inaugural-mlp-nations-cup-but-international-pickleball-is-the-real-winner/",
         "source": "The Dink",
         "date": "2026-11-02T15:57:32.000Z"
+      },
+      {
+        "title": "'There are No Shortcuts': GPF Sends Strong Message On Pickleball's Olympic Ambitions",
+        "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNNjBhY3AxT2RPVjNFWk5WcGVsamVyVUZzb3QtRkNXdDduaWxhQUhyc2dOSlJ5SzF2V0NQOV9uQzhCN0JWS2hZRzNKekZNUkJqSnNJVE54REpCSVpCTlgwZTU1dkR5YTZtcTA0RXRGQ3VwSEM0a2hHall1YmU1SVd0V2hpVFltQjI4cm9vZkdCTFpnX3N3Z0d5TWNpYTQxREkxdDhZNjR6T0VxREh3SkdTVFNVMXVvYlpLSVllQ1JkYW51aFNKbkU2dmVNa3RLWGdCX2N3X3c1T20tRFZWUGfSAeMBQVVfeXFMUE1oeVBlM3QyelhHVlA1enRURnFFVGdMMGFLZmNUMkFNcDJodXhaRDQyY1ZTQl9LeHEwdTVfUjVKQkNEbVNPazVmeFZVUFNEZVJPRkZNYjl2U3ViNGg0VXE3ZnJEcjRhWGpTbGhBekhSODVxVXNaaEMwTG9LZE9oa2pKbEhkcDZVYzFzU1Z5NURZVnhxRkFyamhmS1ZUcW4wWjM3OHR2UHhmSXY1WEdwbXZDelVab3JCemNfRmZDZ096VFZKNW1XTS02SzhtZDRNQWJZZ2psazgta3h4S1ZHMUpqRnc?oc=5",
+        "source": "Times Now",
+        "date": "2026-11-02T11:32:11.000Z"
+      },
+      {
+        "title": "Pickleball world number one Waters to make international debut in Vietnam",
+        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOQ3RLbThiSnhDT01JSk9vVF9UWlhRUTdYcTV5M25KYUdDNmZmelJaZ0JzaU1EUHQ1UElBaUdhSGcxTGNNUHRUVW5wZG5zUUNMYjUtaGpTLTQxM19nY1oxaGN4cVBTV0hDSFdLWVQtM0FSOFI5ZjdkVGJTOU94QWlZcjZURWtzSURUOF9tZ2JxbXhOQm5qTkZlU1U4SW5HTl9a?oc=5",
+        "source": "Stadium Astro",
+        "date": "2026-11-02T09:17:08.000Z"
+      },
+      {
+        "title": "Vietnam's pickleball team ranked 5th out of 32 teams at the 2026 China Open.",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPN0ctb1pxRklqZ3JkcEtsWWpjN1hsNUQ3VmVRMDVDSEw2TjROckpBVTBwVmt0cHlsdzFCMGg4UmFKYkpwWlE3VG94TVZFcTIxUG5LVC1QSE5IUTJUMlJYNzhvbmNVcjJnNWJ6cE1hZmFQVjRaSkdEcWtnM0RNalNKM0g3UDAtT2NBSXlrMjNWRWo4VldhVUs0cEwyTQ?oc=5",
+        "source": "Vietnam.vn",
+        "date": "2026-11-02T08:00:00.000Z"
+      },
+      {
+        "title": "Pickleball emerges as a new bridge for youth exchange between China and the United States",
+        "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1QRHhEM0U4RkVyUW9Od2VFczBHTm90X2NWeEhLeklRUzAxYmxDVXktd1d5V002N3MzWFF2NVB6Z2xOdDJCbzA3Z0lrZ0U4OXhoTzZ1elY5MW8wM3ZDa2RNUXNtSmJObVJpSURMWnBhMA?oc=5",
+        "source": "Beijing Review",
+        "date": "2026-11-02T05:33:55.000Z"
       },
       {
         "title": "Kyle Stoker swaps tennis for pickleball after 28 years in tennis",
@@ -119,33 +137,9 @@
         "link": "https://www.thedinkpickleball.com/selkirk-boomstik-st-first-look-photos-release-date/",
         "source": "The Dink",
         "date": "2026-10-30T16:00:00.000Z"
-      },
-      {
-        "title": "7 Forehand Speed Up Patterns That Make the Right Side a Weapon",
-        "link": "https://www.thedinkpickleball.com/7-forehand-speed-up-patterns-for-right-side-players/",
-        "source": "The Dink",
-        "date": "2026-10-30T14:59:17.000Z"
-      },
-      {
-        "title": "Warping Point's New Nightblade Paddles Let Players Choose Their Weapon",
-        "link": "https://www.thedinkpickleball.com/warping-point-nightblade-001-vs-002-power-or-stability/",
-        "source": "The Dink",
-        "date": "2026-10-30T14:56:13.000Z"
-      },
-      {
-        "title": "How Andre Agassi and Steffi Graf are turning their tennis legacy into a pickleball business venture",
-        "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxNbi1PRS1pWU0yRkZ5ckF4T1lBOVIxTWpPOC1WMWpUWG9mRGdXSnhVMUJtZTVnbXBXZmotclpiaTBZdDBDeHN4VVI2bkp2dDUtSnNPSDZVbHZMZ0d3S2dWbFhuSWZuRi1DdUU1R25RLXlmTmxTbEp2MjB0SXY3V0Z4OEVNSEhZR1BWN3JUQ3drNnRmb2tjN21rZGJmVlkzSGNOOXNoWDJnUWVVakxIcmtvYnpDWWtDc2VIeTdEcDZZNDYtSDEwa0ZzZy1zSkFqWWlPN3FPVDJ6SlNtYVAtOFhnZUxQbmNFU2s2UnpxSVY4RTZHQVFySGlKYUJ3aU9UNnZHSWM5OWlvNXhldVB4SFh3aENLQmd0d0ZH0gGeAkFVX3lxTFAwa1NXcVRISG83NFdGa3ZSN3dyc2g4eEczWFhSbFN5WkxndU5wbWJlWkJiQ3BLbDJGTWF6OE5TV2NJa2hOMU5pUzExVnRnS2ROQ1R3N21OZ2tnODdvVG9DalVUVllueGh4Vks1YURuYS02MmVyY0F0c0w1NWc3QXU0SEJJY0lkQTFqMVpKX1FUYm85cHFUaUhtbHRMMHdTVm1zSmdpMjV1bC1yZ0dGWV9fOTk3RWVMd2t3ZnN5WmpVQldUcC1QVWZLQUViUjc4ZlVzU3VvSGF4ZGNIWVI5VWV6UEFpcUJfQUhJTHVkVWdZSy1HMmVkYVF5bWNQQTJIYVI3Z3VzbjNlMllIa3NfdlpUeUw4ZkxvLVYyQ3dHanc?oc=5",
-        "source": "The Times of India",
-        "date": "2026-10-29T23:38:00.000Z"
       }
     ],
     "travel": [
-      {
-        "title": "A new game for Nikki Gil Albert: Turning pickleball and design passion into reality",
-        "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPQU9WNWd3cTI1TGpoR0RfLVIxcUI3MmZaU0p6ZnhsLXYzNnRJTXA5OTVHODNtdXNGUEpPeWZkRVV5SU1YcnI1T1NFU0g5RWpkYnIxaU9tS0djRE40NFpEOXpIYzdNU294WDdmYjZvZG8zZ04wbnhYWUNUTnRZdVd1NzdoTTRPS3luRVhRVnEwaEF5ejU0b1JhaTVrM1N6b21FdHVZMWV4OEd2U1lvZGZFWnVSdllSNnE5LUZvWkZYUmxLY2VoUC1Xb2JmYzg1UkRGRXpOSXZYaUltR3JhTUZGckpsREtQWTRaMkE?oc=5",
-        "source": "ABS-CBN",
-        "date": "2026-10-21T07:00:00.000Z"
-      },
       {
         "title": "18-year old Floridian to meet Spaniard in men’s final at Pickleball Virginia Beach",
         "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOb1B6OWx4SW5xTHNDSDlMTkhvcTR4NzZodkdtVXpQZ0IyUnNLVlBUS3NxR1kxZXhPVlJTX3IyZC03dS1zaG16Wm5PUHEwcXVlLXRXVDV5XzRqZnFFaVNoRzA4bTV4NEVTajBycWpKenVVLWY1VUxWdXR4bEQ1LVBLcU8yQXpZcGhaOExnMDlYbGpFX2R4V0lzR3ZCVWhMZmw4dDdLVllGcGFTZWdiX1ZZaFg5S2FacVZXSVhnUUFR?oc=5",
@@ -175,6 +169,12 @@
         "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxONHFfSmlBejFOMmJBYmNIVTdZenFEVGRYeTduY2xfWE9FMzdBRXR4NEtuUGNwWHhUd0R5T013YXR5MFYzWVBKLTMtRUd4MzBYYUxGOGNTdnJjQ0JraUU0SXVmSDI0eGNaY0ZfSXoyV2hTOWt1VlJrSGVBUEhXcTFtd0xzS0hsQTFnaG9INGZHVUN3WVdDQUNQejBLZHZfUkVGRW9RNW1RRG8tTk1lMUE?oc=5",
         "source": "Euro Weekly News",
         "date": "2026-09-07T07:00:00.000Z"
+      },
+      {
+        "title": "\"I tried pickleball on an active Greek holiday – I might be hooked\"",
+        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNTRjNVkwNXh6UHYwVE54REUxTWJ1cDl4TzdhdXBuWG1aRWZHWW5WUmpRN2dhTVg3SUVaTllzLW14T3VGWVFZMXd6aVFuRzRyNGRWMXFfRWkzbmJ6Y0FOSHR2eTI0bGw3NHh4eHpZNVhjVWhndFFIY256bGdNRzQ4YXlhOGNTd19MRXNSeFY4ZmQ2RzBJMlFEU0tFRGFUa0pYR1JyRUMxVFRTZEJ6eGNv?oc=5",
+        "source": "Yorkshire Post",
+        "date": "2026-09-06T07:00:00.000Z"
       }
     ]
   }
